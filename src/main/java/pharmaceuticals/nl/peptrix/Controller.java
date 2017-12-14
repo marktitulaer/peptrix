@@ -896,14 +896,14 @@ public class Controller
 	public ResultService resultService;
 
 	public Controller(JFrame frame) {
-		jdbc_user = "your_jdbc_user";
-		jdbc_password = "your_jdbc_password";
+		jdbc_user = "root";
+		jdbc_password = "jk3567";
 		fileSeparator = System.getProperty("file.separator");
 		userhome = System.getProperty("user.home");
 		javaHome = System.getProperty("java.home");
 		osName = System.getProperty("os.name");
-		ftpuser = "your_ftpuser";
-		ftppassword = "your_ftppassword";
+		ftpuser = "root";
+		ftppassword = "jk3567";
 		ftpremotehost = "127.0.0.1";
 		duration_hour = 16;
 		ftp_longtime = duration_hour * minute_per_hour * second_per_minute * milliseconds;
