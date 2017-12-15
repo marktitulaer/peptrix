@@ -37,6 +37,16 @@ public class Thermo_Scientific extends DefaultHandler {
 	File file_thermo_scientific;
 
 	JFileChooser filechooser;
+	
+	SearchFile objectsearchfile;
+
+	BufferedReader reader;
+
+	String exportname;
+
+	Vector<String[]> sequensing_results_vector;
+
+	Experiment experiment;	
 
 	String Batchfilename2;
 
@@ -74,40 +84,28 @@ public class Thermo_Scientific extends DefaultHandler {
 
 	String found_raw_to_mzXML_executable_name2;
 
+	long readw_byteSize;
+
 	int procesexitvalue;
-
-	boolean errormessageonce = false;
-
-	boolean isWindowsFlag = false;
-
-	// boolean readw_directory_found = false;
-
-	boolean notfinished;
-
-	SearchFile objectsearchfile;
-
-	BufferedReader reader;
-
-	String exportname;
 
 	int number_of_masses;
 
 	int number_of_noise_peaks = 0;
 
-	long readw_byteSize;
+	boolean errormessageonce = false;
 
-	Vector<String[]> sequensing_results_vector;
+	boolean isWindowsFlag = false;
 
-	Experiment experiment;
+	boolean notfinished;
 
 	public Thermo_Scientific(Controller cc, Experiment experiment, ExportFileToDisk exportfiletodisk) {
 		raw_to_mzXML_executable = "msconvert.exe";
-		if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert32")) {
-			raw_to_mzXML_executable = "msconvert.exe";
-		}
-		if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert64")) {
-			raw_to_mzXML_executable = "msconvert.exe";
-		}
+		//if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert32")) {
+		//	raw_to_mzXML_executable = "msconvert.exe";
+		//}
+		//if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert64")) {
+		//	raw_to_mzXML_executable = "msconvert.exe";
+		//}
 		this.exportfiletodisk = exportfiletodisk;
 		objectsearchfile = new SearchFile(cc);
 		thermoscientific_filename = "thermo_scientific";
