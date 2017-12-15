@@ -101,10 +101,7 @@ public class Thermo_Scientific extends DefaultHandler {
 	Experiment experiment;
 
 	public Thermo_Scientific(Controller cc, Experiment experiment, ExportFileToDisk exportfiletodisk) {
-		raw_to_mzXML_executable = "ReAdW.exe";
-		// if (experiment.getraw_to_mzXML().equalsIgnoreCase("readw")) {
-		// raw_to_mzXML_executable = "ReAdW.exe";
-		// }
+		raw_to_mzXML_executable = "msconvert.exe";
 		if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert32")) {
 			raw_to_mzXML_executable = "msconvert.exe";
 		}
