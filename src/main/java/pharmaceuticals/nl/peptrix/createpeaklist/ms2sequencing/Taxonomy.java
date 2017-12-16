@@ -1,4 +1,4 @@
-package pharmaceuticals.nl.peptrix.createpeaklist;
+package pharmaceuticals.nl.peptrix.createpeaklist.ms2sequencing;
 
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
@@ -18,7 +18,7 @@ public class Taxonomy {
 
 	FileDescriptor fd;
 
-	boolean taxonomy_file_created;
+	public boolean taxonomy_file_created;
 
 	public Taxonomy(String found_ms2_database, String string_Taxonomy, String found_xtandem_program, String program,
 			Controller cc) {

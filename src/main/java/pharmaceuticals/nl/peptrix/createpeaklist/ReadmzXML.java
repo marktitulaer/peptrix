@@ -13,6 +13,9 @@ import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 import pharmaceuticals.nl.peptrix.SearchFile;
+import pharmaceuticals.nl.peptrix.createpeaklist.ms2sequencing.Default_input_xml;
+import pharmaceuticals.nl.peptrix.createpeaklist.ms2sequencing.Input_xml;
+import pharmaceuticals.nl.peptrix.createpeaklist.ms2sequencing.Taxonomy;
 import pharmaceuticals.nl.peptrix.utils.SortMatrix;
 
 import com.enterprisedt.net.ftp.FTPClient;

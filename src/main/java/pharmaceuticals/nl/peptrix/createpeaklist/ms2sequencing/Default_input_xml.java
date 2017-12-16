@@ -1,4 +1,4 @@
-package pharmaceuticals.nl.peptrix.createpeaklist;
+package pharmaceuticals.nl.peptrix.createpeaklist.ms2sequencing;
 
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
@@ -12,9 +12,9 @@ public class Default_input_xml {
 
 	ExportFileToDisk exportfiletodisk;
 
-	boolean default_input_xml_file_created;
+	public boolean default_input_xml_file_created;
 
-	String default_input_xml_file_name;
+	public String default_input_xml_file_name;
 
 	public Default_input_xml(Controller cc, Experiment experiment, ExportFileToDisk exportfiletodisk) {
 		this.experiment = experiment;

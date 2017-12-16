@@ -1,4 +1,4 @@
-package pharmaceuticals.nl.peptrix.createpeaklist;
+package pharmaceuticals.nl.peptrix.createpeaklist.ms2sequencing;
 
 import java.io.FileDescriptor;
 
@@ -15,7 +15,7 @@ public class Input_xml {
 
 	String input_xmlcontent;
 
-	boolean input_xml_file_created;
+	public boolean input_xml_file_created;
 
 	public Input_xml(Controller cc) {
 		exportfiletodisk = new ExportFileToDisk(cc);
