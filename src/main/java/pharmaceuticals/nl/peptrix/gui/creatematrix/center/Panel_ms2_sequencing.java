@@ -151,7 +151,24 @@ public class Panel_ms2_sequencing {
 		cc.comboenzymes.setLightWeightPopupEnabled(false);
 		ms2_sequencing_panel.add(cc.comboenzymes, gridbagcontraintsmodifications);
 				
-		//--------line 4---------------------------------------------------------		
+		//--------line 4---------------------------------------------------------	
+		
+		
+		
+		gridbagcontraintsmodifications.gridx = 10;
+		gridbagcontraintsmodifications.gridy = 4;
+		gridbagcontraintsmodifications.gridwidth = 1;
+		gridbagcontraintsmodifications.gridheight = 5;
+		gridbagcontraintsmodifications.fill = GridBagConstraints.BOTH;
+		cc.selected_enzyme_mod = new SortedListModel();
+		cc.list_selected_enzyme = new JList(cc.selected_enzyme_mod);
+		//cc.list_selected_enzyme.add("test");
+		JScrollPane pane_fixed_mod2 = new JScrollPane(cc.list_selected_enzyme);
+		ms2_sequencing_panel.add(pane_fixed_mod2, gridbagcontraintsmodifications);	
+		
+		
+		
+		
 		gridbagcontraintsmodifications.gridx = 1;
 		gridbagcontraintsmodifications.gridy = 4;
 		gridbagcontraintsmodifications.gridwidth = 2;

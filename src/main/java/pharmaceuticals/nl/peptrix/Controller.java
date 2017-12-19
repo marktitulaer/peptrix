@@ -200,6 +200,8 @@ public class Controller
 	public SortedListModel model_variabel_mod;
 
 	public SortedListModel model_fixed_mod;
+	
+	public SortedListModel selected_enzyme_mod;
 
 	public JComboBox<String> comborandomizationgroups;
 
@@ -356,6 +358,8 @@ public class Controller
 	public JButton clearselectedsample;
 
 	public JList<String> list_fixed_mod;
+	
+	public JList<String> list_selected_enzyme;
 
 	public JList<String> list_variabel_mod;
 
