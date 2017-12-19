@@ -201,7 +201,11 @@ public class Controller
 
 	public SortedListModel model_fixed_mod;
 	
-	public SortedListModel selected_enzyme_mod;
+	public SortedListModel selected_enzyme_list;
+
+	public SortedListModel potential_enzyme_list;
+
+	
 
 	public JComboBox<String> comborandomizationgroups;
 
@@ -300,6 +304,10 @@ public class Controller
 	public JButton btnwilcoxon2;
 
 	public JButton button_remove_fixed;
+	
+	public JButton button_remove_enzyme;
+	
+	public JButton button_add_enzyme;
 
 	public JButton button_add_fixed;
 
@@ -360,6 +368,9 @@ public class Controller
 	public JList<String> list_fixed_mod;
 	
 	public JList<String> list_selected_enzyme;
+	
+	public JList<String> list_potential_enzyme;
+
 
 	public JList<String> list_variabel_mod;
 
