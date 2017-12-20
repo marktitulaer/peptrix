@@ -371,7 +371,6 @@ public class Controller
 	
 	public JList<String> list_potential_enzyme;
 
-
 	public JList<String> list_variabel_mod;
 
 	public JList<String> list_all_modifications;
@@ -2455,6 +2454,21 @@ public class Controller
 			addSourceElements(selected);
 			clearDestinationSelected();
 		}
+		
+		if (choice == button_remove_enzyme) {
+			//Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
+			//addSourceElements(selected);
+			//clearDestinationSelected();
+			System.out.println(" button_remove_enzyme ");
+		}
+		
+		if (choice == button_add_enzyme) {
+			//Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
+			//addSourceElements(selected);
+			//clearDestinationSelected();
+			System.out.println(" button_add_enzyme ");
+		}
+		
 		if (choice == button_remove_fixed) {
 			Object selected[] = list_fixed_mod.getSelectedValuesList().toArray();
 			addDestinationElements(selected);
