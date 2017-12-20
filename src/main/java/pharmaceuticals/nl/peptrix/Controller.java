@@ -200,12 +200,10 @@ public class Controller
 	public SortedListModel model_variabel_mod;
 
 	public SortedListModel model_fixed_mod;
-	
+
 	public SortedListModel selected_enzyme_list;
 
 	public SortedListModel potential_enzyme_list;
-
-	
 
 	public JComboBox<String> comborandomizationgroups;
 
@@ -304,9 +302,9 @@ public class Controller
 	public JButton btnwilcoxon2;
 
 	public JButton button_remove_fixed;
-	
+
 	public JButton button_remove_enzyme;
-	
+
 	public JButton button_add_enzyme;
 
 	public JButton button_add_fixed;
@@ -366,9 +364,9 @@ public class Controller
 	public JButton clearselectedsample;
 
 	public JList<String> list_fixed_mod;
-	
+
 	public JList<String> list_selected_enzyme;
-	
+
 	public JList<String> list_potential_enzyme;
 
 	public JList<String> list_variabel_mod;
@@ -1428,6 +1426,14 @@ public class Controller
 		fillListModel(model_all_modifications, newValue);
 	}
 
+	public void addSelectedEnzymeElements(Object newValue[]) {
+		fillListModel(selected_enzyme_list, newValue);
+	}
+
+	public void removeSelectedEnzymeElements(Object newValue[]) {
+		fillListModel(potential_enzyme_list, newValue);
+	}
+
 	private void fillListModel(SortedListModel model, Object newValues[]) {
 		model.addAll(newValues);
 	}
@@ -1454,6 +1460,22 @@ public class Controller
 			model_all_modifications.removeElement(selected[i]);
 		}
 		list_all_modifications.getSelectionModel().clearSelection();
+	}
+
+	private void clearPotentialEnzymesSelected() {
+		Object selected[] = list_potential_enzyme.getSelectedValuesList().toArray();
+		for (int i = selected.length - 1; i >= 0; --i) {
+			potential_enzyme_list.removeElement(selected[i]);
+		}
+		list_potential_enzyme.getSelectionModel().clearSelection();
+	}
+
+	private void clearSelectedEnzymesSelected() {
+		Object selected[] = list_selected_enzyme.getSelectedValuesList().toArray();
+		for (int i = selected.length - 1; i >= 0; --i) {
+			selected_enzyme_list.removeElement(selected[i]);
+		}
+		list_selected_enzyme.getSelectionModel().clearSelection();
 	}
 
 	public void setlabelsanddefaults() {
@@ -2445,7 +2467,6 @@ public class Controller
 		}
 		if (choice == button_remove_variabel) {
 			Object selected[] = list_variabel_mod.getSelectedValuesList().toArray();
-
 			addDestinationElements(selected);
 			clearSourceSelected2();
 		}
@@ -2454,21 +2475,19 @@ public class Controller
 			addSourceElements(selected);
 			clearDestinationSelected();
 		}
-		
+
 		if (choice == button_remove_enzyme) {
-			//Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
-			//addSourceElements(selected);
-			//clearDestinationSelected();
-			System.out.println(" button_remove_enzyme ");
+			Object selected[] = list_selected_enzyme.getSelectedValuesList().toArray();
+			removeSelectedEnzymeElements(selected);
+			clearSelectedEnzymesSelected();
 		}
-		
+
 		if (choice == button_add_enzyme) {
-			//Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
-			//addSourceElements(selected);
-			//clearDestinationSelected();
-			System.out.println(" button_add_enzyme ");
+			Object selected[] = list_potential_enzyme.getSelectedValuesList().toArray();
+			addSelectedEnzymeElements(selected);
+			clearPotentialEnzymesSelected();
 		}
-		
+
 		if (choice == button_remove_fixed) {
 			Object selected[] = list_fixed_mod.getSelectedValuesList().toArray();
 			addDestinationElements(selected);
