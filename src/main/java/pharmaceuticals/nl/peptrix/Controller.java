@@ -2718,6 +2718,20 @@ public class Controller
 				selected_enzyme = String.valueOf(comboenzymes.getSelectedItem()).trim();
 			} catch (Exception ex) {
 			}
+			// hier
+
+			selected_enzymes = null;
+
+			System.out.println(" selected_enzyme_list.getSize()  " + selected_enzyme_list.getSize());
+
+			// if (model_variabel_mod_Size > 0) {
+			// array_variabel_modifications = new String[model_variabel_mod_Size];
+			// for (int i = 0; i < model_variabel_mod_Size; i++) {
+			// array_variabel_modifications[i] =
+			// model_variabel_mod.getElementAt(i).toString().trim();
+			// }
+			// }
+
 			model_fixed_mod_Size = 0;
 			try {
 				model_fixed_mod_Size = model_fixed_mod.getSize();
