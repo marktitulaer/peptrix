@@ -154,7 +154,6 @@ public class Panel_ms2_sequencing {
 		gridbagcontraintsmodifications.gridheight = 5;
 		gridbagcontraintsmodifications.fill = GridBagConstraints.BOTH;
 		cc.selected_enzyme_list = new SortedListModel();
-		cc.selected_enzyme_list.add(new String("Trypsin"));
 		cc.list_selected_enzyme = new JList(cc.selected_enzyme_list);
 		JScrollPane pane_selected_enzyme = new JScrollPane(cc.list_selected_enzyme);
 		ms2_sequencing_panel.add(pane_selected_enzyme, gridbagcontraintsmodifications);				
@@ -172,7 +171,6 @@ public class Panel_ms2_sequencing {
 		gridbagcontraintsmodifications.gridheight = 5;
 		gridbagcontraintsmodifications.fill = GridBagConstraints.BOTH;
 		cc.potential_enzyme_list = new SortedListModel();
-		cc.potential_enzyme_list.add(new String("Chymotrypsin"));
 		cc.list_potential_enzyme = new JList(cc.potential_enzyme_list);
 		JScrollPane pane_potential_enzyme = new JScrollPane(cc.list_potential_enzyme);
 		ms2_sequencing_panel.add(pane_potential_enzyme, gridbagcontraintsmodifications);				

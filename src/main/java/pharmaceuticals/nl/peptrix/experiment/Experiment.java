@@ -87,6 +87,10 @@ public class Experiment {
 	private int m_zerofillingfactor;
 
 	private String m_selected_enzyme;
+	
+	private String[] m_selected_enzymes;
+
+	
 
 	private int m_max_charge_state_peptide;
 
@@ -133,6 +137,14 @@ public class Experiment {
 		m_experimentyear = "";
 		m_equipmentid = -1;
 		str_m_equipmentcode = "";
+	}
+	
+	public String[] getSelected_enzymes() {
+		return m_selected_enzymes;
+	}
+
+	public void setSelected_enzymes(String[] selected_enzymes) {
+		m_selected_enzymes = selected_enzymes;
 	}
 
 	public void setequipmentid(int equipmentid) {

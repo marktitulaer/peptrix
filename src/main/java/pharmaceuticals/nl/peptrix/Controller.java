@@ -257,7 +257,7 @@ public class Controller
 
 	public JRadioButton msconvert_programm_32;
 
-	// public JRadioButton Readw_programm;
+	String[] selected_enzymes;
 
 	public JRadioButton ppm;
 
@@ -2048,6 +2048,11 @@ public class Controller
 					for (int i = 0; i < odataenzymes.length; i++) {
 						enzymes[i] = odataenzymes[i][0].toString();
 						comboenzymes.addItem(enzymes[i]);
+						if (enzymes[i].trim().equalsIgnoreCase("trypsin")) {
+							selected_enzyme_list.add(enzymes[i].trim());
+						} else {
+							potential_enzyme_list.add(enzymes[i].trim());
+						}
 					}
 				}
 			}
@@ -2820,6 +2825,7 @@ public class Controller
 			experiment.setpeptide_present_in_minimumnumberoffractions(minimumnumberoffractions);
 			experiment.setzerofillingfactor(zerofillingfactor);
 			experiment.setselected_enzyme(selected_enzyme);
+			experiment.setSelected_enzymes(selected_enzymes);
 			experiment.setmax_charge_state_peptide(max_charge_state);
 			experiment.setdeviation_from_expected_intensity_ratio(inputerror);
 			experiment.setpercent_deviation_from_isotopic_distance(percent_deviation_isotopic_distance);
