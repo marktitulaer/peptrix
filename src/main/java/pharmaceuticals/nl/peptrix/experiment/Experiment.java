@@ -468,13 +468,13 @@ public class Experiment {
 		return m_zerofillingfactor;
 	}
 
-	public void setselected_enzyme(String selected_enzyme) {
-		m_selected_enzyme = selected_enzyme;
-	}
+	//public void setselected_enzyme(String selected_enzyme) {
+	//	m_selected_enzyme = selected_enzyme;
+	//}
 
-	public String getselected_enzyme() {
-		return m_selected_enzyme;
-	}
+	//public String getselected_enzyme() {
+	//	return m_selected_enzyme;
+	//}
 
 	public void setmax_charge_state_peptide(int max_charge_state_peptide) {
 		m_max_charge_state_peptide = max_charge_state_peptide;

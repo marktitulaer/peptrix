@@ -3,7 +3,6 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 import java.awt.*;
 import java.io.*;
 import java.math.BigDecimal;
-//import java.sql.SQLException;
 import java.util.*;
 import javax.swing.*;
 import com.enterprisedt.net.ftp.*;
@@ -587,7 +586,7 @@ public class Readdatafiles extends DefaultHandler {
 
 	BufferedReader input_rejectedpeaks;
 
-	String selected_enzyme;
+	//String selected_enzyme;
 
 	String TOL;
 
@@ -664,7 +663,7 @@ public class Readdatafiles extends DefaultHandler {
 		percent_stdevisotopingdistance = experiment.getvariance_isotopic_distance();
 		inputerror = experiment.getdeviation_from_expected_intensity_ratio();
 		max_charge_state = experiment.getmax_charge_state_peptide();
-		selected_enzyme = experiment.getselected_enzyme();
+		//selected_enzyme = experiment.getselected_enzyme();
 		zerofillingfactor = experiment.getzerofillingfactor();
 		minimumnumberoffractions = experiment.getpeptide_present_in_minimumnumberoffractions();
 		missingfractionsallowed = experiment.getmissing_number_ms_scans_allowed();

@@ -496,7 +496,19 @@ public class ReadmzXML {
 		String ITOL = experiment.getITOL();
 		String ITOLU = experiment.getITOLU();
 		String string_search_engine = experiment.getname_search_engine();
-		String selected_enzyme = experiment.getselected_enzyme();
+		String selected_enzyme = "";
+		String[] selected_enzymes = experiment.getSelected_enzymes();
+		if (selected_enzymes != null) {
+			for (int i = 0; i < selected_enzymes.length; i++) {
+				if (!selected_enzymes[i].trim().equalsIgnoreCase("")) {
+					if (selected_enzymes[i].trim().equalsIgnoreCase("trypsin")) {
+						selected_enzyme = selected_enzymes[i].trim();
+					}
+				}
+			}
+		} else {
+			selected_enzyme = "Trypsin";
+		}
 		int max_charge_state = experiment.getmax_charge_state_peptide();
 		boolean perform_ms2_sequencing = experiment.getperform_ms2_sequencing();
 		mass_distance_factor = 1;
@@ -696,33 +708,21 @@ public class ReadmzXML {
 			mzxmlfraction = "0";
 			retentiontime = "0";
 			precursormassovercharge = "0";
-
 			cc.actualtime.resettime();
 			strdatum = cc.actualtime.getdatestring();
 			strjaar = cc.actualtime.getyear();
 			strtime = cc.actualtime.gettimestring();
-			// tempBD = new BigDecimal(filegrootte_kbytes);
-
 			if ((filetransported__list) && (!sampleid.trim().equals("")) && (!Group_id.trim().equals(""))) {
-				// insertresultrecord("tmp");
-
 				updatesample = resultService.insertresultrecord("tmp", filegrootte_kbytes, sampleid, Group_id,
 						experiment, strdatum, strtime, exportnamexmlfraction, strjaar, retentiontime, mzxmlfraction,
 						filenumber, offset_lc_ms);
-
-				// resultService.inser
-
 			}
 			exportnamexmlfraction = "noise_" + exportname;
-
 			cc.actualtime.resettime();
 			strdatum = cc.actualtime.getdatestring();
 			strjaar = cc.actualtime.getyear();
 			strtime = cc.actualtime.gettimestring();
-			// tempBD = new BigDecimal(filegrootte_kbytes);
-
 			if ((filetransported__noiselist) && (!sampleid.trim().equals("")) && (!Group_id.trim().equals(""))) {
-				// insertresultrecord("tmp2");
 				updatesample = resultService.insertresultrecord("tmp2", filegrootte_kbytes, sampleid, Group_id,
 						experiment, strdatum, strtime, exportnamexmlfraction, strjaar, retentiontime, mzxmlfraction,
 						filenumber, offset_lc_ms);
@@ -730,14 +730,10 @@ public class ReadmzXML {
 			}
 			exportnamexmlfraction = "rejected_" + exportname;
 			if ((filetransported__rejectedlist) && (!sampleid.trim().equals("")) && (!Group_id.trim().equals(""))) {
-				// insertresultrecord("rejected");
-
 				updatesample = resultService.insertresultrecord("rejected", filegrootte_kbytes, sampleid, Group_id,
 						experiment, strdatum, strtime, exportnamexmlfraction, strjaar, retentiontime, mzxmlfraction,
 						filenumber, offset_lc_ms);
-
 			}
-
 			if (perform_ms2_sequencing) {
 				sequensing_results_vector = new Vector();
 				try {
@@ -780,7 +776,6 @@ public class ReadmzXML {
 									} catch (InterruptedException ie) {
 										ie.printStackTrace();
 									}
-
 									procesexitvalue = jproc.exitValue();
 									if (procesexitvalue == 1) {
 										if (!errormessageonce) {
@@ -825,7 +820,21 @@ public class ReadmzXML {
 
 	private void get_ms2_identifications(String directory, String fileSeparator, String filename, double deltamzcombine,
 			int clusteringtechnique) {
-		String selected_enzyme = experiment.getselected_enzyme();
+		//String selected_enzyme = experiment.getselected_enzyme();
+		String selected_enzyme = "";
+		String[] selected_enzymes = experiment.getSelected_enzymes();
+		if (selected_enzymes != null) {
+			for (int i = 0; i < selected_enzymes.length; i++) {
+				if (!selected_enzymes[i].trim().equalsIgnoreCase("")) {
+					if (selected_enzymes[i].trim().equalsIgnoreCase("trypsin")) {
+						selected_enzyme = selected_enzymes[i].trim();
+					}
+				}
+			}
+		} else {
+			selected_enzyme = "Trypsin";
+		}
+		
 		databuffer2 = new StringBuffer();
 		savetextpart = "";
 		group_tag = "</group";

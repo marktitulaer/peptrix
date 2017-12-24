@@ -229,7 +229,7 @@ public class Controller
 
 	public JComboBox<String> equipmentcombo;
 
-	public JComboBox<String> comboenzymes;
+	//public JComboBox<String> comboenzymes;
 
 	public JComboBox<String> filtercombobox2;
 
@@ -2047,7 +2047,7 @@ public class Controller
 					enzymes = new String[odataenzymes.length];
 					for (int i = 0; i < odataenzymes.length; i++) {
 						enzymes[i] = odataenzymes[i][0].toString();
-						comboenzymes.addItem(enzymes[i]);
+						//comboenzymes.addItem(enzymes[i]);
 						if (enzymes[i].trim().equalsIgnoreCase("trypsin")) {
 							selected_enzyme_list.add(enzymes[i].trim());
 						} else {
@@ -2713,25 +2713,18 @@ public class Controller
 			if (!textfieldmaxchargestate.getText().trim().equalsIgnoreCase("")) {
 				max_charge_state = Integer.parseInt(textfieldmaxchargestate.getText().trim());
 			}
-			selected_enzyme = "";
-			try {
-				selected_enzyme = String.valueOf(comboenzymes.getSelectedItem()).trim();
-			} catch (Exception ex) {
-			}
-			// hier
-
+			//selected_enzyme = "";
+			//try {
+			//	selected_enzyme = String.valueOf(comboenzymes.getSelectedItem()).trim();
+			//} catch (Exception ex) {
+			//}
 			selected_enzymes = null;
-
-			System.out.println(" selected_enzyme_list.getSize()  " + selected_enzyme_list.getSize());
-
-			// if (model_variabel_mod_Size > 0) {
-			// array_variabel_modifications = new String[model_variabel_mod_Size];
-			// for (int i = 0; i < model_variabel_mod_Size; i++) {
-			// array_variabel_modifications[i] =
-			// model_variabel_mod.getElementAt(i).toString().trim();
-			// }
-			// }
-
+			if (selected_enzyme_list.getSize() > 0) {
+				selected_enzymes = new String[selected_enzyme_list.getSize()];
+				for (int i = 0; i < selected_enzyme_list.getSize(); i++) {
+					selected_enzymes[i] = selected_enzyme_list.getElementAt(i).toString().trim();
+				}
+			}
 			model_fixed_mod_Size = 0;
 			try {
 				model_fixed_mod_Size = model_fixed_mod.getSize();
@@ -2793,7 +2786,6 @@ public class Controller
 				matrix_only_ms2sequenced_masses = only_ms2sequenced_masses.getState();
 			} catch (Exception e) {
 			}
-
 			selected_database = "HUMAN.fasta";
 			try {
 				selected_database = combo_proteindatabases.getSelectedItem().toString().trim();
@@ -2811,12 +2803,10 @@ public class Controller
 			experiment.setclusteringtechnique(clusteringtechnique);
 			experiment.setequipmentid(Integer.parseInt(dataexperiment[3].trim()));
 			experiment.setEquipmentcode(dataexperiment[5]);
-
 			if ((experiment.getequipmentid() == 3) || (experiment.getequipmentid() == 4)
 					|| (experiment.getequipmentid() == 5)) {
 				experiment.setHas_retentiontime(true);
 			}
-
 			experiment.setpeakfindmethod(peakfindmethod);
 			experiment.setid_calibrationmasses(Integer.parseInt(systemcodeitemid));
 			experiment.setdelta_mz_search_calibrants(inputdeltamzsearchcalibrant.getText().trim());
@@ -2838,7 +2828,7 @@ public class Controller
 			experiment.setmissing_number_ms_scans_allowed(missingfractionsallowed);
 			experiment.setpeptide_present_in_minimumnumberoffractions(minimumnumberoffractions);
 			experiment.setzerofillingfactor(zerofillingfactor);
-			experiment.setselected_enzyme(selected_enzyme);
+			//experiment.setselected_enzyme(selected_enzyme);
 			experiment.setSelected_enzymes(selected_enzymes);
 			experiment.setmax_charge_state_peptide(max_charge_state);
 			experiment.setdeviation_from_expected_intensity_ratio(inputerror);
@@ -2863,7 +2853,6 @@ public class Controller
 			odatanewresultid = resultservice.displaynewmatrix(experimentid2.getText().trim());
 			displaymatrix(odatanewresultid[0][0].toString().trim());
 			experimentid2.setText(experimentid2.getText().trim());
-
 		}
 		if (choice == btnGroup) {
 			wherestring = "";
@@ -2919,11 +2908,9 @@ public class Controller
 			transposematrix = new TransposeMatrix(this);
 			transposematrix.selectexperiment(null);
 		}
-
 		if (choice == btnrefresh) {
 			allocatesamples();
 		}
-
 		if (choice == btnNext) {
 			allocation.resetscrollposition();
 			offset = offset + limit;
@@ -3067,11 +3054,7 @@ public class Controller
 		}
 		if (choice == experimentidwilcoxon) {
 			odatamatrixfileswicoxon = resultservice.collectmatrixfileswilcoxon(experimentidwilcoxon.getText());
-			// groupnumbers =
-			// getgroupnumberswilcoxon.collectgroupnumberswilcoxon(experimentidwilcoxon.getText());
-
 			groupnumbers = resultService.collectgroupnumberswilcoxon(experimentidwilcoxon.getText());
-
 			dataexperiment = getexperimentdata.getexperimentdata(experimentidwilcoxon.getText());
 			experimentnamewilcoxon.setText(dataexperiment[0]);
 			equipmentnamewilcoxon.setText(dataexperiment[1]);
