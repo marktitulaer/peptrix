@@ -496,18 +496,25 @@ public class ReadmzXML {
 		String ITOL = experiment.getITOL();
 		String ITOLU = experiment.getITOLU();
 		String string_search_engine = experiment.getname_search_engine();
-		String selected_enzyme = "";
+		String selected_enzyme = "Trypsin";
 		String[] selected_enzymes = experiment.getSelected_enzymes();
 		if (selected_enzymes != null) {
-			for (int i = 0; i < selected_enzymes.length; i++) {
-				if (!selected_enzymes[i].trim().equalsIgnoreCase("")) {
-					if (selected_enzymes[i].trim().equalsIgnoreCase("trypsin")) {
-						selected_enzyme = selected_enzymes[i].trim();
-					}
+			if ((selected_enzymes.length == 1) && (selected_enzymes[0].trim().equalsIgnoreCase("trypsin"))) {
+				selected_enzyme = "Trypsin";
+			}
+			if ((selected_enzymes.length == 1) && (selected_enzymes[0].trim().equalsIgnoreCase("chymotrypsin"))) {
+				selected_enzyme = "Chymotrypsin";
+			}
+			if (selected_enzymes.length == 2) {
+				if ((selected_enzymes[0].trim().equalsIgnoreCase("trypsin"))
+						&& (selected_enzymes[1].trim().equalsIgnoreCase("chymotrypsin"))) {
+					selected_enzyme = "TrypChymo";
+				}
+				if ((selected_enzymes[0].trim().equalsIgnoreCase("chymotrypsin"))
+						&& (selected_enzymes[1].trim().equalsIgnoreCase("trypsin"))) {
+					selected_enzyme = "TrypChymo";
 				}
 			}
-		} else {
-			selected_enzyme = "Trypsin";
 		}
 		int max_charge_state = experiment.getmax_charge_state_peptide();
 		boolean perform_ms2_sequencing = experiment.getperform_ms2_sequencing();
@@ -820,21 +827,26 @@ public class ReadmzXML {
 
 	private void get_ms2_identifications(String directory, String fileSeparator, String filename, double deltamzcombine,
 			int clusteringtechnique) {
-		//String selected_enzyme = experiment.getselected_enzyme();
-		String selected_enzyme = "";
+		String selected_enzyme = "Trypsin";
 		String[] selected_enzymes = experiment.getSelected_enzymes();
 		if (selected_enzymes != null) {
-			for (int i = 0; i < selected_enzymes.length; i++) {
-				if (!selected_enzymes[i].trim().equalsIgnoreCase("")) {
-					if (selected_enzymes[i].trim().equalsIgnoreCase("trypsin")) {
-						selected_enzyme = selected_enzymes[i].trim();
-					}
+			if ((selected_enzymes.length == 1) && (selected_enzymes[0].trim().equalsIgnoreCase("trypsin"))) {
+				selected_enzyme = "Trypsin";
+			}
+			if ((selected_enzymes.length == 1) && (selected_enzymes[0].trim().equalsIgnoreCase("chymotrypsin"))) {
+				selected_enzyme = "Chymotrypsin";
+			}
+			if (selected_enzymes.length == 2) {
+				if ((selected_enzymes[0].trim().equalsIgnoreCase("trypsin"))
+						&& (selected_enzymes[1].trim().equalsIgnoreCase("chymotrypsin"))) {
+					selected_enzyme = "TrypChymo";
+				}
+				if ((selected_enzymes[0].trim().equalsIgnoreCase("chymotrypsin"))
+						&& (selected_enzymes[1].trim().equalsIgnoreCase("trypsin"))) {
+					selected_enzyme = "TrypChymo";
 				}
 			}
-		} else {
-			selected_enzyme = "Trypsin";
 		}
-		
 		databuffer2 = new StringBuffer();
 		savetextpart = "";
 		group_tag = "</group";
@@ -918,7 +930,6 @@ public class ReadmzXML {
 						} else {
 							missed_cleavages = "";
 						}
-
 						index = -1;
 						searchstring = "<protein expect=\"";
 						index = testline2.indexOf(searchstring) + searchstring.length();
@@ -1075,6 +1086,36 @@ public class ReadmzXML {
 											}
 										}
 									}
+									if (selected_enzyme.trim().equalsIgnoreCase("chymotrypsin")) {
+										for (int i = 0; i < ms2_sequence.length() - 1; i++) {
+											if ((ms2_sequence.charAt(i) == 'F') || (ms2_sequence.charAt(i) == 'f')
+													|| (ms2_sequence.charAt(i) == 'Y')
+													|| (ms2_sequence.charAt(i) == 'y')
+													|| (ms2_sequence.charAt(i) == 'W')
+													|| (ms2_sequence.charAt(i) == 'w')
+													|| (ms2_sequence.charAt(i) == 'L')
+													|| (ms2_sequence.charAt(i) == 'l')) {
+												number_missed_cleavages++;
+											}
+										}
+									}
+									if (selected_enzyme.trim().equalsIgnoreCase("trypchymo")) {
+										for (int i = 0; i < ms2_sequence.length() - 1; i++) {
+											if ((ms2_sequence.charAt(i) == 'k') || (ms2_sequence.charAt(i) == 'K')
+													|| (ms2_sequence.charAt(i) == 'R')
+													|| (ms2_sequence.charAt(i) == 'r')
+													|| (ms2_sequence.charAt(i) == 'F')
+													|| (ms2_sequence.charAt(i) == 'f')
+													|| (ms2_sequence.charAt(i) == 'Y')
+													|| (ms2_sequence.charAt(i) == 'y')
+													|| (ms2_sequence.charAt(i) == 'W')
+													|| (ms2_sequence.charAt(i) == 'w')
+													|| (ms2_sequence.charAt(i) == 'L')
+													|| (ms2_sequence.charAt(i) == 'l')) {
+												number_missed_cleavages++;
+											}
+										}
+									}
 									sequensing_results[8] = String.valueOf(number_missed_cleavages);
 									sequensing_results_vector.add(sequensing_results);
 								} else {
@@ -1094,7 +1135,6 @@ public class ReadmzXML {
 									} catch (Exception ex) {
 									}
 									number_sequenced_masses = number_sequenced_masses + 1;
-
 									sequensing_results_vector.removeElementAt(save_i);
 									sequensing_results = new String[9];
 									sequensing_results[0] = ms2_sequence.trim();
@@ -1123,7 +1163,6 @@ public class ReadmzXML {
 											if (integer_MS2_scannumber < integer_MS2_scannumber_old) {
 												sequensing_results[4] = String.valueOf(integer_MS2_scannumber);
 											}
-
 										}
 										try {
 											integer_MS2_scannumber_old = Integer
@@ -1135,9 +1174,7 @@ public class ReadmzXML {
 											if (integer_MS2_scannumber > integer_MS2_scannumber_old) {
 												sequensing_results[5] = String.valueOf(integer_MS2_scannumber);
 											}
-
 										}
-
 									}
 									double_MS2_retentiontime = -1;
 									try {
@@ -1146,7 +1183,6 @@ public class ReadmzXML {
 										double_MS2_retentiontime = -1;
 									}
 									if (double_MS2_retentiontime > -1) {
-
 										try {
 											double_MS2_retentiontime_old = Double
 													.parseDouble(compare_sequensing_results[6]);
@@ -1186,21 +1222,14 @@ public class ReadmzXML {
 
 	private void get_peaks_from_spectrum(double inputerror, int max_charge_state, int minimumnumberoffractions,
 			String string_search_engine) {
-
 		boolean perform_ms2_sequencing = experiment.getperform_ms2_sequencing();
-
 		int missingfractionsallowed = experiment.getmissing_number_ms_scans_allowed();
-
 		double deltamzcombine = Double.parseDouble(experiment.getdelta_mz_combine());
-
 		double deltamzsearchmaximum = Double.parseDouble(experiment.getdelta_mz_searchmaximum());
-
 		double percent_deviation_isotopic_distance = experiment.getpercent_deviation_from_isotopic_distance();
-
 		double minimummass = Double.parseDouble(experiment.getminimum_mass());
 		double maximummass = Double.parseDouble(experiment.getmaximum_mass());
 		double c13_c12 = experiment.getisotopic_distance_c13_c12();
-
 		String strquantilethreshold = experiment.getquantilethreshold();
 		if (base64coder == null) {
 			base64coder = new Base64Coder();
@@ -1319,7 +1348,6 @@ public class ReadmzXML {
 		}
 		try {
 			mzxml_peak_data = databuffer.toString().substring((index + 1), testline.indexOf("</peaks"));
-
 		} catch (Exception e) {
 			mzxml_peak_data = "";
 		}
@@ -1386,15 +1414,8 @@ public class ReadmzXML {
 							potentialpeaks[i][0] = -1;
 						}
 						for (int chargestate = 2; chargestate <= 6; chargestate++) {
-
-							// listidsofpotentialmonoistopes = deisotoping
-							// .determine_potential_isotopic_clusters(
-							// peaks, chargestate,
-							// checkdoublecharge);
-
 							clusters = deisotoping.determine_potential_isotopic_clusters(peaks, chargestate,
 									checkdoublecharge);
-
 							listidsofpotentialmonoistopes = clusters.get_listidsofpotentialmonoistopes();
 							if ((chargestate > 0) && (chargestate <= max_charge_state)) {
 								potential_monoisotopes = listidsofpotentialmonoistopes.toString().split(",");
@@ -1408,7 +1429,6 @@ public class ReadmzXML {
 											potentialpeaks[Integer
 													.parseInt(potential_monoisotopes[i])][1] = peaks[Integer
 															.parseInt(potential_monoisotopes[i])][1];
-
 											if (matrix_combined_raw_peaks != null) {
 												for (int o = 0; o < matrix_combined_raw_peaks[0].length; o++) {
 													deltamzcombinelocal = deltamzcombine;
@@ -1448,7 +1468,6 @@ public class ReadmzXML {
 												.parseDouble(details_list_of_monoisotopic_ids[1]);
 										storepeaks[Integer.parseInt(details_list_of_monoisotopic_ids[0])][2] = Double
 												.parseDouble(details_list_of_monoisotopic_ids[2]);
-
 									} else if (Double
 											.parseDouble(details_list_of_monoisotopic_ids[1]) < storepeaks[Integer
 													.parseInt(details_list_of_monoisotopic_ids[0])][1]) {
@@ -2040,7 +2059,6 @@ public class ReadmzXML {
 			;
 		}
 		try {
-
 			ftp.chdir(File.separator + experiment.getExperimentyear() + File.separator
 					+ String.valueOf(experiment.getExperimentid()));
 			directoryfiles = ftp.dir(".");
@@ -2088,15 +2106,10 @@ public class ReadmzXML {
 		strdatum = cc.actualtime.getdatestring();
 		strjaar = cc.actualtime.getyear();
 		strtime = cc.actualtime.gettimestring();
-		// tempBD = new BigDecimal(filegrootte_kbytes);
-
 		if ((filetransported) && (!sampleid.trim().equals("")) && (!Group_id.trim().equals(""))) {
-			// insertresultrecord("lc_fraction");
-
 			updatesample = resultService.insertresultrecord("lc_fraction", filegrootte_kbytes, sampleid, Group_id,
 					experiment, strdatum, strtime, exportnamexmlfraction, strjaar, retentiontime, mzxmlfraction,
 					filenumber, offset_lc_ms);
-
 		}
 		try {
 			ftp.quit();
