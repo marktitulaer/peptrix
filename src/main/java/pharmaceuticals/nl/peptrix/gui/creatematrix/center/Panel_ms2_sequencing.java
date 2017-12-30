@@ -232,10 +232,27 @@ public class Panel_ms2_sequencing {
 		gridbagcontraintsmodifications.gridwidth = 2;
 		gridbagcontraintsmodifications.gridheight = 1;
 		gridbagcontraintsmodifications.fill = GridBagConstraints.NONE;
-		String[] array_Taxonomy = { "human" };
+		String[] array_Taxonomy = { "Homo sapiens" };
 		cc.combo_Taxonomy = new JComboBox(array_Taxonomy);
 		cc.combo_Taxonomy.setLightWeightPopupEnabled(false);
 		ms2_sequencing_panel.add(cc.combo_Taxonomy, gridbagcontraintsmodifications);
+
+		// --------line 6---------------------------------------------------------
+		//gridbagcontraintsmodifications.gridx = 1;
+		//gridbagcontraintsmodifications.gridy = 6;
+		//gridbagcontraintsmodifications.gridwidth = 1;
+		//gridbagcontraintsmodifications.gridheight = 1;
+		//gridbagcontraintsmodifications.fill = GridBagConstraints.NONE;
+		//JLabel databaseslabel = new JLabel("Database(s)");
+		//ms2_sequencing_panel.add(databaseslabel, gridbagcontraintsmodifications);
+		//gridbagcontraintsmodifications.gridx = 2;
+		//gridbagcontraintsmodifications.gridy = 6;
+		//gridbagcontraintsmodifications.gridwidth = 2;
+		//gridbagcontraintsmodifications.gridheight = 1;
+		//String[] array_databases = { "HUMAN.fasta" };
+		//cc.combo_proteindatabases = new JComboBox(array_databases);
+		//cc.combo_proteindatabases.setLightWeightPopupEnabled(false);
+		//ms2_sequencing_panel.add(cc.combo_proteindatabases, gridbagcontraintsmodifications);
 
 		// --------line 6---------------------------------------------------------
 		gridbagcontraintsmodifications.gridx = 1;
@@ -243,27 +260,10 @@ public class Panel_ms2_sequencing {
 		gridbagcontraintsmodifications.gridwidth = 1;
 		gridbagcontraintsmodifications.gridheight = 1;
 		gridbagcontraintsmodifications.fill = GridBagConstraints.NONE;
-		JLabel databaseslabel = new JLabel("Database(s)");
-		ms2_sequencing_panel.add(databaseslabel, gridbagcontraintsmodifications);
-		gridbagcontraintsmodifications.gridx = 2;
-		gridbagcontraintsmodifications.gridy = 6;
-		gridbagcontraintsmodifications.gridwidth = 2;
-		gridbagcontraintsmodifications.gridheight = 1;
-		String[] array_databases = { "HUMAN.fasta" };
-		cc.combo_proteindatabases = new JComboBox(array_databases);
-		cc.combo_proteindatabases.setLightWeightPopupEnabled(false);
-		ms2_sequencing_panel.add(cc.combo_proteindatabases, gridbagcontraintsmodifications);
-
-		// --------line 7---------------------------------------------------------
-		gridbagcontraintsmodifications.gridx = 1;
-		gridbagcontraintsmodifications.gridy = 7;
-		gridbagcontraintsmodifications.gridwidth = 1;
-		gridbagcontraintsmodifications.gridheight = 1;
-		gridbagcontraintsmodifications.fill = GridBagConstraints.NONE;
 		JLabel only_ms2_sequenced_masses = new JLabel("Only MS2 sequenced masses in matrix");
 		ms2_sequencing_panel.add(only_ms2_sequenced_masses, gridbagcontraintsmodifications);
 		gridbagcontraintsmodifications.gridx = 2;
-		gridbagcontraintsmodifications.gridy = 7;
+		gridbagcontraintsmodifications.gridy = 6;
 		gridbagcontraintsmodifications.gridwidth = 1;
 		gridbagcontraintsmodifications.gridheight = 1;
 		gridbagcontraintsmodifications.fill = GridBagConstraints.NONE;

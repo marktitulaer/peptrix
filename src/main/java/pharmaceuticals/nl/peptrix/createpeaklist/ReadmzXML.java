@@ -386,7 +386,7 @@ public class ReadmzXML {
 
 		resultService = new ResultServiceImpl(cc);
 		this.exportfiletodisk = exportfiletodisk;
-		String selected_database = experiment.getname_taxonomy_file();
+		// String selected_database = experiment.getname_taxonomy_file();
 		this.experiment = experiment;
 		clusteringtechnique = experiment.getclusteringtechnique();
 		default_input_xml = new Default_input_xml(cc, experiment, exportfiletodisk);
@@ -400,15 +400,23 @@ public class ReadmzXML {
 		batchfile = "";
 		if ((experiment.getperform_ms2_sequencing() == true)
 				&& (experiment.getname_search_engine().trim().equalsIgnoreCase("x!tandem"))) {
-			if ((selected_database != null) && (!selected_database.trim().equalsIgnoreCase(""))) {
-				objectsearchfile = new SearchFile(cc);
-				found_ms2_database = objectsearchfile.return_file(selected_database);
-				objectsearchfile = new SearchFile(cc);
-				program = "tandem.exe";
-				batchfile = "tandem.bat";
-				found_xtandem_program = objectsearchfile.return_file(program);
-				xtandembatchfile = found_xtandem_program.replace(program, batchfile);
-			}
+			// if ((selected_database != null) &&
+			// (!selected_database.trim().equalsIgnoreCase(""))) {
+			objectsearchfile = new SearchFile(cc);
+
+			// System.out.println("selected_database " + selected_database);
+
+			// found_ms2_database = objectsearchfile.return_file(".fasta");
+
+			found_ms2_database = objectsearchfile.return_file_on_wildcard(".fasta");
+
+			System.out.println("2 found_ms2_database  " + found_ms2_database);
+			objectsearchfile = new SearchFile(cc);
+			program = "tandem.exe";
+			batchfile = "tandem.bat";
+			found_xtandem_program = objectsearchfile.return_file(program);
+			xtandembatchfile = found_xtandem_program.replace(program, batchfile);
+			// }
 		}
 		errormessageonce = false;
 	}

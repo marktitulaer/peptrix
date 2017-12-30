@@ -198,7 +198,7 @@ public class Readdatafiles extends DefaultHandler {
 
 	String save_exportname;
 
-	String selected_database;
+	//String selected_database;
 
 	String strdeltamzsearchmaximum;
 
@@ -677,7 +677,7 @@ public class Readdatafiles extends DefaultHandler {
 		ITOL = experiment.getITOL();
 		ITOLU = experiment.getITOLU();
 		perform_ms2_sequencing = experiment.getperform_ms2_sequencing();
-		selected_database = experiment.getname_taxonomy_file();
+		//selected_database = experiment.getname_taxonomy_file();
 		string_Taxonomy = experiment.gettaxonomy_name();
 		c13_c12 = experiment.getisotopic_distance_c13_c12();
 		ndiv = experiment.getdivisions_in_determination_noise();

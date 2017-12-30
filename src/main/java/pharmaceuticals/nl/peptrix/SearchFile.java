@@ -60,6 +60,14 @@ public class SearchFile {
 		search_file();
 		return found_name;
 	}
+	
+	public String return_file_on_wildcard(String wildcard) {
+		this.file_to_search = wildcard;
+		cancel = false;
+		create_system_tables();
+		search_file();
+		return found_name;
+	}
 
 	private void create_system_tables() {
 		cc.jdbcconnection.resetconnection();

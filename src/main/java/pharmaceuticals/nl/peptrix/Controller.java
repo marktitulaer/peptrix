@@ -215,7 +215,7 @@ public class Controller
 
 	public JComboBox<String> combo_Taxonomy;
 
-	public JComboBox<String> combo_proteindatabases;
+	//public JComboBox<String> combo_proteindatabases;
 
 	public JComboBox<String> combo_searchengine;
 
@@ -649,7 +649,7 @@ public class Controller
 
 	String dialogtitle;
 
-	String selected_database;
+	//String selected_database;
 
 	String strexperimentid;
 
@@ -2786,11 +2786,11 @@ public class Controller
 				matrix_only_ms2sequenced_masses = only_ms2sequenced_masses.getState();
 			} catch (Exception e) {
 			}
-			selected_database = "HUMAN.fasta";
-			try {
-				selected_database = combo_proteindatabases.getSelectedItem().toString().trim();
-			} catch (Exception e) {
-			}
+			//selected_database = "HUMAN.fasta";
+			//try {
+			//	selected_database = combo_proteindatabases.getSelectedItem().toString().trim();
+			//} catch (Exception e) {
+			//}
 			string_Taxonomy = "";
 			try {
 				string_Taxonomy = combo_Taxonomy.getSelectedItem().toString().trim();
@@ -2813,7 +2813,7 @@ public class Controller
 			experiment.setdivisions_in_determination_noise(ndiv);
 			experiment.setisotopic_distance_c13_c12(c13_c12);
 			experiment.settaxonomy_name(string_Taxonomy);
-			experiment.setname_taxonomy_file(selected_database);
+			//experiment.setname_taxonomy_file(selected_database);
 			experiment.setperform_ms2_sequencing(perform_ms2_sequencing);
 			experiment.set_only_ms2_sequencedmasses(matrix_only_ms2sequenced_masses);
 			experiment.setTOL(TOL);
