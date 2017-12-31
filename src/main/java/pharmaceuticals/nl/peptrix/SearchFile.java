@@ -60,12 +60,15 @@ public class SearchFile {
 		search_file();
 		return found_name;
 	}
-	
+
 	public String return_file_on_wildcard(String wildcard) {
 		this.file_to_search = wildcard;
 		cancel = false;
 		create_system_tables();
-		search_file();
+		search_file_wildcard();
+
+		System.out.println(" found_name " + found_name);
+
 		return found_name;
 	}
 
@@ -122,6 +125,28 @@ public class SearchFile {
 		}
 	}
 
+	private void search_file_wildcard() {
+		program_directory_found = false;
+		found_name = "";
+		while ((!program_directory_found) && (!cancel)) {
+			if (list_of_readw_directories != null) {
+				// search_file_with_system_tables();
+				search_file_with_system_tables_wildcard();
+			}
+			if (!program_directory_found) {
+				search_file_with_filechooser_wildcard();
+				if (program_directory_found) {
+					create_system_tables();
+					// search_file_with_system_tables();
+					search_file_with_system_tables_wildcard();
+				}
+			}
+		}
+		if (testfile != null) {
+			byteSize = testfile.length();
+		}
+	}
+
 	private void search_file_with_system_tables() {
 		if (list_of_readw_directories != null) {
 			for (int i = 0; i < list_of_readw_directories.length; i++) {
@@ -137,7 +162,77 @@ public class SearchFile {
 		}
 	}
 
+	private void search_file_with_system_tables_wildcard() {
+		if (list_of_readw_directories != null) {
+			for (int i = 0; i < list_of_readw_directories.length; i++) {
+				testfile = new File(list_of_readw_directories[i]);
+				if (testfile.exists()) {
+					// if (testfile.getName().trim().equalsIgnoreCase(file_to_search.trim())) {
+					if (testfile.getName().trim().indexOf(file_to_search.trim()) > -1) {
+						program_directory_found = true;
+						found_name = backlashReplace(testfile.getAbsolutePath().trim());
+						i = list_of_readw_directories.length;
+					}
+				}
+			}
+		}
+	}
+
 	private void search_file_with_filechooser() {
+		if (filechooser == null) {
+			filechooser = new JFileChooser();
+			filechooser.setDialogTitle("Search " + file_to_search);
+		}
+		if (file_to_search.toLowerCase().indexOf("readw") > -1) {
+			if (readwfilter == null) {
+				readwfilter = new ReadwFilter();
+			}
+			filechooser.addChoosableFileFilter(readwfilter);
+		} else if (file_to_search.toLowerCase().indexOf("msconvert") > -1) {
+			if (rtermfilter == null) {
+				msconvertfilter = new MsconvertFilter();
+			}
+			filechooser.addChoosableFileFilter(msconvertfilter);
+		} else if (file_to_search.toLowerCase().indexOf("r") > -1) {
+			if (rtermfilter == null) {
+				rtermfilter = new RtermFilter();
+			}
+			filechooser.addChoosableFileFilter(rtermfilter);
+		} else if (file_to_search.toLowerCase().indexOf("tandem") > -1) {
+			if (tandemfilter == null) {
+				tandemfilter = new TandemFilter();
+			}
+			filechooser.addChoosableFileFilter(tandemfilter);
+		} else if (file_to_search.toLowerCase().indexOf(".fasta") > -1) {
+			if (fastafilter == null) {
+				fastafilter = new FastaFilter();
+			}
+			filechooser.addChoosableFileFilter(fastafilter);
+		} else {
+			if (readwfilter == null) {
+				readwfilter = new ReadwFilter();
+			}
+			filechooser.addChoosableFileFilter(readwfilter);
+		}
+		result = filechooser.showOpenDialog(null);
+		if (result == JFileChooser.CANCEL_OPTION) {
+			program_directory_found = false;
+			cancel = true;
+		}
+		if (result == JFileChooser.APPROVE_OPTION) {
+			file_on_disk = filechooser.getSelectedFile();
+			if (file_on_disk != null) {
+				if (true) {
+					if (file_on_disk.getName().trim().equalsIgnoreCase(file_to_search)) {
+						store_filename_and_path(file_on_disk.getAbsolutePath());
+						program_directory_found = true;
+					}
+				}
+			}
+		}
+	}
+
+	private void search_file_with_filechooser_wildcard() {
 		if (filechooser == null) {
 			filechooser = new JFileChooser();
 			filechooser.setDialogTitle("Search " + file_to_search);
@@ -183,8 +278,11 @@ public class SearchFile {
 			file_on_disk = filechooser.getSelectedFile();
 			if (file_on_disk != null) {
 				if (true) {
-					if (file_on_disk.getName().trim().equalsIgnoreCase(file_to_search)) {
+					// if (file_on_disk.getName().trim().equalsIgnoreCase(file_to_search)) {
+					if (file_on_disk.getName().trim().indexOf(file_to_search) > -1) {
 						store_filename_and_path(file_on_disk.getAbsolutePath());
+						// System.out.println(" file_on_disk.getAbsolutePath() " +
+						// file_on_disk.getAbsolutePath());
 						program_directory_found = true;
 					}
 				}
