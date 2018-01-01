@@ -56,7 +56,7 @@ public class Experiment {
 
 	private String m_taxonomy_name;
 
-	private String m_name_taxonomy_file;
+	//private String m_name_taxonomy_file;
 
 	private boolean m_perform_ms2_sequencing;
 

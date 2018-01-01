@@ -18,10 +18,20 @@ public class Taxonomy {
 
 	FileDescriptor fd;
 
+	String taxonomy_label_for_file;
+
 	public boolean taxonomy_file_created;
 
 	public Taxonomy(String found_ms2_database, String string_Taxonomy, String found_xtandem_program, String program,
 			Controller cc) {
+		taxonomy_label_for_file = "human";
+
+		if (string_Taxonomy.trim().equalsIgnoreCase("homo sapiens")) {
+			System.out.println("hoera");
+			taxonomy_label_for_file = "human";
+
+		}
+
 		taxonomy_file_created = false;
 		taxonomy_file_name = "";
 		program_directory = "";
@@ -39,7 +49,7 @@ public class Taxonomy {
 						&& (!found_ms2_database.trim().equalsIgnoreCase(""))) {
 					taxonomycontent = "<?xml version=\"1.0\"?>" + linefeed
 							+ "<bioml label=\"x! taxon-to-file matching list\">" + linefeed + "<taxon label=\""
-							+ string_Taxonomy.trim() + "\">" + linefeed + "<file format=\"peptide\" URL=\""
+							+ taxonomy_label_for_file.trim() + "\">" + linefeed + "<file format=\"peptide\" URL=\""
 							+ found_ms2_database.trim() + "\" />" + linefeed + "</taxon>" + linefeed + "</bioml>";
 				}
 			}
