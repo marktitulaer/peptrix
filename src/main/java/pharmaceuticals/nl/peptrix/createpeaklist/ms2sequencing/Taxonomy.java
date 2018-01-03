@@ -22,36 +22,28 @@ public class Taxonomy {
 
 	public boolean taxonomy_file_created;
 
-	public Taxonomy(String found_ms2_database, String string_Taxonomy, String found_xtandem_program, String program,
-			Controller cc) {
-		taxonomy_label_for_file = "human";
+	TaxonomyFasta taxonomyfasta;
 
+	public Taxonomy(String found_ms2_database, String string_Taxonomy, Controller cc) {
+		taxonomy_label_for_file = "human";
+		taxonomyfasta = new TaxonomyFasta(found_ms2_database, string_Taxonomy, cc);
 		if (string_Taxonomy.trim().equalsIgnoreCase("homo sapiens")) {
 			System.out.println("hoera");
 			taxonomy_label_for_file = "human";
+			System.out.println("found_ms2_database " + found_ms2_database);
 
 		}
-
 		taxonomy_file_created = false;
 		taxonomy_file_name = "";
 		program_directory = "";
 		taxonomycontent = "";
 		try {
-			try {
-				program_directory = found_xtandem_program.substring(0, found_xtandem_program.indexOf(program));
-			} catch (Exception ex2) {
-			}
-			if (!program_directory.trim().equalsIgnoreCase("")) {
-
-				taxonomy_file_name = cc.userhome + cc.fileSeparator + "taxonomy.xml";
-
-				if ((!string_Taxonomy.trim().equalsIgnoreCase(""))
-						&& (!found_ms2_database.trim().equalsIgnoreCase(""))) {
-					taxonomycontent = "<?xml version=\"1.0\"?>" + linefeed
-							+ "<bioml label=\"x! taxon-to-file matching list\">" + linefeed + "<taxon label=\""
-							+ taxonomy_label_for_file.trim() + "\">" + linefeed + "<file format=\"peptide\" URL=\""
-							+ found_ms2_database.trim() + "\" />" + linefeed + "</taxon>" + linefeed + "</bioml>";
-				}
+			taxonomy_file_name = cc.userhome + cc.fileSeparator + "taxonomy.xml";
+			if ((!string_Taxonomy.trim().equalsIgnoreCase("")) && (!found_ms2_database.trim().equalsIgnoreCase(""))) {
+				taxonomycontent = "<?xml version=\"1.0\"?>" + linefeed
+						+ "<bioml label=\"x! taxon-to-file matching list\">" + linefeed + "<taxon label=\""
+						+ taxonomy_label_for_file.trim() + "\">" + linefeed + "<file format=\"peptide\" URL=\""
+						+ found_ms2_database.trim() + "\" />" + linefeed + "</taxon>" + linefeed + "</bioml>";
 			}
 			if (!taxonomycontent.trim().equalsIgnoreCase("")) {
 				try {

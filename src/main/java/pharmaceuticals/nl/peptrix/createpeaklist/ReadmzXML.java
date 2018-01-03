@@ -6,7 +6,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Vector;
 import javax.swing.JOptionPane;
-
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
@@ -17,7 +16,6 @@ import pharmaceuticals.nl.peptrix.createpeaklist.ms2sequencing.Default_input_xml
 import pharmaceuticals.nl.peptrix.createpeaklist.ms2sequencing.Input_xml;
 import pharmaceuticals.nl.peptrix.createpeaklist.ms2sequencing.Taxonomy;
 import pharmaceuticals.nl.peptrix.utils.SortMatrix;
-
 import com.enterprisedt.net.ftp.FTPClient;
 import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPTransferType;
@@ -386,7 +384,6 @@ public class ReadmzXML {
 
 		resultService = new ResultServiceImpl(cc);
 		this.exportfiletodisk = exportfiletodisk;
-		// String selected_database = experiment.getname_taxonomy_file();
 		this.experiment = experiment;
 		clusteringtechnique = experiment.getclusteringtechnique();
 		default_input_xml = new Default_input_xml(cc, experiment, exportfiletodisk);
@@ -400,26 +397,13 @@ public class ReadmzXML {
 		batchfile = "";
 		if ((experiment.getperform_ms2_sequencing() == true)
 				&& (experiment.getname_search_engine().trim().equalsIgnoreCase("x!tandem"))) {
-			// if ((selected_database != null) &&
-			// (!selected_database.trim().equalsIgnoreCase(""))) {
 			objectsearchfile = new SearchFile(cc);
-
-			// System.out.println("selected_database " + selected_database);
-
-			// found_ms2_database = objectsearchfile.return_file(".fasta");
-
 			found_ms2_database = objectsearchfile.return_file_on_wildcard(".fasta");
-
-			System.out.println("readmzxml 1 found_ms2_database  " + found_ms2_database);
-
-			System.out.println("experiment.gettaxonomy_name()  " + experiment.gettaxonomy_name());
-
 			objectsearchfile = new SearchFile(cc);
 			program = "tandem.exe";
 			batchfile = "tandem.bat";
 			found_xtandem_program = objectsearchfile.return_file(program);
 			xtandembatchfile = found_xtandem_program.replace(program, batchfile);
-			// }
 		}
 		errormessageonce = false;
 	}
@@ -467,22 +451,13 @@ public class ReadmzXML {
 					+ String.valueOf(filenumber).trim() + "_input.xml";
 			if (!taxonomy_file_created) {
 				if ((!string_Taxonomy.trim().equalsIgnoreCase("")) && (!found_ms2_database.trim().equalsIgnoreCase(""))
-						&& (!found_xtandem_program.trim().equalsIgnoreCase(""))) {
-					
-					System.out.println("readmzxml 2 found_ms2_database  " + found_ms2_database);
-					System.out.println("readmzxml 2 string_Taxonomy  " + string_Taxonomy);
-
-					
-					taxonomy = new Taxonomy(found_ms2_database, string_Taxonomy, found_xtandem_program, program, cc);
+						&& (!found_xtandem_program.trim().equalsIgnoreCase(""))) {					
+					taxonomy = new Taxonomy(found_ms2_database, string_Taxonomy, cc);
 					taxonomy_file_created = taxonomy.taxonomy_file_created;
 				}
 			}
 			if (taxonomy_file_created) {
-				if (!default_input_xml_file_created) {
-					
-					
-
-					
+				if (!default_input_xml_file_created) {					
 					default_input_xml.create_default_input_xml(found_xtandem_program, program, taxonomy);
 					default_input_xml_file_created = default_input_xml.default_input_xml_file_created;
 				}
