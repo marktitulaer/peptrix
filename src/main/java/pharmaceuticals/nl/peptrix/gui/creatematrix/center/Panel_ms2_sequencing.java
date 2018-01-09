@@ -238,21 +238,22 @@ public class Panel_ms2_sequencing {
 		ms2_sequencing_panel.add(cc.combo_Taxonomy, gridbagcontraintsmodifications);
 
 		// --------line 6---------------------------------------------------------
-		//gridbagcontraintsmodifications.gridx = 1;
-		//gridbagcontraintsmodifications.gridy = 6;
-		//gridbagcontraintsmodifications.gridwidth = 1;
-		//gridbagcontraintsmodifications.gridheight = 1;
-		//gridbagcontraintsmodifications.fill = GridBagConstraints.NONE;
-		//JLabel databaseslabel = new JLabel("Database(s)");
-		//ms2_sequencing_panel.add(databaseslabel, gridbagcontraintsmodifications);
-		//gridbagcontraintsmodifications.gridx = 2;
-		//gridbagcontraintsmodifications.gridy = 6;
-		//gridbagcontraintsmodifications.gridwidth = 2;
-		//gridbagcontraintsmodifications.gridheight = 1;
-		//String[] array_databases = { "HUMAN.fasta" };
-		//cc.combo_proteindatabases = new JComboBox(array_databases);
-		//cc.combo_proteindatabases.setLightWeightPopupEnabled(false);
-		//ms2_sequencing_panel.add(cc.combo_proteindatabases, gridbagcontraintsmodifications);
+		// gridbagcontraintsmodifications.gridx = 1;
+		// gridbagcontraintsmodifications.gridy = 6;
+		// gridbagcontraintsmodifications.gridwidth = 1;
+		// gridbagcontraintsmodifications.gridheight = 1;
+		// gridbagcontraintsmodifications.fill = GridBagConstraints.NONE;
+		// JLabel databaseslabel = new JLabel("Database(s)");
+		// ms2_sequencing_panel.add(databaseslabel, gridbagcontraintsmodifications);
+		// gridbagcontraintsmodifications.gridx = 2;
+		// gridbagcontraintsmodifications.gridy = 6;
+		// gridbagcontraintsmodifications.gridwidth = 2;
+		// gridbagcontraintsmodifications.gridheight = 1;
+		// String[] array_databases = { "HUMAN.fasta" };
+		// cc.combo_proteindatabases = new JComboBox(array_databases);
+		// cc.combo_proteindatabases.setLightWeightPopupEnabled(false);
+		// ms2_sequencing_panel.add(cc.combo_proteindatabases,
+		// gridbagcontraintsmodifications);
 
 		// --------line 6---------------------------------------------------------
 		gridbagcontraintsmodifications.gridx = 1;

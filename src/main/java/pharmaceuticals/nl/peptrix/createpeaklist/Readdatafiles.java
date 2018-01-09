@@ -198,7 +198,7 @@ public class Readdatafiles extends DefaultHandler {
 
 	String save_exportname;
 
-	//String selected_database;
+	// String selected_database;
 
 	String strdeltamzsearchmaximum;
 
@@ -586,7 +586,7 @@ public class Readdatafiles extends DefaultHandler {
 
 	BufferedReader input_rejectedpeaks;
 
-	//String selected_enzyme;
+	// String selected_enzyme;
 
 	String TOL;
 
@@ -663,7 +663,7 @@ public class Readdatafiles extends DefaultHandler {
 		percent_stdevisotopingdistance = experiment.getvariance_isotopic_distance();
 		inputerror = experiment.getdeviation_from_expected_intensity_ratio();
 		max_charge_state = experiment.getmax_charge_state_peptide();
-		//selected_enzyme = experiment.getselected_enzyme();
+		// selected_enzyme = experiment.getselected_enzyme();
 		zerofillingfactor = experiment.getzerofillingfactor();
 		minimumnumberoffractions = experiment.getpeptide_present_in_minimumnumberoffractions();
 		missingfractionsallowed = experiment.getmissing_number_ms_scans_allowed();
@@ -677,7 +677,7 @@ public class Readdatafiles extends DefaultHandler {
 		ITOL = experiment.getITOL();
 		ITOLU = experiment.getITOLU();
 		perform_ms2_sequencing = experiment.getperform_ms2_sequencing();
-		//selected_database = experiment.getname_taxonomy_file();
+		// selected_database = experiment.getname_taxonomy_file();
 		string_Taxonomy = experiment.gettaxonomy_name();
 		c13_c12 = experiment.getisotopic_distance_c13_c12();
 		ndiv = experiment.getdivisions_in_determination_noise();

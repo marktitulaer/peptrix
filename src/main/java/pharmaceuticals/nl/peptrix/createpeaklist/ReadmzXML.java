@@ -451,13 +451,13 @@ public class ReadmzXML {
 					+ String.valueOf(filenumber).trim() + "_input.xml";
 			if (!taxonomy_file_created) {
 				if ((!string_Taxonomy.trim().equalsIgnoreCase("")) && (!found_ms2_database.trim().equalsIgnoreCase(""))
-						&& (!found_xtandem_program.trim().equalsIgnoreCase(""))) {					
+						&& (!found_xtandem_program.trim().equalsIgnoreCase(""))) {
 					taxonomy = new Taxonomy(found_ms2_database, string_Taxonomy, cc);
 					taxonomy_file_created = taxonomy.taxonomy_file_created;
 				}
 			}
 			if (taxonomy_file_created) {
-				if (!default_input_xml_file_created) {					
+				if (!default_input_xml_file_created) {
 					default_input_xml.create_default_input_xml(found_xtandem_program, program, taxonomy);
 					default_input_xml_file_created = default_input_xml.default_input_xml_file_created;
 				}

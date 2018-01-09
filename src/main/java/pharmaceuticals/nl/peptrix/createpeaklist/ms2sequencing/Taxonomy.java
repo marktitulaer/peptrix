@@ -26,12 +26,14 @@ public class Taxonomy {
 
 	public Taxonomy(String found_ms2_database, String string_Taxonomy, Controller cc) {
 		taxonomy_label_for_file = "human";
-		taxonomyfasta = new TaxonomyFasta(found_ms2_database, string_Taxonomy, cc);
+		taxonomyfasta = new TaxonomyFasta(cc);
 		if (string_Taxonomy.trim().equalsIgnoreCase("homo sapiens")) {
-			System.out.println("hoera");
 			taxonomy_label_for_file = "human";
 			System.out.println("found_ms2_database " + found_ms2_database);
 
+			String taxonomyFastaFileName = taxonomyfasta.generateTaxonomyFastaFile(found_ms2_database, string_Taxonomy);
+
+			System.out.println(" taxonomyFastaFileName " + taxonomyFastaFileName);
 		}
 		taxonomy_file_created = false;
 		taxonomy_file_name = "";

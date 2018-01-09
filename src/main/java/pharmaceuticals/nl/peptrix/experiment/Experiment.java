@@ -56,7 +56,7 @@ public class Experiment {
 
 	private String m_taxonomy_name;
 
-	//private String m_name_taxonomy_file;
+	// private String m_name_taxonomy_file;
 
 	private boolean m_perform_ms2_sequencing;
 
@@ -344,13 +344,13 @@ public class Experiment {
 		return m_taxonomy_name;
 	}
 
-	//public void setname_taxonomy_file(String name_taxonomy_file) {
-	//	m_name_taxonomy_file = name_taxonomy_file;
-	//}
+	// public void setname_taxonomy_file(String name_taxonomy_file) {
+	// m_name_taxonomy_file = name_taxonomy_file;
+	// }
 
-	//public String getname_taxonomy_file() {
-	//	return m_name_taxonomy_file;
-	//}
+	// public String getname_taxonomy_file() {
+	// return m_name_taxonomy_file;
+	// }
 
 	public void setperform_ms2_sequencing(boolean perform_ms2_sequencing) {
 		m_perform_ms2_sequencing = perform_ms2_sequencing;

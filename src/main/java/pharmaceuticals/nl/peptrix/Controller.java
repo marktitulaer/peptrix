@@ -215,7 +215,7 @@ public class Controller
 
 	public JComboBox<String> combo_Taxonomy;
 
-	//public JComboBox<String> combo_proteindatabases;
+	// public JComboBox<String> combo_proteindatabases;
 
 	public JComboBox<String> combo_searchengine;
 
@@ -229,7 +229,7 @@ public class Controller
 
 	public JComboBox<String> equipmentcombo;
 
-	//public JComboBox<String> comboenzymes;
+	// public JComboBox<String> comboenzymes;
 
 	public JComboBox<String> filtercombobox2;
 
@@ -649,7 +649,7 @@ public class Controller
 
 	String dialogtitle;
 
-	//String selected_database;
+	// String selected_database;
 
 	String strexperimentid;
 
@@ -2047,7 +2047,7 @@ public class Controller
 					enzymes = new String[odataenzymes.length];
 					for (int i = 0; i < odataenzymes.length; i++) {
 						enzymes[i] = odataenzymes[i][0].toString();
-						//comboenzymes.addItem(enzymes[i]);
+						// comboenzymes.addItem(enzymes[i]);
 						if (enzymes[i].trim().equalsIgnoreCase("trypsin")) {
 							selected_enzyme_list.add(enzymes[i].trim());
 						} else {
@@ -2713,11 +2713,11 @@ public class Controller
 			if (!textfieldmaxchargestate.getText().trim().equalsIgnoreCase("")) {
 				max_charge_state = Integer.parseInt(textfieldmaxchargestate.getText().trim());
 			}
-			//selected_enzyme = "";
-			//try {
-			//	selected_enzyme = String.valueOf(comboenzymes.getSelectedItem()).trim();
-			//} catch (Exception ex) {
-			//}
+			// selected_enzyme = "";
+			// try {
+			// selected_enzyme = String.valueOf(comboenzymes.getSelectedItem()).trim();
+			// } catch (Exception ex) {
+			// }
 			selected_enzymes = null;
 			if (selected_enzyme_list.getSize() > 0) {
 				selected_enzymes = new String[selected_enzyme_list.getSize()];
@@ -2786,11 +2786,12 @@ public class Controller
 				matrix_only_ms2sequenced_masses = only_ms2sequenced_masses.getState();
 			} catch (Exception e) {
 			}
-			//selected_database = "HUMAN.fasta";
-			//try {
-			//	selected_database = combo_proteindatabases.getSelectedItem().toString().trim();
-			//} catch (Exception e) {
-			//}
+			// selected_database = "HUMAN.fasta";
+			// try {
+			// selected_database =
+			// combo_proteindatabases.getSelectedItem().toString().trim();
+			// } catch (Exception e) {
+			// }
 			string_Taxonomy = "";
 			try {
 				string_Taxonomy = combo_Taxonomy.getSelectedItem().toString().trim();
@@ -2813,7 +2814,7 @@ public class Controller
 			experiment.setdivisions_in_determination_noise(ndiv);
 			experiment.setisotopic_distance_c13_c12(c13_c12);
 			experiment.settaxonomy_name(string_Taxonomy);
-			//experiment.setname_taxonomy_file(selected_database);
+			// experiment.setname_taxonomy_file(selected_database);
 			experiment.setperform_ms2_sequencing(perform_ms2_sequencing);
 			experiment.set_only_ms2_sequencedmasses(matrix_only_ms2sequenced_masses);
 			experiment.setTOL(TOL);
@@ -2828,7 +2829,7 @@ public class Controller
 			experiment.setmissing_number_ms_scans_allowed(missingfractionsallowed);
 			experiment.setpeptide_present_in_minimumnumberoffractions(minimumnumberoffractions);
 			experiment.setzerofillingfactor(zerofillingfactor);
-			//experiment.setselected_enzyme(selected_enzyme);
+			// experiment.setselected_enzyme(selected_enzyme);
 			experiment.setSelected_enzymes(selected_enzymes);
 			experiment.setmax_charge_state_peptide(max_charge_state);
 			experiment.setdeviation_from_expected_intensity_ratio(inputerror);

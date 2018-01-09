@@ -66,9 +66,7 @@ public class SearchFile {
 		cancel = false;
 		create_system_tables();
 		search_file_wildcard();
-
-		System.out.println(" found_name " + found_name);
-
+		// System.out.println(" found_name " + found_name);
 		return found_name;
 	}
 
