@@ -452,7 +452,7 @@ public class ReadmzXML {
 			if (!taxonomy_file_created) {
 				if ((!string_Taxonomy.trim().equalsIgnoreCase("")) && (!found_ms2_database.trim().equalsIgnoreCase(""))
 						&& (!found_xtandem_program.trim().equalsIgnoreCase(""))) {
-					taxonomy = new Taxonomy(found_ms2_database, string_Taxonomy, cc);
+					taxonomy = new Taxonomy(found_ms2_database, string_Taxonomy, cc, exportfiletodisk);
 					taxonomy_file_created = taxonomy.taxonomy_file_created;
 				}
 			}

@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import pharmaceuticals.nl.peptrix.Controller;
+import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 
 public class Taxonomy {
 
@@ -24,9 +25,9 @@ public class Taxonomy {
 
 	TaxonomyFasta taxonomyfasta;
 
-	public Taxonomy(String found_ms2_database, String string_Taxonomy, Controller cc) {
+	public Taxonomy(String found_ms2_database, String string_Taxonomy, Controller cc, ExportFileToDisk exportfiletodisk) {
 		taxonomy_label_for_file = "human";
-		taxonomyfasta = new TaxonomyFasta(cc);
+		taxonomyfasta = new TaxonomyFasta(cc,exportfiletodisk);
 		if (string_Taxonomy.trim().equalsIgnoreCase("homo sapiens")) {
 			taxonomy_label_for_file = "human";
 			System.out.println("found_ms2_database " + found_ms2_database);
