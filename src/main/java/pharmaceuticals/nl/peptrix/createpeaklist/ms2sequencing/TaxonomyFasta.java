@@ -21,9 +21,7 @@ public class TaxonomyFasta {
 	}
 
 	public String generateTaxonomyFastaFile(String found_ms2_database, String string_Taxonomy) {
-
 		String taxonomyFastaFileName = cc.userhome + cc.fileSeparator + string_Taxonomy.replaceAll(" ", "_") + ".fasta";
-
 		boolean taxonomyFastaFileCreated = exportfiletodisk.exportcompletefilename(taxonomyFastaFileName,
 				"".getBytes());
 		String line = "";
@@ -43,14 +41,16 @@ public class TaxonomyFasta {
 			while ((line = in.readLine()) != null) {
 				testline = line.toLowerCase();
 				if (testline.indexOf(">") > -1) {
-					try {
-						taxonomyFastaFile.write(block.getBytes());
-						taxonomyFastaFile.flush();
-					} catch (Exception e) {
-						if (cc.debugmode) {
-							e.printStackTrace();
-						} else {
-							JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+					if (block.toLowerCase().indexOf(string_Taxonomy.toLowerCase()) > -1) {
+						try {
+							taxonomyFastaFile.write(block.getBytes());
+							taxonomyFastaFile.flush();
+						} catch (Exception e) {
+							if (cc.debugmode) {
+								e.printStackTrace();
+							} else {
+								JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+							}
 						}
 					}
 					block = testline + "\n";
@@ -58,14 +58,16 @@ public class TaxonomyFasta {
 					block = block + testline + "\n";
 				}
 			}
-			try {
-				taxonomyFastaFile.write(block.getBytes());
-				taxonomyFastaFile.flush();
-			} catch (Exception e) {
-				if (cc.debugmode) {
-					e.printStackTrace();
-				} else {
-					JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+			if (block.toLowerCase().indexOf(string_Taxonomy.toLowerCase()) > -1) {
+				try {
+					taxonomyFastaFile.write(block.getBytes());
+					taxonomyFastaFile.flush();
+				} catch (Exception e) {
+					if (cc.debugmode) {
+						e.printStackTrace();
+					} else {
+						JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+					}
 				}
 			}
 		} catch (Exception e) {
