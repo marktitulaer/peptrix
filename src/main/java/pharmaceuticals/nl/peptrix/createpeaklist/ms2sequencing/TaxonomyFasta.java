@@ -1,10 +1,9 @@
 package pharmaceuticals.nl.peptrix.createpeaklist.ms2sequencing;
 
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.FileReader;
-
 import javax.swing.JOptionPane;
-
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 
@@ -14,9 +13,7 @@ public class TaxonomyFasta {
 
 	ExportFileToDisk exportfiletodisk;
 
-	String line;
-
-	String testline;
+	FileOutputStream taxonomyFastaFile;
 
 	public TaxonomyFasta(Controller cc, ExportFileToDisk exportfiletodisk) {
 		this.cc = cc;
@@ -29,17 +26,57 @@ public class TaxonomyFasta {
 
 		boolean taxonomyFastaFileCreated = exportfiletodisk.exportcompletefilename(taxonomyFastaFileName,
 				"".getBytes());
-
-		System.out.println("taxonomyFastaFileCreated " + taxonomyFastaFileCreated);
-
+		String line = "";
+		String testline = "";
+		String block = "";
+		try {
+			taxonomyFastaFile = new FileOutputStream(taxonomyFastaFileName);
+		} catch (Exception e) {
+			if (cc.debugmode) {
+				e.printStackTrace();
+			} else {
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+			}
+		}
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(found_ms2_database));
 			while ((line = in.readLine()) != null) {
-				System.out.println("twee");
 				testline = line.toLowerCase();
-				System.out.println("  testline " + testline);
+				if (testline.indexOf(">") > -1) {
+					try {
+						taxonomyFastaFile.write(block.getBytes());
+						taxonomyFastaFile.flush();
+					} catch (Exception e) {
+						if (cc.debugmode) {
+							e.printStackTrace();
+						} else {
+							JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+						}
+					}
+					block = testline + "\n";
+				} else {
+					block = block + testline + "\n";
+				}
 			}
-			System.out.println("file geopend ");
+			try {
+				taxonomyFastaFile.write(block.getBytes());
+				taxonomyFastaFile.flush();
+			} catch (Exception e) {
+				if (cc.debugmode) {
+					e.printStackTrace();
+				} else {
+					JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		} catch (Exception e) {
+			if (cc.debugmode) {
+				e.printStackTrace();
+			} else {
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+		try {
+			taxonomyFastaFile.close();
 		} catch (Exception e) {
 			if (cc.debugmode) {
 				e.printStackTrace();
