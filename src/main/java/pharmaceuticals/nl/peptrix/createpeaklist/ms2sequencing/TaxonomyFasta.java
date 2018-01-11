@@ -25,7 +25,6 @@ public class TaxonomyFasta {
 		boolean taxonomyFastaFileCreated = exportfiletodisk.exportcompletefilename(taxonomyFastaFileName,
 				"".getBytes());
 		String line = "";
-		String testline = "";
 		String block = "";
 		try {
 			taxonomyFastaFile = new FileOutputStream(taxonomyFastaFileName);
@@ -39,8 +38,7 @@ public class TaxonomyFasta {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(found_ms2_database));
 			while ((line = in.readLine()) != null) {
-				testline = line.toLowerCase();
-				if (testline.indexOf(">") > -1) {
+				if (line.indexOf(">") > -1) {
 					if (block.toLowerCase().indexOf(string_Taxonomy.toLowerCase()) > -1) {
 						try {
 							taxonomyFastaFile.write(block.getBytes());
@@ -53,9 +51,9 @@ public class TaxonomyFasta {
 							}
 						}
 					}
-					block = testline + "\n";
+					block = line + "\n";
 				} else {
-					block = block + testline + "\n";
+					block = block + line + "\n";
 				}
 			}
 			if (block.toLowerCase().indexOf(string_Taxonomy.toLowerCase()) > -1) {
@@ -86,6 +84,7 @@ public class TaxonomyFasta {
 				JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 			}
 		}
+		taxonomyFastaFileName = taxonomyFastaFileName.replace("\\", "/");
 		return taxonomyFastaFileName;
 	}
 
