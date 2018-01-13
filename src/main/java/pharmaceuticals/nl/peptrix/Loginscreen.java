@@ -15,7 +15,7 @@ import pharmaceuticals.nl.peptrix.gui.application.FramePanel;
 
 public class Loginscreen implements WindowListener {
 
-	static String screentitle = "PEPTRIX v3.35";
+	static String screentitle = "PEPTRIX v3.36";
 
 	Controller cc;
 

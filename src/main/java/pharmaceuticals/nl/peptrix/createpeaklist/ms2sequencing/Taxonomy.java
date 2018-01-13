@@ -32,11 +32,9 @@ public class Taxonomy {
 		String taxonomyFastaFileName = "";
 		if (string_Taxonomy.trim().equalsIgnoreCase("homo sapiens")) {
 			taxonomy_label_for_file = "human";
-			System.out.println("found_ms2_database " + found_ms2_database);
-
+			// System.out.println("found_ms2_database " + found_ms2_database);
 			taxonomyFastaFileName = taxonomyfasta.generateTaxonomyFastaFile(found_ms2_database, string_Taxonomy);
-
-			System.out.println(" taxonomyFastaFileName " + taxonomyFastaFileName);
+			// System.out.println(" taxonomyFastaFileName " + taxonomyFastaFileName);
 		}
 		taxonomy_file_created = false;
 		taxonomy_file_name = "";
@@ -58,7 +56,7 @@ public class Taxonomy {
 						+ taxonomy_label_for_file.trim() + "\">" + linefeed + "<file format=\"peptide\" URL=\""
 						+ taxonomyFastaFileName.trim() + "\" />" + linefeed + "</taxon>" + linefeed + "</bioml>";
 
-				System.out.println(" taxonomycontent " + taxonomycontent);
+				// System.out.println(" taxonomycontent " + taxonomycontent);
 			}
 			if (!taxonomycontent.trim().equalsIgnoreCase("")) {
 				try {
