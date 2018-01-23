@@ -6,16 +6,14 @@ import java.sql.*;
 import javax.swing.*;
 import pharmaceuticals.nl.peptrix.gui.CreateMenu;
 import pharmaceuticals.nl.peptrix.gui.application.FramePanel;
-//import pharmaceuticals.nl.peptrix.hibernate.HibernateUtil;
-//import pharmaceuticals.nl.peptrix.model.Equipment;
-//import pharmaceuticals.nl.peptrix.model.Person;
+import pharmaceuticals.nl.peptrix.hibernate.HibernateUtil;
+import pharmaceuticals.nl.peptrix.model.*;
 
-//import org.hibernate.Session;
-//import org.hibernate.Transaction;
+import org.hibernate.*;
 
 public class Loginscreen implements WindowListener {
 
-	static String screentitle = "PEPTRIX v3.35";
+	static String screentitle = "PEPTRIX v3.36";
 
 	Controller cc;
 
@@ -26,54 +24,54 @@ public class Loginscreen implements WindowListener {
 
 	Loginscreen(String title) throws SQLException {
 
-		// Session session = null;
-		// Transaction transaction = null;
-		// try {
-		// session = HibernateUtil.getSessionFactory().openSession();
-		// transaction = session.getTransaction();
-		// transaction.begin();
+		Session session = null;
+		Transaction transaction = null;
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			transaction = session.getTransaction();
+			transaction.begin();
 
-		// Person person = new Person();
-		// person.setName("Mike Lewis2");
-		// session.save(person);
+			Equipment equipment = new Equipment();
+			Person person = new Person();
+			equipment.setCode("MALDITOF");
+			equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
+			session.save(equipment);
 
-		// Equipment equipment = new Equipment();
-		// equipment.setCode("MALDITOF");
-		// equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
-		// session.save(equipment);
+			equipment = new Equipment();
+			equipment.setCode("FTICRMS");
+			equipment.setName("FTMS");
+			session.save(equipment);
 
-		// equipment = new Equipment();
-		// equipment.setCode("FTICRMS");
-		// equipment.setName("FTMS");
-		// session.save(equipment);
+			equipment = new Equipment();
+			equipment.setCode("MALDILCMS");
+			equipment.setName("MALDI-TOF LC MS");
+			session.save(equipment);
 
-		// equipment = new Equipment();
-		// equipment.setCode("MALDILCMS");
-		// equipment.setName("MALDI-TOF LC MS");
-		// session.save(equipment);
+			equipment = new Equipment();
+			equipment.setCode("ORBITRAP");
+			equipment.setName("LTQ Orbitrap LC MS");
+			session.save(equipment);
 
-		// equipment = new Equipment();
-		// equipment.setCode("ORBITRAP");
-		// equipment.setName("LTQ Orbitrap LC MS");
-		// session.save(equipment);
+			equipment = new Equipment();
+			equipment.setCode("IONTRAP");
+			equipment.setName("Bruker Ion Trap");
+			session.save(equipment);
+			
+			person.setName("Person 1");
+			session.save(person);
 
-		// equipment = new Equipment();
-		// equipment.setCode("IONTRAP");
-		// equipment.setName("Bruker Ion Trap");
-		// session.save(equipment);
+			transaction.commit();
+		} catch (Exception e) {
+			if (transaction != null) {
+				transaction.rollback();
+			}
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
 
-		// transaction.commit();
-		// } catch (Exception e) {
-		// if (transaction != null) {
-		// transaction.rollback();
-		// }
-		// } finally {
-		// if (session != null) {
-		// session.close();
-		// }
-		// }
-
-		// HibernateUtil.shutdown();
+		HibernateUtil.shutdown();
 
 		JFrame frame = new JFrame(title);
 		cc = new Controller(frame);

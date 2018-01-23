@@ -952,7 +952,6 @@ public class Controller
 		displayPvalues = new DisplayPvalues(this);
 		storedetailsWilcoxon = new StoredetailsWilcoxon(this);
 		insertresultrecordWilcoxon = new InsertresultrecordWilcoxon(this);
-		// getgroupnumberswilcoxon = new Getgroupnumberswilcoxon(this);
 		insertGroups = new InsertGroups(this);
 		dataexperiment = new String[6];
 		getexperimentdata = new ExperimentServiceImpl(this);
@@ -1620,7 +1619,6 @@ public class Controller
 
 		} else if (dataexperiment[3].trim().equalsIgnoreCase("2")) {
 			Raw_to_mzXML.setVisible(false);
-			// Readw_programm.setVisible(false);
 			msconvert_programm_64.setVisible(false);
 			msconvert_programm_32.setVisible(false);
 			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
@@ -1807,13 +1805,11 @@ public class Controller
 			if (filtercombobox2 != null) {
 				if (filtercombobox2.getSelectedItem().toString().toLowerCase().indexOf(".txt") > -1) {
 					Raw_to_mzXML.setVisible(false);
-					// Readw_programm.setVisible(false);
 					msconvert_programm_64.setVisible(false);
 					msconvert_programm_32.setVisible(false);
 				}
 				if (filtercombobox2.getSelectedItem().toString().toLowerCase().indexOf(".mzxml") > -1) {
 					Raw_to_mzXML.setVisible(false);
-					// Readw_programm.setVisible(false);
 					msconvert_programm_64.setVisible(false);
 					msconvert_programm_32.setVisible(false);
 				}
@@ -2047,7 +2043,6 @@ public class Controller
 					enzymes = new String[odataenzymes.length];
 					for (int i = 0; i < odataenzymes.length; i++) {
 						enzymes[i] = odataenzymes[i][0].toString();
-						// comboenzymes.addItem(enzymes[i]);
 						if (enzymes[i].trim().equalsIgnoreCase("trypsin")) {
 							selected_enzyme_list.add(enzymes[i].trim());
 						} else {
@@ -2366,7 +2361,6 @@ public class Controller
 			searchtablerecorddialog.setVisible(true);
 		}
 		if (choice == selectinputsample) {
-			// searchsample2 = new SearchSample(this);
 			updatefield = selectsampleid;
 			String dialogtitle = "Search sample";
 			searchtablerecorddialog = new JDialog(frame, dialogtitle);
@@ -2570,9 +2564,6 @@ public class Controller
 		if (choice == msconvert_programm_32) {
 			raw_to_mzXML = "msconvert32";
 		}
-		// if (choice == Readw_programm) {
-		// raw_to_mzXML = "readw";
-		// }
 		if (choice == none) {
 			centroidingmethod = 0;
 		}
@@ -2713,11 +2704,6 @@ public class Controller
 			if (!textfieldmaxchargestate.getText().trim().equalsIgnoreCase("")) {
 				max_charge_state = Integer.parseInt(textfieldmaxchargestate.getText().trim());
 			}
-			// selected_enzyme = "";
-			// try {
-			// selected_enzyme = String.valueOf(comboenzymes.getSelectedItem()).trim();
-			// } catch (Exception ex) {
-			// }
 			selected_enzymes = null;
 			if (selected_enzyme_list.getSize() > 0) {
 				selected_enzymes = new String[selected_enzyme_list.getSize()];
@@ -2786,12 +2772,6 @@ public class Controller
 				matrix_only_ms2sequenced_masses = only_ms2sequenced_masses.getState();
 			} catch (Exception e) {
 			}
-			// selected_database = "HUMAN.fasta";
-			// try {
-			// selected_database =
-			// combo_proteindatabases.getSelectedItem().toString().trim();
-			// } catch (Exception e) {
-			// }
 			string_Taxonomy = "";
 			try {
 				string_Taxonomy = combo_Taxonomy.getSelectedItem().toString().trim();
@@ -2812,9 +2792,9 @@ public class Controller
 			experiment.setid_calibrationmasses(Integer.parseInt(systemcodeitemid));
 			experiment.setdelta_mz_search_calibrants(inputdeltamzsearchcalibrant.getText().trim());
 			experiment.setdivisions_in_determination_noise(ndiv);
+
 			experiment.setisotopic_distance_c13_c12(c13_c12);
 			experiment.settaxonomy_name(string_Taxonomy);
-			// experiment.setname_taxonomy_file(selected_database);
 			experiment.setperform_ms2_sequencing(perform_ms2_sequencing);
 			experiment.set_only_ms2_sequencedmasses(matrix_only_ms2sequenced_masses);
 			experiment.setTOL(TOL);
@@ -2829,7 +2809,6 @@ public class Controller
 			experiment.setmissing_number_ms_scans_allowed(missingfractionsallowed);
 			experiment.setpeptide_present_in_minimumnumberoffractions(minimumnumberoffractions);
 			experiment.setzerofillingfactor(zerofillingfactor);
-			// experiment.setselected_enzyme(selected_enzyme);
 			experiment.setSelected_enzymes(selected_enzymes);
 			experiment.setmax_charge_state_peptide(max_charge_state);
 			experiment.setdeviation_from_expected_intensity_ratio(inputerror);
@@ -2880,6 +2859,7 @@ public class Controller
 			searchselection = new SearchSelection(this, frame, pBody);
 			searchselection.selectbrowser("Sample", wherestring);
 		}
+
 		if (choice == btnExperiment) {
 			wherestring = "";
 			searchselection = new SearchSelection(this, frame, pBody);
