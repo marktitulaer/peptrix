@@ -11,7 +11,7 @@ public class Equipment {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "quipmentid")
+	@Column(name = "equipmentid")
 	private long equipmentid;
 
 	@Column(name = "Name", length = 200)

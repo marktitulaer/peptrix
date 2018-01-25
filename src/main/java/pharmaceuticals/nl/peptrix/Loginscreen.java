@@ -35,29 +35,29 @@ public class Loginscreen implements WindowListener {
 			Group group = new Group();
 			Sample sample = new Sample();
 			
-			equipment.setCode("MALDITOF");
-			equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
-			session.save(equipment);
+			//equipment.setCode("MALDITOF");
+			//equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
+			//session.save(equipment);
 
-			equipment = new Equipment();
-			equipment.setCode("FTICRMS");
-			equipment.setName("FTMS");
-			session.save(equipment);
+			//equipment = new Equipment();
+			//equipment.setCode("FTICRMS");
+			//equipment.setName("FTMS");
+			//session.save(equipment);
 
-			equipment = new Equipment();
-			equipment.setCode("MALDILCMS");
-			equipment.setName("MALDI-TOF LC MS");
-			session.save(equipment);
+			//equipment = new Equipment();
+			//equipment.setCode("MALDILCMS");
+			//equipment.setName("MALDI-TOF LC MS");
+			//session.save(equipment);
 
-			equipment = new Equipment();
-			equipment.setCode("ORBITRAP");
-			equipment.setName("LTQ Orbitrap LC MS");
-			session.save(equipment);
+			//equipment = new Equipment();
+			//equipment.setCode("ORBITRAP");
+			//equipment.setName("LTQ Orbitrap LC MS");
+			//session.save(equipment);
 			
-			equipment = new Equipment();
-			equipment.setCode("IONTRAP");
-			equipment.setName("Bruker Ion Trap");
-			session.save(equipment);
+			//equipment = new Equipment();
+			//equipment.setCode("IONTRAP");
+			//equipment.setName("Bruker Ion Trap");
+			//session.save(equipment);
 			
 			//group.setName("Group 1");
 			//group.setGroupcode("10");
