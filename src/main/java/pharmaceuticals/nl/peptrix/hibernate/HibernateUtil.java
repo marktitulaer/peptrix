@@ -12,6 +12,7 @@ import org.hibernate.cfg.Environment;
 
 import pharmaceuticals.nl.peptrix.model.Person;
 import pharmaceuticals.nl.peptrix.model.Equipment;
+import pharmaceuticals.nl.peptrix.model.Group;
 
 public class HibernateUtil {
 
@@ -51,6 +52,7 @@ public class HibernateUtil {
 
 				metadataSource.addAnnotatedClass(Person.class);
 				metadataSource.addAnnotatedClass(Equipment.class);
+				metadataSource.addAnnotatedClass(Group.class);
 
 				Metadata metadata = metadataSource.getMetadataBuilder().build();
 				sessionFactory = metadata.getSessionFactoryBuilder().build();

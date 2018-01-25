@@ -33,6 +33,8 @@ public class Loginscreen implements WindowListener {
 
 			Equipment equipment = new Equipment();
 			Person person = new Person();
+			Group group = new Group();
+			
 			equipment.setCode("MALDITOF");
 			equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
 			session.save(equipment);
@@ -59,6 +61,11 @@ public class Loginscreen implements WindowListener {
 			
 			person.setName("Person 1");
 			session.save(person);
+			
+			group.setName("Group 1");
+			group.setGroupcode("1");
+			session.save(group);
+			
 
 			transaction.commit();
 		} catch (Exception e) {
