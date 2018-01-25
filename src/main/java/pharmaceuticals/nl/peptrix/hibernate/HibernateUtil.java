@@ -10,9 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 
-import pharmaceuticals.nl.peptrix.model.Person;
-import pharmaceuticals.nl.peptrix.model.Equipment;
-import pharmaceuticals.nl.peptrix.model.Group;
+import pharmaceuticals.nl.peptrix.model.*;
 
 public class HibernateUtil {
 
@@ -24,7 +22,6 @@ public class HibernateUtil {
 			try {
 				StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
 
-				// Map<String, Object> settings = new HashMap<>();
 				Map<String, Object> settings = new HashMap();
 				settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
 				settings.put(Environment.URL, "jdbc:mysql://localhost:3306/proteomics?useSSL=false");
@@ -50,9 +47,9 @@ public class HibernateUtil {
 
 				MetadataSources metadataSource = new MetadataSources(registry);
 
-				metadataSource.addAnnotatedClass(Person.class);
 				metadataSource.addAnnotatedClass(Equipment.class);
 				metadataSource.addAnnotatedClass(Group.class);
+				metadataSource.addAnnotatedClass(Sample.class);
 
 				Metadata metadata = metadataSource.getMetadataBuilder().build();
 				sessionFactory = metadata.getSessionFactoryBuilder().build();

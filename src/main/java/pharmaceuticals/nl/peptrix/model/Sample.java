@@ -11,7 +11,7 @@ public class Sample {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "ampleid")
+	@Column(name = "sampleid")
 	private long sampleid;
 
 	@Column(name = "Sample_code", length = 100, unique = true)

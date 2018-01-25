@@ -17,7 +17,7 @@ public class Experiment {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "xperimentid")
+	@Column(name = "experimentid")
 	private long experimentid;
 
 	@Column(name = "quipmentid")

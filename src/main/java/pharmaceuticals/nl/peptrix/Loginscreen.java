@@ -32,8 +32,8 @@ public class Loginscreen implements WindowListener {
 			transaction.begin();
 
 			Equipment equipment = new Equipment();
-			Person person = new Person();
 			Group group = new Group();
+			Sample sample = new Sample();
 			
 			equipment.setCode("MALDITOF");
 			equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
@@ -53,19 +53,19 @@ public class Loginscreen implements WindowListener {
 			equipment.setCode("ORBITRAP");
 			equipment.setName("LTQ Orbitrap LC MS");
 			session.save(equipment);
-
+			
 			equipment = new Equipment();
 			equipment.setCode("IONTRAP");
 			equipment.setName("Bruker Ion Trap");
 			session.save(equipment);
 			
-			person.setName("Person 1");
-			session.save(person);
+			//group.setName("Group 1");
+			//group.setGroupcode("10");
+			//session.save(group);
 			
-			group.setName("Group 1");
-			group.setGroupcode("1");
-			session.save(group);
-			
+			//sample.setSamplecode("sample 1");
+			//sample.setName("sample name 1");
+			//session.save(sample);
 
 			transaction.commit();
 		} catch (Exception e) {

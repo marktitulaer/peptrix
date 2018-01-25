@@ -17,7 +17,7 @@ public class Equipment {
 	@Column(name = "Name", length = 200)
 	private String name;
 
-	@Column(name = "Code", length = 16)
+	@Column(name = "Code", length = 16, unique = true)
 	private String code;
 
 	@CreationTimestamp
