@@ -12,10 +12,10 @@ public class Systemcodeitem {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "ystemCodeItemid")
+	@Column(name = "systemCodeItemid")
 	long systemcodeitemid;
 
-	@Column(name = "ystemcodeid")
+	@Column(name = "systemcodeid")
 	long systemcodeid;
 
 	@Column(name = "ItemCode", length = 16, unique = true)

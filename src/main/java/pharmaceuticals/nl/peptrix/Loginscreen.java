@@ -13,7 +13,7 @@ import org.hibernate.*;
 
 public class Loginscreen implements WindowListener {
 
-	static String screentitle = "PEPTRIX v3.36";
+	static String screentitle = "PEPTRIX v3.37";
 
 	Controller cc;
 
@@ -32,8 +32,10 @@ public class Loginscreen implements WindowListener {
 			transaction.begin();
 
 			Equipment equipment = new Equipment();
+			Sample sample = new Sample(); 
 			Group group = new Group();
-			Sample sample = new Sample();
+			Systemcode systemcode = new Systemcode();
+			Systemcodeitem systemcodeitem = new Systemcodeitem();
 			
 			//equipment.setCode("MALDITOF");
 			//equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
@@ -66,7 +68,35 @@ public class Loginscreen implements WindowListener {
 			//sample.setSamplecode("sample 1");
 			//sample.setName("sample name 1");
 			//session.save(sample);
-
+			
+			//systemcode.setCode("CALMASSES");
+			//systemcode.setDescription("Calibration Masses");
+			//session.save(systemcode);
+			
+			//systemcode = new Systemcode(); 
+			//systemcode.setCode("MODIFICATIONS");
+			//systemcode.setDescription("Modifications");
+			//session.save(systemcode);
+			
+			//systemcode = new Systemcode(); 
+			//systemcode.setCode("ENZYME");
+			//systemcode.setDescription("Enzyme");
+			//session.save(systemcode);
+			
+			//systemcodeitem.setItemcode("ALBMASSES");
+			//systemcodeitem.setDescription("Albumine Masses");
+			//session.save(systemcodeitem);
+			
+			//systemcodeitem = new Systemcodeitem();
+			//systemcodeitem.setItemcode("MS2_MOD");
+			//systemcodeitem.setDescription("MS2 Modifications");
+			//session.save(systemcodeitem);
+	
+			//systemcodeitem = new Systemcodeitem();
+			//systemcodeitem.setItemcode("ENZYME");
+			//systemcodeitem.setDescription("Enzyme");
+			//session.save(systemcodeitem);
+			
 			transaction.commit();
 		} catch (Exception e) {
 			if (transaction != null) {

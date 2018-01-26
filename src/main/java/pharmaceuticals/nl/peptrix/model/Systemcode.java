@@ -11,7 +11,7 @@ public class Systemcode {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "ystemcodeid")
+	@Column(name = "systemcodeid")
 	long systemcodeid;
 
 	@Column(name = "Code", length = 16, unique = true)

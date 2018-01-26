@@ -2,7 +2,6 @@ package pharmaceuticals.nl.peptrix.hibernate;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -31,7 +30,6 @@ public class HibernateUtil {
 				settings.put(Environment.SHOW_SQL, true);
 
 				// HikariCP settings
-
 				// Maximum waiting time for a connection from the pool
 				settings.put("hibernate.hikari.connectionTimeout", "20000");
 				// Minimum number of ideal connections in the pool
@@ -50,7 +48,11 @@ public class HibernateUtil {
 				metadataSource.addAnnotatedClass(Equipment.class);
 				metadataSource.addAnnotatedClass(Group.class);
 				metadataSource.addAnnotatedClass(Sample.class);
-
+				metadataSource.addAnnotatedClass(Experiment.class);
+				metadataSource.addAnnotatedClass(Result.class);
+				metadataSource.addAnnotatedClass(Systemcode.class);
+				metadataSource.addAnnotatedClass(Systemcodeitem.class);
+	
 				Metadata metadata = metadataSource.getMetadataBuilder().build();
 				sessionFactory = metadata.getSessionFactoryBuilder().build();
 			} catch (Exception e) {
