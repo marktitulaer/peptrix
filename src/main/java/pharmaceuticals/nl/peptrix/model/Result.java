@@ -11,16 +11,16 @@ public class Result {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "esultid")
+	@Column(name = "resultid")
 	private long resultid;
 
-	@Column(name = "xperimentid")
+	@Column(name = "experimentid")
 	private long experimentid;
 
-	@Column(name = "ampleid")
+	@Column(name = "sampleid")
 	private long sampleid;
 
-	@Column(name = "roup_id")
+	@Column(name = "group_id")
 	private long group_id;
 
 	@Column(name = "filenumber")
