@@ -58,6 +58,7 @@ import pharmaceuticals.nl.peptrix.allocation.InsertGroups;
 import pharmaceuticals.nl.peptrix.allocation.InsertSamples;
 import pharmaceuticals.nl.peptrix.calibration.Getcalibrationstandards;
 import pharmaceuticals.nl.peptrix.createpeaklist.Readdatafiles;
+import pharmaceuticals.nl.peptrix.database.JDBC;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 import pharmaceuticals.nl.peptrix.experiment.Getexistingexperiment;
 import pharmaceuticals.nl.peptrix.export.CreateexportstringWilcoxon;
@@ -679,9 +680,9 @@ public class Controller
 
 	public String userhome;
 
-	String jdbc_user;
+	public String jdbc_user;
 
-	String jdbc_password;
+	public String jdbc_password;
 
 	public String p_values_prefix = "p_values_";
 

@@ -4,9 +4,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 import javax.swing.*;
+
+import pharmaceuticals.nl.peptrix.database.HibernateUtil;
 import pharmaceuticals.nl.peptrix.gui.CreateMenu;
 import pharmaceuticals.nl.peptrix.gui.application.FramePanel;
-import pharmaceuticals.nl.peptrix.hibernate.HibernateUtil;
 import pharmaceuticals.nl.peptrix.model.*;
 
 import org.hibernate.*;
@@ -36,6 +37,7 @@ public class Loginscreen implements WindowListener {
 			Group group = new Group();
 			Systemcode systemcode = new Systemcode();
 			Systemcodeitem systemcodeitem = new Systemcodeitem();
+			Unit unit = new Unit();
 			
 			//equipment.setCode("MALDITOF");
 			//equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
@@ -96,6 +98,10 @@ public class Loginscreen implements WindowListener {
 			//systemcodeitem.setItemcode("ENZYME");
 			//systemcodeitem.setDescription("Enzyme");
 			//session.save(systemcodeitem);
+			
+			unit.setType("mass");
+			unit.setUnitvalue("m/z");
+			session.save(unit);
 			
 			transaction.commit();
 		} catch (Exception e) {

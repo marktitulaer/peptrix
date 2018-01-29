@@ -1,10 +1,12 @@
-package pharmaceuticals.nl.peptrix;
+package pharmaceuticals.nl.peptrix.database;
 
 import java.sql.*;
 
 import java.util.*;
 
 import javax.swing.JOptionPane;
+
+import pharmaceuticals.nl.peptrix.Controller;
 
 public class JDBC {
 

@@ -12,7 +12,7 @@ public class Unit {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "nitid")
+	@Column(name = "unitid")
 	private long unitid;
 
 	@Column(name = "Type", length = 16)

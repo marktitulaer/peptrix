@@ -1,4 +1,4 @@
-package pharmaceuticals.nl.peptrix.hibernate;
+package pharmaceuticals.nl.peptrix.database;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,6 +52,7 @@ public class HibernateUtil {
 				metadataSource.addAnnotatedClass(Result.class);
 				metadataSource.addAnnotatedClass(Systemcode.class);
 				metadataSource.addAnnotatedClass(Systemcodeitem.class);
+				metadataSource.addAnnotatedClass(Unit.class);
 	
 				Metadata metadata = metadataSource.getMetadataBuilder().build();
 				sessionFactory = metadata.getSessionFactoryBuilder().build();

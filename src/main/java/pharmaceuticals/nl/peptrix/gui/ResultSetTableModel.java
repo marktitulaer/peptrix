@@ -3,7 +3,7 @@ package pharmaceuticals.nl.peptrix.gui;
 import java.sql.*;
 import javax.swing.table.*;
 
-import pharmaceuticals.nl.peptrix.JDBC;
+import pharmaceuticals.nl.peptrix.database.JDBC;
 
 public class ResultSetTableModel extends AbstractTableModel {
 
