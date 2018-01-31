@@ -53,7 +53,8 @@ public class HibernateUtil {
 				metadataSource.addAnnotatedClass(Systemcode.class);
 				metadataSource.addAnnotatedClass(Systemcodeitem.class);
 				metadataSource.addAnnotatedClass(Unit.class);
-	
+				metadataSource.addAnnotatedClass(ItemValue.class);
+
 				Metadata metadata = metadataSource.getMetadataBuilder().build();
 				sessionFactory = metadata.getSessionFactoryBuilder().build();
 			} catch (Exception e) {

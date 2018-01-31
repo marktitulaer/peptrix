@@ -11,13 +11,13 @@ public class ItemValue {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "temValueid")
+	@Column(name = "itemValueid")
 	private long itemvalueid;
 
-	@Column(name = "ystemCodeItemid")
+	@Column(name = "systemCodeItemid")
 	private long systemcodeitemid;
 
-	@Column(name = "nitid")
+	@Column(name = "initid")
 	private long unitid;
 
 	@Column(name = "Itemvalue", length = 200)

@@ -33,76 +33,124 @@ public class Loginscreen implements WindowListener {
 			transaction.begin();
 
 			Equipment equipment = new Equipment();
-			Sample sample = new Sample(); 
+			Sample sample = new Sample();
 			Group group = new Group();
 			Systemcode systemcode = new Systemcode();
 			Systemcodeitem systemcodeitem = new Systemcodeitem();
 			Unit unit = new Unit();
-			
-			//equipment.setCode("MALDITOF");
-			//equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
-			//session.save(equipment);
+			ItemValue itemvalue = new ItemValue();
 
-			//equipment = new Equipment();
-			//equipment.setCode("FTICRMS");
-			//equipment.setName("FTMS");
-			//session.save(equipment);
+			// equipment.setCode("MALDITOF");
+			// equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
+			// session.save(equipment);
 
-			//equipment = new Equipment();
-			//equipment.setCode("MALDILCMS");
-			//equipment.setName("MALDI-TOF LC MS");
-			//session.save(equipment);
+			// equipment = new Equipment();
+			// equipment.setCode("FTICRMS");
+			// equipment.setName("FTMS");
+			// session.save(equipment);
 
-			//equipment = new Equipment();
-			//equipment.setCode("ORBITRAP");
-			//equipment.setName("LTQ Orbitrap LC MS");
-			//session.save(equipment);
-			
-			//equipment = new Equipment();
-			//equipment.setCode("IONTRAP");
-			//equipment.setName("Bruker Ion Trap");
-			//session.save(equipment);
-			
-			//group.setName("Group 1");
-			//group.setGroupcode("10");
-			//session.save(group);
-			
-			//sample.setSamplecode("sample 1");
-			//sample.setName("sample name 1");
-			//session.save(sample);
-			
-			//systemcode.setCode("CALMASSES");
-			//systemcode.setDescription("Calibration Masses");
-			//session.save(systemcode);
-			
-			//systemcode = new Systemcode(); 
-			//systemcode.setCode("MODIFICATIONS");
-			//systemcode.setDescription("Modifications");
-			//session.save(systemcode);
-			
-			//systemcode = new Systemcode(); 
-			//systemcode.setCode("ENZYME");
-			//systemcode.setDescription("Enzyme");
-			//session.save(systemcode);
-			
-			//systemcodeitem.setItemcode("ALBMASSES");
-			//systemcodeitem.setDescription("Albumine Masses");
-			//session.save(systemcodeitem);
-			
-			//systemcodeitem = new Systemcodeitem();
-			//systemcodeitem.setItemcode("MS2_MOD");
-			//systemcodeitem.setDescription("MS2 Modifications");
-			//session.save(systemcodeitem);
-	
-			//systemcodeitem = new Systemcodeitem();
-			//systemcodeitem.setItemcode("ENZYME");
-			//systemcodeitem.setDescription("Enzyme");
-			//session.save(systemcodeitem);
-			
-			unit.setType("mass");
-			unit.setUnitvalue("m/z");
-			session.save(unit);
-			
+			// equipment = new Equipment();
+			// equipment.setCode("MALDILCMS");
+			// equipment.setName("MALDI-TOF LC MS");
+			// session.save(equipment);
+
+			// equipment = new Equipment();
+			// equipment.setCode("ORBITRAP");
+			// equipment.setName("LTQ Orbitrap LC MS");
+			// session.save(equipment);
+
+			// equipment = new Equipment();
+			// equipment.setCode("IONTRAP");
+			// equipment.setName("Bruker Ion Trap");
+			// session.save(equipment);
+
+			// group.setName("Group 1");
+			// group.setGroupcode("10");
+			// session.save(group);
+
+			// sample.setSamplecode("sample 1");
+			// sample.setName("sample name 1");
+			// session.save(sample);
+
+			// systemcode.setCode("CALMASSES");
+			// systemcode.setDescription("Calibration Masses");
+			// session.save(systemcode);
+
+			// systemcode = new Systemcode();
+			// systemcode.setCode("MODIFICATIONS");
+			// systemcode.setDescription("Modifications");
+			// session.save(systemcode);
+
+			// systemcode = new Systemcode();
+			// systemcode.setCode("ENZYME");
+			// systemcode.setDescription("Enzyme");
+			// session.save(systemcode);
+
+			// systemcodeitem.setItemcode("ALBMASSES");
+			// systemcodeitem.setDescription("Albumine Masses");
+			// session.save(systemcodeitem);
+
+			// systemcodeitem = new Systemcodeitem();
+			// systemcodeitem.setItemcode("MS2_MOD");
+			// systemcodeitem.setDescription("MS2 Modifications");
+			// session.save(systemcodeitem);
+
+			// systemcodeitem = new Systemcodeitem();
+			// systemcodeitem.setItemcode("ENZYME");
+			// systemcodeitem.setDescription("Enzyme");
+			// session.save(systemcodeitem);
+
+			// unit.setType("mass");
+			// unit.setUnitvalue("m/z");
+			// session.save(unit);
+
+			itemvalue.setItemvalue("960.5631");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("1000.6043");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("1149.6156");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("1511.8433");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("2045.0959");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("Carbamidomethyl (C)");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("Oxidation (M)");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("Phosphorylation (S)");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("Phosphorylation (T)");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("Phosphorylation (Y)");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("Trypsin");
+			session.save(itemvalue);
+
+			itemvalue = new ItemValue();
+			itemvalue.setItemvalue("Chymotrypsin");
+			session.save(itemvalue);
+
 			transaction.commit();
 		} catch (Exception e) {
 			if (transaction != null) {
