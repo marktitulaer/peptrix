@@ -17,12 +17,14 @@ public class Result {
 	@ManyToOne(optional = true)
 	@JoinColumn(name = "experimentid")
 	private Experiment experiment;
-	
-	@Column(name = "sampleid")
-	private long sampleid;
 
-	@Column(name = "group_id")
-	private long group_id;
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "sampleid")
+	private Sample sample;
+
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "group_id")
+	private Group group;
 
 	@Column(name = "filenumber")
 	private long filenumber;
@@ -79,20 +81,20 @@ public class Result {
 		this.experiment = experiment;
 	}
 
-	public long getSampleid() {
-		return sampleid;
+	public Sample getSample() {
+		return sample;
 	}
 
-	public void setSampleid(long sampleid) {
-		this.sampleid = sampleid;
+	public void setSample(Sample sample) {
+		this.sample = sample;
 	}
 
-	public long getGroup_id() {
-		return group_id;
+	public Group getGroup() {
+		return group;
 	}
 
-	public void setGroup_id(long group_id) {
-		this.group_id = group_id;
+	public void setGroup(Group group) {
+		this.group = group;
 	}
 
 	public long getFilenumber() {

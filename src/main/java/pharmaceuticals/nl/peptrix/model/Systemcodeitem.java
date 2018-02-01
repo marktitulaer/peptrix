@@ -12,11 +12,12 @@ public class Systemcodeitem {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "systemCodeItemid")
+	@Column(name = "systemcodeitemid")
 	long systemcodeitemid;
 
-	@Column(name = "systemcodeid")
-	long systemcodeid;
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "systemcodeid")
+	Systemcode systemcode;
 
 	@Column(name = "ItemCode", length = 16, unique = true)
 	String itemcode;
@@ -38,12 +39,12 @@ public class Systemcodeitem {
 		this.systemcodeitemid = systemcodeitemid;
 	}
 
-	public long getSystemcodeid() {
-		return systemcodeid;
+	public Systemcode getSystemcode() {
+		return systemcode;
 	}
 
-	public void setSystemcodeid(long systemcodeid) {
-		this.systemcodeid = systemcodeid;
+	public void setSystemcode(Systemcode systemcode) {
+		this.systemcode = systemcode;
 	}
 
 	public String getItemcode() {

@@ -14,8 +14,9 @@ public class ItemValue {
 	@Column(name = "itemValueid")
 	private long itemvalueid;
 
-	@Column(name = "systemCodeItemid")
-	private long systemcodeitemid;
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "systemcodeitemid")
+	private Systemcodeitem systemcodeitem;
 
 	@Column(name = "initid")
 	private long unitid;
@@ -37,12 +38,12 @@ public class ItemValue {
 		this.itemvalueid = itemvalueid;
 	}
 
-	public long getSystemcodeitemid() {
-		return systemcodeitemid;
+	public Systemcodeitem getSystemcodeitem() {
+		return systemcodeitem;
 	}
 
-	public void setSystemcodeitemid(long systemcodeitemid) {
-		this.systemcodeitemid = systemcodeitemid;
+	public void setSystemcodeitem(Systemcodeitem systemcodeitem) {
+		this.systemcodeitem = systemcodeitem;
 	}
 
 	public long getUnitid() {
