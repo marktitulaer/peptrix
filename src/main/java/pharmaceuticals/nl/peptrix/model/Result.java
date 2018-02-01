@@ -14,9 +14,10 @@ public class Result {
 	@Column(name = "resultid")
 	private long resultid;
 
-	@Column(name = "experimentid")
-	private long experimentid;
-
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "experimentid")
+	private Experiment experiment;
+	
 	@Column(name = "sampleid")
 	private long sampleid;
 
@@ -70,12 +71,12 @@ public class Result {
 		this.resultid = resultid;
 	}
 
-	public long getExperimentid() {
-		return experimentid;
+	public Experiment getExperiment() {
+		return experiment;
 	}
 
-	public void setExperimentid(long experimentid) {
-		this.experimentid = experimentid;
+	public void setExperiment(Experiment experiment) {
+		this.experiment = experiment;
 	}
 
 	public long getSampleid() {

@@ -39,10 +39,30 @@ public class Loginscreen implements WindowListener {
 			Systemcodeitem systemcodeitem = new Systemcodeitem();
 			Unit unit = new Unit();
 			ItemValue itemvalue = new ItemValue();
+			
+			Experiment experiment = new Experiment();
+			//experiment.setName("test experiment");
 
-			// equipment.setCode("MALDITOF");
-			// equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
-			// session.save(equipment);
+			//equipment.setCode("MALDITOF");
+			//equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
+			//session.save(equipment);
+			
+			//experiment.setEquipment(equipment);
+			//session.save(experiment);
+			
+			
+			experiment = new Experiment();
+			experiment.setName("test experiment2");
+
+			equipment.setCode("MALDITOF3");
+			equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
+			session.save(equipment);
+			
+			experiment.setEquipment(equipment);
+			session.save(experiment);
+			
+			
+			
 
 			// equipment = new Equipment();
 			// equipment.setCode("FTICRMS");
@@ -104,52 +124,52 @@ public class Loginscreen implements WindowListener {
 			// unit.setUnitvalue("m/z");
 			// session.save(unit);
 
-			itemvalue.setItemvalue("960.5631");
-			session.save(itemvalue);
+			//itemvalue.setItemvalue("960.5631");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("1000.6043");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("1000.6043");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("1149.6156");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("1149.6156");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("1511.8433");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("1511.8433");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("2045.0959");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("2045.0959");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("Carbamidomethyl (C)");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("Carbamidomethyl (C)");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("Oxidation (M)");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("Oxidation (M)");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("Phosphorylation (S)");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("Phosphorylation (S)");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("Phosphorylation (T)");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("Phosphorylation (T)");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("Phosphorylation (Y)");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("Phosphorylation (Y)");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("Trypsin");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("Trypsin");
+			//session.save(itemvalue);
 
-			itemvalue = new ItemValue();
-			itemvalue.setItemvalue("Chymotrypsin");
-			session.save(itemvalue);
+			//itemvalue = new ItemValue();
+			//itemvalue.setItemvalue("Chymotrypsin");
+			//session.save(itemvalue);
 
 			transaction.commit();
 		} catch (Exception e) {

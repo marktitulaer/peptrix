@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -20,8 +22,9 @@ public class Experiment {
 	@Column(name = "experimentid")
 	private long experimentid;
 
-	@Column(name = "quipmentid")
-	private long equipmentid;
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "equipmentid")
+	private Equipment equipment;
 
 	@Column(name = "Name", length = 200)
 	String name;
@@ -46,12 +49,12 @@ public class Experiment {
 		this.experimentid = experimentid;
 	}
 
-	public long getEquipmentid() {
-		return equipmentid;
+	public Equipment getEquipment() {
+		return equipment;
 	}
 
-	public void setEquipmentid(long equipmentid) {
-		this.equipmentid = equipmentid;
+	public void setEquipment(Equipment equipment) {
+		this.equipment = equipment;
 	}
 
 	public String getName() {
