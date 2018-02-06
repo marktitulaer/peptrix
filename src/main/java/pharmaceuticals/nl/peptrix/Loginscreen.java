@@ -50,15 +50,15 @@ public class Loginscreen implements WindowListener {
 			// experiment.setEquipment(equipment);
 			// session.save(experiment);
 
-			experiment = new Experiment();
-			experiment.setName("test experiment2");
+			// experiment = new Experiment();
+			// experiment.setName("test experiment2");
 
-			equipment.setCode("MALDITOF3");
-			equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
-			session.save(equipment);
+			// equipment.setCode("MALDITOF3");
+			// equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
+			// session.save(equipment);
 
-			experiment.setEquipment(equipment);
-			session.save(experiment);
+			// experiment.setEquipment(equipment);
+			// session.save(experiment);
 
 			// equipment = new Equipment();
 			// equipment.setCode("FTICRMS");
