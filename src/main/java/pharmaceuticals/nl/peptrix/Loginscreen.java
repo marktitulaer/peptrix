@@ -5,12 +5,8 @@ import java.awt.event.*;
 import java.sql.*;
 import javax.swing.*;
 
-import pharmaceuticals.nl.peptrix.database.HibernateUtil;
 import pharmaceuticals.nl.peptrix.gui.CreateMenu;
 import pharmaceuticals.nl.peptrix.gui.application.FramePanel;
-import pharmaceuticals.nl.peptrix.model.*;
-
-import org.hibernate.*;
 
 public class Loginscreen implements WindowListener {
 
@@ -18,168 +14,16 @@ public class Loginscreen implements WindowListener {
 
 	Controller cc;
 
+	DataBase database;
+
 	public static void main(String[] args) throws SQLException {
 		Loginscreen lg = new Loginscreen(screentitle);
 		lg.dummy();
 	}
 
 	Loginscreen(String title) throws SQLException {
-
-		Session session = null;
-		Transaction transaction = null;
-		try {
-			session = HibernateUtil.getSessionFactory().openSession();
-			transaction = session.getTransaction();
-			transaction.begin();
-
-			Equipment equipment = new Equipment();
-			Sample sample = new Sample();
-			Group group = new Group();
-			Systemcode systemcode = new Systemcode();
-			Systemcodeitem systemcodeitem = new Systemcodeitem();
-			Unit unit = new Unit();
-			ItemValue itemvalue = new ItemValue();
-
-			Experiment experiment = new Experiment();
-			// experiment.setName("test experiment");
-
-			// equipment.setCode("MALDITOF");
-			// equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
-			// session.save(equipment);
-
-			// experiment.setEquipment(equipment);
-			// session.save(experiment);
-
-			// experiment = new Experiment();
-			// experiment.setName("test experiment2");
-
-			// equipment.setCode("MALDITOF3");
-			// equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
-			// session.save(equipment);
-
-			// experiment.setEquipment(equipment);
-			// session.save(experiment);
-
-			// equipment = new Equipment();
-			// equipment.setCode("FTICRMS");
-			// equipment.setName("FTMS");
-			// session.save(equipment);
-
-			// equipment = new Equipment();
-			// equipment.setCode("MALDILCMS");
-			// equipment.setName("MALDI-TOF LC MS");
-			// session.save(equipment);
-
-			// equipment = new Equipment();
-			// equipment.setCode("ORBITRAP");
-			// equipment.setName("LTQ Orbitrap LC MS");
-			// session.save(equipment);
-
-			// equipment = new Equipment();
-			// equipment.setCode("IONTRAP");
-			// equipment.setName("Bruker Ion Trap");
-			// session.save(equipment);
-
-			// group.setName("Group 1");
-			// group.setGroupcode("10");
-			// session.save(group);
-
-			// sample.setSamplecode("sample 1");
-			// sample.setName("sample name 1");
-			// session.save(sample);
-
-			// systemcode.setCode("CALMASSES");
-			// systemcode.setDescription("Calibration Masses");
-			// session.save(systemcode);
-
-			// systemcode = new Systemcode();
-			// systemcode.setCode("MODIFICATIONS");
-			// systemcode.setDescription("Modifications");
-			// session.save(systemcode);
-
-			// systemcode = new Systemcode();
-			// systemcode.setCode("ENZYME");
-			// systemcode.setDescription("Enzyme");
-			// session.save(systemcode);
-
-			// systemcodeitem.setItemcode("ALBMASSES");
-			// systemcodeitem.setDescription("Albumine Masses");
-			// session.save(systemcodeitem);
-
-			// systemcodeitem = new Systemcodeitem();
-			// systemcodeitem.setItemcode("MS2_MOD");
-			// systemcodeitem.setDescription("MS2 Modifications");
-			// session.save(systemcodeitem);
-
-			// systemcodeitem = new Systemcodeitem();
-			// systemcodeitem.setItemcode("ENZYME");
-			// systemcodeitem.setDescription("Enzyme");
-			// session.save(systemcodeitem);
-
-			// unit.setType("mass");
-			// unit.setUnitvalue("m/z");
-			// session.save(unit);
-
-			// itemvalue.setItemvalue("960.5631");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("1000.6043");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("1149.6156");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("1511.8433");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("2045.0959");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("Carbamidomethyl (C)");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("Oxidation (M)");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("Phosphorylation (S)");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("Phosphorylation (T)");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("Phosphorylation (Y)");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("Trypsin");
-			// session.save(itemvalue);
-
-			// itemvalue = new ItemValue();
-			// itemvalue.setItemvalue("Chymotrypsin");
-			// session.save(itemvalue);
-
-			transaction.commit();
-		} catch (Exception e) {
-			if (transaction != null) {
-				transaction.rollback();
-			}
-		} finally {
-			if (session != null) {
-				session.close();
-			}
-		}
-
-		HibernateUtil.shutdown();
-
+		database = new DataBase();
+		database.FillInitialData();
 		JFrame frame = new JFrame(title);
 		cc = new Controller(frame);
 		MenuBar menubar = new CreateMenu(cc);

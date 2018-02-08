@@ -66,4 +66,9 @@ public class Equipment {
 		this.code = code;
 	}
 
+	@Override
+	public String toString() {
+		return "Equipment2 [id=" + equipmentid + ", name=" + name + ", code=" + code + "]";
+	}
+
 }
