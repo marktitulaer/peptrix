@@ -23,8 +23,6 @@ public class DataBase {
 			transaction = session.getTransaction();
 			transaction.begin();
 
-			Sample sample = new Sample();
-			Group group = new Group();
 			Systemcode systemcode = new Systemcode();
 			Systemcodeitem systemcodeitem = new Systemcodeitem();
 			Unit unit = new Unit();
@@ -32,9 +30,9 @@ public class DataBase {
 			Experiment experiment = new Experiment();
 
 			Equipment equipment = new Equipment();
-			Query<Equipment> query = session.createQuery("from Equipment where Code = :code  ");
-			query.setParameter("code", "MALDITOF");
-			List<Equipment> equipments = query.list();
+			Query<Equipment> queryequipment = session.createQuery("from Equipment where Code = :code  ");
+			queryequipment.setParameter("code", "MALDITOF");
+			List<Equipment> equipments = queryequipment.list();
 			if (equipments.size() == 0) {
 				equipment.setCode("MALDITOF");
 				equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
@@ -42,8 +40,8 @@ public class DataBase {
 			}
 
 			equipment = new Equipment();
-			query.setParameter("code", "FTICRMS");
-			equipments = query.list();
+			queryequipment.setParameter("code", "FTICRMS");
+			equipments = queryequipment.list();
 			if (equipments.size() == 0) {
 				equipment.setCode("FTICRMS");
 				equipment.setName("FTMS");
@@ -51,17 +49,18 @@ public class DataBase {
 			}
 
 			equipment = new Equipment();
-			query.setParameter("code", "MALDILCMS");
-			equipments = query.list();
+			queryequipment.setParameter("code", "MALDILCMS");
+			equipments = queryequipment.list();
 			if (equipments.size() == 0) {
 				equipment.setCode("MALDILCMS");
 				equipment.setName("MALDI-TOF LC MS");
 				session.save(equipment);
 			}
 
+
 			equipment = new Equipment();
-			query.setParameter("code", "ORBITRAP");
-			equipments = query.list();
+			queryequipment.setParameter("code", "ORBITRAP");
+			equipments = queryequipment.list();
 			if (equipments.size() == 0) {
 				equipment.setCode("ORBITRAP");
 				equipment.setName("LTQ Orbitrap LC MS");
@@ -69,13 +68,37 @@ public class DataBase {
 			}
 
 			equipment = new Equipment();
-			query.setParameter("code", "IONTRAP");
-			equipments = query.list();
+			queryequipment.setParameter("code", "IONTRAP");
+			equipments = queryequipment.list();
 			if (equipments.size() == 0) {
 				equipment.setCode("IONTRAP");
 				equipment.setName("Bruker Ion Trap");
 				session.save(equipment);
 			}
+
+			Group group = new Group();
+			Query<Group> querygroup = session.createQuery("from Group where Group_code = :code  ");
+			querygroup.setParameter("code", "1");
+			List<Group> groups =  querygroup .list();
+			if (groups.size() == 0) {
+				group.setGroupcode("1");
+				group.setName("Group 1");
+				session.save(group);
+			}
+
+			Sample sample = new Sample();
+			Query<Sample> querysample = session.createQuery("from Sample where Sample_code = :code  ");
+			querysample.setParameter("code", "1");
+			List<Sample> samples =  querysample.list();
+			if (samples.size() == 0) {
+				sample.setSamplecode("1");
+				sample.setName("sample1");
+				session.save(sample);
+			}
+
+
+			System.out.println("hier ");
+
 
 			// group.setName("Group 1");
 			// group.setGroupcode("10");
