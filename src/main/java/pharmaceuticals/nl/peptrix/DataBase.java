@@ -23,9 +23,7 @@ public class DataBase {
             transaction = session.getTransaction();
             transaction.begin();
 
-            Unit unit = new Unit();
             ItemValue itemvalue = new ItemValue();
-            Experiment experiment = new Experiment();
 
             Equipment equipment = new Equipment();
             Query<Equipment> queryequipment = session.createQuery("from Equipment where Code = :code  ");
@@ -151,48 +149,39 @@ public class DataBase {
                 session.save(systemcodeitem);
             }
 
-            System.out.println("hier 4 ");
+            systemcodeitem = new Systemcodeitem();
+            querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+            querysystemcodeitem.setParameter("code", "ENZYME");
+            systemcodeitems =  querysystemcodeitem.list();
+            if (systemcodeitems.size() == 0) {
+                querysystemcode = session.createQuery("from Systemcode where Code = :code  ");
+                querysystemcode.setParameter("code", "ENZYME");
+                systemcodes = querysystemcode.list();
+                systemcode =  systemcodes.get(0);
+                systemcodeitem.setSystemcode(systemcode);
+                systemcodeitem.setItemcode("ENZYME");
+                systemcodeitem.setDescription("Enzyme");
+                session.save(systemcodeitem);
+            }
+
+            Unit unit = new Unit();
+            Query<Unit> queryunit = session.createQuery("from Unit where Type = :type and UnitValue = :unitvalue ");
+
+            queryunit.setParameter("type", "mass");
+            queryunit.setParameter("unitvalue", "m/z");
+            List<Unit> units =  queryunit.list();
+            if (units.size() == 0) {
+                unit.setType("mass");
+                unit.setUnitvalue("m/z");
+                session.save(unit);
+            }
 
 
-            // group.setName("Group 1");
-            // group.setGroupcode("10");
-            // session.save(group);
+            System.out.println("hier 6 ");
 
-            // sample.setSamplecode("sample 1");
-            // sample.setName("sample name 1");
-            // session.save(sample);
 
-            // systemcode.setCode("CALMASSES");
-            // systemcode.setDescription("Calibration Masses");
-            // session.save(systemcode);
 
-            // systemcode = new Systemcode();
-            // systemcode.setCode("MODIFICATIONS");
-            // systemcode.setDescription("Modifications");
-            // session.save(systemcode);
 
-            // systemcode = new Systemcode();
-            // systemcode.setCode("ENZYME");
-            // systemcode.setDescription("Enzyme");
-            // session.save(systemcode);
-
-            // systemcodeitem.setItemcode("ALBMASSES");
-            // systemcodeitem.setDescription("Albumine Masses");
-            // session.save(systemcodeitem);
-
-            // systemcodeitem = new Systemcodeitem();
-            // systemcodeitem.setItemcode("MS2_MOD");
-            // systemcodeitem.setDescription("MS2 Modifications");
-            // session.save(systemcodeitem);
-
-            // systemcodeitem = new Systemcodeitem();
-            // systemcodeitem.setItemcode("ENZYME");
-            // systemcodeitem.setDescription("Enzyme");
-            // session.save(systemcodeitem);
-
-            // unit.setType("mass");
-            // unit.setUnitvalue("m/z");
-            // session.save(unit);
 
             // itemvalue.setItemvalue("960.5631");
             // session.save(itemvalue);
