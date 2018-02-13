@@ -120,12 +120,12 @@ public class DataBase {
             Systemcodeitem systemcodeitem = new Systemcodeitem();
             Query<Systemcodeitem> querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
             querysystemcodeitem.setParameter("code", "ALBMASSES");
-            List<Systemcodeitem> systemcodeitems =  querysystemcodeitem.list();
+            List<Systemcodeitem> systemcodeitems = querysystemcodeitem.list();
             if (systemcodeitems.size() == 0) {
                 querysystemcode = session.createQuery("from Systemcode where Code = :code  ");
                 querysystemcode.setParameter("code", "CALMASSES");
                 systemcodes = querysystemcode.list();
-                systemcode =  systemcodes.get(0);
+                systemcode = systemcodes.get(0);
                 systemcodeitem.setSystemcode(systemcode);
                 systemcodeitem.setItemcode("ALBMASSES");
                 systemcodeitem.setDescription("Albumine Masses");
@@ -135,12 +135,12 @@ public class DataBase {
             systemcodeitem = new Systemcodeitem();
             querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
             querysystemcodeitem.setParameter("code", "MS2_MOD");
-            systemcodeitems =  querysystemcodeitem.list();
+            systemcodeitems = querysystemcodeitem.list();
             if (systemcodeitems.size() == 0) {
                 querysystemcode = session.createQuery("from Systemcode where Code = :code  ");
                 querysystemcode.setParameter("code", "MODIFICATIONS");
                 systemcodes = querysystemcode.list();
-                systemcode =  systemcodes.get(0);
+                systemcode = systemcodes.get(0);
                 systemcodeitem.setSystemcode(systemcode);
                 systemcodeitem.setItemcode("MS2_MOD");
                 systemcodeitem.setDescription("MS2 Modifications");
@@ -150,12 +150,12 @@ public class DataBase {
             systemcodeitem = new Systemcodeitem();
             querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
             querysystemcodeitem.setParameter("code", "ENZYME");
-            systemcodeitems =  querysystemcodeitem.list();
+            systemcodeitems = querysystemcodeitem.list();
             if (systemcodeitems.size() == 0) {
                 querysystemcode = session.createQuery("from Systemcode where Code = :code  ");
                 querysystemcode.setParameter("code", "ENZYME");
                 systemcodes = querysystemcode.list();
-                systemcode =  systemcodes.get(0);
+                systemcode = systemcodes.get(0);
                 systemcodeitem.setSystemcode(systemcode);
                 systemcodeitem.setItemcode("ENZYME");
                 systemcodeitem.setDescription("Enzyme");
@@ -166,7 +166,7 @@ public class DataBase {
             Query<Unit> queryunit = session.createQuery("from Unit where Type = :type and UnitValue = :unitvalue ");
             queryunit.setParameter("type", "mass");
             queryunit.setParameter("unitvalue", "m/z");
-            List<Unit> units =  queryunit.list();
+            List<Unit> units = queryunit.list();
             if (units.size() == 0) {
                 unit.setType("mass");
                 unit.setUnitvalue("m/z");
@@ -176,37 +176,106 @@ public class DataBase {
             ItemValue itemvalue = new ItemValue();
             Query<ItemValue> queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "960.5631");
-            List<ItemValue> itemValues =  queryitemValue.list();
+            List<ItemValue> itemValues = queryitemValue.list();
             if (itemValues.size() == 0) {
                 queryunit = session.createQuery("from Unit where Type = :type and UnitValue = :unitvalue ");
                 queryunit.setParameter("type", "mass");
                 queryunit.setParameter("unitvalue", "m/z");
-                units =  queryunit.list();
-                unit =  units.get(0);
-                //itemvalue.setUnitid();
+                units = queryunit.list();
+                unit = units.get(0);
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "ALBMASSES");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setUnit(unit);
                 itemvalue.setItemvalue("960.5631");
+                session.save(itemvalue);
+            }
 
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "1000.6043");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                queryunit = session.createQuery("from Unit where Type = :type and UnitValue = :unitvalue ");
+                queryunit.setParameter("type", "mass");
+                queryunit.setParameter("unitvalue", "m/z");
+                units = queryunit.list();
+                unit = units.get(0);
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "ALBMASSES");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setUnit(unit);
+                itemvalue.setItemvalue("1000.6043");
+                session.save(itemvalue);
+            }
+
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "1149.6156");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                queryunit = session.createQuery("from Unit where Type = :type and UnitValue = :unitvalue ");
+                queryunit.setParameter("type", "mass");
+                queryunit.setParameter("unitvalue", "m/z");
+                units = queryunit.list();
+                unit = units.get(0);
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "ALBMASSES");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setUnit(unit);
+                itemvalue.setItemvalue("1149.6156");
                 session.save(itemvalue);
             }
 
 
-            System.out.println("hier 7 ");
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "1511.8433");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                queryunit = session.createQuery("from Unit where Type = :type and UnitValue = :unitvalue ");
+                queryunit.setParameter("type", "mass");
+                queryunit.setParameter("unitvalue", "m/z");
+                units = queryunit.list();
+                unit = units.get(0);
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "ALBMASSES");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setUnit(unit);
+                itemvalue.setItemvalue("1511.8433");
+                session.save(itemvalue);
+            }
 
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("1000.6043");
-            // session.save(itemvalue);
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "2045.0959");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                queryunit = session.createQuery("from Unit where Type = :type and UnitValue = :unitvalue ");
+                queryunit.setParameter("type", "mass");
+                queryunit.setParameter("unitvalue", "m/z");
+                units = queryunit.list();
+                unit = units.get(0);
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "ALBMASSES");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setUnit(unit);
+                itemvalue.setItemvalue("2045.0959");
+                session.save(itemvalue);
+            }
 
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("1149.6156");
-            // session.save(itemvalue);
+            System.out.println("hier 9 ");
 
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("1511.8433");
-            // session.save(itemvalue);
-
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("2045.0959");
-            // session.save(itemvalue);
 
             // itemvalue = new ItemValue();
             // itemvalue.setItemvalue("Carbamidomethyl (C)");

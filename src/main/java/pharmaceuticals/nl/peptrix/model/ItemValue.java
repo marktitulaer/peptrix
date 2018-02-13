@@ -18,8 +18,9 @@ public class ItemValue {
 	@JoinColumn(name = "systemcodeitemid")
 	private Systemcodeitem systemcodeitem;
 
-	//@Column(name = "initid")
-	//private long unitid;
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "unitid")
+	private Unit unit;
 
 	@Column(name = "Itemvalue", length = 200)
 	String itemvalue;
@@ -46,13 +47,13 @@ public class ItemValue {
 		this.systemcodeitem = systemcodeitem;
 	}
 
-	//public long getUnitid() {
-	//	return unitid;
-	//}
+	public Unit getUnit() {
+		return unit;
+	}
 
-	//public void setUnitid(long unitid) {
-		//this.unitid = unitid;
-	//}
+	public void setUnit(Unit unit) {
+		this.unit = unit;
+	}
 
 	public String getItemvalue() {
 		return itemvalue;
