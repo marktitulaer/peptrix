@@ -233,7 +233,6 @@ public class DataBase {
                 session.save(itemvalue);
             }
 
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "1511.8433");
@@ -274,36 +273,103 @@ public class DataBase {
                 session.save(itemvalue);
             }
 
-            System.out.println("hier 9 ");
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "Carbamidomethyl (C)");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "ENZYME");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setItemvalue("Carbamidomethyl (C)");
+                session.save(itemvalue);
+            }
 
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "Oxidation (M)");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "ENZYME");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setItemvalue("Oxidation (M)");
+                session.save(itemvalue);
+            }
 
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("Carbamidomethyl (C)");
-            // session.save(itemvalue);
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "Phosphorylation (S)");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "ENZYME");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setItemvalue("Phosphorylation (S)");
+                session.save(itemvalue);
+            }
 
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("Oxidation (M)");
-            // session.save(itemvalue);
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "Phosphorylation (T)");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "ENZYME");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setItemvalue("Phosphorylation (T)");
+                session.save(itemvalue);
+            }
 
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("Phosphorylation (S)");
-            // session.save(itemvalue);
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "Phosphorylation (Y)");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "ENZYME");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setItemvalue("Phosphorylation (Y)");
+                session.save(itemvalue);
+            }
 
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("Phosphorylation (T)");
-            // session.save(itemvalue);
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "Trypsin");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "MS2_MOD");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setItemvalue("Trypsin");
+                session.save(itemvalue);
+            }
 
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("Phosphorylation (Y)");
-            // session.save(itemvalue);
-
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("Trypsin");
-            // session.save(itemvalue);
-
-            // itemvalue = new ItemValue();
-            // itemvalue.setItemvalue("Chymotrypsin");
-            // session.save(itemvalue);
+            itemvalue = new ItemValue();
+            queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "Chymotrypsin");
+            itemValues = queryitemValue.list();
+            if (itemValues.size() == 0) {
+                querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
+                querysystemcodeitem.setParameter("code", "MS2_MOD");
+                systemcodeitems = querysystemcodeitem.list();
+                systemcodeitem = systemcodeitems.get(0);
+                itemvalue.setSystemcodeitem(systemcodeitem);
+                itemvalue.setItemvalue("Chymotrypsin");
+                session.save(itemvalue);
+            }
 
             transaction.commit();
         } catch (Exception e) {
