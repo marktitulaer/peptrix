@@ -23,8 +23,6 @@ public class DataBase {
             transaction = session.getTransaction();
             transaction.begin();
 
-            ItemValue itemvalue = new ItemValue();
-
             Equipment equipment = new Equipment();
             Query<Equipment> queryequipment = session.createQuery("from Equipment where Code = :code  ");
             queryequipment.setParameter("code", "MALDITOF");
@@ -166,7 +164,6 @@ public class DataBase {
 
             Unit unit = new Unit();
             Query<Unit> queryunit = session.createQuery("from Unit where Type = :type and UnitValue = :unitvalue ");
-
             queryunit.setParameter("type", "mass");
             queryunit.setParameter("unitvalue", "m/z");
             List<Unit> units =  queryunit.list();
@@ -176,15 +173,24 @@ public class DataBase {
                 session.save(unit);
             }
 
+            ItemValue itemvalue = new ItemValue();
+            Query<ItemValue> queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
+            queryitemValue.setParameter("itemvalue", "960.5631");
+            List<ItemValue> itemValues =  queryitemValue.list();
+            if (itemValues.size() == 0) {
+                queryunit = session.createQuery("from Unit where Type = :type and UnitValue = :unitvalue ");
+                queryunit.setParameter("type", "mass");
+                queryunit.setParameter("unitvalue", "m/z");
+                units =  queryunit.list();
+                unit =  units.get(0);
+                //itemvalue.setUnitid();
+                itemvalue.setItemvalue("960.5631");
 
-            System.out.println("hier 6 ");
+                session.save(itemvalue);
+            }
 
 
-
-
-
-            // itemvalue.setItemvalue("960.5631");
-            // session.save(itemvalue);
+            System.out.println("hier 7 ");
 
             // itemvalue = new ItemValue();
             // itemvalue.setItemvalue("1000.6043");
