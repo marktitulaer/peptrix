@@ -1,70 +1,74 @@
 package pharmaceuticals.nl.peptrix.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "Unit2")
-public class Unit {
+@Table(name = "Unit")
+public class Unit implements Serializable {
 
-	@Id
-	@GeneratedValue
-	@Column(name = "unitid")
-	private long unitid;
+    private static final long serialVersionUID = 1L;
 
-	@Column(name = "Type", length = 16)
-	private String type;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "unitid")
+    private long unitid;
 
-	@Column(name = "UnitValue", length = 16)
-	private String unitvalue;
+    @Column(name = "Type", length = 16)
+    private String type;
 
-	@CreationTimestamp
-	private Date created;
+    @Column(name = "UnitValue", length = 16)
+    private String unitvalue;
 
-	@UpdateTimestamp
-	private Date updated;
+    @CreationTimestamp
+    private Date created;
 
-	public long getUnitid() {
-		return unitid;
-	}
+    @UpdateTimestamp
+    private Date updated;
 
-	public void setUnitid(long unitid) {
-		this.unitid = unitid;
-	}
+    public long getUnitid() {
+        return unitid;
+    }
 
-	public String getType() {
-		return type;
-	}
+    public void setUnitid(long unitid) {
+        this.unitid = unitid;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public String getUnitvalue() {
-		return unitvalue;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public void setUnitvalue(String unitvalue) {
-		this.unitvalue = unitvalue;
-	}
+    public String getUnitvalue() {
+        return unitvalue;
+    }
 
-	public Date getCreated() {
-		return created;
-	}
+    public void setUnitvalue(String unitvalue) {
+        this.unitvalue = unitvalue;
+    }
 
-	public void setCreated(Date created) {
-		this.created = created;
-	}
+    public Date getCreated() {
+        return created;
+    }
 
-	public Date getUpdated() {
-		return updated;
-	}
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
-	public void setUpdated(Date updated) {
-		this.updated = updated;
-	}
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
 
 }

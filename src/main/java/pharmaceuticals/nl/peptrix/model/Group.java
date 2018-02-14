@@ -1,16 +1,20 @@
 package pharmaceuticals.nl.peptrix.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "Group2_")
-public class Group {
+@Table(name = "Group_")
+public class Group implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "group_id")
 	private long groupid;
 
