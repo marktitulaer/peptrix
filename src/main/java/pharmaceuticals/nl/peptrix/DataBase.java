@@ -279,7 +279,7 @@ public class DataBase {
             itemValues = queryitemValue.list();
             if (itemValues.size() == 0) {
                 querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
-                querysystemcodeitem.setParameter("code", "ENZYME");
+                querysystemcodeitem.setParameter("code", "MS2_MOD");
                 systemcodeitems = querysystemcodeitem.list();
                 systemcodeitem = systemcodeitems.get(0);
                 itemvalue.setSystemcodeitem(systemcodeitem);
@@ -293,7 +293,7 @@ public class DataBase {
             itemValues = queryitemValue.list();
             if (itemValues.size() == 0) {
                 querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
-                querysystemcodeitem.setParameter("code", "ENZYME");
+                querysystemcodeitem.setParameter("code", "MS2_MOD");
                 systemcodeitems = querysystemcodeitem.list();
                 systemcodeitem = systemcodeitems.get(0);
                 itemvalue.setSystemcodeitem(systemcodeitem);
@@ -307,7 +307,7 @@ public class DataBase {
             itemValues = queryitemValue.list();
             if (itemValues.size() == 0) {
                 querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
-                querysystemcodeitem.setParameter("code", "ENZYME");
+                querysystemcodeitem.setParameter("code", "MS2_MOD");
                 systemcodeitems = querysystemcodeitem.list();
                 systemcodeitem = systemcodeitems.get(0);
                 itemvalue.setSystemcodeitem(systemcodeitem);
@@ -321,7 +321,7 @@ public class DataBase {
             itemValues = queryitemValue.list();
             if (itemValues.size() == 0) {
                 querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
-                querysystemcodeitem.setParameter("code", "ENZYME");
+                querysystemcodeitem.setParameter("code", "MS2_MOD");
                 systemcodeitems = querysystemcodeitem.list();
                 systemcodeitem = systemcodeitems.get(0);
                 itemvalue.setSystemcodeitem(systemcodeitem);
@@ -335,7 +335,7 @@ public class DataBase {
             itemValues = queryitemValue.list();
             if (itemValues.size() == 0) {
                 querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
-                querysystemcodeitem.setParameter("code", "ENZYME");
+                querysystemcodeitem.setParameter("code", "MS2_MOD");
                 systemcodeitems = querysystemcodeitem.list();
                 systemcodeitem = systemcodeitems.get(0);
                 itemvalue.setSystemcodeitem(systemcodeitem);
@@ -349,7 +349,7 @@ public class DataBase {
             itemValues = queryitemValue.list();
             if (itemValues.size() == 0) {
                 querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
-                querysystemcodeitem.setParameter("code", "MS2_MOD");
+                querysystemcodeitem.setParameter("code", "ENZYME");
                 systemcodeitems = querysystemcodeitem.list();
                 systemcodeitem = systemcodeitems.get(0);
                 itemvalue.setSystemcodeitem(systemcodeitem);
@@ -363,7 +363,7 @@ public class DataBase {
             itemValues = queryitemValue.list();
             if (itemValues.size() == 0) {
                 querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
-                querysystemcodeitem.setParameter("code", "MS2_MOD");
+                querysystemcodeitem.setParameter("code", "ENZYME");
                 systemcodeitems = querysystemcodeitem.list();
                 systemcodeitem = systemcodeitems.get(0);
                 itemvalue.setSystemcodeitem(systemcodeitem);
