@@ -216,8 +216,6 @@ public class Controller
 
 	public JComboBox<String> combo_Taxonomy;
 
-	// public JComboBox<String> combo_proteindatabases;
-
 	public JComboBox<String> combo_searchengine;
 
 	public JComboBox<String> combo_ITOLU;
@@ -229,8 +227,6 @@ public class Controller
 	public JComboBox<String> calibrationstandard;
 
 	public JComboBox<String> equipmentcombo;
-
-	// public JComboBox<String> comboenzymes;
 
 	public JComboBox<String> filtercombobox2;
 
@@ -333,6 +329,8 @@ public class Controller
 	public JButton btnallocation = new JButton("Allocation");
 
 	public JButton btncreatematrix = new JButton("Create Matrix");
+
+	public JButton btnfasta = new JButton("Fasta files");
 
 	public JButton btnwilcoxon = new JButton("Wilcoxon");
 
@@ -649,8 +647,6 @@ public class Controller
 	StringBuffer linebuffer;
 
 	String dialogtitle;
-
-	// String selected_database;
 
 	String strexperimentid;
 
