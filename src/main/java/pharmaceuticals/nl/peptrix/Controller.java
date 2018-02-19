@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.TextEvent;
-import java.awt.event.TextListener;
+//import java.awt.event.TextListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -45,7 +45,6 @@ import pharmaceuticals.nl.peptrix.gui.application.menu.Buttonstoppanel;
 import pharmaceuticals.nl.peptrix.statistics.wilcoxon.Cleanpvalues;
 import pharmaceuticals.nl.peptrix.statistics.wilcoxon.DisplayPplot;
 import pharmaceuticals.nl.peptrix.statistics.wilcoxon.DisplayPvalues;
-//import pharmaceuticals.nl.peptrix.statistics.wilcoxon.Getgroupnumberswilcoxon;
 import pharmaceuticals.nl.peptrix.statistics.wilcoxon.InsertresultrecordWilcoxon;
 import pharmaceuticals.nl.peptrix.statistics.wilcoxon.StartWilcoxon;
 import pharmaceuticals.nl.peptrix.statistics.wilcoxon.StorePplot;
@@ -70,7 +69,9 @@ import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class Controller
-		implements TextListener, ActionListener, MouseListener, ItemListener, PropertyChangeListener, FocusListener {
+		implements ActionListener, MouseListener, ItemListener, PropertyChangeListener, FocusListener {
+
+	public CreateMatrixAction createMatrixAction;
 
 	Object[][] odatamatrixfileswicoxon;
 
@@ -477,8 +478,6 @@ public class Controller
 	public TextField inputdeltamzsearchcalibrant;
 
 	public TextField dateexperiment;
-
-	public TextField experimentid2;
 
 	public TextField inputminimumcountmasses;
 
@@ -916,6 +915,10 @@ public class Controller
 		ftpremotehost = "127.0.0.1";
 		duration_hour = 16;
 		ftp_longtime = duration_hour * minute_per_hour * second_per_minute * milliseconds;
+
+		createMatrixAction = new CreateMatrixAction(this);
+
+
 		createnewexperiment = new Createnewexperiment(this);
 		exportfiletodisk = new ExportFileToDisk(this);
 		progress = new Progress();
@@ -963,6 +966,10 @@ public class Controller
 		resultService = new ResultServiceImpl(this);
 	}
 
+	public void textValueChanged(TextEvent evt) {
+
+	}
+
 	public Color getcolor_empty_frames() {
 		return color_empty_frames;
 	}
@@ -981,7 +988,7 @@ public class Controller
 		inputgradientchange[2] = -1;
 		creatematrix.displayframes();
 		if (strinputexperimentid != null) {
-			experimentid2.setText(strinputexperimentid);
+			createMatrixAction.experimentid2.setText(strinputexperimentid);
 		}
 		frame.setVisible(true);
 	}
@@ -1029,68 +1036,6 @@ public class Controller
 		frame.setVisible(true);
 	}
 
-	public void textValueChanged(TextEvent evt) {
-		PerformAction(evt.getSource());
-		if (evt.getSource() == experimentid2) {
-			creatematrix.creatematrix_center.centerpanelsouthcreatematrix.removeAll2();
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
-					.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
-					.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.startcreatematrixpanel
-					.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.peakfindinputpanel
-					.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
-					.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
-					.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.dummypanel.setVisible(false);
-			dataexperiment[3] = "";
-			peakfindmethod = 1;
-			centroidingmethod = -1;
-			inputerror = -1;
-			matrixfiles = collectmatrixfiles.collectmatrixfiles(experimentid2.getText());
-			dataexperiment = getexperimentdata.getexperimentdata(experimentid2.getText());
-			experimentname2.setText(dataexperiment[0]);
-			equipmentname2.setText(dataexperiment[1]);
-			dateexperiment2.setText(dataexperiment[2]);
-			boolean equipmentid_ok = false;
-			try {
-				int testint = Integer.parseInt(dataexperiment[3]);
-				if (testint > 0) {
-					equipmentid_ok = true;
-				}
-			} catch (Exception ex) {
-			}
-			if (equipmentid_ok) {
-				creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
-						.setVisible(true);
-				creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
-						.setVisible(true);
-				creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.startcreatematrixpanel
-						.setVisible(true);
-				creatematrix.creatematrix_center.centerpanelsouthcreatematrix.setvisible();
-				creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.peakfindinputpanel
-						.setVisible(true);
-				creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
-						.setVisible(true);
-				creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
-						.setVisible(true);
-				creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.dummypanel.setVisible(true);
-				creatematrix.fill_panels_with_fields();
-				setlabelsanddefaults();
-				setbackground(colorgrey);
-				frame.setVisible(true);
-				if (combomatrixtodisplay.getItemCount() > 0) {
-					combomatrixtodisplay.setSelectedIndex(0);
-				}
-			}
-		} else {
-			textValueChangedZ(evt);
-		}
-	}
-
 	public void textValueChangedZ(TextEvent evt) {
 		textValueChanged3(odata_allocation, evt, odatasample, datalength2);
 		clearallcheckboxes(datalength2);
@@ -1110,12 +1055,12 @@ public class Controller
 			updategroupid = -1;
 			for (int i = 0; i <= (datalength - 1); i++) {
 				if (evt.getSource() == Sampleid[i]) {
-					Sampleid[i].removeTextListener(this);
+					Sampleid[i].removeTextListener(createMatrixAction);
 					updatesampleid = i;
 					strsampleid = Sampleid[i].getText().trim();
 				}
 				if (evt.getSource() == Groupid[i]) {
-					Groupid[i].removeTextListener(this);
+					Groupid[i].removeTextListener(createMatrixAction);
 					updategroupid = i;
 					strgroupid = Groupid[i].getText().trim();
 				}
@@ -1501,8 +1446,8 @@ public class Controller
 		minimumcountmasses.setText("Mass counts in matrix    > ");
 		labeltimealignment.setText("Time Alignment");
 		labelpointstimealignment.setText("Minimum points timealignment");
-		if (!experimentid2.getText().trim().equalsIgnoreCase("")) {
-			count_allocated_records = resultservice.countallocatedrecords(experimentid2);
+		if (!createMatrixAction.experimentid2.getText().trim().equalsIgnoreCase("")) {
+			count_allocated_records = resultservice.countallocatedrecords(createMatrixAction.experimentid2);
 			if (count_allocated_records.length > 0) {
 				if (Integer.parseInt(count_allocated_records[0][0].toString().trim()) >= 100) {
 					inputminimumcountmasses.setText(String.valueOf((int) Math
@@ -1519,7 +1464,7 @@ public class Controller
 					inputminimumcountmasses.setText("0");
 				}
 			}
-			odatafiletypes2 = resultservice.resulttype(experimentid2);
+			odatafiletypes2 = resultservice.resulttype(createMatrixAction.experimentid2);
 			if (odatafiletypes2.length > 0) {
 				for (int i = 0; i < odatafiletypes2.length; i++) {
 					for (int j = 0; j < filetypes.length; j++) {
@@ -2219,7 +2164,7 @@ public class Controller
 				ftp.login(ftpuser, ftppassword);
 				ftp.setConnectMode(FTPConnectMode.PASV);
 				ftp.setType(FTPTransferType.BINARY);
-				ftp.chdir(File.separator + dataexperiment[4] + File.separator + experimentid2.getText().trim());
+				ftp.chdir(File.separator + dataexperiment[4] + File.separator + createMatrixAction.experimentid2.getText().trim());
 				numberofrows = 0;
 			} catch (Exception e) {
 				if (debugmode) {
@@ -2490,14 +2435,14 @@ public class Controller
 			clearSourceSelected();
 		}
 		if (choice == btnwilcoxon2) {
-			if (!experimentid2.getText().trim().equalsIgnoreCase("")) {
+			if (!createMatrixAction.experimentid2.getText().trim().equalsIgnoreCase("")) {
 				createwilcoxon = new CreateWilcoxon(this);
-				createwilcoxon.selectexperiment(experimentid2.getText().trim());
+				createwilcoxon.selectexperiment(createMatrixAction.experimentid2.getText().trim());
 			}
 		}
 		if (choice == allocation2) {
-			if (!experimentid2.getText().trim().equalsIgnoreCase("")) {
-				selectexperimentAllocation(experimentid2.getText().trim());
+			if (!createMatrixAction.experimentid2.getText().trim().equalsIgnoreCase("")) {
+				selectexperimentAllocation(createMatrixAction.experimentid2.getText().trim());
 			}
 		}
 		if (choice == creatematrixmethodcombobox) {
@@ -2530,7 +2475,7 @@ public class Controller
 			string_apodization_method = "none";
 		}
 		if (choice == search_experiment) {
-			updatefield = experimentid2;
+			updatefield = createMatrixAction.experimentid2;
 			dialogtitle = "Search experiment";
 			searchtablerecorddialog = new JDialog(frame, dialogtitle);
 			searchtablerecordpanel = new JPanel();
@@ -2571,8 +2516,8 @@ public class Controller
 			performtimealgnment = checkboxtimealignment.getState();
 			experiment = new Experiment();
 			experiment.setraw_to_mzXML(raw_to_mzXML);
-			strexperimentid = experimentid2.getText().trim();
-			experiment.setExperimentid(experimentid2.getText().trim());
+			strexperimentid = createMatrixAction.experimentid2.getText().trim();
+			experiment.setExperimentid(createMatrixAction.experimentid2.getText().trim());
 			internalcalibration = checkbox_internalcalibration.getState();
 			strinputnumberofreplicatessample = inputnumberofreplicatessample.getText().trim();
 			str_threshold_noisy_spectra = peaksnoisyspectra.getText().trim();
@@ -2827,9 +2772,9 @@ public class Controller
 			if (readdatafiles != null) {
 				readdatafiles = null;
 			}
-			odatanewresultid = resultservice.displaynewmatrix(experimentid2.getText().trim());
+			odatanewresultid = resultservice.displaynewmatrix(createMatrixAction.experimentid2.getText().trim());
 			displaymatrix(odatanewresultid[0][0].toString().trim());
-			experimentid2.setText(experimentid2.getText().trim());
+			createMatrixAction.experimentid2.setText(createMatrixAction.experimentid2.getText().trim());
 		}
 		if (choice == btnGroup) {
 			wherestring = "";
@@ -2876,6 +2821,9 @@ public class Controller
 			selectexperimentAllocation("-1");
 		}
 		if (choice == btncreatematrix) {
+			selectexperiment("-1");
+		}
+		if (choice == btnfasta) {
 			selectexperiment("-1");
 		}
 		if (choice == btnwilcoxon) {
@@ -2948,7 +2896,7 @@ public class Controller
 			for (int i = 0; i <= (datalength2 - 1); i++) {
 				if (choice == searchsample[i]) {
 					updatefield = Sampleid[i];
-					Sampleid[i].addTextListener(this);
+					Sampleid[i].addTextListener(createMatrixAction);
 					dialogtitle = "Search sample";
 					searchtablerecorddialog = new JDialog(this.frame, dialogtitle);
 					searchtablerecordpanel = new JPanel();
@@ -2961,7 +2909,7 @@ public class Controller
 				}
 				if (choice == searchgroup[i]) {
 					updatefield = Groupid[i];
-					Groupid[i].addTextListener(this);
+					Groupid[i].addTextListener(createMatrixAction);
 					dialogtitle = "Search group";
 					searchtablerecorddialog = new JDialog(this.frame, dialogtitle);
 					searchtablerecordpanel = new JPanel();
@@ -2973,13 +2921,13 @@ public class Controller
 					searchtablerecorddialog.setVisible(true);
 				}
 				if (choice == clearsample[i]) {
-					Sampleid[i].addTextListener(this);
+					Sampleid[i].addTextListener(createMatrixAction);
 					Sampleid[i].setText("");
 					Sample_name[i].setText("");
 					Sample_code[i].setText("");
 				}
 				if (choice == cleargroup[i]) {
-					Groupid[i].addTextListener(this);
+					Groupid[i].addTextListener(createMatrixAction);
 					Groupid[i].setText("");
 					Group_name[i].setText("");
 					Group_code[i].setText("");

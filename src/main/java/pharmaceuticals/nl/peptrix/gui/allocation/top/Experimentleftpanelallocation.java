@@ -49,7 +49,7 @@ public class Experimentleftpanelallocation {
 		gridbagexperiment.setConstraints(experimentidlabel, constraintsexperiment);
 		panelexperimentleft.add(experimentidlabel);
 		cc.experimentid = new TextField(20);
-		cc.experimentid.addTextListener(cc);
+		cc.experimentid.addTextListener(cc.createMatrixAction);
 		cc.experimentid.setEnabled(false);
 		cc.experimentid.setBackground(cc.colorgrey);
 		constraintsexperiment.gridx = 1;
@@ -142,7 +142,7 @@ public class Experimentleftpanelallocation {
 		constraintsexperiment.gridwidth = 1;
 		constraintsexperiment.gridheight = 1;
 		cc.selectsampleid = new TextField(20);
-		cc.selectsampleid.addTextListener(cc);
+		cc.selectsampleid.addTextListener(cc.createMatrixAction);
 		cc.selectsampleid.setEnabled(false);
 		cc.selectsampleid.setBackground(cc.colorgrey);
 		gridbagexperiment.setConstraints(cc.selectsampleid, constraintsexperiment);

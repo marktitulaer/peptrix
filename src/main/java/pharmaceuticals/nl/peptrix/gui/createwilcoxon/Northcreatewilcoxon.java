@@ -5,6 +5,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+//import pharmaceuticals.nl.
+
 
 import pharmaceuticals.nl.peptrix.Controller;
 
@@ -43,7 +45,7 @@ public class Northcreatewilcoxon {
 		gridbagexperiment.setConstraints(experimentidlabel, constraintsexperiment);
 		panelexperimentleft.add(experimentidlabel);
 		cc.experimentidwilcoxon = new TextField(20);
-		cc.experimentidwilcoxon.addTextListener(cc);
+		cc.experimentidwilcoxon.addTextListener(cc.createMatrixAction);
 		cc.experimentidwilcoxon.setEnabled(false);
 		cc.experimentidwilcoxon.setBackground(cc.colorgrey);
 		constraintsexperiment.gridx = 2;

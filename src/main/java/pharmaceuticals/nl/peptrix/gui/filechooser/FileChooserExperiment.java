@@ -70,7 +70,7 @@ public class FileChooserExperiment {
 		gridbagexperiment.setConstraints(experimentidlabel, constraintsexperiment);
 		panelexperimentleft.add(experimentidlabel);
 		cc.inputexperimentid = new TextField(20);
-		cc.inputexperimentid.addTextListener(cc);
+		cc.inputexperimentid.addTextListener(cc.createMatrixAction);
 		constraintsexperiment.gridx = 1;
 		constraintsexperiment.gridy = 1;
 		constraintsexperiment.gridwidth = 1;
