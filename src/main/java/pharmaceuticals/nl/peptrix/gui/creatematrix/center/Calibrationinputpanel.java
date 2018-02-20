@@ -63,6 +63,10 @@ public class Calibrationinputpanel {
 		constraintscalibration.gridheight = 1;
 		gridbagcalibration.setConstraints(labelcalibrationmasses, constraintscalibration);
 		jpanel.add(labelcalibrationmasses);
+		//if (cc.strcalibrationstandards == null){
+		//	System.out.println(" cc.strcalibrationstandards == null ");
+		//}
+
 		cc.calibrationstandard = new JComboBox<String>(cc.strcalibrationstandards);
 		cc.calibrationstandard.setLightWeightPopupEnabled(false);
 		constraintscalibration.gridx = 2;

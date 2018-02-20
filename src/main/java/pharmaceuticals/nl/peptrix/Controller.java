@@ -11,7 +11,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.TextEvent;
-//import java.awt.event.TextListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -21,7 +20,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import pharmaceuticals.nl.peptrix.gui.Allocation;
 import pharmaceuticals.nl.peptrix.gui.CreateWilcoxon;
-import pharmaceuticals.nl.peptrix.gui.Creatematrix;
+//import pharmaceuticals.nl.peptrix.gui.Creatematrix;
 import pharmaceuticals.nl.peptrix.gui.Progress;
 import pharmaceuticals.nl.peptrix.gui.ReportAllocation;
 import pharmaceuticals.nl.peptrix.gui.SearchSelection;
@@ -133,7 +132,7 @@ public class Controller
 
 	Allocation allocation;
 
-	Creatematrix creatematrix;
+
 
 	public CreateWilcoxon createwilcoxon;
 
@@ -918,6 +917,9 @@ public class Controller
 
 		createMatrixAction = new CreateMatrixAction(this);
 
+        //createMatrixAction.create_matrix_screen();
+
+		//createMatrixAction.creatematrix = new Creatematrix(cc);
 
 		createnewexperiment = new Createnewexperiment(this);
 		exportfiletodisk = new ExportFileToDisk(this);
@@ -939,7 +941,7 @@ public class Controller
 		strcalibrationstandards = getcalibrationstandards.collectcalibrationstandards();
 		errornotshownbefore = true;
 		allocation = new Allocation(this);
-		creatematrix = new Creatematrix(this);
+
 		searchselection = new SearchSelection(this, frame, pBody);
 		reportallocation = new ReportAllocation(this);
 
@@ -964,6 +966,10 @@ public class Controller
 		sampleserviceimpl = new SampleServiceImpl(this);
 		systemcodeservice = new SystemCodeItemServiceImpl(this);
 		resultService = new ResultServiceImpl(this);
+
+		//createMatrixAction = new CreateMatrixAction(this);
+        createMatrixAction.create_matrix_screen();
+
 	}
 
 	public void textValueChanged(TextEvent evt) {
@@ -986,7 +992,7 @@ public class Controller
 		inputgradientchange[0] = -1;
 		inputgradientchange[1] = -1;
 		inputgradientchange[2] = -1;
-		creatematrix.displayframes();
+		createMatrixAction.creatematrix.displayframes();
 		if (strinputexperimentid != null) {
 			createMatrixAction.experimentid2.setText(strinputexperimentid);
 		}
@@ -1004,7 +1010,7 @@ public class Controller
 	}
 
 	public void setbackground(Color colorgrey) {
-		creatematrix.setbackground(colorgrey);
+		createMatrixAction.creatematrix.setbackground(colorgrey);
 		checkbox_internalcalibration.setBackground(colorgrey);
 		checkdeisotoping.setBackground(colorgrey);
 		checkboxtimealignment.setBackground(colorgrey);
@@ -1431,11 +1437,11 @@ public class Controller
 		}
 		string_apodization_method = "gaussian";
 		btn_Gaussian_Lorentzian.setSelected(true);
-		creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
+		createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
 				.setVisible(true);
-		creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
+		createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
 				.setVisible(true);
-		creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
+		createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
 				.setVisible(true);
 		if (centroidingmethod == 0) {
 			none.setSelected(true);
@@ -1480,7 +1486,7 @@ public class Controller
 			}
 		}
 		if (dataexperiment[3].trim().equalsIgnoreCase("1")) {
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
+            createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
 					.setVisible(false);
 			input_time_widow_lc_ms.setEditable(false);
 			input_time_widow_lc_ms.setBackground(colorgrey);
@@ -1495,7 +1501,7 @@ public class Controller
 			input_changeingradient1.setBackground(colorgrey);
 			input_changeingradient2.setBackground(colorgrey);
 			input_changeingradient3.setBackground(colorgrey);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
+            createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
 					.setVisible(false);
 			if (centroidingmethod < 0) {
 				none.setSelected(true);
@@ -1563,7 +1569,7 @@ public class Controller
 			Raw_to_mzXML.setVisible(false);
 			msconvert_programm_64.setVisible(false);
 			msconvert_programm_32.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
+			createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
 					.setVisible(false);
 			textfieldmaxchargestate.setText("1");
 			textfieldmaxchargestate.setEditable(false);
@@ -1669,13 +1675,13 @@ public class Controller
 				creatematrixmethodcombobox.setSelectedIndex(0);
 			}
 		} else if (dataexperiment[3].trim().equalsIgnoreCase("3")) {
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
+			createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
 					.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
+			createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
 					.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
+			createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
 					.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
+			createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
 					.setVisible(false);
 			if (clusteringtechnique < 1) {
 				clusteringtechnique = 2;
@@ -1775,7 +1781,7 @@ public class Controller
 					combo_ITOLU.setSelectedIndex(i);
 				}
 			}
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
+			createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
 					.setVisible(true);
 			btn_Gaussian_Lorentzian.setVisible(false);
 			btn_sine_bell.setVisible(false);
@@ -1786,11 +1792,11 @@ public class Controller
 			btn_no_apodization.setVisible(false);
 			apodization_method.setVisible(false);
 			if (dataexperiment[3].trim().equalsIgnoreCase("4")) {
-				creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
+				createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
 						.setBorder(BorderFactory.createTitledBorder("Orbitrap"));
 			}
 			if (dataexperiment[3].trim().equalsIgnoreCase("5")) {
-				creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
+				createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
 						.setBorder(BorderFactory.createTitledBorder("Bruker Daltonics Ion Trap"));
 			}
 			inputvarianceisotopicdistance.setText("");
@@ -1835,11 +1841,11 @@ public class Controller
 				clusteringtechnique = 1;
 			}
 			peakfindmethod = 2;
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
+			createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
 					.setVisible(false);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
+			createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
 					.setVisible(true);
-			creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
+			createMatrixAction.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
 					.setVisible(false);
 			if (clusteringtechnique < 1) {
 				clusteringtechnique = 2;
@@ -2149,7 +2155,7 @@ public class Controller
 	}
 
 	public void displaymatrix(String resultid) {
-		creatematrix.getcreatematrixcenterpanelsouth().removeAll();
+		createMatrixAction.creatematrix.getcreatematrixcenterpanelsouth().removeAll();
 		if (resultid != null) {
 			matrixfilename = resultservice.returnmatrixfilename(resultid);
 			filepresent = false;
@@ -2236,13 +2242,13 @@ public class Controller
 					if (matrixtable == null) {
 						matrixtable = new JTable(sorter);
 						matrixtable.setPreferredScrollableViewportSize(
-								creatematrix.creatematrix_center.creatematrixcenter.getSize());
+								createMatrixAction.creatematrix.creatematrix_center.creatematrixcenter.getSize());
 					} else {
 						matrixtable.setModel(sorter);
 					}
 					sorter.setTableHeader(matrixtable.getTableHeader());
 					browserpane = new JScrollPane(matrixtable);
-					creatematrix.creatematrix_center.centerpanelsouthcreatematrix.displaymatrix(temp, numberofrows2,
+					createMatrixAction.creatematrix.creatematrix_center.centerpanelsouthcreatematrix.displaymatrix(temp, numberofrows2,
 							browserpane);
 				}
 			}
@@ -2448,7 +2454,7 @@ public class Controller
 		if (choice == creatematrixmethodcombobox) {
 			int test = creatematrixmethodcombobox.getSelectedIndex();
 			peakfindmethod = test + 1;
-			creatematrix.fill_panels_with_fields();
+			createMatrixAction.creatematrix.fill_panels_with_fields();
 			setlabelsanddefaults();
 			setbackground(colorgrey);
 			frame.setVisible(true);
@@ -2488,14 +2494,14 @@ public class Controller
 		}
 		if (choice == Da) {
 			clusteringtechnique = 2;
-			creatematrix.fill_panels_with_fields();
+			createMatrixAction.creatematrix.fill_panels_with_fields();
 			setlabelsanddefaults();
 			setbackground(colorgrey);
 			frame.setVisible(true);
 		}
 		if (choice == ppm) {
 			clusteringtechnique = 1;
-			creatematrix.fill_panels_with_fields();
+			createMatrixAction.creatematrix.fill_panels_with_fields();
 			setlabelsanddefaults();
 			setbackground(colorgrey);
 			frame.setVisible(true);

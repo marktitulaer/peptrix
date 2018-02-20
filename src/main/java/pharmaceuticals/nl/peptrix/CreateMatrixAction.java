@@ -3,6 +3,7 @@ package pharmaceuticals.nl.peptrix;
 import java.awt.*;
 import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
+import pharmaceuticals.nl.peptrix.gui.Creatematrix;
 
 public class CreateMatrixAction implements TextListener {
 
@@ -10,33 +11,42 @@ public class CreateMatrixAction implements TextListener {
 
     public TextField experimentid2;
 
+    Creatematrix creatematrix;
+
 
     public CreateMatrixAction(Controller cc)
 
     {
         this.cc = cc;
+        //System.out.println("  new Creatematrix(cc) ");
+
+        //creatematrix = new Creatematrix(cc);
+
+        //System.out.println("  na ");
+    }
+
+    public void create_matrix_screen(){
+        creatematrix = new Creatematrix(cc);
     }
 
     public void textValueChanged(TextEvent evt) {
         cc.PerformAction(evt.getSource());
         if (evt.getSource() == experimentid2) {
 
-            System.out.println("============  hier ==========");
-
-            cc.creatematrix.creatematrix_center.centerpanelsouthcreatematrix.removeAll2();
-            cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
+            creatematrix.creatematrix_center.centerpanelsouthcreatematrix.removeAll2();
+            creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
                     .setVisible(false);
-            cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
+            creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
                     .setVisible(false);
-            cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.startcreatematrixpanel
+            creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.startcreatematrixpanel
                     .setVisible(false);
-            cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.peakfindinputpanel
+            creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.peakfindinputpanel
                     .setVisible(false);
-            cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
+            creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
                     .setVisible(false);
-            cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
+            creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
                     .setVisible(false);
-            cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.dummypanel.setVisible(false);
+            creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.dummypanel.setVisible(false);
             cc.dataexperiment[3] = "";
             cc.peakfindmethod = 1;
             cc.centroidingmethod = -1;
@@ -55,21 +65,21 @@ public class CreateMatrixAction implements TextListener {
             } catch (Exception ex) {
             }
             if (equipmentid_ok) {
-                cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
+                creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
                         .setVisible(true);
-                cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
+                creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.panelcalibrationinput
                         .setVisible(true);
-                cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.startcreatematrixpanel
+                creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.startcreatematrixpanel
                         .setVisible(true);
-                cc.creatematrix.creatematrix_center.centerpanelsouthcreatematrix.setvisible();
-                cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.peakfindinputpanel
+                creatematrix.creatematrix_center.centerpanelsouthcreatematrix.setvisible();
+                creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.peakfindinputpanel
                         .setVisible(true);
-                cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
+                creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ftmspanel
                         .setVisible(true);
-                cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
+                creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.ms2_sequencing_panel
                         .setVisible(true);
-                cc.creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.dummypanel.setVisible(true);
-                cc.creatematrix.fill_panels_with_fields();
+                creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.dummypanel.setVisible(true);
+                creatematrix.fill_panels_with_fields();
                 cc.setlabelsanddefaults();
                 cc.setbackground(cc.colorgrey);
                 cc.frame.setVisible(true);
