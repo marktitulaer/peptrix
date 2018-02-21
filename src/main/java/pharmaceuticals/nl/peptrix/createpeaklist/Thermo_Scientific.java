@@ -1,107 +1,63 @@
 package pharmaceuticals.nl.peptrix.createpeaklist;
 
 import java.io.BufferedReader;
-
 import java.io.File;
 import java.io.FileDescriptor;
 import java.util.Vector;
-
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 import org.xml.sax.helpers.DefaultHandler;
-
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 import pharmaceuticals.nl.peptrix.SearchFile;
-
 import com.enterprisedt.net.ftp.FTPClient;
 import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class Thermo_Scientific extends DefaultHandler {
-
     ExportFileToDisk exportfiletodisk;
-
     Process jproc;
-
     FileDescriptor fd;
-
     Controller cc;
-
     FTPClient ftp;
-
     ReadmzXML readmzxml;
-
     File file_thermo_scientific;
-
     JFileChooser filechooser;
-
     SearchFile objectsearchfile;
-
     BufferedReader reader;
-
     String exportname;
-
     Vector<String[]> sequensing_results_vector;
-
     Experiment experiment;
-
     String Batchfilename2;
-
     String clearstatusfile;
-
     String cmd2;
-
     String message = "";
-
     String text;
-
     String Thermo_Scientific_dir;
-
     String emptystring = "";
-
     String filename = "";
-
     String experimentyear = "";
-
     String experimentnumber = "";
-
     String thermoscientific_filename;
-
     String raw_to_mzXML_executable;
-
     String mslevel;
-
     String found_raw_to_mzXML_executable_name;
-
     String finished_text = "finished";
-
     String status_file = "status.txt";
-
     String content;
-
     String found_raw_to_mzXML_executable_name2;
-
     long readw_byteSize;
-
     int procesexitvalue;
-
     int number_of_masses;
-
     int number_of_noise_peaks = 0;
-
     boolean errormessageonce = false;
-
     boolean isWindowsFlag = false;
-
     boolean notfinished;
 
     public Thermo_Scientific(Controller cc, Experiment experiment, ExportFileToDisk exportfiletodisk) {
         raw_to_mzXML_executable = "msconvert.exe";
-
-
         this.exportfiletodisk = exportfiletodisk;
         objectsearchfile = new SearchFile(cc);
         thermoscientific_filename = "thermo_scientific";

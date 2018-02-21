@@ -8,9 +8,7 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class PanelTop {
-
     JPanel toppanel;
-
     FileChooserEquipment filechooserequipment;
 
     public PanelTop(Controller cc) {
@@ -32,5 +30,4 @@ public class PanelTop {
     public JPanel gettoppanel() {
         return toppanel;
     }
-
 }

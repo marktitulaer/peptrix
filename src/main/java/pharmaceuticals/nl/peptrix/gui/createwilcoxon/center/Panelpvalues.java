@@ -5,7 +5,6 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -14,21 +13,13 @@ import javax.swing.JTable;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Panelpvalues {
-
     JPanel detailspanel;
-
     JScrollPane tablepane;
-
     JPanel pvaluespanel;
-
     Controller cc;
-
     GridBagLayout gridbagpvaluespanel;
-
     GridBagConstraints pvaluespanelconstraints;
-
     public JPanel p_plot_panel;
-
     JPanel tablepanel;
 
     public JPanel gettablepanel() {
@@ -69,7 +60,6 @@ public class Panelpvalues {
         tablepanel.setBackground(color);
         p_plot_panel.setBackground(color);
         pvaluespanel.setBackground(color);
-
     }
 
     public void displayPvalues(JTable Pvaluestable) {

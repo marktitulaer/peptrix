@@ -9,81 +9,43 @@ import javax.swing.table.TableColumn;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class SlavePane implements MouseListener, ActionListener {
-
     Object[][] odata;
-
     Object[][] maxnumberofrecords;
-
     ResultSetTableModel resultsettablemodel;
-
     TableSorter sorter;
-
     FlowLayout layoutMgr;
-
     Controller cc;
-
     TableColumn col;
-
     public String table;
-
     public String primarykey;
-
     public String primarykeyvalue;
-
     String query;
-
     String stroffset;
-
     String strlimit;
-
     String querymaxnumberrecords;
-
     JPanel slavepanel;
-
     JPanel panelsouth;
-
     JPanel panelnorth;
-
     JPanel panelnorthwest;
-
     JPanel dummypanel;
-
     JPanel browsepanel;
-
     JPanel browseandinfopanel;
-
     JPanel infopanel;
-
     JTable slaveTable;
-
     JTabbedPane tabbedPane;
-
     StringBuffer tablabel;
-
     JScrollPane scrollpane;
-
     JButton btnNextslave;
-
     JButton btnFirstslave;
-
     JButton btnPreviousslave;
-
     JButton btnLastslave;
-
     JButton btnrefreshslave;
-
     JLabel numberrecordsinfolabel;
-
     int offset = 0;
-
     int limit = 10000;
-
     int numbersofrows = 0;
-
     int intmaxnumberofrecords;
-
     int columnwidth = 100;
-
     boolean debugmode = false;
 
     public SlavePane(String table, String primarykey, String primarykeyvalue, JPanel slavepanel, JTabbedPane tabbedPane,
@@ -92,7 +54,6 @@ public class SlavePane implements MouseListener, ActionListener {
         this.primarykey = primarykey;
         this.primarykeyvalue = primarykeyvalue;
         this.cc = cc;
-
         this.slavepanel = slavepanel;
         this.tabbedPane = tabbedPane;
         if (!primarykeyvalue.trim().equals("")) {

@@ -3,27 +3,17 @@ package pharmaceuticals.nl.peptrix.statistics.wilcoxon;
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.gui.Progress;
 import pharmaceuticals.nl.peptrix.utils.SortMatrix;
-
 import com.enterprisedt.net.ftp.FTPClient;
 
 public class StartWilcoxon {
-
     Controller cc;
-
     String experimentnumber_wilcoxon;
-
     String stringnumberrandomizations;
-
     int int_randomizationgroups;
-
     String color1;
-
     String color2;
-
     String strinputplotheight = "480";
-
     String strinputplotwidth = "480";
-
     StorePvalues storePvalues;
 
     public StartWilcoxon(Controller cc) {
@@ -60,11 +50,9 @@ public class StartWilcoxon {
                     strinputplotheight, strinputplotwidth, cc.dataexperiment[3], progress);
             if (cc.doublePvalues != null) {
                 cc.strexperimentid2 = cc.experimentidwilcoxon.getText().trim();
-
                 cc.cleanedPalues = cc.cleanpvalues.clean_p_values(cc.doublePvalues);
                 int sortrow = 1;
                 cc.sortmatrix = new SortMatrix(cc.cleanedPalues, sortrow);
-
                 if (cc.ftp != null) {
                 } else {
                     try {

@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Allocationcenternorthleft {
-
     JPanel jpanel;
 
     public Allocationcenternorthleft(Controller cc) {
@@ -29,5 +28,4 @@ public class Allocationcenternorthleft {
     public JPanel getpanel() {
         return jpanel;
     }
-
 }

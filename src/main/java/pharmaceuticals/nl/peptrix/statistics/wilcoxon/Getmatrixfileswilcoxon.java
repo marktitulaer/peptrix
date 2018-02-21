@@ -5,15 +5,10 @@ import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 
 public class Getmatrixfileswilcoxon {
-
     Controller cc;
-
     int odatamatrixfileswicoxonlength;
-
     String[] matrixfiles;
-
     String experimentyear;
-
     ResultService resultService;
 
     public Getmatrixfileswilcoxon(Controller cc) {
@@ -46,5 +41,4 @@ public class Getmatrixfileswilcoxon {
         }
         return matrixfiles;
     }
-
 }

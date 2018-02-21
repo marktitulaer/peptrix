@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.gui.allocation.center;
 
 import java.awt.BorderLayout;
-
 import java.awt.ScrollPane;
 import java.awt.Checkbox;
 import java.awt.Color;
@@ -21,27 +20,16 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Panelallocationcentertotal {
-
     ScrollPane scrollallocationcenter;
-
     Controller cc;
-
     JPanel allocationcenterpaneltotal;
-
     JPanel dummypanel;
-
     public JPanel allocationcenterpanelsouth;
-
     Allocationcenterpanelsouth centerpanelsouthallocation;
-
     Object[][] odatasample;
-
     Object[][] odatagroup;
-
     String TableName;
-
     String primarykey;
-
     String primarykeyvalue;
 
     public Panelallocationcentertotal(Controller cc) {

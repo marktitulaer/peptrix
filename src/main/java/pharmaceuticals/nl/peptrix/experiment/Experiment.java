@@ -1,128 +1,66 @@
 package pharmaceuticals.nl.peptrix.experiment;
 
 public class Experiment {
-
     private String str_m_equipmentcode;
-
     private String str_m_equipmentname;
-
     private String str_m_experimentname;
-
     private boolean m_has_retentiontime;
-
     private int m_divisions_in_detemination_noise;
-
     private String m_raw_to_mzXML;
-
     private String m_experimentid;
-
     private String m_experimentyear;
-
     private boolean m_internalcalibration;
-
     private String m_numberofreplicatessample;
-
     private String m_threshold_noisy_spectra;
-
     private String m_numbermisfitsallowed;
-
     private String m_quantilethreshold;
-
     private String m_delta_mz_searchmaximum;
-
     private String m_delta_mz_combine;
-
     private String m_minimum_mass;
-
     private String m_maximum_mass;
-
     private int m_clusteringtechnique;
-
     private String m_thresholdbinarymatrix;
-
     private int m_equipmentid = -1;
-
     private int m_peakfindmethod;
-
     private int m_id_calibrationmasses;
-
     private String m_filetype;
-
     private String m_delta_mz_search_calibrants;
-
     private int m_minimum_number_of_masses_that_should_be_present;
-
     private double m_isotopic_distance_c13_c12;
-
     private String m_taxonomy_name;
-
-
     private boolean m_perform_ms2_sequencing;
-
     private boolean m_only_ms2_sequencedmasses;
-
     private String m_TOL;
-
     private String m_TOLU;
-
     private String m_ITOL;
-
     private String m_ITOLU;
-
     private String m_name_search_engine;
-
     private double m_GaussfactorB;
-
     private double m_LorentzfactorA;
-
     private int m_minimum_points_required_for_time_alignment;
-
     private boolean m_should_time_alignment_be_performed;
-
     private int m_missing_number_ms_scans_allowed;
-
     private int m_peptide_present_in_minimumnumberoffractions;
-
     private int m_zerofillingfactor;
-
     private String[] m_selected_enzymes;
-
     private int m_max_charge_state_peptide;
-
     private double m_deviation_from_expected_intensity_ratio;
-
     private double m_percent_deviation_from_isotopic_distance;
-
     private double m_variance_isotopic_distance;
-
     private double m_time_window_combining_peptide_masses;
-
     private String m_FT_ICR_apodization_method;
-
     private boolean m_perform_deisotoping;
-
     private double[] m_change_in_gradient_after_time;
-
     private int m_method_peak_centroiding;
-
     private String[] m_fixed_peptide_modifications;
-
     private String[] m_variabel_peptide_modifications;
-
     private int m_time_clustering_absolute_or_percentage;
-
     private double m_window_centroiding_ppm;
-
     private double m_maximal_shift_by_centroiding_ppm;
-
     private String m_matrixcountsfilename;
-
     private String m_matrixintensityfilename;
-
     private String m_binarymatrixfilename;
-
     private int m_numberofmasses;
-
     private double[][] m_doublearraycombinedpeaks;
 
     public Experiment() {
@@ -342,7 +280,6 @@ public class Experiment {
     public String gettaxonomy_name() {
         return m_taxonomy_name;
     }
-
 
     public void setperform_ms2_sequencing(boolean perform_ms2_sequencing) {
         m_perform_ms2_sequencing = perform_ms2_sequencing;
@@ -623,5 +560,4 @@ public class Experiment {
     public void setEquipmentcode(String equipmentcode) {
         this.str_m_equipmentcode = equipmentcode;
     }
-
 }

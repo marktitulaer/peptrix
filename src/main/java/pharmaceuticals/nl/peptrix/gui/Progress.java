@@ -4,13 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.TextField;
-
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
 public class Progress {
-
     JProgressBar progressbar;
     JPanel progressPanel;
     JPanel tekstprogressbarpanel;
@@ -46,7 +44,6 @@ public class Progress {
         tekstprogessbar.setText(text);
         jd.setVisible(true);
         progressbar.paintImmediately(progressbar.getVisibleRect());
-
     }
 
     public void setmaximum(int maximum) {
@@ -59,7 +56,6 @@ public class Progress {
             tekstprogessbar.setText(text);
         }
         progressbar.paintImmediately(progressbar.getVisibleRect());
-
     }
 
     public void settext(String text) {
@@ -73,5 +69,4 @@ public class Progress {
         jd.setVisible(false);
         jd.dispose();
     }
-
 }

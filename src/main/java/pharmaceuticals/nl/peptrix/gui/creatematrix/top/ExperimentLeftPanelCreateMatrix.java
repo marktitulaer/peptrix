@@ -4,7 +4,6 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.TextField;
-
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -13,7 +12,6 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class ExperimentLeftPanelCreateMatrix {
-
     JPanel panelexperimentleft;
 
     public ExperimentLeftPanelCreateMatrix(Controller cc) {
@@ -102,5 +100,4 @@ public class ExperimentLeftPanelCreateMatrix {
     public JPanel getpanel() {
         return panelexperimentleft;
     }
-
 }

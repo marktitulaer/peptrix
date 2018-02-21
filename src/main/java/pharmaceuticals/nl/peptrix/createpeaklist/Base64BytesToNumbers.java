@@ -1,35 +1,20 @@
 package pharmaceuticals.nl.peptrix.createpeaklist;
 
 public class Base64BytesToNumbers {
-
     StringBuffer binary_string_buffer;
-
     StringBuffer binary_string_buffer2;
-
     String mantissastring = "";
-
     String exponentstring = "";
-
     String binary_string = "";
-
     String binary_string2 = "";
-
     double value = 0;
-
     double mantissa = 1;
-
     double double_exponent;
-
     int sign = 0;
-
     int num;
-
     int num2;
-
     int numberofvalues;
-
     int count;
-
     int totalpeakscount;
 
     public Spectrum convert_single_precision_byteorder_network(int outputcount, byte[] input_output_bytes) {
@@ -139,5 +124,4 @@ public class Base64BytesToNumbers {
         }
         return spectrum;
     }
-
 }

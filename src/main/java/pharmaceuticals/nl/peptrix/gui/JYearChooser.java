@@ -3,11 +3,8 @@ package pharmaceuticals.nl.peptrix.gui;
 import java.util.Calendar;
 
 class JYearChooser extends JSpinField {
-
     protected JDayChooser dayChooser;
-
     protected int startYear;
-
     protected int endYear;
 
     public JYearChooser() {
@@ -61,5 +58,4 @@ class JYearChooser extends JSpinField {
     public void setStartYear(int startYear) {
         setMinimum(startYear);
     }
-
 }

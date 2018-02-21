@@ -12,59 +12,32 @@ import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class StoredetailsWilcoxon {
-
     int testint;
-
     String linetime;
-
     StringBuffer linetimebuffer;
-
     StringBuffer linebuffer2;
-
     String line;
-
     StringBuffer linebuffer;
-
     StringBuffer bufferheaderdetailsgroup1;
-
     StringBuffer bufferheaderdetailsgroup2;
-
     StringBuffer buffermatrixdata;
-
     StringBuffer buffermatrixdatagroup1;
-
     StringBuffer buffermatrixdatagroup2;
-
     Controller cc;
-
     boolean ms_data_present;
-
     boolean first;
-
     String[] teststring1;
-
     String[] teststring2;
-
     String line2;
-
     double meangroup1;
-
     double meangroup2;
-
     boolean createbufferheaderdetailsgroup1;
-
     boolean createbufferheaderdetailsgroup2;
-
     double totalsgroup1;
-
     double countsgroup1;
-
     double countsgroup2;
-
     double totalsgroup2;
-
     String exportname;
-
     int index;
 
     public StoredetailsWilcoxon(Controller cc) {
@@ -190,7 +163,6 @@ public class StoredetailsWilcoxon {
                                 totalsgroup2 = totalsgroup2 + Double.valueOf(cc.temp2[index].trim()).doubleValue();
                                 countsgroup2 = countsgroup2 + 1;
                             }
-
                         }
                         line2 = "";
                         linebuffer2 = new StringBuffer(line2);
@@ -337,5 +309,4 @@ public class StoredetailsWilcoxon {
             e.printStackTrace();
         }
     }
-
 }

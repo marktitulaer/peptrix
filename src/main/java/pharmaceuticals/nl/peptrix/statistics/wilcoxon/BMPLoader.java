@@ -5,7 +5,6 @@ import java.awt.*;
 import java.io.*;
 
 public class BMPLoader {
-
     public static Image read(byte[] inputdata) {
         try {
             int byte_14_BITMAPFILEHEADER = 14;

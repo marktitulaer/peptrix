@@ -3,9 +3,7 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public class Filetypes {
-
     public Filetypes() {
-
     }
 
     public boolean can_be_processed(Experiment experiment) {
@@ -16,11 +14,9 @@ public class Filetypes {
         boolean filetype_canbe_processed = false;
         if (filetype != null) {
             if ((equipmentid == 1) && filetype.equalsIgnoreCase("fid")) {
-
                 filetype_canbe_processed = true;
             }
             if ((equipmentid == 2) && filetype.equalsIgnoreCase("fid")) {
-
                 filetype_canbe_processed = true;
             }
             if ((equipmentid == 1) && filetype.equalsIgnoreCase("txt")) {

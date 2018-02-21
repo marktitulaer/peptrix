@@ -3,19 +3,12 @@ package pharmaceuticals.nl.peptrix.creatematrix;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public class Checkbettermatchingothermass {
-
     Experiment experiment;
-
     double valueprevious;
-
     double valuenext;
-
     int change_j;
-
     int increase_k;
-
     boolean addmasstolist;
-
     boolean checksmallerdistance;
 
     public Checkbettermatchingothermass(Experiment experiment) {

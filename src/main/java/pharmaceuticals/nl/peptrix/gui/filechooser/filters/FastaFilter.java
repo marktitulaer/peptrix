@@ -3,11 +3,8 @@ package pharmaceuticals.nl.peptrix.gui.filechooser.filters;
 import java.io.File;
 
 public class FastaFilter extends SuffixAwareFilter {
-
     String suffix;
-
     String searchname = ".fasta";
-
     boolean fasta_in_name = false;
 
     @Override

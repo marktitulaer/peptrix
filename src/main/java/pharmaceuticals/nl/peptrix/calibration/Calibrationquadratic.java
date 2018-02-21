@@ -3,9 +3,7 @@ package pharmaceuticals.nl.peptrix.calibration;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Calibrationquadratic {
-
     Controller cc;
-
     Calibration calibration;
 
     public Calibrationquadratic(Controller cc) {
@@ -26,5 +24,4 @@ public class Calibrationquadratic {
                 number_of_calibration_coefficients, Rscriptname);
         return calibration_coefficients;
     }
-
 }

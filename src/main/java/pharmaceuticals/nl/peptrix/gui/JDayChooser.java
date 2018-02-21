@@ -7,47 +7,26 @@ import java.util.*;
 import javax.swing.*;
 
 class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusListener, MouseListener {
-
     protected JButton[] days;
-
     protected JButton[] weeks;
-
     protected JButton selectedDay;
-
     protected JPanel weekPanel;
-
     protected JPanel dayPanel;
-
     protected int day;
-
     protected Color oldDayBackgroundColor;
-
     protected Color selectedColor;
-
     protected Color sundayForeground;
-
     protected Color weekdayForeground;
-
     protected Color decorationBackgroundColor;
-
     protected String[] dayNames;
-
     protected Calendar calendar;
-
     protected Calendar today;
-
     protected Locale locale;
-
     protected boolean initialized;
-
     protected boolean weekOfYearVisible;
-
     protected boolean decorationBackgroundVisible = true;
-
     protected boolean decorationBordersVisible;
-
     private boolean alwaysFireDayProperty;
-
     JCalendar parentcalendar;
 
     public JDayChooser() {
@@ -74,7 +53,6 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
                 int index = x + (7 * y);
                 if (y == 0) {
                     days[index] = new JButton() {
-
                         private static final long serialVersionUID = -5809626126834906203L;
 
                         @Override
@@ -106,7 +84,6 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
         weeks = new JButton[7];
         for (int i = 0; i < 7; i++) {
             weeks[i] = new JButton() {
-
                 private static final long serialVersionUID = 5340957604009810961L;
 
                 @Override
@@ -341,7 +318,6 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
         return "JDayChooser";
     }
 
-
     public void actionPerformed(ActionEvent e) {
         JButton button = (JButton) e.getSource();
         String buttonText = button.getText();
@@ -349,14 +325,11 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
         setDay(day);
     }
 
-
     public void focusGained(FocusEvent e) {
     }
 
-
     public void focusLost(FocusEvent e) {
     }
-
 
     public void keyPressed(KeyEvent e) {
         int offset = (e.getKeyCode() == KeyEvent.VK_UP) ? (-7)
@@ -367,17 +340,13 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
         if ((newDay >= 1) && (newDay <= calendar.getMaximum(Calendar.DAY_OF_MONTH))) {
             setDay(newDay);
         }
-
     }
-
 
     public void keyTyped(KeyEvent e) {
     }
 
-
     public void keyReleased(KeyEvent e) {
     }
-
 
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);
@@ -476,25 +445,20 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
         initDecorations();
     }
 
-
     public void mouseClicked(MouseEvent evt) {
         if (evt.getClickCount() > 1) {
             parentcalendar.btnOK.doClick();
         }
     }
 
-
     public void mouseEntered(MouseEvent arg0) {
     }
-
 
     public void mouseExited(MouseEvent arg0) {
     }
 
-
     public void mousePressed(MouseEvent arg0) {
     }
-
 
     public void mouseReleased(MouseEvent arg0) {
     }

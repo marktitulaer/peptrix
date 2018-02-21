@@ -3,11 +3,8 @@ package pharmaceuticals.nl.peptrix.gui.filechooser.filters;
 import java.io.File;
 
 public class SuffixAwareFilter extends javax.swing.filechooser.FileFilter {
-
     String s;
-
     String suffix;
-
     int i;
 
     public String getSuffix(File f) {
@@ -39,7 +36,6 @@ public class SuffixAwareFilter extends javax.swing.filechooser.FileFilter {
 
     @Override
     public String getDescription() {
-
         return null;
     }
 }

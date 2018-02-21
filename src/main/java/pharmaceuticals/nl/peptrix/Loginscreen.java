@@ -9,11 +9,8 @@ import pharmaceuticals.nl.peptrix.gui.CreateMenu;
 import pharmaceuticals.nl.peptrix.gui.application.FramePanel;
 
 public class Loginscreen implements WindowListener {
-
     static String screentitle = "PEPTRIX v3.42";
-
     Controller cc;
-
     DataBase database;
 
     public static void main(String[] args) throws SQLException {

@@ -1,19 +1,14 @@
 package pharmaceuticals.nl.peptrix.export;
 
 import java.io.*;
-
 import javax.swing.JOptionPane;
 
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class ExportFileToDisk {
-
     Controller cc;
-
     FileOutputStream os;
-
     FileDescriptor fd;
-
     boolean exportsucceeded;
 
     public ExportFileToDisk(Controller cc) {
@@ -66,5 +61,4 @@ public class ExportFileToDisk {
         fd.sync();
         os.close();
     }
-
 }

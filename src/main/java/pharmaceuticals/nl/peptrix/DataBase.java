@@ -5,24 +5,20 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-
 import pharmaceuticals.nl.peptrix.database.HibernateUtil;
 import pharmaceuticals.nl.peptrix.model.*;
 
 public class DataBase {
-
     public DataBase() {
     }
 
     public void FillInitialData() {
-
         Session session = null;
         Transaction transaction = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             transaction = session.getTransaction();
             transaction.begin();
-
             Equipment equipment = new Equipment();
             Query<Equipment> queryequipment = session.createQuery("from Equipment where Code = :code  ");
             queryequipment.setParameter("code", "MALDITOF");
@@ -32,7 +28,6 @@ public class DataBase {
                 equipment.setName("Bruker Daltonics Ultraflex MALDI-TOF");
                 session.save(equipment);
             }
-
             equipment = new Equipment();
             queryequipment.setParameter("code", "FTICRMS");
             equipments = queryequipment.list();
@@ -41,7 +36,6 @@ public class DataBase {
                 equipment.setName("FTMS");
                 session.save(equipment);
             }
-
             equipment = new Equipment();
             queryequipment.setParameter("code", "MALDILCMS");
             equipments = queryequipment.list();
@@ -50,7 +44,6 @@ public class DataBase {
                 equipment.setName("MALDI-TOF LC MS");
                 session.save(equipment);
             }
-
             equipment = new Equipment();
             queryequipment.setParameter("code", "ORBITRAP");
             equipments = queryequipment.list();
@@ -59,7 +52,6 @@ public class DataBase {
                 equipment.setName("LTQ Orbitrap LC MS");
                 session.save(equipment);
             }
-
             equipment = new Equipment();
             queryequipment.setParameter("code", "IONTRAP");
             equipments = queryequipment.list();
@@ -68,7 +60,6 @@ public class DataBase {
                 equipment.setName("Bruker Ion Trap");
                 session.save(equipment);
             }
-
             Group group = new Group();
             Query<Group> querygroup = session.createQuery("from Group where Group_code = :code  ");
             querygroup.setParameter("code", "1");
@@ -78,7 +69,6 @@ public class DataBase {
                 group.setName("Group 1");
                 session.save(group);
             }
-
             Sample sample = new Sample();
             Query<Sample> querysample = session.createQuery("from Sample where Sample_code = :code  ");
             querysample.setParameter("code", "1");
@@ -88,7 +78,6 @@ public class DataBase {
                 sample.setName("sample1");
                 session.save(sample);
             }
-
             Systemcode systemcode = new Systemcode();
             Query<Systemcode> querysystemcode = session.createQuery("from Systemcode where Code = :code  ");
             querysystemcode.setParameter("code", "CALMASSES");
@@ -98,7 +87,6 @@ public class DataBase {
                 systemcode.setDescription("Calibration Masses");
                 session.save(systemcode);
             }
-
             systemcode = new Systemcode();
             querysystemcode.setParameter("code", "MODIFICATIONS");
             systemcodes = querysystemcode.list();
@@ -107,7 +95,6 @@ public class DataBase {
                 systemcode.setDescription("Modifications");
                 session.save(systemcode);
             }
-
             systemcode = new Systemcode();
             querysystemcode.setParameter("code", "ENZYME");
             systemcodes = querysystemcode.list();
@@ -116,7 +103,6 @@ public class DataBase {
                 systemcode.setDescription("Enzyme");
                 session.save(systemcode);
             }
-
             Systemcodeitem systemcodeitem = new Systemcodeitem();
             Query<Systemcodeitem> querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
             querysystemcodeitem.setParameter("code", "ALBMASSES");
@@ -131,7 +117,6 @@ public class DataBase {
                 systemcodeitem.setDescription("Albumine Masses");
                 session.save(systemcodeitem);
             }
-
             systemcodeitem = new Systemcodeitem();
             querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
             querysystemcodeitem.setParameter("code", "MS2_MOD");
@@ -146,7 +131,6 @@ public class DataBase {
                 systemcodeitem.setDescription("MS2 Modifications");
                 session.save(systemcodeitem);
             }
-
             systemcodeitem = new Systemcodeitem();
             querysystemcodeitem = session.createQuery("from Systemcodeitem where ItemCode = :code  ");
             querysystemcodeitem.setParameter("code", "ENZYME");
@@ -161,7 +145,6 @@ public class DataBase {
                 systemcodeitem.setDescription("Enzyme");
                 session.save(systemcodeitem);
             }
-
             Unit unit = new Unit();
             Query<Unit> queryunit = session.createQuery("from Unit where Type = :type and UnitValue = :unitvalue ");
             queryunit.setParameter("type", "mass");
@@ -172,7 +155,6 @@ public class DataBase {
                 unit.setUnitvalue("m/z");
                 session.save(unit);
             }
-
             ItemValue itemvalue = new ItemValue();
             Query<ItemValue> queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "960.5631");
@@ -192,7 +174,6 @@ public class DataBase {
                 itemvalue.setItemvalue("960.5631");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "1000.6043");
@@ -212,7 +193,6 @@ public class DataBase {
                 itemvalue.setItemvalue("1000.6043");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "1149.6156");
@@ -232,7 +212,6 @@ public class DataBase {
                 itemvalue.setItemvalue("1149.6156");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "1511.8433");
@@ -252,7 +231,6 @@ public class DataBase {
                 itemvalue.setItemvalue("1511.8433");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "2045.0959");
@@ -272,7 +250,6 @@ public class DataBase {
                 itemvalue.setItemvalue("2045.0959");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "Carbamidomethyl (C)");
@@ -286,7 +263,6 @@ public class DataBase {
                 itemvalue.setItemvalue("Carbamidomethyl (C)");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "Oxidation (M)");
@@ -300,7 +276,6 @@ public class DataBase {
                 itemvalue.setItemvalue("Oxidation (M)");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "Phosphorylation (S)");
@@ -314,7 +289,6 @@ public class DataBase {
                 itemvalue.setItemvalue("Phosphorylation (S)");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "Phosphorylation (T)");
@@ -328,7 +302,6 @@ public class DataBase {
                 itemvalue.setItemvalue("Phosphorylation (T)");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "Phosphorylation (Y)");
@@ -342,7 +315,6 @@ public class DataBase {
                 itemvalue.setItemvalue("Phosphorylation (Y)");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "Trypsin");
@@ -356,7 +328,6 @@ public class DataBase {
                 itemvalue.setItemvalue("Trypsin");
                 session.save(itemvalue);
             }
-
             itemvalue = new ItemValue();
             queryitemValue = session.createQuery("from ItemValue where Itemvalue = :itemvalue  ");
             queryitemValue.setParameter("itemvalue", "Chymotrypsin");
@@ -370,7 +341,6 @@ public class DataBase {
                 itemvalue.setItemvalue("Chymotrypsin");
                 session.save(itemvalue);
             }
-
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -381,8 +351,6 @@ public class DataBase {
                 session.close();
             }
         }
-
         HibernateUtil.shutdown();
     }
-
 }

@@ -14,47 +14,26 @@ import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 import pharmaceuticals.nl.peptrix.serviceimpl.SampleServiceImpl;
 
 public class ImportFiles {
-
     FileTransfer filetransfer;
-
     SuffixAwareFilter suffixAwarefilter;
-
     File[] files;
-
     File parent1;
-
     File parent2;
-
     File parent3;
-
     File parent4;
-
     Object[][] filesolreadyindatabase;
-
     String[] strfilesolreadyindatabase;
-
     StringBuffer stringbufferfilename;
-
     String type;
-
     String suffix;
-
     float filegrootte_kbytes;
-
     long lastmod;
-
     int progresscount;
-
     int teller;
-
     ResultService resultservice;
-
     ResultServiceImpl resultServiceImpl;
-
     boolean booleanfileolreadyindatabase;
-
     SampleService sampleService;
-
     SampleServiceImpl sampleServiceImpl;
 
     public void processfiles(Controller cc, Vector<File[]> filevector, String filtertype, String existingexperimentid,
@@ -177,8 +156,6 @@ public class ImportFiles {
                         if ((!(suffix.equals("acqu") || suffix.equals("acqus"))) && (generatesamplecodes)) {
                             sampleService.insertsample(filename);
                         }
-
-
                         cc.strquery = "INSERT INTO Result(Experimentid, Sampleid, Date, Time, Size_KB, File, Type,Year) "
                                 + "VALUES (" + existingexperimentid + ",null,'" + cc.actualtime.getdatestring() + "','"
                                 + cc.actualtime.gettimestring() + "'," + filegrootte_kbytes + ",'" + filename + "','"
@@ -192,7 +169,6 @@ public class ImportFiles {
                                 JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                             }
                         }
-
                         if ((!(suffix.equals("acqu") || suffix.equals("acqus"))) && (generatesamplecodes)) {
                             cc.strquery = "update result res set res.sampleid = (select max(sampleid) from sample sa where sa.sample_code = '"
                                     + filename + "') where res.file = '" + filename + "'and res.experimentid = "

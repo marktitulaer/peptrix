@@ -1,24 +1,17 @@
 package pharmaceuticals.nl.peptrix.serviceimpl;
 
 import java.sql.SQLException;
-
 import javax.swing.JOptionPane;
 
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.service.SampleService;
 
 public class SampleServiceImpl implements SampleService {
-
     String strquery;
-
     Object[][] odatasample;
-
     Controller cc;
-
     Object[][] totalnumberofsamples;
-
     Object[][] numberofsamplesinmatrix;
-
     Object[][] toolownumberofcalibratedsamples;
 
     public SampleServiceImpl(Controller cc) {
@@ -145,5 +138,4 @@ public class SampleServiceImpl implements SampleService {
             }
         }
     }
-
 }

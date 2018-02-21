@@ -1,13 +1,9 @@
 package pharmaceuticals.nl.peptrix.statistics.wilcoxon;
 
 public class CreateexportstringWilcoxon {
-
     String exportstringwilcoxon;
-
     StringBuffer exportbuffer;
-
     String linefeed = "\n";
-
     byte[] data_wilcoxon;
 
     public CreateexportstringWilcoxon() {

@@ -4,19 +4,12 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 
 public class GenerateinputfilesRscript {
-
     Controller cc;
-
     ExportFileToDisk exportfiletodisk;
-
     StringBuffer xdatabuffer;
-
     StringBuffer ydatabuffer;
-
     char backslash = (char) 92;
-
     double[] calibration_coefficients;
-
     int count;
 
     public GenerateinputfilesRscript(Controller cc, ExportFileToDisk exportfiletodisk) {
@@ -46,5 +39,4 @@ public class GenerateinputfilesRscript {
         boolean OK = exporttodisksucceeded_file1 & exporttodisksucceeded_file2;
         return OK;
     }
-
 }

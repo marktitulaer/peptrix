@@ -13,190 +13,100 @@ import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 import pharmaceuticals.nl.peptrix.utils.SortMatrix;
 import pharmaceuticals.nl.peptrix.createpeaklist.MassSpectrometryFile;
-
 import com.enterprisedt.net.ftp.FTPClient;
 import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPException;
 import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class Makematrix {
-
     boolean min_and_max_retentiontime_present;
-
     boolean extra_retention_time_and_ms2_sequencing_data;
-
     Controller cc;
-
     ExportFileToDisk exportmatrixheadertodisk;
-
     ExportFileToDisk exportmatrixcountstodisk;
-
     ExportFileToDisk exportmatrixintensitytodisk;
-
     ExportFileToDisk exportmatrixbinarytodisk;
-
     SortMatrix sortmatrix_ms2;
-
     BigDecimal tempBD;
-
     FileInputStream is;
-
     Vector<String[]> sequensing_results_vector;
-
     Object[][] odata;
-
     Object[][] odatanoisepeaks;
-
     Object[][] odatanoisepeaks2;
-
     Object[][] odata_lc_ms_offset;
-
     String[] arraymassesoffile;
-
     String[] arraytimesoffile;
-
     String[] arrayintensitiesoffile;
-
     String[] compare_sequensing_results;
-
     String[] sequensing_results;
-
     String[] noisemass;
-
     String[] listdir;
-
     String[] arraymintimesoffile;
-
     String[] arraymaxtimesoffile;
-
     String[] massline;
-
     StringBuffer bufferlisminretentiontimesoffile;
-
     StringBuffer stringbufferdetailinformation;
-
     StringBuffer bufferlismaxretentiontimesoffile;
-
     StringBuffer bufferlistintensitiesoffile;
-
     StringBuffer bufferlistimesoffile;
-
     StringBuffer bufferlistmassesoffile;
-
     StringBuffer newsamplecount;
-
     StringBuffer newsampleintensity;
-
     StringBuffer linebuffer;
-
     StringBuffer newsamplebinary;
-
     StringBuffer noiselinebuffer;
-
     String stringclusteringtechnique;
-
     String line;
-
     String temporary_noise_file;
-
     String temporary_noise_file3;
-
     String noiseline = "";
-
     String stringsampleintensity;
-
     String stringsamplebinary;
-
     String listmassesoffile;
-
     String listintensitiesoffile;
-
     String test;
-
     String listtimesoffile;
-
     String listmintimesoffile;
-
     String listmaxtimesoffile;
-
     String fileSeparator;
-
     String newsampleid;
-
     String strdeltatimecombine;
-
     String filenoisepeaks;
-
     String groupid_old;
-
     String sampleid_old;
-
     String stringsamplecount;
-
     String strpeakfindmethod;
-
     String matrixcountsfilename;
-
     String binarymatrixfilename;
-
     String matrixintensityfilename;
-
     double[][] doublearraycombinedpeaks;
-
     double[][] ms2_peaks;
-
     double sum_ms2_retentiontime;
-
     double deltamzcombinelocal2;
-
     double count_ms2;
-
     double sum_ms2_mass;
-
     double absolutedifference;
-
     double doublemass2;
-
     double doublemass3;
-
     double deltatimecombine;
-
     int timeclusteringtechnique;
-
     byte[] bytesnoise;
-
     byte[] data;
-
     byte[] bytesfile;
-
     boolean filenoisepeaks2present;
-
     boolean startcreatinglist = true;
-
     boolean ms2_sequence_already_present;
-
     boolean firstdata = true;
-
     boolean filepresent;
-
     boolean startcreatingnoiselist;
-
     Experiment experiment;
-
     CombineMS2peaks combinems2peaks;
-
     AddPeaksToMatrix addpeakstomatrix;
-
     CombineNoisePeaks combinenoisepeaks;
-
     CombineNoisePeaks2 combinenoisepeaks2;
-
     MassSpectrometryFile masspectrometryfile;
-
     Matrix matrix;
-
     int matrixlenght;
-
     ResultService resultService;
 
     public Makematrix(Controller cc, Experiment experiment) {
@@ -278,7 +188,6 @@ public class Makematrix {
             cc.jdbcconnection.createcon();
             odata = resultService.getreducedresultrecords(experiment.getExperimentid(),
                     experiment.getquantilethreshold());
-
         } catch (Exception e) {
             if (cc.debugmode) {
                 e.printStackTrace();
@@ -388,7 +297,6 @@ public class Makematrix {
                         stringsamplecount = odata[i][0].toString().trim() + "," + odata[i][1].toString().trim() + ","
                                 + odata[i][2].toString().trim() + "," + odata[i][3].toString().trim();
                         firstdata = false;
-
                     } else {
                         stringsamplecount = cc.linefeed + odata[i][0].toString().trim() + ","
                                 + odata[i][1].toString().trim() + "," + odata[i][2].toString().trim() + ","
@@ -403,7 +311,6 @@ public class Makematrix {
                             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                         }
                     }
-
                     try {
                         exportmatrixintensitytodisk.append_data_to_file(stringsamplecount.getBytes());
                     } catch (Exception e) {
@@ -613,15 +520,12 @@ public class Makematrix {
                                                             if (Double
                                                                     .parseDouble(compare_sequensing_results[2]) < Double
                                                                     .parseDouble(sequensing_results[2])) {
-
                                                                 sequensing_results[2] = compare_sequensing_results[2];
-
                                                             }
                                                             if (Double
                                                                     .parseDouble(compare_sequensing_results[3]) > Double
                                                                     .parseDouble(sequensing_results[3])) {
                                                                 sequensing_results[3] = compare_sequensing_results[3];
-
                                                             }
                                                             ms2_sequence_already_present = true;
                                                             sequensing_results_vector.removeElementAt(v);
@@ -649,7 +553,6 @@ public class Makematrix {
                                         || (experiment.getequipmentid() == 5)) {
                                     bufferlistimesoffile.append("," + massline[2].trim());
                                     if ((experiment.getequipmentid() == 4) && (massline.length > 4)) {
-
                                         extra_retention_time_and_ms2_sequencing_data = true;
                                         if (massline[3].trim().equalsIgnoreCase("")) {
                                             bufferlisminretentiontimesoffile.append("," + "-1");
@@ -694,14 +597,12 @@ public class Makematrix {
                                                             deltamzcombinelocal2 = Double
                                                                     .parseDouble(experiment.getdelta_mz_combine());
                                                             if (experiment.getclusteringtechnique() == 1) {
-
                                                                 deltamzcombinelocal2 = Double
                                                                         .parseDouble(experiment.getdelta_mz_combine())
                                                                         * doublemass2 / 1000000;
                                                             }
                                                             absolutedifference = Math.abs(doublemass2 - doublemass3);
                                                             if (absolutedifference < deltamzcombinelocal2) {
-
                                                                 count_ms2 = count_ms2 + Double
                                                                         .parseDouble(compare_sequensing_results[5]);
                                                                 sum_ms2_mass = sum_ms2_mass + (Double
@@ -715,15 +616,12 @@ public class Makematrix {
                                                                 if (Double.parseDouble(
                                                                         compare_sequensing_results[2]) < Double
                                                                         .parseDouble(sequensing_results[2])) {
-
                                                                     sequensing_results[2] = compare_sequensing_results[2];
-
                                                                 }
                                                                 if (Double.parseDouble(
                                                                         compare_sequensing_results[3]) > Double
                                                                         .parseDouble(sequensing_results[3])) {
                                                                     sequensing_results[3] = compare_sequensing_results[3];
-
                                                                 }
                                                                 ms2_sequence_already_present = true;
                                                                 sequensing_results_vector.removeElementAt(v);
@@ -767,11 +665,8 @@ public class Makematrix {
                     masspectrometryfile.setarraymintimesoffile(arraymintimesoffile);
                     masspectrometryfile.setarraymaxtimesoffile(arraymaxtimesoffile);
                     masspectrometryfile.setarraytimesoffile(arraytimesoffile);
-
-
                     addpeakstomatrix.combinepeaks(doublearraycombinedpeaks,
                             extra_retention_time_and_ms2_sequencing_data, masspectrometryfile, matrix);
-
                     if (odatanoisepeaks != null) {
                         if (odatanoisepeaks.length > 0) {
                             if (bytesnoise != null) {
@@ -988,7 +883,6 @@ public class Makematrix {
                     }
                 }
                 for (int i = 0; i < doublearraycombinedpeaks[0].length; i++) {
-
                     if (matrix.gettotalcount(i) < 1) {
                         matrix.settotalcount(i, 1);
                     }

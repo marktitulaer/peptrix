@@ -13,9 +13,7 @@ import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class DisplayPplot {
-
     FTPClient ftp;
-
     Controller cc;
 
     public DisplayPplot(Controller cc) {
@@ -23,7 +21,6 @@ public class DisplayPplot {
     }
 
     public void displayPplot(String input_p_file, CreateWilcoxon createwilcoxon, String stryear, String strexperiment) {
-
         if (ftp == null) {
             try {
                 ftp = new FTPClient();
@@ -95,7 +92,6 @@ public class DisplayPplot {
             JLabel icon_label = new JLabel(p_plot_icon);
             createwilcoxon.p_plot_panel_add_image(icon_label);
         }
-
         try {
             ftp.quit();
         } catch (Exception e) {

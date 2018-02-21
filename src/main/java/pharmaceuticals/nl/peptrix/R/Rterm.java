@@ -8,77 +8,41 @@ import pharmaceuticals.nl.peptrix.SearchFile;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 
 public class Rterm {
-
     ExportFileToDisk exportfiletodisk;
-
     public String RsourceBasePath;
-
     String RtopPath;
-
     String RbasePath;
-
     String RbinBasePath;
-
     File fRscript;
-
     Process jproc;
-
     File fileRtopPath;
-
     String findstring;
-
     int rwvalue = 0;
-
     int rwvalueold = 0;
-
     File[] fileRtopPathsubdirs;
-
     String teststring;
-
     String fullRunRfilePath;
-
     String fullRoutputFilePath;
-
     String fullRsourcePath;
-
     String sRunQuote;
-
     String sInputQuote;
-
     String sOutputQuote;
-
     int idxSpaceInRunFilePath;
-
     int idxSpaceInRscriptInputPath;
-
     int idxSpaceInRscriptOutputPath;
-
     String Rcmd;
-
     FileDescriptor fd;
-
     String Rbatchfile;
-
     public String RinputBasePath;
-
     public String ReportsBasePath;
-
     String RoutBasePath;
-
     String message;
-
     boolean errormessageonce = false;
-
     int count_names;
-
     String r_executable = "r.exe";
-
     String found_r_executable_name;
-
     SearchFile searchfile;
-
     Controller cc;
-
     int follownumber;
 
     public Rterm(Controller cc) {
@@ -112,7 +76,6 @@ public class Rterm {
             fRscript.mkdirs();
         }
         RsourceBasePath = cc.userhome + cc.fileSeparator + "R" + cc.fileSeparator;
-
         fRscript = null;
         try {
             fRscript = new File(RsourceBasePath);
@@ -123,7 +86,6 @@ public class Rterm {
             fRscript.mkdirs();
         }
         RoutBasePath = cc.userhome + cc.fileSeparator + "Out" + cc.fileSeparator;
-
         fRscript = null;
         try {
             fRscript = new File(RoutBasePath);
@@ -133,7 +95,6 @@ public class Rterm {
         if (!fRscript.isDirectory()) {
             fRscript.mkdirs();
         }
-
     }
 
     public void createRbatchfile(String inputRscriptname) {

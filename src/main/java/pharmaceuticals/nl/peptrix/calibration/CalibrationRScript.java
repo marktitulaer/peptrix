@@ -4,33 +4,19 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 
 public class CalibrationRScript {
-
     Controller cc;
-
     CalibrationRScript calibrationRScript;
-
     ExportFileToDisk exportfiletodisk;
-
     StringBuffer xdatabuffer;
-
     StringBuffer ydatabuffer;
-
     StringBuffer inputpathbuffer;
-
     StringBuffer outputpathbuffer;
-
     String searchstring;
-
     String inputpath;
-
     String teststring;
-
     String outputpath;
-
     char backslash = (char) 92;
-
     double[] calibration_coefficients;
-
     int count;
 
     public CalibrationRScript(Controller cc) {

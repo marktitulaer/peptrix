@@ -5,19 +5,12 @@ import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 
 public class InsertGroups {
-
     Controller cc;
-
     InsertGroup insertgroup;
-
     String stroldsampleid;
-
     String strnewampleid;
-
     String stroldgroupid;
-
     String strnewgroupid;
-
     ResultService resultService;
 
     public InsertGroups(Controller cc) {

@@ -22,367 +22,187 @@ import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class ReadmzXML {
-
     ResultService resultService;
-
     StringBuffer listidsofpotentialmonoistopes;
-
     Process jproc;
-
     String searchstring;
-
     String protein;
-
     String scannumber_retentiontime;
-
     String MS2_scannumber;
-
     int integer_MS2_scannumber;
-
     int integer_MS2_scannumber_old;
-
     String MS2_retentiontime;
-
     double double_MS2_retentiontime;
-
     double double_MS2_retentiontime_old;
-
     String[] array_scannumber_retentiontime;
-
     String group_tag;
-
     FileOutputStream os;
-
     FileDescriptor fd;
-
     String input_xml_file_name;
-
     boolean taxonomy_file_created;
-
     boolean default_input_xml_file_created;
-
     boolean ms2dataOK;
-
     GregorianCalendar gc;
-
     SortMatrix sortmatrix;
-
     Controller cc;
-
     Base64Coder base64coder;
-
     Spectrum spectrum;
-
     Simplepeakfind simplepeakfind;
-
     FTPClient ftp = null;
-
     Deisotoping deisotoping;
-
     BigDecimal tempBD;
-
     BufferedReader in;
-
     BufferedReader in_ms2;
-
     StringBuffer databuffer;
-
     StringBuffer databuffer2;
-
     StringBuffer outputstringbuffer;
-
     StringBuffer combined_raw_peaks;
-
     StringBuffer buffer_count_raw_peaks;
-
     StringBuffer buffer_last_lc_fraction;
-
     StringBuffer retentiontime_last_lc_fraction;
-
     StringBuffer buffer_maximum_intensity;
-
     StringBuffer buffer_sum_mass;
-
     StringBuffer buffer_sum_quadratic_mass;
-
     StringBuffer buffer_sum_intensity;
-
     StringBuffer buffer_retentiontime_maximum_intensity;
-
     StringBuffer buffer_retentiontime_start_peak;
-
     StringBuffer export_peak_buffer;
-
     StringBuffer export_noise_buffer;
-
     String[] details_list_of_monoisotopic_ids;
-
     String[] tmp_string;
-
     String[] machedpeak;
-
     String[] directoryfiles;
-
     String[] potential_monoisotopes;
-
     String mzxmlfraction;
-
     String mzxml_filename;
-
     String inputmslevel;
-
     String precision;
-
     String line;
-
     String line_ms2;
-
     String mslevel;
-
     String pairorder;
-
     String byteorder;
-
     String mzxml_peak_data;
-
     String testline;
-
     String testline2;
-
     String testline3;
-
     String peakscount;
-
     String retentiontime;
-
     String precursormassovercharge;
-
     String sampleid;
-
     String Group_id;
-
     String strdatum;
-
     String strtime;
-
     String outputstring;
-
     String teststring = "0123456789.";
-
     String query;
-
     String exportname;
-
     String exportnamexmlfraction;
-
     String linefeed = "\n";
-
     String strjaar = "";
-
     StringBuffer exportbuffer;
-
     String exportstring;
-
     String list_of_monoisotopic_ids;
-
     String directoryfile;
-
     String precursorCharge;
-
     String mgf_file_name;
-
     String mgfstring;
-
     String savetextpart;
-
     String group_id;
-
     byte[] data;
-
     double[][] matrix_combined_raw_peaks;
-
     double[][] peaks;
-
     double[][] ms2_peaks;
-
     double[][] peakstransposed;
-
     double[][] storepeaks;
-
     double[] peaks_also_found_in_previous_fractions;
-
     double[][] potentialpeaks;
-
     double[] newcalibrationmassesraw;
-
     double[] count_peaks;
-
     double[] sum_mass_peaks;
-
     double filegrootte_kbytes;
-
     double offset_lc_ms = 0;
-
     double percent_stdevisotopingdistance;
-
     double deltamzsearchcalibrants;
-
     double deltamzcombinelocal;
-
     double absolutedifference;
-
     double averagemass;
-
     double standarddeviation;
-
     double mass_distance_factor;
-
     int missingfractions;
-
     int index;
-
     int index_end;
-
     int index_end2;
-
     int filenumber;
-
     int followingnumber;
-
     int updatesample;
-
     double testdouble;
-
     int chargestate = 1;
-
     int sortrow;
-
     int testint;
-
     int count_number_of_masses = 0;
-
     int count_number_of_noise_masses = 0;
-
     int r;
-
     boolean filetransported;
-
     boolean filetransported__list;
-
     boolean filetransported__noiselist;
-
     boolean filetransported__rejectedlist;
-
     boolean firsttime;
-
     boolean firsttime2;
-
     boolean internalcalibration;
-
     boolean peaks_data;
-
     boolean run_once = false;
-
     boolean do_once;
-
     boolean makedir = true;
-
     boolean lipodomics = false;
-
     boolean no_deisotoping_lipodomics = false;
-
     boolean first_istope_found;
-
     double istopehigh;
-
     double istopelow;
-
     double intensity_first_isotope;
-
     int countdown;
-
     boolean checkdoublecharge = true;
-
     String fixed_mod;
-
     String variabel_mod;
-
     FileOutputStream mgf_file;
-
     byte[] mgfdata;
-
     SearchFile objectsearchfile;
-
     String found_ms2_database;
-
     String found_xtandem_program;
-
     String program;
-
     String batchfile;
-
     Taxonomy taxonomy;
-
     Default_input_xml default_input_xml;
-
     Input_xml input_xml;
-
     boolean input_xml_file_created;
-
     String ms2_export_xml_filename;
-
     String xtandembatchfile;
-
     String xtandembatchoutputfile;
-
     String xtandemcmd;
-
     String mass_MH;
-
     String ms2_sequence;
-
     String missed_cleavages;
-
     boolean tandembatchfilecreated;
-
     boolean tandembatchfileexecuted;
-
     boolean errormessageonce;
-
     String time_stamp;
-
     String recognision_pattern;
-
     File directory;
-
     Vector<String[]> sequensing_results_vector;
-
     String[] sequensing_results;
-
     String[] compare_sequensing_results;
-
     int save_i;
-
     double number_sequenced_masses;
-
     double double_value_sequenced_mass;
-
     int number_missed_cleavages;
-
     double testdouble1;
-
     double testdouble2;
-
     Experiment experiment;
-
     int clusteringtechnique;
-
     Clusters clusters;
-
     ExportFileToDisk exportfiletodisk;
 
     public ReadmzXML(Controller cc, Experiment experiment, ExportFileToDisk exportfiletodisk) {
-
         resultService = new ResultServiceImpl(cc);
         this.exportfiletodisk = exportfiletodisk;
         this.experiment = experiment;
@@ -447,7 +267,6 @@ public class ReadmzXML {
             ms2_export_xml_filename = cc.userhome + cc.fileSeparator + recognision_pattern + ".xml";
             xtandembatchoutputfile = cc.userhome + cc.fileSeparator + Group_id.trim() + "_" + sampleid.trim() + "_"
                     + String.valueOf(filenumber).trim() + "_output.txt";
-
             input_xml_file_name = cc.userhome + cc.fileSeparator + Group_id.trim() + "_" + sampleid.trim() + "_"
                     + String.valueOf(filenumber).trim() + "_input.xml";
             if (!taxonomy_file_created) {
@@ -663,7 +482,6 @@ public class ReadmzXML {
                     if (exportname != null) {
                         if (!exportname.trim().equalsIgnoreCase("")) {
                             mgfstring = mgfstring + exportname.trim();
-
                         }
                     }
                     mgfstring = mgfstring + " ms2" + linefeed;
@@ -729,7 +547,6 @@ public class ReadmzXML {
                 updatesample = resultService.insertresultrecord("tmp2", filegrootte_kbytes, sampleid, Group_id,
                         experiment, strdatum, strtime, exportnamexmlfraction, strjaar, retentiontime, mzxmlfraction,
                         filenumber, offset_lc_ms);
-
             }
             exportnamexmlfraction = "rejected_" + exportname;
             if ((filetransported__rejectedlist) && (!sampleid.trim().equals("")) && (!Group_id.trim().equals(""))) {
@@ -774,7 +591,6 @@ public class ReadmzXML {
                                     }
                                     jproc = Runtime.getRuntime().exec(xtandembatchfile);
                                     try {
-
                                         jproc.waitFor();
                                     } catch (InterruptedException ie) {
                                         ie.printStackTrace();
@@ -978,7 +794,6 @@ public class ReadmzXML {
                             try {
                                 index_end2 = testline2.substring(index, testline2.length()).indexOf("</note>");
                             } catch (Exception ex) {
-
                             }
                             if (index_end2 > -1) {
                                 testline3 = testline2.substring(index, testline2.length()).substring(0, index_end2);
@@ -1120,7 +935,6 @@ public class ReadmzXML {
                                     try {
                                         number_sequenced_masses = Double.parseDouble(compare_sequensing_results[2]);
                                     } catch (Exception ex) {
-
                                     }
                                     try {
                                         double_value_sequenced_mass = (number_sequenced_masses
@@ -1189,7 +1003,6 @@ public class ReadmzXML {
                                             if (double_MS2_retentiontime < double_MS2_retentiontime_old) {
                                                 sequensing_results[6] = String.valueOf(double_MS2_retentiontime);
                                             }
-
                                         }
                                         try {
                                             double_MS2_retentiontime_old = Double
@@ -1303,7 +1116,6 @@ public class ReadmzXML {
             } catch (Exception e) {
                 peakscount = "";
             }
-
         }
         mslevel = "";
         index = testline.indexOf("mslevel");
@@ -1439,7 +1251,6 @@ public class ReadmzXML {
                                                                 - matrix_combined_raw_peaks[0][o]) < deltamzcombinelocal) {
                                                             peaks_also_found_in_previous_fractions[Integer
                                                                     .parseInt(potential_monoisotopes[i])] = chargestate;
-
                                                         }
                                                     }
                                                 }
@@ -1612,7 +1423,6 @@ public class ReadmzXML {
                     if (peaks[j][0] > 0) {
                         absolutedifference = Math.abs(peaks[i][0] - peaks[j][0]);
                         if (clusteringtechnique == 1) {
-
                             deltamzcombinelocal = mass_distance_factor * peaks[i][0] * deltamzcombine / 1000000;
                         }
                         if (absolutedifference <= deltamzcombinelocal) {
@@ -2097,7 +1907,6 @@ public class ReadmzXML {
         } catch (Exception ex) {
             mzxmlfraction = String.valueOf(followingnumber);
         }
-
         cc.actualtime.resettime();
         strdatum = cc.actualtime.getdatestring();
         strjaar = cc.actualtime.getyear();
@@ -2124,5 +1933,4 @@ public class ReadmzXML {
         outputstring = outputstringbuffer.toString();
         return outputstring;
     }
-
 }

@@ -14,23 +14,14 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Experimentleftpanelallocation {
-
     JPanel panelexperimentleft;
-
     GridBagLayout gridbagexperiment;
-
     GridBagConstraints constraintsexperiment;
-
     JLabel experimentidlabel;
-
     JLabel labelexperimentname;
-
     JLabel equipmentlabel;
-
     JLabel datelabel;
-
     JLabel labelfiletype;
-
     JLabel selectsamplelabel;
 
     public Experimentleftpanelallocation(Controller cc) {
@@ -177,5 +168,4 @@ public class Experimentleftpanelallocation {
     public JPanel getpanel() {
         return panelexperimentleft;
     }
-
 }

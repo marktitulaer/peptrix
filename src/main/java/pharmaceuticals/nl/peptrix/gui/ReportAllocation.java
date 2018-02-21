@@ -18,19 +18,12 @@ import pharmaceuticals.nl.peptrix.gui.Allocation;
 import pharmaceuticals.nl.peptrix.gui.TableSorter;
 
 public class ReportAllocation {
-
     String queryallocationreport;
-
     JScrollPane scrollpane;
-
     public SaveAllocation saveallocation;
-
     Controller cc;
-
     public ResultSetTableModel resultsettablemodel;
-
     Allocation allocation;
-
     ExportFileToDisk exportfiletodisk;
 
     public ReportAllocation(Controller cc) {
@@ -40,13 +33,11 @@ public class ReportAllocation {
 
     public void reportallocation(String filtertype, TableSorter sorter, JTable allocationtable,
                                  JPanel allocationcenterpanelsouth) {
-
         GridBagLayout gridbagresults = new GridBagLayout();
         allocationcenterpanelsouth.setLayout(gridbagresults);
         GridBagConstraints constraintsresults = new GridBagConstraints();
         constraintsresults.anchor = GridBagConstraints.FIRST_LINE_START;
         constraintsresults.insets = new Insets(2, 2, 2, 2);
-
         cc.savereportallocation = new JButton("save report");
         saveallocation = new SaveAllocation(cc);
         allocationcenterpanelsouth.removeAll();
@@ -84,7 +75,6 @@ public class ReportAllocation {
         sorter.setTableHeader(allocationtable.getTableHeader());
         scrollpane = new JScrollPane(allocationtable);
         cc.savereportallocation.addActionListener(cc);
-
         constraintsresults.gridx = 1;
         constraintsresults.gridy = 1;
         constraintsresults.gridwidth = 1;
@@ -99,5 +89,4 @@ public class ReportAllocation {
         allocationcenterpanelsouth.add(scrollpane);
         cc.frame.setVisible(true);
     }
-
 }

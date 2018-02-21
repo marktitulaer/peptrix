@@ -7,7 +7,6 @@ import pharmaceuticals.nl.peptrix.createpeaklist.MassSpectrometryFile;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public interface ResultService {
-
     public int getnumberofrecords();
 
     public int getrecordsnotallocated();
@@ -114,6 +113,4 @@ public interface ResultService {
                                   String retentiontime, String mzxmlfraction, int filenumber, double offset_lc_ms);
 
     public Object[][] getallresultrecords(String existingexperimentid);
-
-
 }

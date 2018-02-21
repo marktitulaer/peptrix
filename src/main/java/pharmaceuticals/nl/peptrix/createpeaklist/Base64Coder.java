@@ -1,13 +1,9 @@
 package pharmaceuticals.nl.peptrix.createpeaklist;
 
 public class Base64Coder {
-
     Base64StringToBytes base64_string_to_bytes;
-
     Base64BytesToNumbers base64_bytes_to_numbers;
-
     int outputcount = 0;
-
     byte[] input_output_bytes;
 
     Base64Coder() {

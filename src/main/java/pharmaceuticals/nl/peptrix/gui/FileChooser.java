@@ -13,21 +13,13 @@ import pharmaceuticals.nl.peptrix.gui.filechooser.filters.XMLFilter;
 import pharmaceuticals.nl.peptrix.gui.filechooser.filters.mzXMLFilter;
 
 public class FileChooser extends JFrame {
-
     Controller cc;
-
     PanelTop paneltop;
-
     public JFileChooser jfileChooser;
-
     public TextFilter textfilter;
-
     public mzXMLFilter mzxmlfilter;
-
     public XMLFilter xmlfilter;
-
     public RawFilter rawfilter;
-
     public FidFilter fidfilter;
 
     public FileChooser(Controller cc) {
@@ -67,5 +59,4 @@ public class FileChooser extends JFrame {
     public FileFilter getFileFilter() {
         return jfileChooser.getFileFilter();
     }
-
 }

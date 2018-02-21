@@ -8,11 +8,8 @@ import pharmaceuticals.nl.peptrix.gui.allocation.Northallocation;
 import pharmaceuticals.nl.peptrix.gui.allocation.Southallocation;
 
 public class Allocation {
-
     Northallocation northallocation;
-
     public Centerallocation centerallocation;
-
     Southallocation southallocation;
 
     public Allocation(Controller cc) {

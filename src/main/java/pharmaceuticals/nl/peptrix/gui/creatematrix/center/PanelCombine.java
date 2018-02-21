@@ -4,31 +4,20 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-
 import javax.swing.JPanel;
 
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class PanelCombine {
-
     Controller cc;
-
     PanelPreprocessing panelpreprocessing;
-
     PanelFTICR panelfticr;
-
     Panel_ms2_sequencing panel_ms2_sequencing;
-
     JPanel combinepanel;
-
     JPanel calibrationinputpanel;
-
     public JPanel preprocessingpanel;
-
     public JPanel ftmspanel;
-
     public JPanel ms2_sequencing_panel;
-
     public Calibrationinputpanel panelcalibrationinput;
 
     public PanelCombine(Controller cc) {
@@ -83,7 +72,6 @@ public class PanelCombine {
         preprocessingpanel.setBackground(color);
         cc.msconvert_programm_32.setBackground(color);
         cc.msconvert_programm_64.setBackground(color);
-
         ftmspanel.setBackground(color);
         ms2_sequencing_panel.setBackground(color);
         calibrationinputpanel.setBackground(color);
@@ -103,5 +91,4 @@ public class PanelCombine {
     public JPanel returnpanel() {
         return combinepanel;
     }
-
 }

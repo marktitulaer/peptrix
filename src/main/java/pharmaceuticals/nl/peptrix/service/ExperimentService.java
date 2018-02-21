@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.service;
 
 public interface ExperimentService {
-
     public String[] getexperimentdata(String strexperimentid);
 
     public String getnewexperimentid();
@@ -13,5 +12,4 @@ public interface ExperimentService {
     public String getlatestexperimentid();
 
     public Object[][] getexperimentdata2(String experimentid);
-
 }

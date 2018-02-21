@@ -3,11 +3,8 @@ package pharmaceuticals.nl.peptrix.gui.filechooser.filters;
 import java.io.File;
 
 public class TandemFilter extends SuffixAwareFilter {
-
     String suffix;
-
     String searchname = "tandem.exe";
-
     boolean tandem_in_name = false;
 
     @Override

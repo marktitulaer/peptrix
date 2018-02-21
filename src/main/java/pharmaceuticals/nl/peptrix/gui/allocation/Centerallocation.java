@@ -8,11 +8,8 @@ import pharmaceuticals.nl.peptrix.gui.allocation.center.Centerpanelnorthallocati
 import pharmaceuticals.nl.peptrix.gui.allocation.center.Panelallocationcentertotal;
 
 public class Centerallocation {
-
     public Panelallocationcentertotal panelallocationcentertotal;
-
     Centerpanelnorthallocation centerpanelnorthallocation;
-
     JPanel jpanel;
 
     public Centerallocation(Controller cc) {

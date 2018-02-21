@@ -4,13 +4,9 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.serviceimpl.ExperimentServiceImpl;
 
 public class Getexistingexperiment {
-
     Controller cc;
-
     Experiment existingexperiment;
-
     ExperimentServiceImpl getexperimentdata;
-
     String[] dataexperiment;
 
     public Getexistingexperiment(Controller cc) {

@@ -4,39 +4,22 @@ import pharmaceuticals.nl.peptrix.experiment.Experiment;
 import pharmaceuticals.nl.peptrix.createpeaklist.MassSpectrometryFile;
 
 public class CombineNoisePeaks {
-
     double valueprevious;
-
     double valuenext;
-
     double min_retention_time;
-
     double max_retention_time;
-
     double doublemass;
-
     double doubleintensity;
-
     double absolutedifference;
-
     double doubletime;
-
     double deltatimelocalcombine;
-
     double deltamzcombinelocal;
-
     double deltatimecombine;
-
     int increase_k;
-
     int increase_j;
-
     int timeclusteringtechnique;
-
     boolean withintimewindow;
-
     boolean checksmallerdistance;
-
     boolean addmasstolist;
 
     public CombineNoisePeaks() {
@@ -73,16 +56,13 @@ public class CombineNoisePeaks {
                     } else {
                         doublemass = Double.valueOf(arraymassesoffile[k]).doubleValue();
                     }
-
                     if (arrayintenistiesoffile[k].trim().equalsIgnoreCase("")) {
                         doubleintensity = -1.0;
                     } else {
                         doubleintensity = Double.valueOf(arrayintenistiesoffile[k]).doubleValue();
                     }
-
                     absolutedifference = Math.abs(doublemass - doublearraycombinedpeaks[0][j]);
                     if (experiment.getclusteringtechnique() == 1) {
-
                         deltamzcombinelocal = Double.parseDouble(experiment.getdelta_mz_combine())
                                 * doublearraycombinedpeaks[0][j] / 1000000;
                     }
@@ -277,7 +257,6 @@ public class CombineNoisePeaks {
                                                         ;
                                                     }
                                                     if (valueprevious > 0) {
-
                                                         if ((Math.abs(valueprevious - doubletime) < Math
                                                                 .abs(doublearraycombinedpeaks[1][j] - doubletime))
                                                                 && (Math.abs(valueprevious
@@ -308,14 +287,12 @@ public class CombineNoisePeaks {
                             }
                         }
                         if (addmasstolist) {
-
                             if (boolean_addnoisepeaks[j] == 1) {
                                 matrix.samplenoisecount[j] = matrix.samplenoisecount[j] + 1;
                                 matrix.samplenoiseintensity[j] = matrix.samplenoiseintensity[j] + doubleintensity;
                                 matrix.addtotalcount(j, 1);
                                 matrix.addaccumulatemass(j, doublemass);
                             }
-
                             if ((j == doublearraycombinedpeaks[0].length - 1) && (k < arraymassesoffile.length - 1)) {
                                 k = arraymassesoffile.length;
                             }

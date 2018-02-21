@@ -11,15 +11,10 @@ import javax.swing.JScrollPane;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class CenterpanelsouthCreatematrix {
-
     JPanel creatematrixcenterpanelsouth;
-
     GridBagLayout gridbglayoutcenterpanelsouth;
-
     GridBagConstraints gridbagconstraints;
-
     JLabel numberofsamples;
-
     JLabel numberofmasses;
 
     public CenterpanelsouthCreatematrix(Controller cc) {
@@ -79,5 +74,4 @@ public class CenterpanelsouthCreatematrix {
     public void setvisible() {
         creatematrixcenterpanelsouth.setVisible(true);
     }
-
 }

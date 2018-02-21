@@ -6,21 +6,14 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 import pharmaceuticals.nl.peptrix.createpeaklist.Makepeaklist;
 import pharmaceuticals.nl.peptrix.gui.Progress;
-
 import com.enterprisedt.net.ftp.*;
 
 public class Combinepeaks {
-
     Controller cc;
-
     Experiment experiment;
-
     FTPClient ftp;
-
     Makematrix makematrix;
-
     Makepeaklist makepeaklist;
-
     Eliminatesamples eliminatesamples;
 
     public Combinepeaks(Controller cc, Experiment experiment) {

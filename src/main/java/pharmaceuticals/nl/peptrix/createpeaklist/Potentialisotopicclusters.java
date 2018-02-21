@@ -3,71 +3,38 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public class Potentialisotopicclusters {
-
     Experiment experiment;
-
     String[] isotopes;
-
     double istopehigh;
-
     double istopelow;
-
     StringBuffer listofpotentialistopes;
-
     StringBuffer listofpotentialmonoistopes;
-
     StringBuffer listofindecespotentialistopes;
-
     double potentialisotope;
-
     boolean is_an_isotope;
-
     double mean;
-
     double istopehigh_doublecharge;
-
     double istopelow_doublecharge;
-
     String linefeed = "\n";
-
     boolean first;
-
     int numberoflines;
-
     double mean2;
-
     int number_of_best_isotopic_clusters;
-
     double sum_of_squares2;
-
     String overviewofisotopes;
-
     StringBuffer bufferoverviewofisotopes;
-
     int j;
-
     int countnumberofpotenialisotopes;
-
     int countnumberofisotopes;
-
     double intensitypreviousisotope;
-
     boolean countmoreisotopes;
-
     boolean is_isotopic_series;
-
     boolean intensity_second_smaller_than_first;
-
     boolean intensity_declining;
-
     int l;
-
     double maxratio;
-
     double minratio;
-
     double sum_of_squares;
-
     double stdev;
 
     public Potentialisotopicclusters(Experiment experiment) {

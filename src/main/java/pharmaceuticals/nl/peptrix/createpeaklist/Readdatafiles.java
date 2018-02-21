@@ -30,613 +30,308 @@ import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 import pharmaceuticals.nl.peptrix.serviceimpl.SystemCodeItemServiceImpl;
 
 public class Readdatafiles extends DefaultHandler {
-
     int countftp;
-
     double referencemass2;
-
     int countdown;
-
     File parsefile;
-
     Monoisotoopfinding monoisotoopfinding;
-
     Thermo_Scientific thermoscientific;
-
     ReadmzXML readmzxml;
-
     SAXParserFactory spf;
-
     SAXParser sp;
-
     FastFourierTransform fft;
-
     Spectrum spectrum;
-
     File file;
-
     FileInputStream is;
-
     FTMSdata ftmsdata;
-
     IdentifyPeaks identifypeaks;
-
     SortMatrix sortmatrix;
-
     SortArray sortarray;
-
     Calibrationquadratic calibrationquadratic;
-
     Calibrationlinear calibrationlinear;
-
     Controller cc;
-
     FileOutputStream os;
-
     FileOutputStream timealignmentreferencemass;
-
     FileOutputStream timealignmentreferenceretentiontime;
-
     FileOutputStream timealignmentreferencesequence;
-
     FileInputStream inputalignmentreferencemass;
-
     FileInputStream inputalignmentreferenceretentiontime;
-
     FileInputStream inputalignmentreferencesequence;
-
     FileInputStream inputpeaklist;
-
     String nametimealignmentreferencemass;
-
     String nametimealignmentreferenceretentiontime;
-
     String nametimealignmentreferencesequence;
-
     FileDescriptor fd;
-
     Combinepeaks combinepeaks;
-
     FTPClient ftp = null;
-
     FTPMessageCollector listener;
-
     Simplepeakfind simplepeakfind;
-
     BigDecimal tempBD;
-
     GregorianCalendar gc;
-
     Object[][] odatacalmasses;
-
     Object[][] odatafiles;
-
     Object[][] odataequipmentid;
-
     Object[][] objectcalmasses;
-
     String[] linearray;
-
     String[] arrayalignmentmasses;
-
     String[] arrayretentiontimes;
-
     String[] arraysequences;
-
     String[] alignment_time;
-
     String[] arrayofremovemassesindices;
-
     String teststring_header = "abcdfghijklmnopqrstuvwxyzABCDFGHIJKLMNOPQRSTUVWXYZ~`!@#$%^&*()_=\\\"?/<>[]{}:;";
-
     String teststring_separated = "0123456789.E-+e";
-
     String line;
-
     String searchstring;
-
     String systemcodeitemid;
-
     String calmassesquery;
-
     String numberofmeasurements;
-
     String acquisname;
-
     String filenameexport;
-
     String exportname;
-
     String exportstring;
-
     String linefeed = "\n";
-
     String fid = "fid";
-
     String acqus = "acqus";
-
     String query;
-
     String experimentnumber;
-
     String strdatum;
-
     String stryear = "";
-
     public String calibtext;
-
     String strtime;
-
     String strquantilethreshold;
-
     String groupcode;
-
     String samplecode;
-
     String matrixcounts;
-
     String matrixcountsfilename;
-
     String matrixintensityfilename;
-
     String matrixintensitystring;
-
     String binarymatrixfilename;
-
     String binarymatrixstring;
-
     String inputtype;
-
     String experimentyear;
-
     String headerline;
-
     String tmp_filename;
-
     String str_aligned;
-
     String tmp_filenameexport;
-
     String localmzxmlfilename;
-
     String save_exportname;
-
-
     String strdeltamzsearchmaximum;
-
     String strinputminimummass;
-
     String strinputmaximummass;
-
     String strthresholdbinarymatrix;
-
     String strdeltamzsearchcalibrants;
-
     StringBuffer linebuffer;
-
     StringBuffer headerbuffer;
-
     StringBuffer timealignmentbuffermassnew;
-
     StringBuffer timealignmentbuffersequencenew;
-
     StringBuffer timealignmentbufferretentiontimenew;
-
     StringBuffer removemassesindices;
-
     StringBuffer removemassesindices2;
-
     double quantilethreshold;
-
     double deltamzsearchmaximum;
-
     double deltamzsearchcalibrants;
-
     double deltamzsearchcalibrantslocal;
-
     double c0;
-
     double c1;
-
     double c2;
-
     double delay;
-
     double timebase;
-
     double time;
-
     double C;
-
     double B;
-
     double A;
-
     double square_root_mass;
-
     double reciprocalmass;
-
     double mass;
-
     double dummy1;
-
     double dummy2;
-
     double sweep;
-
     double aquisitiontime;
-
     double frequencyresolution;
-
     double frequency;
-
     double centralfrequency;
-
     double lowmass;
-
     double highfrequency;
-
     double filegrootte_kbytes;
-
     double deltamzcombine;
-
     double minimummass;
-
     double maximummass;
-
     double thresholdbinarymatrix;
-
     double LorentzfactorA;
-
     double GaussfactorB;
-
     double signal_to_noise;
-
     double multiply;
-
     double progress;
-
     double c13_c12;
-
     double percent_stdevisotopingdistance;
-
     double deltaxcentroiding;
-
     double limitshiftcentroiding;
-
     double intensitypreviousisotope = 0;
-
     double mean2;
-
     double deltatimecombine;
-
     double referencemass;
-
     double referenceretentiontime;
-
     double deltamzlocal;
-
     double deltatimelocalcombine;
-
     double save_ms2_index;
-
     double save_mass;
-
     double save_retentiontime;
-
     double save_min_retentiontime;
-
     double save_max_retentiontime;
-
     double save_intensity;
-
     double sqr_difference_time_alignment;
-
     double mean_difference_time_alignment;
-
     double standard_deviation_time_alignment;
-
     double max_time_difference;
-
     double sum_distances;
-
     double inputerror;
-
     double distance;
-
     double sum_square_distances;
-
     double distance_count;
-
     double variance_distances;
-
     double standard_deviation_distance;
-
     double average_distances;
-
     int ndiv_timealignment;
-
     double sum_time;
-
     double sum_difference_time;
-
     double sum_data_points;
-
     double ms2_mass;
-
     int count_windows;
-
     double[] newcalibrationmasses2;
-
     double[] intensity;
-
     double[] calibrationchannel2;
-
     double[] reciprocalcalibrationchannel2;
-
     double[] frequencyraw;
-
     double[] frequencyraw2;
-
     double[] reciprocalcalibrationmasses2;
-
     double[] a;
-
     double[] calibrationmasses;
-
     double[] calibrationmassesintensity;
-
     double[] newcalibrationmassesraw;
-
     double[] calibrationchannelraw;
-
     double[] reciprocalfrequencyraw;
-
     double[] reciprocalfrequencyraw2;
-
     double[] calibrationtimeraw;
-
     double[] fftMag;
-
     double[] xim;
-
     double[] delta_time;
-
     double[] calibration_time;
-
     double[] average_time;
-
     double[] average_differene_time;
-
     double[] calibration_delta_time;
-
     double[] inputgradientchange;
-
     double[] low_time_alignment;
-
     double[] high_time_alignment;
-
     double[] a0_time_alignment;
-
     double[] a1_time_alignment;
-
     double[] a2_time_alignment;
-
     double[][] calibration_time_new;
-
     double[][] peaks;
-
     double[][] noisepeaks;
-
     double[][] peakstransposed;
-
     double[][] retentiontimes;
-
     double[][] doublearraycombinedpeaks;
-
     double[][] cleanmasses;
-
     double[] used_ms2_mass;
-
     int n_time_alignment;
-
     int timeclusteringtechnique;
-
     int intnumberofmeasurements;
-
     int intnumberofmeasurements_old = 0;
-
     int detect_mode;
-
     int equipmentid;
-
     int numbermisfitallowed;
-
     int numberoffits;
-
     int threshold_noisy_spectra;
-
     int teller = 0;
-
     int chanelintensity;
-
     int shiftby;
-
     int day;
-
     int month;
-
     int year;
-
     int hour;
-
     int min;
-
     int sec;
-
     int updatesample;
-
     int inputfollowingnumbersample;
-
     int count;
-
     public int numberofmasses;
-
     int zerofillingfactor;
-
     int peakfindmethod;
-
     int sortrow;
-
     int clusteringtechnique;
-
     int int_filegrootte;
-
     int ndiv;
-
     int centroidingmethod;
-
     int numberoflines;
-
     int numberpointstimealignment;
-
     int filenumber;
-
     int chargestate = 1;
-
     int ch;
-
     int ch2;
-
     int ch3;
-
     int max_charge_state;
-
     int minimumnumberoffractions;
-
     int missingfractionsallowed;
-
     int low_value;
-
     int intnumberofmeasurementsraw;
-
     int q;
-
     int countdown2;
-
     int peaksbuffer;
-
     boolean first;
-
     boolean calibrated = false;
-
     boolean filetransported = false;
-
     boolean internalcalibration = false;
-
     boolean matrixcountsfiletransported = false;
-
     boolean matrixintensityfiletransported = false;
-
     boolean matrixbinaryfiletransported = false;
-
     boolean set_separator;
-
     boolean add_to_peak_list = true;
-
     boolean performApodization = true;
-
     boolean filetype_canbe_processed;
-
     boolean header;
-
     boolean zerofile;
-
     boolean add_mass;
-
     boolean monoistopefinding;
-
     boolean performtimealgnment;
-
     boolean alignmentmassfound;
-
     boolean in_time_window;
-
     boolean in_time_window2;
-
     byte[] acquis;
-
     byte[] data;
-
     byte[] bytesfile;
-
     String string_apodization_method;
-
     double remove_double_mass_window;
-
     double retentiontime_distance_factor;
-
     double mass_distance_factor;
-
     int save_i;
-
     String inputnoisepeaks;
-
     String resultrecordtype;
-
     FileOutputStream fileexportbuffer;
-
     BufferedReader input_rejectedpeaks;
-
-
     String TOL;
-
     String TOLU;
-
     String ITOL;
-
     String ITOLU;
-
     boolean perform_ms2_sequencing;
-
     String string_search_engine;
-
     String string_Taxonomy;
-
     Vector<String[]> sequensing_results_vector;
-
     String[] sequensing_results;
-
     boolean ms2_sequencenced_masses_present;
-
     double double_ms2_retentiontime_min;
-
     double double_ms2_retentiontime_max;
-
     boolean ms2_within_time_window;
-
     String sequencing_results_string;
-
     boolean firsttimereferenceexport;
-
     String strnumbermisfitallowed;
-
     String strdeltamzcombine;
-
     Experiment experiment;
-
     Progress progressnew;
-
     MassSpectrometryFile massspectrometryfile;
-
     ExportFileToDisk exportfiletodisk;
-
     Filetypes filetypes;
-
     SystemCodeItemService systemCodeItemService;
-
     ExperimentService experimentService;
-
     ResultService resultservice;
 
     public Readdatafiles(Controller cc, ExportFileToDisk exportfiletodisk, Experiment experiment) {
@@ -664,7 +359,6 @@ public class Readdatafiles extends DefaultHandler {
         percent_stdevisotopingdistance = experiment.getvariance_isotopic_distance();
         inputerror = experiment.getdeviation_from_expected_intensity_ratio();
         max_charge_state = experiment.getmax_charge_state_peptide();
-
         zerofillingfactor = experiment.getzerofillingfactor();
         minimumnumberoffractions = experiment.getpeptide_present_in_minimumnumberoffractions();
         missingfractionsallowed = experiment.getmissing_number_ms_scans_allowed();
@@ -678,7 +372,6 @@ public class Readdatafiles extends DefaultHandler {
         ITOL = experiment.getITOL();
         ITOLU = experiment.getITOLU();
         perform_ms2_sequencing = experiment.getperform_ms2_sequencing();
-
         string_Taxonomy = experiment.gettaxonomy_name();
         c13_c12 = experiment.getisotopic_distance_c13_c12();
         ndiv = experiment.getdivisions_in_determination_noise();
@@ -765,7 +458,6 @@ public class Readdatafiles extends DefaultHandler {
         if (strinputmaximummass != null) {
             if (!strinputmaximummass.trim().equalsIgnoreCase("")) {
                 this.maximummass = Double.parseDouble(strinputmaximummass);
-
             }
         }
         odatacalmasses = systemCodeItemService.getclibrationmasses(systemcodeitemid);
@@ -894,11 +586,8 @@ public class Readdatafiles extends DefaultHandler {
         strdatum = date_to_string(gc);
         stryear = get_year_date(gc);
         strtime = date_to_time(gc);
-
-
         updatesample = resultservice.insertmatrixresultrecord(matrixcountsfilename, filegrootte_kbytes, strtime,
                 experimentnumber, strquantilethreshold, strdatum, stryear);
-
     }
 
     private void storematrixintensities() {
@@ -942,11 +631,8 @@ public class Readdatafiles extends DefaultHandler {
         strdatum = date_to_string(gc);
         stryear = get_year_date(gc);
         strtime = date_to_time(gc);
-
-
         updatesample = resultservice.insertmatrixresultrecord(matrixintensityfilename, filegrootte_kbytes, strtime,
                 experimentnumber, strquantilethreshold, strdatum, stryear);
-
     }
 
     private void storebinarymatrix() {
@@ -989,8 +675,6 @@ public class Readdatafiles extends DefaultHandler {
         strdatum = date_to_string(gc);
         stryear = get_year_date(gc);
         strtime = date_to_time(gc);
-
-
         updatesample = resultservice.insertmatrixresultrecord(binarymatrixfilename, filegrootte_kbytes, strtime,
                 experimentnumber, strquantilethreshold, strdatum, stryear);
     }
@@ -1069,11 +753,9 @@ public class Readdatafiles extends DefaultHandler {
                 simplepeakfind = new Simplepeakfind();
             }
             if (equipmentid == 2) {
-
                 peaks = simplepeakfind.findlocalmaximaFTMS(deltamzsearchmaximum, quantilethreshold, minimummass,
                         maximummass, clusteringtechnique, ftmsdata);
             } else {
-
                 peaks = simplepeakfind.findlocalmaxima(deltamzsearchmaximum, quantilethreshold, minimummass,
                         maximummass, clusteringtechnique, spectrum);
             }
@@ -1269,7 +951,6 @@ public class Readdatafiles extends DefaultHandler {
                             if ((j <= cleanmasses[0].length - 2)
                                     && (Math.abs(cleanmasses[3][j + 1] - cleanmasses[3][j]) < deltatimelocalcombine)) {
                                 peaks[(int) cleanmasses[0][j]][0] = -1;
-
                             } else {
                                 peaks[(int) cleanmasses[0][j]][0] = save_mass;
                                 peaks[(int) cleanmasses[0][j]][1] = save_intensity;
@@ -1445,23 +1126,18 @@ public class Readdatafiles extends DefaultHandler {
                                     deltatimelocalcombine = retentiontime_distance_factor * deltatimecombine
                                             * peaks[i][2] / 100;
                                 }
-
                                 if ((Math.abs(peaks[i][2] - peaks[countdown2][2]) < deltatimelocalcombine)) {
                                     in_time_window2 = true;
                                 }
-
                                 if ((peaks[i][5] < peaks[countdown2][5]) && (peaks[i][6] > peaks[countdown2][5])) {
                                     in_time_window2 = true;
                                 }
-
                                 if ((peaks[i][5] < peaks[countdown2][6]) && (peaks[i][6] > peaks[countdown2][6])) {
                                     in_time_window2 = true;
                                 }
-
                                 if ((peaks[i][5] > peaks[countdown2][5]) && (peaks[i][6] < peaks[countdown2][6])) {
                                     in_time_window2 = true;
                                 }
-
                                 if ((peaks[countdown2][5] > peaks[i][5]) && (peaks[countdown2][6] < peaks[i][6])) {
                                     in_time_window2 = true;
                                 }
@@ -1805,7 +1481,6 @@ public class Readdatafiles extends DefaultHandler {
             } else {
                 removedoublemasses();
             }
-
         }
         if (equipmentid == 3) {
             removedoublemasses();
@@ -2109,7 +1784,6 @@ public class Readdatafiles extends DefaultHandler {
             exportpeakslist();
         }
         if ((equipmentid == 2) && experiment.getfiletype().trim().equalsIgnoreCase("fid")) {
-
             if (fft == null) {
                 fft = new FastFourierTransform();
             }
@@ -2135,7 +1809,6 @@ public class Readdatafiles extends DefaultHandler {
                 Apodization();
             }
             if (detect_mode == 1) {
-
                 fillmassesFTMS();
                 fillpeaks("createobject");
                 if (peaks != null) {
@@ -2143,12 +1816,10 @@ public class Readdatafiles extends DefaultHandler {
                     exportpeakslist();
                 }
             } else if (detect_mode == 2) {
-
             } else {
             }
         }
         if ((equipmentid == 1) && experiment.getfiletype().trim().equalsIgnoreCase("fid")) {
-
             readparameters();
             spectrum = new Spectrum(intnumberofmeasurements);
             filltimesignal();
@@ -2289,19 +1960,16 @@ public class Readdatafiles extends DefaultHandler {
                                             try {
                                                 ms2_mass = Double.parseDouble(sequensing_results[1]);
                                             } catch (Exception ex) {
-
                                             }
                                             try {
                                                 double_ms2_retentiontime_min = Double
                                                         .parseDouble(sequensing_results[6]);
                                             } catch (Exception ex) {
-
                                             }
                                             try {
                                                 double_ms2_retentiontime_max = Double
                                                         .parseDouble(sequensing_results[7]);
                                             } catch (Exception ex) {
-
                                             }
                                             if ((ms2_mass > -1) && (peaks[intnumberofmeasurements][0] > -1)) {
                                                 deltamzlocal = deltamzcombine;
@@ -2316,7 +1984,6 @@ public class Readdatafiles extends DefaultHandler {
                                                         ms2_within_time_window = false;
                                                         deltatimelocalcombine = deltatimecombine;
                                                         if (timeclusteringtechnique == 1) {
-
                                                             deltatimelocalcombine = deltatimecombine
                                                                     * peaks[intnumberofmeasurements][2] / 100;
                                                         }
@@ -2564,7 +2231,6 @@ public class Readdatafiles extends DefaultHandler {
                                                 double_ms2_retentiontime_max = Double
                                                         .parseDouble(sequensing_results[7]);
                                             } catch (Exception ex) {
-
                                             }
                                             if ((ms2_mass > -1) && (peaks[intnumberofmeasurements][0] > -1)) {
                                                 deltamzlocal = deltamzcombine;
@@ -2579,7 +2245,6 @@ public class Readdatafiles extends DefaultHandler {
                                                         ms2_within_time_window = false;
                                                         deltatimelocalcombine = deltatimecombine;
                                                         if (timeclusteringtechnique == 1) {
-
                                                             deltatimelocalcombine = deltatimecombine
                                                                     * peaks[intnumberofmeasurements][2] / 100;
                                                         }
@@ -2788,7 +2453,6 @@ public class Readdatafiles extends DefaultHandler {
                                             && (peaks[i][2] <= high_time_alignment[d])) {
                                         peaks[i][2] = peaks[i][2] - ((a1_time_alignment[d] * peaks[i][2] * peaks[i][2])
                                                 + (a2_time_alignment[d] * peaks[i][2]) + a0_time_alignment[d]);
-
                                         peaks[i][5] = peaks[i][5] - ((a1_time_alignment[d] * peaks[i][5] * peaks[i][5])
                                                 + (a2_time_alignment[d] * peaks[i][5]) + a0_time_alignment[d]);
                                         peaks[i][6] = peaks[i][6] - ((a1_time_alignment[d] * peaks[i][6] * peaks[i][6])
@@ -2816,7 +2480,6 @@ public class Readdatafiles extends DefaultHandler {
                     try {
                         tempBD = new BigDecimal(peaks[i][0]);
                     } catch (Exception e) {
-
                     }
                     if (peaks[i][0] > 0) {
                         try {
@@ -3008,7 +2671,6 @@ public class Readdatafiles extends DefaultHandler {
                 timealignmentreferencesequence = new FileOutputStream(
                         cc.userhome + cc.fileSeparator + nametimealignmentreferencesequence);
             } catch (FileNotFoundException e) {
-
                 e.printStackTrace();
             }
             firsttimereferenceexport = true;
@@ -3089,7 +2751,6 @@ public class Readdatafiles extends DefaultHandler {
                     timealignmentreferencemass.flush();
                     timealignmentreferencemass.close();
                 } catch (IOException e) {
-
                     e.printStackTrace();
                 }
             }
@@ -3100,7 +2761,6 @@ public class Readdatafiles extends DefaultHandler {
                     timealignmentreferenceretentiontime.flush();
                     timealignmentreferenceretentiontime.close();
                 } catch (IOException e) {
-
                     e.printStackTrace();
                 }
             }
@@ -3112,7 +2772,6 @@ public class Readdatafiles extends DefaultHandler {
                         timealignmentreferencesequence.flush();
                         timealignmentreferencesequence.close();
                     } catch (IOException e) {
-
                         e.printStackTrace();
                     }
                 }
@@ -3122,7 +2781,6 @@ public class Readdatafiles extends DefaultHandler {
                     timealignmentreferencesequence.flush();
                     timealignmentreferencesequence.close();
                 } catch (IOException e) {
-
                     e.printStackTrace();
                 }
             }
@@ -3156,7 +2814,6 @@ public class Readdatafiles extends DefaultHandler {
                 inputalignmentreferenceretentiontime = new FileInputStream(
                         cc.userhome + cc.fileSeparator + nametimealignmentreferenceretentiontime);
             } catch (FileNotFoundException e) {
-
                 e.printStackTrace();
             }
             if ((perform_ms2_sequencing) && (ms2_sequencenced_masses_present)) {
@@ -3164,7 +2821,6 @@ public class Readdatafiles extends DefaultHandler {
                     inputalignmentreferencesequence = new FileInputStream(
                             cc.userhome + cc.fileSeparator + nametimealignmentreferencesequence);
                 } catch (FileNotFoundException e) {
-
                     e.printStackTrace();
                 }
             }
@@ -3174,7 +2830,6 @@ public class Readdatafiles extends DefaultHandler {
             for (int i = 0; i < peaks.length; i++) {
                 alignment_time[i] = "no";
                 if (peaks[i][0] > 0) {
-
                 } else {
                     peaks[i][0] = -1;
                 }
@@ -3428,7 +3083,6 @@ public class Readdatafiles extends DefaultHandler {
                     }
                 }
             } catch (IOException e1) {
-
             }
             n_time_alignment = 0;
             double low_time = -1;
@@ -3646,19 +3300,16 @@ public class Readdatafiles extends DefaultHandler {
                 timealignmentreferencemass = new FileOutputStream(
                         cc.userhome + cc.fileSeparator + nametimealignmentreferencemass, true);
             } catch (FileNotFoundException e) {
-
             }
             try {
                 timealignmentreferenceretentiontime = new FileOutputStream(
                         cc.userhome + cc.fileSeparator + nametimealignmentreferenceretentiontime, true);
             } catch (FileNotFoundException e) {
-
             }
             try {
                 timealignmentreferencesequence = new FileOutputStream(
                         cc.userhome + cc.fileSeparator + nametimealignmentreferencesequence, true);
             } catch (FileNotFoundException e) {
-
             }
             timealignmentbuffermassnew = new StringBuffer("");
             timealignmentbufferretentiontimenew = new StringBuffer("");
@@ -3716,7 +3367,6 @@ public class Readdatafiles extends DefaultHandler {
                                             timealignmentbufferretentiontimenew
                                                     .append(String.valueOf(peaks[j][2]).trim());
                                             timealignmentbuffersequencenew.append(sequencing_results_string);
-
                                         } else {
                                             timealignmentbuffermassnew.append("," + String.valueOf(peaks[j][0]).trim());
                                             timealignmentbufferretentiontimenew
@@ -3731,7 +3381,6 @@ public class Readdatafiles extends DefaultHandler {
                                 first = false;
                                 timealignmentbuffermassnew.append(String.valueOf(peaks[j][0]).trim());
                                 timealignmentbufferretentiontimenew.append(String.valueOf(peaks[j][2]).trim());
-
                             } else {
                                 timealignmentbuffermassnew.append("," + String.valueOf(peaks[j][0]).trim());
                                 timealignmentbufferretentiontimenew.append("," + String.valueOf(peaks[j][2]).trim());
@@ -3747,7 +3396,6 @@ public class Readdatafiles extends DefaultHandler {
                     timealignmentreferencemass.flush();
                     timealignmentreferencemass.close();
                 } catch (IOException e) {
-
                     e.printStackTrace();
                 }
             }
@@ -3758,20 +3406,17 @@ public class Readdatafiles extends DefaultHandler {
                     timealignmentreferenceretentiontime.flush();
                     timealignmentreferenceretentiontime.close();
                 } catch (IOException e) {
-
                     e.printStackTrace();
                 }
             }
             if ((perform_ms2_sequencing) && (ms2_sequencenced_masses_present)) {
                 data = (timealignmentbuffersequencenew.toString() + "#").getBytes();
-
                 if (timealignmentreferencesequence != null) {
                     try {
                         timealignmentreferencesequence.write(data);
                         timealignmentreferencesequence.flush();
                         timealignmentreferencesequence.close();
                     } catch (IOException e) {
-
                         e.printStackTrace();
                     }
                 }
@@ -3791,7 +3436,6 @@ public class Readdatafiles extends DefaultHandler {
             ftp.setType(FTPTransferType.BINARY);
             ftp.chdir(File.separator + experimentyear + File.separator + this.experimentnumber);
             ftp.get(cc.userhome + cc.fileSeparator + tmp_filename, massspectrometryfile.getFilename());
-
         } catch (Exception e) {
             if (cc.debugmode) {
                 e.printStackTrace();
@@ -3853,7 +3497,6 @@ public class Readdatafiles extends DefaultHandler {
                                 peaks[intnumberofmeasurements - 1][2] = Double.parseDouble(attributes.getValue(i));
                             }
                         }
-
                     }
                 }
             }
@@ -3941,12 +3584,8 @@ public class Readdatafiles extends DefaultHandler {
             for (int i = 0; i < (inputstream.length / 4); i++) {
                 chanelintensity = 0;
                 shiftby = 0;
-
                 for (int j = 0; j < 4; j++) {
-
-
                     shiftby = j * 8;
-
                     chanelintensity = chanelintensity | ((inputstream[teller] & 0xff) << shiftby);
                     teller++;
                 }
@@ -3980,12 +3619,8 @@ public class Readdatafiles extends DefaultHandler {
             for (int i = 0; i < (inputstream.length / 4); i++) {
                 chanelintensity = 0;
                 shiftby = 0;
-
                 for (int j = 0; j < 4; j++) {
-
-
                     shiftby = j * 8;
-
                     chanelintensity = chanelintensity | ((inputstream[teller] & 0xff) << shiftby);
                     teller++;
                 }

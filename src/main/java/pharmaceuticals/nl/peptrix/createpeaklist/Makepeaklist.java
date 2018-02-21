@@ -3,7 +3,6 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 import javax.swing.JOptionPane;
 
 import pharmaceuticals.nl.peptrix.Controller;
@@ -12,111 +11,60 @@ import pharmaceuticals.nl.peptrix.gui.Progress;
 import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 import pharmaceuticals.nl.peptrix.utils.SortMatrix;
-
 import com.enterprisedt.net.ftp.FTPClient;
 import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class Makepeaklist {
-
     Controller cc;
-
     Experiment experiment;
-
     FileInputStream readfile;
-
     SortMatrix sortmatrix;
-
     Object[][] odata;
-
     String[] arraycombinedpeaks;
-
     String[] arraymaxtimecobinedpeaks;
-
     String[] arraymintimecobinedpeaks;
-
     String[] arraycombinedcounts;
-
     String[] mass;
-
     String[] arraytimecobinedpeaks;
-
     StringBuffer linebuffer;
-
     StringBuffer buffermasscombinedpeaks;
-
     StringBuffer buffertimecombinedpeaks;
-
     StringBuffer bufferstringsamplecount;
-
     StringBuffer buffermintimecombinedpeaks;
-
     StringBuffer buffermaxtimecombinedpeaks;
-
     String fileSeparator;
-
     String line;
-
     String stringsamplecount;
-
     double[][] doublearraycombinedpeaks;
-
     double doublemaxtimecombinedpeaks;
-
     double doublemasscombinedpeaks;
-
     double doublemintimecombinedpeaks;
-
     double valueprevious;
-
     double min_time_window;
-
     double max_time_window;
-
     double deltatimelocalcombine;
-
     double tempmass;
-
     double temptime;
-
     double doublemass;
-
     double doubletime;
-
     double doubletimecombined;
-
     double absolutedifference;
-
     double max_retention_time;
-
     double min_retention_time;
-
     int index1 = 0;
-
     int index2 = 0;
-
     int ch;
-
     int change_j;
-
     int increase_k;
-
     int j_bewaar;
-
     int number;
-
     int deletemasseswithcount = 0;
-
     int timeclusteringtechnique;
-
     boolean withintimewindow;
-
     boolean first = true;
-
     boolean startcombinedpeaks = true;
-
     boolean addmasstolist = true;
-
     ResultService resultService;
 
     public Makepeaklist(Controller cc, Experiment experiment) {
@@ -237,7 +185,6 @@ public class Makepeaklist {
                 if (doublearraycombinedpeaks[0][i] > 0) {
                     increase_k = i;
                     if (experiment.getclusteringtechnique() == 1) {
-
                         deltamzcombinelocal = doublearraycombinedpeaks[0][i]
                                 * Double.parseDouble(experiment.getdelta_mz_combine()) / 1000000;
                     }
@@ -247,7 +194,6 @@ public class Makepeaklist {
                             if (Math.abs(doublearraycombinedpeaks[0][i]
                                     - doublearraycombinedpeaks[0][increase_k]) < deltamzcombinelocal) {
                                 if (timeclusteringtechnique == 1) {
-
                                     deltatimelocalcombine = experiment.gettime_window_combining_peptide_masses()
                                             * doublearraycombinedpeaks[1][i] / 100;
                                 }
@@ -455,7 +401,6 @@ public class Makepeaklist {
                                 if (doublemass > 0) {
                                     deltamzcombinelocal = Double.parseDouble(experiment.getdelta_mz_combine());
                                     if (experiment.getclusteringtechnique() == 1) {
-
                                         deltamzcombinelocal = doublemass
                                                 * Double.parseDouble(experiment.getdelta_mz_combine()) / 1000000;
                                     }
@@ -469,7 +414,6 @@ public class Makepeaklist {
                                         }
                                         deltatimelocalcombine = experiment.gettime_window_combining_peptide_masses();
                                         if (timeclusteringtechnique == 1) {
-
                                             deltatimelocalcombine = experiment.gettime_window_combining_peptide_masses()
                                                     * Double.valueOf(arraytimecobinedpeaks[change_j]).doubleValue()
                                                     / 100;
@@ -609,7 +553,6 @@ public class Makepeaklist {
                                     }
                                     absolutedifference = Math.abs(doublemass - doublemasscombinedpeaks);
                                     if (experiment.getclusteringtechnique() == 1) {
-
                                         deltamzcombinelocal = doublemasscombinedpeaks
                                                 * Double.parseDouble(experiment.getdelta_mz_combine()) / 1000000;
                                     }
@@ -633,7 +576,6 @@ public class Makepeaklist {
                                         withintimewindow = false;
                                         deltatimelocalcombine = experiment.gettime_window_combining_peptide_masses();
                                         if (timeclusteringtechnique == 1) {
-
                                             deltatimelocalcombine = experiment.gettime_window_combining_peptide_masses()
                                                     * Double.valueOf(arraytimecobinedpeaks[j]).doubleValue() / 100;
                                         }

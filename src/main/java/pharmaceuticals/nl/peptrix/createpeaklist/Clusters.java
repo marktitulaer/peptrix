@@ -1,21 +1,13 @@
 package pharmaceuticals.nl.peptrix.createpeaklist;
 
 public class Clusters {
-
     StringBuffer m_bufferoverviewofisotopes;
-
     StringBuffer m_listidsofpotentialmonoistopes;
-
     StringBuffer m_ids_todelete;
-
     double m_mean2;
-
     double m_sum_of_squares2;
-
     int m_chargestate;
-
     int m_numberoflines;
-
     int m_number_of_best_isotopic_clusters;
 
     public Clusters() {
@@ -31,7 +23,6 @@ public class Clusters {
 
     public void setnumberoflines(int numberoflines) {
         m_numberoflines = numberoflines;
-
     }
 
     public int getnumberoflines() {
@@ -48,7 +39,6 @@ public class Clusters {
 
     public void setnumber_of_best_isotopic_clusters(int number_of_best_isotopic_clusters) {
         m_number_of_best_isotopic_clusters = number_of_best_isotopic_clusters;
-
     }
 
     public int getnumber_of_best_isotopic_clusters() {

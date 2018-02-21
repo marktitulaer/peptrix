@@ -6,17 +6,11 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 class JSpinField extends JPanel implements ChangeListener, CaretListener, ActionListener {
-
     protected JSpinner spinner;
-
     protected JTextField textField;
-
     protected int min;
-
     protected int max;
-
     protected int value;
-
     protected Color darkGreen;
 
     public JSpinField() {
@@ -58,7 +52,6 @@ class JSpinField extends JPanel implements ChangeListener, CaretListener, Action
         textField.setPreferredSize(new Dimension(width, height));
         textField.revalidate();
     }
-
 
     public void stateChanged(ChangeEvent e) {
         SpinnerNumberModel model = (SpinnerNumberModel) spinner.getModel();
@@ -127,7 +120,6 @@ class JSpinField extends JPanel implements ChangeListener, CaretListener, Action
         }
     }
 
-
     public void caretUpdate(CaretEvent e) {
         try {
             int testValue = Integer.valueOf(textField.getText()).intValue();
@@ -141,11 +133,9 @@ class JSpinField extends JPanel implements ChangeListener, CaretListener, Action
             if (ex instanceof NumberFormatException) {
                 textField.setForeground(Color.red);
             }
-
         }
         textField.repaint();
     }
-
 
     public void actionPerformed(ActionEvent e) {
         if (textField.getForeground().equals(darkGreen)) {
@@ -168,5 +158,4 @@ class JSpinField extends JPanel implements ChangeListener, CaretListener, Action
     public String getName() {
         return "JSpinField";
     }
-
 }

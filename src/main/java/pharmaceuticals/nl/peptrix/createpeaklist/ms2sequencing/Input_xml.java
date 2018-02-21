@@ -6,15 +6,10 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 
 public class Input_xml {
-
     FileDescriptor fd;
-
     ExportFileToDisk exportfiletodisk;
-
     String linefeed = "\n";
-
     String input_xmlcontent;
-
     public boolean input_xml_file_created;
 
     public Input_xml(Controller cc) {

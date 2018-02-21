@@ -3,29 +3,17 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 import pharmaceuticals.nl.peptrix.utils.SortArray;
 
 public class Simplepeakfind {
-
     double threshold;
-
     boolean valid;
-
     boolean lookleft;
-
     int left;
-
     int right;
-
     int j;
-
     int count;
-
     double[][] peaks;
-
     double[] sort_intensities;
-
     SortArray sortarray;
-
     int indexquantile;
-
     double double_indexquantile;
 
     public Simplepeakfind() {
@@ -35,7 +23,6 @@ public class Simplepeakfind {
                                       int clusteringtechnique, Spectrum spectrum) {
         double localdeltamz = deltamz;
         threshold = 0;
-
         if (spectrum.intensity.length > 0) {
             sort_intensities = new double[spectrum.intensity.length];
             for (int i = 0; i <= spectrum.intensity.length - 1; i++) {
@@ -184,7 +171,6 @@ public class Simplepeakfind {
                     left = i - j;
                     while ((left >= 0) && (Math.abs(ftmsdata.data[ftmsdata.data.length / 2 + i]
                             - ftmsdata.data[ftmsdata.data.length / 2 + left])) < localdeltamz) {
-
                         if (ftmsdata.data[left] > ftmsdata.data[i]) {
                             valid = false;
                         }
@@ -225,7 +211,6 @@ public class Simplepeakfind {
                     left = i - j;
                     while ((left >= 0) && (Math.abs(ftmsdata.data[ftmsdata.data.length / 2 + i]
                             - ftmsdata.data[ftmsdata.data.length / 2 + left])) < localdeltamz) {
-
                         if (ftmsdata.data[left] > ftmsdata.data[i]) {
                             valid = false;
                         }
@@ -253,6 +238,5 @@ public class Simplepeakfind {
             }
         }
         return peaks;
-
     }
 }

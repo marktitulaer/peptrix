@@ -5,7 +5,6 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.TextField;
 import java.awt.event.KeyEvent;
-
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
@@ -15,17 +14,11 @@ import javax.swing.JRadioButton;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class PanelPreprocessing {
-
     JPanel preprocessingpanel;
-
     GridBagLayout preprocessinglayout;
-
     GridBagConstraints gridbagcontraintspreprocessing;
-
     JLabel labelsingnaltonoiseinparts;
-
     JLabel labelcentroidingmethod;
-
     Controller cc;
 
     public PanelPreprocessing(Controller cc) {
@@ -119,5 +112,4 @@ public class PanelPreprocessing {
     public JPanel getpanel() {
         return preprocessingpanel;
     }
-
 }

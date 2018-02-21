@@ -4,27 +4,16 @@ import java.io.File;
 import java.util.Vector;
 
 public class Directories {
-
     Vector<File[]> directoryvector;
-
     File[] filesindir;
-
     File[] onlyfiles;
-
     File[] allsubdirectories;
-
     File[] filesanddirs_in_dir;
-
     File[] directories_in_dir;
-
     int newindexdirectories;
-
     int countnumberoffiles;
-
     int newindexsubdirectories;
-
     int count_of_dirs_in_dir;
-
     int total_number_of_subdirectories;
 
     public Directories() {
@@ -80,5 +69,4 @@ public class Directories {
         }
         return filevector;
     }
-
 }

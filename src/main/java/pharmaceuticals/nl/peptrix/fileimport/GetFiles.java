@@ -2,7 +2,6 @@ package pharmaceuticals.nl.peptrix.fileimport;
 
 import java.io.File;
 import java.util.Vector;
-
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -18,41 +17,28 @@ import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 import pharmaceuticals.nl.peptrix.gui.FileChooser;
 
 public class GetFiles {
-
-
     ImportFiles importfiles;
-
     Controller cc;
-
     Progress progress;
-
     int resultfilechooser;
-
     Filetypes filetypesfilechooser;
-
     Vector<File[]> filevectorfilechooser = new Vector<File[]>();
-
     FileChooser filechooser;
-
     ResultService resultService;
-
     EquipmentService equipmentService;
 
     public GetFiles(Controller cc) {
         this.cc = cc;
         filetypesfilechooser = new Filetypes();
-
         resultService = new ResultServiceImpl(cc);
         equipmentService = new EquipmentServiceImpl(cc);
     }
 
     public void getFiles() {
-
         equipmentService.show_equipment();
         filechooser = new FileChooser(cc);
         String InvalidFile;
         String latestexperimentid = "-1";
-
         progress = new Progress();
         ScanFilesandDirs addfilestofilevector = new ScanFilesandDirs(progress);
         cc.newradio.setSelected(cc.isnewexperiment);
@@ -125,8 +111,6 @@ public class GetFiles {
             if (cc.isnewexperiment) {
                 latestexperimentid = cc.createnewexperiment.createnewexperiment(cc.inputexperimentname.getText(),
                         cc.equipmentid.getText().trim());
-
-
                 cc.inputexperimentidfilechooser = resultService.newexperimentid();
             } else {
                 cc.inputexperimentidfilechooser = cc.inputexperimentid.getText().trim();

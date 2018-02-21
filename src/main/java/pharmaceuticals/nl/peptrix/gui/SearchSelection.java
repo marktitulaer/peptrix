@@ -10,359 +10,182 @@ import javax.swing.table.*;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class SearchSelection implements ActionListener, MouseListener, PropertyChangeListener {
-
     TableColumn col;
-
     Dimension fill;
-
     Box.Filler vFill;
-
     Controller cc;
-
     DefaultTableModel model = new DefaultTableModel();
-
     BorderLayout borderlayout = new BorderLayout();
-
     GridBagLayout gridbaglayout1 = new GridBagLayout();
-
     GridBagConstraints gbc1 = new GridBagConstraints();
-
     GridBagLayout gridbaglayout2 = new GridBagLayout();
-
     GridBagConstraints gbc2 = new GridBagConstraints();
-
     JFrame frame;
-
     JPanel pLeft;
-
     JPanel pTop;
-
     JPanel pBody;
-
     JPanel browsepanel;
-
     JPanel panelnorth;
-
     JPanel panelsouth;
-
     JPanel bodybottempanel = new JPanel();
-
     JPanel searchtablerecordpanel;
-
     JPanel browseinfo;
-
     JPanel toppanel;
-
     ScrollPane panelcenter;
-
     JScrollPane browserpane;
-
     JButton btnOKsearch = null;
-
     JButton btnClearsearch = null;
-
     JButton btnNext;
-
     JButton btnFirst;
-
     JButton btnrefresh;
-
     JButton btnPrevious;
-
     JButton btnLast;
-
     JButton[] searchforeignkey;
-
     JButton[] searchforeignkey2;
-
     JTable table = null;
-
     TableSorter sorter = null;
-
     JDialog searchtablerecorddialog = null;
-
     TextField[] dummy1;
-
     TextField[] dummy2;
-
     ResultSetTableModel resultsettablemodel;
-
     FlowLayout layoutMgr;
-
     SearchSelection searchselection;
-
     JOptionPane optionsearch;
-
     Object object = null;
-
     Object[] clmHeaders;
-
     Object[][] odata;
-
     Object[][] odata2;
-
     Object[][] maxnumberofrecords;
-
     JLabel labelnumberofrecords;
-
     Label[] fieldname;
-
     public String TableName;
-
     String TableNameold;
-
     public String primarykey = "";
-
     public String primarykeyvalue;
-
     String id;
-
     String dialogtitle;
-
     String wherestring;
-
     String prop;
-
     String stroffset;
-
     String strlimit;
-
     String query;
-
     String querymaxnumberrecords;
-
     String[] dummy1old;
-
     String[] dummy2old;
-
     String[] strSearch = {"=", ">=", ">", "<=", "<", "<>", "pattern"};
-
     String[] and_or = {"and", "or"};
-
     StringBuffer querybuffermaxnumberrecords;
-
     StringBuffer querybuffer;
-
     JComboBox sqlSearch0 = null;
-
     JComboBox sqlSearch1 = null;
-
     JComboBox sqlSearch2 = null;
-
     JComboBox sqlSearch3 = null;
-
     JComboBox sqlSearch4 = null;
-
     JComboBox sqlSearch5 = null;
-
     JComboBox sqlSearch6 = null;
-
     JComboBox sqlSearch7 = null;
-
     JComboBox sqlSearch8 = null;
-
     JComboBox sqlSearch9 = null;
-
     JComboBox sqlSearch10 = null;
-
     JComboBox sqlSearch11 = null;
-
     JComboBox sqlSearch12 = null;
-
     JComboBox sqlSearch13 = null;
-
     JComboBox sqlSearch14 = null;
-
     JComboBox sqlSearch15 = null;
-
     JComboBox sqlSearch16 = null;
-
     JComboBox sqlSearch17 = null;
-
     JComboBox sqlSearch18 = null;
-
     JComboBox sqlSearch19 = null;
-
     JComboBox sqlSearch20 = null;
-
     JComboBox sqlSearch21 = null;
-
     JComboBox sqlSearch22 = null;
-
     JComboBox sqlSearch23 = null;
-
     JComboBox sqlSearch24 = null;
-
     JComboBox sqlSearch25 = null;
-
     JComboBox sqlSearch26 = null;
-
     JComboBox sqlSearch27 = null;
-
     JComboBox sqlSearch28 = null;
-
     JComboBox sqlSearch29 = null;
-
     JComboBox sqlSearch30 = null;
-
     JComboBox and_or0 = null;
-
     JComboBox and_or1 = null;
-
     JComboBox and_or2 = null;
-
     JComboBox and_or3 = null;
-
     JComboBox and_or4 = null;
-
     JComboBox and_or5 = null;
-
     JComboBox and_or6 = null;
-
     JComboBox and_or7 = null;
-
     JComboBox and_or8 = null;
-
     JComboBox and_or9 = null;
-
     JComboBox and_or10 = null;
-
     JComboBox and_or11 = null;
-
     JComboBox and_or12 = null;
-
     JComboBox and_or13 = null;
-
     JComboBox and_or14 = null;
-
     JComboBox and_or15 = null;
-
     JComboBox and_or16 = null;
-
     JComboBox and_or17 = null;
-
     JComboBox and_or18 = null;
-
     JComboBox and_or19 = null;
-
     JComboBox and_or20 = null;
-
     JComboBox and_or21 = null;
-
     JComboBox and_or22 = null;
-
     JComboBox and_or23 = null;
-
     JComboBox and_or24 = null;
-
     JComboBox and_or25 = null;
-
     JComboBox and_or26 = null;
-
     JComboBox and_or27 = null;
-
     JComboBox and_or28 = null;
-
     JComboBox and_or29 = null;
-
     JComboBox and_or30 = null;
-
     JComboBox secondSearch0 = null;
-
     JComboBox secondSearch1 = null;
-
     JComboBox secondSearch2 = null;
-
     JComboBox secondSearch3 = null;
-
     JComboBox secondSearch4 = null;
-
     JComboBox secondSearch5 = null;
-
     JComboBox secondSearch6 = null;
-
     JComboBox secondSearch7 = null;
-
     JComboBox secondSearch8 = null;
-
     JComboBox secondSearch9 = null;
-
     JComboBox secondSearch10 = null;
-
     JComboBox secondSearch11 = null;
-
     JComboBox secondSearch12 = null;
-
     JComboBox secondSearch13 = null;
-
     JComboBox secondSearch14 = null;
-
     JComboBox secondSearch15 = null;
-
     JComboBox secondSearch16 = null;
-
     JComboBox secondSearch17 = null;
-
     JComboBox secondSearch18 = null;
-
     JComboBox secondSearch19 = null;
-
     JComboBox secondSearch20 = null;
-
     JComboBox secondSearch21 = null;
-
     JComboBox secondSearch22 = null;
-
     JComboBox secondSearch23 = null;
-
     JComboBox secondSearch24 = null;
-
     JComboBox secondSearch25 = null;
-
     JComboBox secondSearch26 = null;
-
     JComboBox secondSearch27 = null;
-
     JComboBox secondSearch28 = null;
-
     JComboBox secondSearch29 = null;
-
     JComboBox secondSearch30 = null;
-
     boolean firstwindow;
-
     boolean lastwindow;
-
     boolean dialog = false;
-
     int offset = 0;
-
     int limit = 5000;
-
     int numbersofrows = 0;
-
     int indexofid;
-
     int intmaxnumberofrecords;
-
     int j;
-
     int k;
-
     int l;
-
     int m;
-
     int n;
-
     int o;
-
     int p;
-
     int q;
-
     int columnwidth = 200;
-
     Integer testint;
 
     public SearchSelection(Controller cc, Object object, JPanel body) {
@@ -481,7 +304,6 @@ public class SearchSelection implements ActionListener, MouseListener, PropertyC
             }
             browserpane = new JScrollPane(table);
         } catch (SQLException e) {
-
             e.printStackTrace();
         }
         Selectfields(panelcenter, tablename);

@@ -8,15 +8,10 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class SouthWilcoxon {
-
     JPanel creatematrixsouth;
-
     BoxLayout boxlayout;
-
     Box.Filler vFill;
-
     Dimension fill;
-
     Controller cc;
 
     public SouthWilcoxon(Controller cc) {
@@ -34,5 +29,4 @@ public class SouthWilcoxon {
     public JPanel getpanel() {
         return creatematrixsouth;
     }
-
 }

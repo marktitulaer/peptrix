@@ -8,45 +8,25 @@ import pharmaceuticals.nl.peptrix.service.SystemCodeItemService;
 import pharmaceuticals.nl.peptrix.serviceimpl.SystemCodeItemServiceImpl;
 
 public class SearchFile {
-
     SystemCodeItemService systemcodeservice;
-
     Controller cc;
-
     File testfile;
-
     File file_on_disk;
-
     JFileChooser filechooser;
-
     ReadwFilter readwfilter;
-
     MsconvertFilter msconvertfilter;
-
     RtermFilter rtermfilter;
-
     FastaFilter fastafilter;
-
     TandemFilter tandemfilter;
-
     Object[][] odata;
-
     String[] list_of_readw_directories;
-
     String query = "";
-
     String systemcode_id;
-
     String file_to_search;
-
     String found_name;
-
     public long byteSize;
-
     int result;
-
     boolean program_directory_found = false;
-
     boolean cancel = false;
 
     public SearchFile(Controller cc) {
@@ -66,7 +46,6 @@ public class SearchFile {
         cancel = false;
         create_system_tables();
         search_file_wildcard();
-
         return found_name;
     }
 
@@ -128,14 +107,12 @@ public class SearchFile {
         found_name = "";
         while ((!program_directory_found) && (!cancel)) {
             if (list_of_readw_directories != null) {
-
                 search_file_with_system_tables_wildcard();
             }
             if (!program_directory_found) {
                 search_file_with_filechooser_wildcard();
                 if (program_directory_found) {
                     create_system_tables();
-
                     search_file_with_system_tables_wildcard();
                 }
             }
@@ -165,7 +142,6 @@ public class SearchFile {
             for (int i = 0; i < list_of_readw_directories.length; i++) {
                 testfile = new File(list_of_readw_directories[i]);
                 if (testfile.exists()) {
-
                     if (testfile.getName().trim().indexOf(file_to_search.trim()) > -1) {
                         program_directory_found = true;
                         found_name = backlashReplace(testfile.getAbsolutePath().trim());
@@ -255,7 +231,6 @@ public class SearchFile {
                 tandemfilter = new TandemFilter();
             }
             filechooser.addChoosableFileFilter(tandemfilter);
-
         } else if (file_to_search.toLowerCase().indexOf(".fasta") > -1) {
             if (fastafilter == null) {
                 fastafilter = new FastaFilter();
@@ -276,11 +251,8 @@ public class SearchFile {
             file_on_disk = filechooser.getSelectedFile();
             if (file_on_disk != null) {
                 if (true) {
-
                     if (file_on_disk.getName().trim().indexOf(file_to_search) > -1) {
                         store_filename_and_path(file_on_disk.getAbsolutePath());
-
-
                         program_directory_found = true;
                     }
                 }
@@ -311,5 +283,4 @@ public class SearchFile {
         }
         return result.toString();
     }
-
 }

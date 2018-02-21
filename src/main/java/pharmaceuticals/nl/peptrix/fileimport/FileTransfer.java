@@ -7,43 +7,25 @@ import javax.swing.JOptionPane;
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.gui.Progress;
 import pharmaceuticals.nl.peptrix.gui.filechooser.filters.SuffixAwareFilter;
-
 import com.enterprisedt.net.ftp.*;
 
 public class FileTransfer {
-
     SuffixAwareFilter suffixawarefilter;
-
     String suffix;
-
     String[] files_and_dirs;
-
     String file_or_dir;
-
     File[] files;
-
     String filename;
-
     File file1;
-
     File parent1;
-
     File parent2;
-
     File parent3;
-
     File parent4;
-
     FileInputStream fis;
-
     FTPClient ftp = null;
-
     boolean fidfile;
-
     StringBuffer stringbufferfilename;
-
     Controller cc;
-
     boolean choose_testvector;
 
     public FileTransfer(Controller cc) {

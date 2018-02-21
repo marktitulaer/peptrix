@@ -3,16 +3,13 @@ package pharmaceuticals.nl.peptrix.statistics.wilcoxon;
 import java.io.File;
 import java.io.FileInputStream;
 import java.math.BigDecimal;
-
 import javax.swing.JOptionPane;
 
 import pharmaceuticals.nl.peptrix.Controller;
-
 import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class StorePplot {
-
     Controller cc;
 
     public StorePplot(Controller cc) {
@@ -60,7 +57,6 @@ public class StorePplot {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         try {
             file = new File(cc.P_plot_file);
             FileInputStream fis = new FileInputStream(file);
@@ -70,7 +66,6 @@ public class StorePplot {
             cc.ftp.put(cc.data_wilcoxon, exportname);
             filetransportedwilcoxon = true;
             fis.close();
-
         } catch (Exception e) {
             if (cc.debugmode) {
                 e.printStackTrace();

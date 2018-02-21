@@ -15,215 +15,111 @@ import pharmaceuticals.nl.peptrix.service.ExperimentService;
 import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ExperimentServiceImpl;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
-
 import com.enterprisedt.net.ftp.*;
 
 public class TransposeMatrix implements TextListener, ActionListener {
-
     ResultService resultService;
-
     FTPClient ftp;
-
     GridBagLayout gridbglayouttransposematrixresultpanel;
-
     JScrollPane browserpane;
-
     DefaultTableModel defaulttablemodel;
-
     TableSorter sorter;
-
     BigDecimal tempBD;
-
     FileDescriptor fd;
-
     FileOutputStream os;
-
     BoxLayout boxlayout;
-
     Object[][] odataexperimentname;
-
     Object[][] odatamatrixfiles;
-
     Object[][] odatatransposedmatrixfiles;
-
     SearchSelection searchselection;
-
     Controller cc;
-
     GridBagLayout gridbagexperiment;
-
     GridBagLayout gridbagpanelnorth;
-
     GridBagLayout gridbagtransposematrixinoutpanel;
-
     GridBagConstraints transposematrixinputpanelconstraints;
-
     GridBagConstraints constraintsexperiment;
-
     GridBagConstraints constraintspanelnorth;
-
     Color colorgrey = new Color(204, 204, 204);
-
     Color erasmuslichtblauw = new Color(134, 210, 237);
-
     Box.Filler vFill;
-
     Dimension fill;
-
     ScrollPane transposematrixcenter;
-
     JPanel transposematrixcenterpanel;
-
     JPanel transposematrixcenterpanelnorth;
-
     JPanel createtransposematrixnorth;
-
     JPanel creatematrixsouth;
-
     JPanel panelexperimentleft;
-
     JPanel panelexperimentright;
-
     JPanel searchtablerecordpanel;
-
     JPanel transposematrixinputpanel;
-
     JPanel centerpanelnorthtotal;
-
     JPanel dummypanel;
-
     JPanel transposematrixresultpanel;
-
     JComboBox combomatrixtodisplay;
-
     JLabel labelexperimentname;
-
     JLabel experimentidlabel;
-
     JLabel equipmentlabel;
-
     JLabel datelabel;
-
     JLabel labelselectmatrix;
-
     TextField experimentname;
-
     TextField experimentid;
-
     TextField equipmentname;
-
     TextField dateexperiment;
-
     BufferedReader in;
-
     JButton search;
-
     JButton starttransposematrix;
-
     FileInputStream is;
-
     JTable matrixtable;
-
     GridBagConstraints gridbagconstraints;
-
     FileReader fr;
-
     Progress progress;
-
     StringBuffer linebuffer;
-
     String[][] tabledata_raw;
-
     String[][] tabledata;
-
     String[][] transposedmatrix;
-
     String[] arraystr;
-
     String[] temp;
-
     String[] matrixfiles;
-
     String[] tableheader;
-
     String dialogtitle;
-
     String wherestring;
-
     String strquery;
-
     String strexperimentname;
-
     String strequipmentname;
-
     String experimentdate;
-
     String strequipmentid;
-
     String fileSeparator;
-
     String strexperimentid;
-
     String userhome;
-
     String strtype;
-
     String experimentyear;
-
     String filename;
-
     String exportline;
-
     String str;
-
     String transposed_file_name;
-
     String line;
-
     String transposed_prefix = "t_";
-
     double double_columncount = 0;
-
     double filegrootte_kbytes;
-
     double double_rowcount = 0;
-
     int updatesample;
-
     int selected_index;
-
     int int_blocksize;
-
     int max_column;
-
     int min_column;
-
     int columncount = 0;
-
     int rowcount = 0;
-
     int rowcount_transposematrix = 0;
-
     int numberofrows;
-
     int maxcolumns;
-
     int maxcolums2;
-
     int int_file_size;
-
     byte[] exportdata;
-
     boolean firstline;
-
     boolean first = true;
-
     boolean filetransported;
-
     boolean debugmode = true;
-
     boolean filepresent;
-
     ExperimentService experimentService;
 
     public TransposeMatrix(Controller cc) {
@@ -236,8 +132,6 @@ public class TransposeMatrix implements TextListener, ActionListener {
     }
 
     public void selectexperiment(String strinputexperimentid) {
-
-
         panelexperimentleft = new JPanel();
         fillexperimentleftpanel();
         panelexperimentright = new JPanel();
@@ -245,8 +139,6 @@ public class TransposeMatrix implements TextListener, ActionListener {
         createtransposematrixnorth.setLayout(new BorderLayout());
         createtransposematrixnorth.add(panelexperimentleft, BorderLayout.WEST);
         createtransposematrixnorth.add(panelexperimentright, BorderLayout.CENTER);
-
-
         transposematrixcenterpanelnorth = new JPanel();
         transposematrixinputpanel = new JPanel();
         gridbagpanelnorth = new GridBagLayout();
@@ -260,28 +152,18 @@ public class TransposeMatrix implements TextListener, ActionListener {
         constraintspanelnorth.gridheight = 1;
         gridbagpanelnorth.setConstraints(transposematrixinputpanel, constraintspanelnorth);
         transposematrixcenterpanelnorth.add(transposematrixinputpanel);
-
-
         dummypanel = new JPanel();
         centerpanelnorthtotal = new JPanel();
         centerpanelnorthtotal.setLayout(new BorderLayout());
         centerpanelnorthtotal.add(transposematrixcenterpanelnorth, BorderLayout.WEST);
         centerpanelnorthtotal.add(dummypanel, BorderLayout.CENTER);
-
-
         transposematrixcenterpanel = new JPanel();
         transposematrixcenterpanel.setLayout(new BorderLayout());
         transposematrixcenterpanel.add(centerpanelnorthtotal, BorderLayout.NORTH);
-
-
         transposematrixresultpanel = new JPanel();
         transposematrixcenterpanel.add(transposematrixresultpanel, BorderLayout.CENTER);
-
-
         transposematrixcenter = new ScrollPane();
         transposematrixcenter.add(transposematrixcenterpanel);
-
-
         creatematrixsouth = new JPanel();
         creatematrixsouth.setBackground(erasmuslichtblauw);
         boxlayout = new BoxLayout(creatematrixsouth, BoxLayout.X_AXIS);
@@ -289,13 +171,11 @@ public class TransposeMatrix implements TextListener, ActionListener {
         fill = new Dimension(10, 30);
         vFill = new Box.Filler(fill, fill, fill);
         creatematrixsouth.add(vFill);
-
         cc.pBody.setLayout(new BorderLayout());
         cc.pBody.removeAll();
         cc.pBody.add(createtransposematrixnorth, BorderLayout.PAGE_START);
         cc.pBody.add(transposematrixcenter, BorderLayout.CENTER);
         cc.pBody.add(creatematrixsouth, BorderLayout.PAGE_END);
-
         colorframesblue();
         if (strinputexperimentid != null) {
             experimentid.setText(strinputexperimentid);
@@ -480,7 +360,6 @@ public class TransposeMatrix implements TextListener, ActionListener {
                         combomatrixtodisplay.setSelectedIndex(0);
                     }
                 }
-
             }
             cc.frame.setVisible(true);
         }
@@ -493,7 +372,6 @@ public class TransposeMatrix implements TextListener, ActionListener {
         try {
             selected_index = combomatrixtodisplay.getSelectedIndex();
         } catch (Exception ex) {
-
         }
         if (selected_index > -1) {
             odatatransposedmatrixfiles = null;
@@ -503,7 +381,6 @@ public class TransposeMatrix implements TextListener, ActionListener {
                 if (!experimentid.getText().trim().equals("")) {
                     odatatransposedmatrixfiles = resultService.gettransposedmatrixfiles(transposed_file_name,
                             experimentid.getText());
-
                     if (odatatransposedmatrixfiles != null) {
                         if (odatatransposedmatrixfiles.length > 0) {
                             filepresent = false;
@@ -520,7 +397,6 @@ public class TransposeMatrix implements TextListener, ActionListener {
                                 ftp.setType(FTPTransferType.BINARY);
                                 ftp.chdir(File.separator + experimentyear + File.separator
                                         + experimentid.getText().trim());
-
                             } catch (Exception e) {
                                 if (cc.debugmode) {
                                     e.printStackTrace();
@@ -725,16 +601,13 @@ public class TransposeMatrix implements TextListener, ActionListener {
         columncount = (int) double_columncount;
         rowcount = (int) double_rowcount;
         if ((columncount > 0) && (rowcount > 0)) {
-
             progress.init("Transpose matrix  ......", 70);
             rowcount_transposematrix = rowcount;
             transposed_file_name = transposed_prefix + filename;
-
             try {
                 os = new FileOutputStream(userhome + fileSeparator + transposed_file_name);
                 fd = os.getFD();
             } catch (Exception e) {
-
                 transposed_file_name = "";
             }
             int j = 0;
@@ -788,7 +661,6 @@ public class TransposeMatrix implements TextListener, ActionListener {
                     try {
                         os.write(exportdata);
                         os.flush();
-
                     } catch (Exception e) {
                     }
                 }
@@ -859,7 +731,6 @@ public class TransposeMatrix implements TextListener, ActionListener {
             try {
                 selected_index = combomatrixtodisplay.getSelectedIndex();
             } catch (Exception ex) {
-
             }
             if (selected_index > -1) {
                 filename = combomatrixtodisplay.getSelectedItem().toString();

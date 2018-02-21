@@ -5,47 +5,26 @@ import java.util.Vector;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public class CombineMS2peaks {
-
     Experiment experiment;
-
     String[] compare_sequensing_results;
-
     String stringsamplecount;
-
     String linefeed = "\n";
-
     String sequencing_protein_descrition;
-
     double doublemass;
-
     double absolutedifference;
-
     double max_retention_time;
-
     double min_retention_time;
-
     double doubletime;
-
     double deltatimelocalcombine;
-
     boolean withintimewindow;
-
     double deltamzcombinelocal;
-
     double deltatimecombine;
-
     int timeclusteringtechnique;
-
     int ms2_vector_index;
-
     int highest_index_ms2_peak;
-
     int highest_index_matching_ms2_peak;
-
     boolean withinmasswindow;
-
     boolean massandtimewindowOK;
-
     boolean first;
 
     public CombineMS2peaks(Experiment experiment) {
@@ -67,7 +46,6 @@ public class CombineMS2peaks {
             for (int j = highest_index_ms2_peak; j < ms2_peaks[0].length; j++) {
                 doublemass = ms2_peaks[0][j];
                 if (experiment.getclusteringtechnique() == 1) {
-
                     deltamzcombinelocal = Double.parseDouble(experiment.getdelta_mz_combine())
                             * doublearraycombinedpeaks[0][i] / 1000000;
                 }
@@ -102,7 +80,6 @@ public class CombineMS2peaks {
         withinmasswindow = false;
         withintimewindow = false;
         if (experiment.getclusteringtechnique() == 1) {
-
             deltamzcombinelocal = Double.parseDouble(experiment.getdelta_mz_combine()) * reference_mass / 1000000;
         }
         absolutedifference = Math.abs(mass_peaklist - reference_mass);

@@ -8,39 +8,22 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public class IdentifyPeaks {
-
     FileInputStream fstream;
-
     BufferedReader in;
-
     Controller cc;
-
     IdentifypeaksRscript identifypeaksrscript;
-
     BigDecimal tempBD;
-
     FileOutputStream os;
-
     StringBuffer databuffer;
-
     String stringdatabuffer;
-
     String Rscriptname;
-
     double[][] peaks;
-
     double[][] noisepeaks;
-
     double minimummass;
-
     double maximummass;
-
     int count;
-
     int procesexitvalue;
-
     byte[] data;
-
     Experiment experiment;
 
     public IdentifyPeaks(Controller cc, Experiment experiment) {
@@ -322,5 +305,4 @@ public class IdentifyPeaks {
     public double[][] returnnoisepeaks() {
         return noisepeaks;
     }
-
 }

@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.model;
 
 import java.util.Date;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -11,30 +10,22 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 @Table(name = "Experiment")
 public class Experiment implements Serializable {
-
     private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "experimentid")
     private long experimentid;
-
     @ManyToOne(optional = false)
     @JoinColumn(name = "equipmentid")
     private Equipment equipment;
-
     @Column(name = "Name", length = 200)
     String name;
-
     @Column(name = "Date")
     Date date;
-
     @Column(name = "Year", length = 4)
     String year;
-
     @CreationTimestamp
     private Date created;
-
     @UpdateTimestamp
     private Date updated;
 
@@ -93,5 +84,4 @@ public class Experiment implements Serializable {
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
-
 }

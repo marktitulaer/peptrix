@@ -1,48 +1,29 @@
 package pharmaceuticals.nl.peptrix.creatematrix;
 
 import java.io.BufferedReader;
-
 import java.io.FileReader;
 
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public class CombineNoisePeaks2 {
-
     BufferedReader in;
-
     Controller cc;
-
     String[] noisemass;
-
     String line;
-
     String noiseline = "";
-
     double absolutedifference;
-
     double max_retention_time;
-
     double min_retention_time;
-
     double doubletime;
-
     double doublemass;
-
     double doubleintensity;
-
     double deltatimelocalcombine;
-
     double deltatimecombine;
-
     int timeclusteringtechnique;
-
     int j_save2;
-
     boolean fixfirst;
-
     boolean withintimewindow;
-
     boolean addmasstolist = true;
 
     public CombineNoisePeaks2(Controller cc) {
@@ -96,7 +77,6 @@ public class CombineNoisePeaks2 {
                     if (matrix.boolean_addnoisepeaks[j] == 1) {
                         absolutedifference = Math.abs(doublemass - doublearraycombinedpeaks[0][j]);
                         if (clusteringtechnique == 1) {
-
                             deltamzcombinelocal = Double.parseDouble(experiment.getdelta_mz_combine())
                                     * doublearraycombinedpeaks[0][j] / 1000000;
                         }
@@ -144,9 +124,7 @@ public class CombineNoisePeaks2 {
             }
             in.close();
         } catch (Exception e) {
-
             e.printStackTrace();
         }
     }
-
 }

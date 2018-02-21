@@ -2,18 +2,14 @@ package pharmaceuticals.nl.peptrix.statistics.wilcoxon;
 
 import java.io.File;
 import java.math.BigDecimal;
-
 import javax.swing.JOptionPane;
 
 import pharmaceuticals.nl.peptrix.Controller;
-
 import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class StorePvalues {
-
     Controller cc;
-
     CreateexportstringWilcoxon createexportstringWilcoxon;
 
     public StorePvalues(Controller cc) {

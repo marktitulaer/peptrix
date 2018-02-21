@@ -9,7 +9,6 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class PanelCreateMatrixSouth {
-
     JPanel creatematrixsouth;
 
     public PanelCreateMatrixSouth(Controller cc) {
@@ -29,5 +28,4 @@ public class PanelCreateMatrixSouth {
     public void setbackground(Color color) {
         creatematrixsouth.setBackground(color);
     }
-
 }

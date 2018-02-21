@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Calibrationinputpanel {
-
     JPanel jpanel;
 
     public Calibrationinputpanel(Controller cc) {
@@ -63,8 +62,6 @@ public class Calibrationinputpanel {
         constraintscalibration.gridheight = 1;
         gridbagcalibration.setConstraints(labelcalibrationmasses, constraintscalibration);
         jpanel.add(labelcalibrationmasses);
-
-
         cc.calibrationstandard = new JComboBox<String>(cc.strcalibrationstandards);
         cc.calibrationstandard.setLightWeightPopupEnabled(false);
         constraintscalibration.gridx = 2;
@@ -96,5 +93,4 @@ public class Calibrationinputpanel {
     public JPanel getPanel() {
         return jpanel;
     }
-
 }

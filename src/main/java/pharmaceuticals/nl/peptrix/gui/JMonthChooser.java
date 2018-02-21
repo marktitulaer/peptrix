@@ -9,25 +9,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.*;
 
 class JMonthChooser extends JPanel implements ItemListener, ChangeListener {
-
     protected boolean hasSpinner;
-
     private Locale locale;
-
     private int month;
-
     private int oldSpinnerValue = 0;
-
     private JDayChooser dayChooser;
-
     private JYearChooser yearChooser;
-
     private JComboBox comboBox;
-
     private JSpinner spinner;
-
     private boolean initialized;
-
     private boolean localInitialize;
 
     public JMonthChooser() {
@@ -69,7 +59,6 @@ class JMonthChooser extends JPanel implements ItemListener, ChangeListener {
         comboBox.setSelectedIndex(month);
     }
 
-
     public void stateChanged(ChangeEvent e) {
         SpinnerNumberModel model = (SpinnerNumberModel) ((JSpinner) e.getSource()).getModel();
         int value = model.getNumber().intValue();
@@ -99,7 +88,6 @@ class JMonthChooser extends JPanel implements ItemListener, ChangeListener {
         }
         setMonth(month);
     }
-
 
     public void itemStateChanged(ItemEvent e) {
         if (e.getStateChange() == ItemEvent.SELECTED) {
@@ -184,5 +172,4 @@ class JMonthChooser extends JPanel implements ItemListener, ChangeListener {
     public String getName() {
         return "JMonthChooser";
     }
-
 }

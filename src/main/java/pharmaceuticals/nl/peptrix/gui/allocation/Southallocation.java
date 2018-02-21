@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.gui.allocation;
 
 import java.awt.Dimension;
-
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
@@ -9,13 +8,9 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Southallocation {
-
     JPanel allocationsouth;
-
     Box.Filler vFill;
-
     Dimension fill;
-
     BoxLayout boxlayout;
 
     public Southallocation(Controller cc) {
@@ -30,5 +25,4 @@ public class Southallocation {
     public JPanel getpanel() {
         return allocationsouth;
     }
-
 }

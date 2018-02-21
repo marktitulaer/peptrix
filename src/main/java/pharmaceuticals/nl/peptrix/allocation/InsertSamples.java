@@ -5,13 +5,9 @@ import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 
 public class InsertSamples {
-
     Controller cc;
-
     Insertsample insertsample;
-
     ResultService resultService;
-
     int datalength;
 
     public InsertSamples(Controller cc) {

@@ -3,19 +3,12 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public class Monoisotoopfinding {
-
     Deisotoping deisotoping;
-
     Experiment experiment;
-
     String[] string_of_ids_todelete;
-
     String dummy;
-
     double deltamzsearchcalibrantslocal;
-
     boolean is_an_isotope;
-
     boolean checkdoublecharge2;
 
     public Monoisotoopfinding(double[] newcalibrationmassesraw, Experiment experiment) {

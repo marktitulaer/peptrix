@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Contentrightpanel {
-
     JPanel jpanel;
 
     public Contentrightpanel(Controller cc) {

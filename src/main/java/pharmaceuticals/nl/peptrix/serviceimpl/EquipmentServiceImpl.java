@@ -1,16 +1,13 @@
 package pharmaceuticals.nl.peptrix.serviceimpl;
 
 import java.sql.SQLException;
-
 import javax.swing.JOptionPane;
 
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.service.EquipmentService;
 
 public class EquipmentServiceImpl implements EquipmentService {
-
     Controller cc;
-
     private String strquery;
 
     public EquipmentServiceImpl(Controller cc) {
@@ -33,5 +30,4 @@ public class EquipmentServiceImpl implements EquipmentService {
             }
         }
     }
-
 }

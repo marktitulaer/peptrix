@@ -4,25 +4,17 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-
 import javax.swing.JPanel;
 
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class CenterpanelnorthCreatematrix {
-
     PanelPeakFind panelpeakfind;
-
     public PanelCombine panelcombine;
-
     CreateMatrixStartPanel creatematrixstartpanel;
-
     JPanel creatematrixcenterpanelnorth;
-
     public JPanel peakfindinputpanel;
-
     JPanel combinepanel;
-
     public JPanel startcreatematrixpanel;
 
     public CenterpanelnorthCreatematrix(Controller cc) {
@@ -74,5 +66,4 @@ public class CenterpanelnorthCreatematrix {
         panelcombine.fill_panels_with_fields_();
         creatematrixstartpanel.fill_panels_with_fields();
     }
-
 }

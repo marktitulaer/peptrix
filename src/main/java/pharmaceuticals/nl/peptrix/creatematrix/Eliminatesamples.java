@@ -6,11 +6,8 @@ import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 
 public class Eliminatesamples {
-
     Experiment experiment;
-
     Controller cc;
-
     ResultService resultService;
 
     public Eliminatesamples(Controller cc, Experiment experiment) {

@@ -1,11 +1,8 @@
 package pharmaceuticals.nl.peptrix.utils;
 
 public class SortMatrix {
-
     private double[] A;
-
     int row;
-
     double[][] matrix;
 
     public SortMatrix(double[][] a, int row) {

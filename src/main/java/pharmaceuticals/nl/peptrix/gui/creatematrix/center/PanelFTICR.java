@@ -16,9 +16,7 @@ import javax.swing.JRadioButton;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class PanelFTICR {
-
     JPanel ftmspanel;
-
     Controller cc;
 
     public PanelFTICR(Controller cc) {
@@ -272,8 +270,6 @@ public class PanelFTICR {
         ftmspanellayout.setConstraints(cc.Raw_to_mzXML, gridbagcontraintsftmspanel);
         ftmspanel.add(cc.Raw_to_mzXML);
         cc.raw_to_mzXML_programms = new ButtonGroup();
-
-
         cc.msconvert_programm_64 = new JRadioButton("msconvert 64");
         cc.msconvert_programm_64.setMnemonic(KeyEvent.VK_1);
         cc.raw_to_mzXML_programms.add(cc.msconvert_programm_64);

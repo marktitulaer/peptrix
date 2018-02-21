@@ -3,9 +3,7 @@ package pharmaceuticals.nl.peptrix.calibration;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Calibrationlinear {
-
     Controller cc;
-
     Calibration calibration;
 
     public Calibrationlinear(Controller cc) {
@@ -26,5 +24,4 @@ public class Calibrationlinear {
                 number_of_calibration_coefficients, Rscriptname);
         return calibration_coefficients;
     }
-
 }

@@ -7,9 +7,7 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.service.GroupService;
 
 public class GroupServiceImpl implements GroupService {
-
     private String strquery;
-
     Controller cc;
 
     public GroupServiceImpl(Controller cc) {
@@ -82,5 +80,4 @@ public class GroupServiceImpl implements GroupService {
         }
         return newgroupid2;
     }
-
 }

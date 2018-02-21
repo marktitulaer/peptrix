@@ -1,11 +1,9 @@
 package pharmaceuticals.nl.peptrix.gui.allocation.center;
 
 import java.awt.FlowLayout;
-
 import javax.swing.JPanel;
 
 public class Allocationbrowsepanel {
-
     JPanel jpanel;
 
     public Allocationbrowsepanel() {
@@ -17,5 +15,4 @@ public class Allocationbrowsepanel {
     public JPanel getpanel() {
         return jpanel;
     }
-
 }

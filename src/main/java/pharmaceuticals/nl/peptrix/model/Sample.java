@@ -10,24 +10,17 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 @Table(name = "Sample")
 public class Sample implements Serializable {
-
     private static final long serialVersionUID = 1L;
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sampleid")
     private long sampleid;
-
     @Column(name = "Sample_code", length = 100, unique = true)
     private String samplecode;
-
     @Column(name = "Name", length = 200)
     private String name;
-
     @CreationTimestamp
     private Date created;
-
     @UpdateTimestamp
     private Date updated;
 
@@ -70,5 +63,4 @@ public class Sample implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
 }

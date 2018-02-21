@@ -7,13 +7,9 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Centerpanelnorthtotalcreatematrix {
-
     JPanel centerpanelnorthtotal;
-
     public CenterpanelnorthCreatematrix centerpanelnorthcreatematrix;
-
     JPanel creatematrixcenterpanelnorth;
-
     public JPanel dummypanel;
 
     public Centerpanelnorthtotalcreatematrix(Controller cc) {
@@ -39,5 +35,4 @@ public class Centerpanelnorthtotalcreatematrix {
     public JPanel getpanel() {
         return centerpanelnorthtotal;
     }
-
 }

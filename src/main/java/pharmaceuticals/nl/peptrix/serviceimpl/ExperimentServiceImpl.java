@@ -7,15 +7,12 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.service.ExperimentService;
 
 public class ExperimentServiceImpl implements ExperimentService {
-
     Controller cc;
-
     private String strquery;
 
     public ExperimentServiceImpl(Controller cc) {
         this.cc = cc;
     }
-
 
     public String[] getexperimentdata(String strexperimentid) {
         String[] dataexperiment = new String[6];
@@ -51,7 +48,6 @@ public class ExperimentServiceImpl implements ExperimentService {
         return dataexperiment;
     }
 
-
     public String getnewexperimentid() {
         String newexperimentid = null;
         try {
@@ -59,7 +55,6 @@ public class ExperimentServiceImpl implements ExperimentService {
             Object[][] odataexperiment = cc.jdbcconnection.returnData(strquery);
             if (odataexperiment.length > 0) {
                 newexperimentid = (String) odataexperiment[0][0];
-
             } else {
                 newexperimentid = "1";
             }
@@ -142,5 +137,4 @@ public class ExperimentServiceImpl implements ExperimentService {
         }
         return odata;
     }
-
 }

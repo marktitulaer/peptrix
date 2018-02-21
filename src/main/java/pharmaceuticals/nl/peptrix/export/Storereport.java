@@ -3,29 +3,21 @@ package pharmaceuticals.nl.peptrix.export;
 import java.io.File;
 import java.math.BigDecimal;
 import java.sql.SQLException;
-
 import javax.swing.JOptionPane;
 
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
-
 import com.enterprisedt.net.ftp.FTPClient;
 import com.enterprisedt.net.ftp.FTPConnectMode;
 import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class Storereport {
-
     int updatesample;
-
     Controller cc;
-
     byte[] datareport;
-
     double filegrootte_kbytes;
-
     BigDecimal bigdecimal_filegrootte_kbytes;
-
     ResultService resultService;
 
     public Storereport(Controller cc) {
@@ -64,12 +56,10 @@ public class Storereport {
         if (filetransported) {
             bigdecimal_filegrootte_kbytes = new BigDecimal(filegrootte_kbytes);
             cc.actualtime.resettime();
-
             updatesample = resultService.delete_report(strquantilethreshold, reportname, strexperimentid);
             updatesample = resultService.insertreport(strquantilethreshold, reportname, strexperimentid,
                     bigdecimal_filegrootte_kbytes);
         }
         return updatesample;
     }
-
 }

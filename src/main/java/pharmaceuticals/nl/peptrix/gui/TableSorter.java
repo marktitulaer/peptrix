@@ -9,44 +9,29 @@ import javax.swing.event.*;
 import javax.swing.table.*;
 
 public class TableSorter extends AbstractTableModel {
-
     private static final long serialVersionUID = 4569901490299309282L;
-
     protected TableModel tableModel;
-
     public static final int DESCENDING = -1;
-
     public static final int NOT_SORTED = 0;
-
     public static final int ASCENDING = 1;
-
     private static Directive EMPTY_DIRECTIVE = new Directive(-1, NOT_SORTED);
-
     @SuppressWarnings("unchecked")
     public static final Comparator<Object> COMPARABLE_COMAPRATOR = new Comparator<Object>() {
         public int compare(Object o1, Object o2) {
             return ((Comparable<Object>) o1).compareTo(o2);
         }
     };
-
     public static final Comparator<Object> LEXICAL_COMPARATOR = new Comparator<Object>() {
         public int compare(Object o1, Object o2) {
             return o1.toString().compareTo(o2.toString());
         }
     };
-
     private Row[] viewToModel;
-
     private int[] modelToView;
-
     private JTableHeader tableHeader;
-
     private MouseListener mouseListener;
-
     private TableModelListener tableModelListener;
-
     private Map<Object, Object> columnComparators = new HashMap<Object, Object>();
-
     private List<Directive> sortingColumns = new ArrayList<Directive>();
 
     public TableSorter() {
@@ -234,7 +219,6 @@ public class TableSorter extends AbstractTableModel {
     }
 
     private class Row implements Comparable<Object> {
-
         private int modelIndex;
 
         public Row(int index) {
@@ -268,7 +252,6 @@ public class TableSorter extends AbstractTableModel {
     }
 
     private class TableModelHandler implements TableModelListener {
-
         public void tableChanged(TableModelEvent e) {
             if (!isSorting()) {
                 clearSortingState();
@@ -305,22 +288,16 @@ public class TableSorter extends AbstractTableModel {
                 if (!e.isControlDown()) {
                     cancelSorting();
                 }
-
-
                 status = status + (e.isShiftDown() ? -1 : 1);
                 status = (status + 4) % 3 - 1;
-
                 setSortingStatus(column, status);
             }
         }
     }
 
     private static class Arrow implements Icon {
-
         private boolean descending;
-
         private int size;
-
         private int priority;
 
         public Arrow(boolean descending, int size, int priority) {
@@ -331,42 +308,30 @@ public class TableSorter extends AbstractTableModel {
 
         public void paintIcon(Component c, Graphics g, int x, int y) {
             Color color = c == null ? Color.GRAY : c.getBackground();
-
-
             int dx = (int) (size / 2 * Math.pow(0.8, priority));
             int dy = descending ? dx : -dx;
-
             y = y + 5 * size / 6 + (descending ? -dy : 0);
             int shift = descending ? 1 : -1;
             g.translate(x, y);
-
-
             g.setColor(color.darker());
             g.drawLine(dx / 2, dy, 0, 0);
             g.drawLine(dx / 2, dy + shift, 0, shift);
-
-
             g.setColor(color.brighter());
             g.drawLine(dx / 2, dy, dx, 0);
             g.drawLine(dx / 2, dy + shift, dx, shift);
-
-
             if (descending) {
                 g.setColor(color.darker().darker());
             } else {
                 g.setColor(color.brighter().brighter());
             }
             g.drawLine(dx, 0, 0, 0);
-
             g.setColor(color);
             g.translate(-x, -y);
         }
 
-
         public int getIconWidth() {
             return size;
         }
-
 
         public int getIconHeight() {
             return size;
@@ -374,7 +339,6 @@ public class TableSorter extends AbstractTableModel {
     }
 
     private class SortableHeaderRenderer implements TableCellRenderer {
-
         private TableCellRenderer tableCellRenderer;
 
         public SortableHeaderRenderer(TableCellRenderer tableCellRenderer) {
@@ -396,9 +360,7 @@ public class TableSorter extends AbstractTableModel {
     }
 
     private static class Directive {
-
         private int column;
-
         private int direction;
 
         public Directive(int column, int direction) {

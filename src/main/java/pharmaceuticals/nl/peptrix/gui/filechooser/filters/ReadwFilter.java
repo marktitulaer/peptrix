@@ -3,11 +3,8 @@ package pharmaceuticals.nl.peptrix.gui.filechooser.filters;
 import java.io.File;
 
 public class ReadwFilter extends SuffixAwareFilter {
-
     String suffix;
-
     String searchname = "ReAdW.exe";
-
     boolean readw_in_name = false;
 
     @Override

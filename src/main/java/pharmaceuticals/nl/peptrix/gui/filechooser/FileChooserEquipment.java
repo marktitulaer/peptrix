@@ -14,19 +14,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class FileChooserEquipment {
-
     JPanel panelequipment;
-
     JPanel panelequipmentleft;
-
     JPanel panelequipmentright;
-
     GridBagLayout gridbagequipment;
-
     GridBagConstraints constraintsequipment;
-
     JLabel equipmentidlabel;
-
     Controller cc;
 
     public FileChooserEquipment(Controller cc) {

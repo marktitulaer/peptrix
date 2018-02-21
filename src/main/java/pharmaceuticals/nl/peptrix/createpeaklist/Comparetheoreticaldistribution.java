@@ -3,55 +3,30 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public class Comparetheoreticaldistribution {
-
     Experiment experiment;
-
     Theoreticaldistribution theoreticaldistribution;
-
     StringBuffer list_monotopic_id;
-
     StringBuffer bufferoverviewofisotopes2;
-
     String[] isotopes;
-
     String overviewofisotopes;
-
     double[] ratio;
-
     double inputerror;
-
     double potentialisotope;
-
     double sum_error_nosulphur;
-
     double error_nosulphur;
-
     double sum_error_onesulphur;
-
     double error_onesulphur;
-
     double sum_error_twosulphur;
-
     double error_twosulphur;
-
     double save_error;
-
     double return_error;
-
     double istopehigh;
-
     double istopelow;
-
     int counterror;
-
     int l;
-
     int chargestate;
-
     int numberoflines2;
-
     boolean calculate;
-
     boolean is_isotopic_cluster;
 
     public Comparetheoreticaldistribution(Experiment experiment) {

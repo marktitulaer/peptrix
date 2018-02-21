@@ -11,7 +11,6 @@ public class mzXMLFilter extends SuffixAwareFilter {
         } else {
             return super.accept(f);
         }
-
     }
 
     @Override

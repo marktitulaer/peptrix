@@ -15,9 +15,7 @@ import javax.swing.JRadioButton;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class PanelPeakFind {
-
     JPanel peakfindinputpanel;
-
     Controller cc;
 
     public PanelPeakFind(Controller cc) {
@@ -271,6 +269,5 @@ public class PanelPeakFind {
         constraintspeakfind.gridheight = 1;
         gridbagpeakfind.setConstraints(cc.input_changeingradient3, constraintspeakfind);
         peakfindinputpanel.add(cc.input_changeingradient3);
-
     }
 }

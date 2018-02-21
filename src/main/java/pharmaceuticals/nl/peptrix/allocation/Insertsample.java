@@ -7,17 +7,11 @@ import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 import pharmaceuticals.nl.peptrix.serviceimpl.SampleServiceImpl;
 
 public class Insertsample {
-
     Controller cc;
-
     Object[][] odatasample;
-
     String newsamplename;
-
     ResultService resultService;
-
     ResultServiceImpl resultServiceImpl;
-
     SampleService sampleService;
 
     public Insertsample(Controller cc) {

@@ -4,33 +4,19 @@ import pharmaceuticals.nl.peptrix.experiment.Experiment;
 import pharmaceuticals.nl.peptrix.createpeaklist.MassSpectrometryFile;
 
 public class AddPeaksToMatrix {
-
     CheckMassandTimeWindow checkMassandTimeWindow;
-
     Checkbettermatchingothermass checkbettermatchingothermass;
-
     Experiment experiment;
-
     double deltatimecombine;
-
     double deltamzcombinelocal;
-
     double absolutedifference;
-
     double deltatimelocalcombine;
-
     double retentiontime_peaklist;
-
     double min_retention_time;
-
     double max_retention_time;
-
     double doublemass;
-
     double doubleintensity;
-
     boolean matchingtest;
-
     boolean addmasstolist;
 
     public AddPeaksToMatrix(Experiment experiment) {
@@ -92,14 +78,10 @@ public class AddPeaksToMatrix {
                     reference_list[2][j] = -1;
                     reference_list[3][j] = -1;
                 }
-
-
                 matchingtest = checkMassandTimeWindow.checkMassandTimeWindow(doublemass, reference_list[0][j],
                         extra_retention_time_and_ms2_sequencing_data, min_retention_time, max_retention_time,
                         retentiontime_peaklist, reference_list[1][j], reference_list[2][j], reference_list[3][j]);
                 if (matchingtest) {
-
-
                     absolutedifference = Math.abs(doublemass - reference_list[0][j]);
                     addmasstolist = checkbettermatchingothermass.check_better_matching_other_mass(j, reference_list,
                             deltamzcombinelocal, massesofmasspectrometryfile, k, arraytimesoffile, doublemass,

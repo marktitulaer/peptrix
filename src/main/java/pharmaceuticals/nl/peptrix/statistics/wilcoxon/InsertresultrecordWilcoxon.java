@@ -5,11 +5,8 @@ import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 
 public class InsertresultrecordWilcoxon {
-
     Controller cc;
-
     int updatesample;
-
     ResultService resultService;
 
     public InsertresultrecordWilcoxon(Controller cc) {

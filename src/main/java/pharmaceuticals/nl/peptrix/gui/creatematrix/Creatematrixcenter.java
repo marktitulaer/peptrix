@@ -10,11 +10,8 @@ import pharmaceuticals.nl.peptrix.gui.creatematrix.center.Centerpanelnorthtotalc
 import pharmaceuticals.nl.peptrix.gui.creatematrix.center.CenterpanelsouthCreatematrix;
 
 public class Creatematrixcenter {
-
     public Centerpanelnorthtotalcreatematrix centerpanelnorthtotalcreatematrix;
-
     public CenterpanelsouthCreatematrix centerpanelsouthcreatematrix;
-
     public ScrollPane creatematrixcenter;
 
     public Creatematrixcenter(Controller cc) {
@@ -46,5 +43,4 @@ public class Creatematrixcenter {
     public JPanel getcreatematrixcenterpanelsouth() {
         return centerpanelsouthcreatematrix.getcreatematrixcenterpanelsouth();
     }
-
 }

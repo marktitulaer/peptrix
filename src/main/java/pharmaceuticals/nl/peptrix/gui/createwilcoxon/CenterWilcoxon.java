@@ -6,7 +6,6 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.ScrollPane;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -16,19 +15,12 @@ import pharmaceuticals.nl.peptrix.gui.createwilcoxon.center.Inputpanelwilcoxon;
 import pharmaceuticals.nl.peptrix.gui.createwilcoxon.center.Panelpvalues;
 
 public class CenterWilcoxon {
-
     ScrollPane wilcoxoncenter;
-
     JPanel wilcoxoncenterpanelsouth;
-
     JPanel wilcoxoncenterpanelnorth;
-
     JPanel dummypanel;
-
     JPanel wilcoxoninputpanel;
-
     public Inputpanelwilcoxon inputpanelwilcoxon;
-
     public Panelpvalues panelpvalues;
 
     public CenterWilcoxon(Controller cc) {

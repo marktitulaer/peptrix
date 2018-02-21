@@ -4,25 +4,15 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class ActualTime {
-
     private GregorianCalendar gc;
-
     private String day;
-
     private String month;
-
     private String year;
-
     private String hour;
-
     private String minutes;
-
     private String seconds;
-
     private String datestring;
-
     private String timestring;
-
     private int intyear;
 
     public void resettime() {
@@ -74,5 +64,4 @@ public class ActualTime {
     public String getseconds() {
         return seconds;
     }
-
 }

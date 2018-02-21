@@ -10,29 +10,21 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 @Table(name = "ItemValue")
 public class ItemValue implements Serializable {
-
     private static final long serialVersionUID = 1L;
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "itemValueid")
     private long itemvalueid;
-
     @ManyToOne(optional = true)
     @JoinColumn(name = "systemcodeitemid")
     private Systemcodeitem systemcodeitem;
-
     @ManyToOne(optional = true)
     @JoinColumn(name = "unitid")
     private Unit unit;
-
     @Column(name = "Itemvalue", length = 200)
     String itemvalue;
-
     @CreationTimestamp
     private Date created;
-
     @UpdateTimestamp
     private Date updated;
 
@@ -83,5 +75,4 @@ public class ItemValue implements Serializable {
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
-
 }

@@ -3,25 +3,15 @@ package pharmaceuticals.nl.peptrix.utils;
 import pharmaceuticals.nl.peptrix.createpeaklist.FTMSdata;
 
 public class FastFourierTransform {
-
     int n;
-
     int nu;
-
     int n2;
-
     int nu1;
-
     double tr;
-
     double ti;
-
     double p;
-
     double arg;
-
     double c;
-
     double s;
 
     private int bitrev(int j) {
@@ -84,6 +74,5 @@ public class FastFourierTransform {
         for (int i = 1; i < n / 2; i++) {
             xre.data[i] = 2 * (float) (Math.sqrt(xre.data[i] * xre.data[i] + xim[i] * xim[i])) / n;
         }
-
     }
 }

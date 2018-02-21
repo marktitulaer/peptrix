@@ -4,19 +4,12 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 
 public class Calibration {
-
     GenerateinputfilesRscript generateinputfilesRscript;
-
     Controller cc;
-
     ExportFileToDisk exportfiletodisk;
-
     CalibrationRScript calibrationRScript;
-
     Readoutputfilescalibration readoutputfilescalibration;
-
     double[] calibration_coefficients;
-
     int count;
 
     public Calibration(Controller cc) {
@@ -40,5 +33,4 @@ public class Calibration {
         }
         return calibration_coefficients;
     }
-
 }

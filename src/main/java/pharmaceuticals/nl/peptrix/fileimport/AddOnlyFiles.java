@@ -6,7 +6,6 @@ import java.util.Vector;
 import pharmaceuticals.nl.peptrix.gui.Progress;
 
 public class AddOnlyFiles {
-
     Progress progress;
 
     public AddOnlyFiles(Progress progress) {

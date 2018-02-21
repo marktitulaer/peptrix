@@ -3,7 +3,6 @@ package pharmaceuticals.nl.peptrix.gui.filechooser.filters;
 import java.io.File;
 
 public class RawFilter extends SuffixAwareFilter {
-
     @Override
     public boolean accept(File f) {
         String suffix = getSuffix(f);

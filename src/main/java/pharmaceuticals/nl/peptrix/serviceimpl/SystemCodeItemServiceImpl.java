@@ -1,16 +1,13 @@
 package pharmaceuticals.nl.peptrix.serviceimpl;
 
 import java.sql.SQLException;
-
 import javax.swing.JOptionPane;
 
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.service.SystemCodeItemService;
 
 public class SystemCodeItemServiceImpl implements SystemCodeItemService {
-
     Controller cc;
-
     private String query;
 
     public SystemCodeItemServiceImpl(Controller cc) {
@@ -133,7 +130,6 @@ public class SystemCodeItemServiceImpl implements SystemCodeItemService {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-
     }
 
     public Object[][] searchdirectories(String file_to_search) {
@@ -141,7 +137,6 @@ public class SystemCodeItemServiceImpl implements SystemCodeItemService {
         query = "select systemcodeitem.systemcodeitemid from systemcodeitem, systemcode where systemcodeitem.itemcode = '"
                 + file_to_search
                 + "' and systemcodeitem.systemcodeid = systemcode.systemcodeid and systemcode.code = 'directories'";
-
         try {
             odata = cc.jdbcconnection.returnData(query);
         } catch (SQLException e) {
@@ -166,7 +161,6 @@ public class SystemCodeItemServiceImpl implements SystemCodeItemService {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-
     }
 
     public Object[][] getclibrationstandards() {
@@ -203,5 +197,4 @@ public class SystemCodeItemServiceImpl implements SystemCodeItemService {
         }
         return odata;
     }
-
 }

@@ -1,21 +1,13 @@
 package pharmaceuticals.nl.peptrix.creatematrix;
 
 public class Matrix {
-
     double[] totalcount;
-
     double[] samplecount;
-
     double[] accumulatemass;
-
     double[] sampleintensity;
-
     double[] boolean_addnoisepeaks;
-
     double[] samplenoisecount;
-
     double[] samplenoiseintensity;
-
     String[] detailinformation;
 
     public Matrix(int matrixlenght) {
@@ -96,7 +88,6 @@ public class Matrix {
         return samplenoiseintensity[i];
     }
 
-
     public void addaccumulatemass(int i, double value) {
         accumulatemass[i] = accumulatemass[i] + value;
     }
@@ -112,5 +103,4 @@ public class Matrix {
     public String getdetailinformation(int i) {
         return detailinformation[i];
     }
-
 }

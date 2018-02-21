@@ -6,11 +6,8 @@ import java.util.Vector;
 import pharmaceuticals.nl.peptrix.gui.Progress;
 
 public class ScanFilesandDirs {
-
     Vector<File[]> filevector;
-
     AddOnlyFiles addfiles;
-
     Directories directories;
 
     public ScanFilesandDirs(Progress progress) {
@@ -25,5 +22,4 @@ public class ScanFilesandDirs {
         filevector = directories.search_for_sub_directories(this, addfiles, name, filevector);
         return filevector;
     }
-
 }

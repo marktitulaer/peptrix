@@ -3,29 +3,17 @@ package pharmaceuticals.nl.peptrix.statistics.wilcoxon;
 import java.io.*;
 
 public class BitmapHeader {
-
     int nsize;
-
     int nbisize;
-
     int nwidth;
-
     int nheight;
-
     int nplanes;
-
     int nbitcount;
-
     int ncompression;
-
     int nsizeimage;
-
     int nxpm;
-
     int nypm;
-
     int nclrused;
-
     int nclrimp;
 
     public void read_the_bitmap_header(byte[] inputdata, int bflen, int bilen) throws IOException {

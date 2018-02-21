@@ -7,23 +7,14 @@ import pharmaceuticals.nl.peptrix.service.ResultService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 
 public class SaveAllocation {
-
     Object[][] odatadetails;
-
     Object[] oheaders;
-
     Controller cc;
-
     ResultService resultService;
-
     StringBuffer printallocationbuffer;
-
     String linefeed = "\n";
-
     String exportname;
-
     String strquery;
-
     String printallocation;
 
     public SaveAllocation(Controller cc) {

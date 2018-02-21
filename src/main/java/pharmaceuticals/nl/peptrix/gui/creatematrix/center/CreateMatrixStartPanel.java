@@ -13,9 +13,7 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 class CreateMatrixStartPanel {
-
     JPanel startcreatematrixpanel;
-
     Controller cc;
 
     public CreateMatrixStartPanel(Controller cc) {
@@ -108,5 +106,4 @@ class CreateMatrixStartPanel {
     public JPanel getpanel() {
         return startcreatematrixpanel;
     }
-
 }

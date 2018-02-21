@@ -1,9 +1,7 @@
 package pharmaceuticals.nl.peptrix.createpeaklist;
 
 public class Spectrum {
-
     double[] mass;
-
     double[] intensity;
 
     public Spectrum(int intnumberofmeasurements) {

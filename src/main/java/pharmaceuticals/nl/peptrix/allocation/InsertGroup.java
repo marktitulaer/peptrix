@@ -5,9 +5,7 @@ import pharmaceuticals.nl.peptrix.service.GroupService;
 import pharmaceuticals.nl.peptrix.serviceimpl.GroupServiceImpl;
 
 public class InsertGroup {
-
     Controller cc;
-
     GroupService groupService;
 
     public InsertGroup(Controller cc) {
@@ -15,13 +13,9 @@ public class InsertGroup {
     }
 
     public String insertgroup(String strGroup_code, String strGroup_name, String strexperimentid) {
-
         groupService = new GroupServiceImpl(cc);
-
         String groupid = "";
-
         Object[][] odatagroup = groupService.selectgroup(strGroup_code, strexperimentid);
-
         if (odatagroup.length > 0) {
             groupid = odatagroup[0][0].toString().trim();
         } else {

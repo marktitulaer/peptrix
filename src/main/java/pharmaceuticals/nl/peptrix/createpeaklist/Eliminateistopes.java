@@ -3,31 +3,18 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public class Eliminateistopes {
-
     Experiment experiment;
-
     StringBuffer bufferoverviewofisotopes;
-
     String[] isotopes;
-
     String linefeed = "\n";
-
     String overviewofisotopes;
-
     double stdev;
-
     double mean1;
-
     double sum_of_squares2;
-
     double deltamzsearchcalibrantslocal;
-
     double mean2;
-
     int number_of_best_isotopic_clusters;
-
     int numberoflines2;
-
     boolean is_an_isotope;
 
     public Eliminateistopes(Experiment experiment) {

@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.gui;
 
 import java.awt.*;
-
 import javax.swing.JPanel;
 
 import pharmaceuticals.nl.peptrix.Controller;
@@ -10,13 +9,9 @@ import pharmaceuticals.nl.peptrix.gui.creatematrix.Creatematrixnorth;
 import pharmaceuticals.nl.peptrix.gui.creatematrix.PanelCreateMatrixSouth;
 
 public class Creatematrix {
-
     Controller cc;
-
     Creatematrixnorth northcreatematrix;
-
     public Creatematrixcenter creatematrix_center;
-
     PanelCreateMatrixSouth panelcreatematrixsouth;
 
     public Creatematrix(Controller cc) {
@@ -46,5 +41,4 @@ public class Creatematrix {
     public JPanel getcreatematrixcenterpanelsouth() {
         return creatematrix_center.getcreatematrixcenterpanelsouth();
     }
-
 }

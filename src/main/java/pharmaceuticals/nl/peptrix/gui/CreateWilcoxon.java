@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.gui;
 
 import java.awt.*;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -13,15 +12,10 @@ import pharmaceuticals.nl.peptrix.gui.createwilcoxon.SouthWilcoxon;
 import pharmaceuticals.nl.peptrix.statistics.wilcoxon.Wilcoxon;
 
 public class CreateWilcoxon {
-
     public Wilcoxon wilcoxon;
-
     Controller cc;
-
     Northcreatewilcoxon northcreatewilcoxon;
-
     public CenterWilcoxon centerWilcoxon;
-
     SouthWilcoxon southWilcoxon;
 
     public CreateWilcoxon(Controller cc) {
@@ -69,5 +63,4 @@ public class CreateWilcoxon {
     public void removeAll_from_p_values_panel() {
         centerWilcoxon.removeAll_from_p_values_panel();
     }
-
 }

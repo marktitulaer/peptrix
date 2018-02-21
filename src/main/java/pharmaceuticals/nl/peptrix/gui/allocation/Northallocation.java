@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.gui.allocation;
 
 import java.awt.FlowLayout;
-
 import javax.swing.JPanel;
 
 import pharmaceuticals.nl.peptrix.Controller;
@@ -9,7 +8,6 @@ import pharmaceuticals.nl.peptrix.gui.allocation.top.Experimentleftpanelallocati
 import pharmaceuticals.nl.peptrix.gui.allocation.top.Experimentrighttotal;
 
 public class Northallocation {
-
     JPanel allocationnorthpanel;
 
     public Northallocation(Controller cc) {

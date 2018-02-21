@@ -5,39 +5,22 @@ import pharmaceuticals.nl.peptrix.experiment.Experiment;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 
 public class IdentifypeaksRscript {
-
     ExportFileToDisk exportfiletodisk;
-
     Controller cc;
-
     StringBuffer outputpathbuffer;
-
     StringBuffer inputpathbuffer;
-
     String searchstring;
-
     String outputpath;
-
     String inputpath;
-
     String teststring;
-
     String Rscript;
-
     char backslash = (char) 92;
-
     double deltamz;
-
     double quantilethreshold;
-
     double deltaxcentroiding;
-
     double limitshiftcentroiding;
-
     int ndiv;
-
     int clusteringtechnique;
-
     int centroidingmethod;
 
     public IdentifypeaksRscript(Controller cc) {

@@ -3,13 +3,9 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 class Deisotoping {
-
     Eliminateistopes eliminateistopes;
-
     Clusters clusters;
-
     Potentialisotopicclusters potentialisotopicclusters;
-
     Comparetheoreticaldistribution comparetheoreticaldistribution;
 
     public Deisotoping(Experiment experiment) {

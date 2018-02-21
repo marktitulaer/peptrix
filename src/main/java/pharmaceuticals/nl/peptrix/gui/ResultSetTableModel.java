@@ -6,18 +6,12 @@ import javax.swing.table.*;
 import pharmaceuticals.nl.peptrix.database.JDBC;
 
 public class ResultSetTableModel extends AbstractTableModel {
-
     private static final long serialVersionUID = 1L;
-
     private ResultSet resultSet;
-
     private ResultSetMetaData metaData;
-
     private int numberOfRows;
 
-
     public ResultSetTableModel(JDBC jdbcconnection) throws SQLException {
-
         this.resultSet = jdbcconnection.rs;
         this.metaData = jdbcconnection.metaData;
         this.numberOfRows = jdbcconnection.rowCnt;
@@ -25,7 +19,6 @@ public class ResultSetTableModel extends AbstractTableModel {
     }
 
     public void displayresults(JDBC jdbcconnection) {
-
         this.resultSet = jdbcconnection.rs;
         this.metaData = jdbcconnection.metaData;
         this.numberOfRows = jdbcconnection.rowCnt;
@@ -46,7 +39,6 @@ public class ResultSetTableModel extends AbstractTableModel {
         return Object.class;
     }
 
-
     public int getColumnCount() throws IllegalStateException {
         try {
             return metaData.getColumnCount();
@@ -66,11 +58,9 @@ public class ResultSetTableModel extends AbstractTableModel {
         return "";
     }
 
-
     public int getRowCount() throws IllegalStateException {
         return numberOfRows;
     }
-
 
     public Object getValueAt(int row, int column) throws IllegalStateException {
         try {

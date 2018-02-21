@@ -3,23 +3,14 @@ package pharmaceuticals.nl.peptrix.creatematrix;
 import pharmaceuticals.nl.peptrix.experiment.Experiment;
 
 public class CheckMassandTimeWindow {
-
     Experiment experiment;
-
     double deltamzcombinelocal;
-
     double absolutedifference;
-
     double deltatimecombine;
-
     double deltatimelocalcombine;
-
     boolean massandtimewindowOK;
-
     boolean withintimewindowtest;
-
     boolean withintimewindow;
-
     boolean withinmasswindow;
 
     public CheckMassandTimeWindow(Experiment experiment) {
@@ -37,7 +28,6 @@ public class CheckMassandTimeWindow {
         deltamzcombinelocal = Double.parseDouble(experiment.getdelta_mz_combine());
         deltatimecombine = experiment.gettime_window_combining_peptide_masses();
         if (experiment.getclusteringtechnique() == 1) {
-
             deltamzcombinelocal = Double.parseDouble(experiment.getdelta_mz_combine()) * reference_mass / 1000000;
         }
         absolutedifference = Math.abs(mass_peaklist - reference_mass);
@@ -68,23 +58,18 @@ public class CheckMassandTimeWindow {
                                 && (maximum_retentiontime_peaklist <= reference_max_retentiontime)) {
                             withintimewindow = true;
                         }
-
                         if ((maximum_retentiontime_peaklist >= reference_min_retentiontime)
                                 && (reference_max_retentiontime >= minimum_retentiontime_peaklist)) {
                             withintimewindowtest = true;
                         }
-
                         if (withintimewindowtest != withintimewindow) {
                             System.out.println(" verschil withintimewindowtest " + withintimewindowtest
                                     + " withintimewindow  " + withintimewindow);
-
                             System.out.println("   reference_min_retentiontime " + reference_min_retentiontime
                                     + " reference_max_retentiontime  " + reference_max_retentiontime);
                             System.out.println("   minimum_retentiontime_peaklist " + minimum_retentiontime_peaklist
                                     + " maximum_retentiontime_peaklist  " + maximum_retentiontime_peaklist);
-
                         }
-
                         if (minimum_retentiontime_peaklist > -1) {
                             if (Math.abs(
                                     minimum_retentiontime_peaklist - reference_retentiontime) < deltatimelocalcombine) {

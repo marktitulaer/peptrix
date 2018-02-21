@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.utils;
 
 public class SortArray {
-
     public SortArray(double[] a) {
         sort(a);
     }

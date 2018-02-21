@@ -8,33 +8,19 @@ import java.util.*;
 import javax.swing.*;
 
 class JCalendar extends JPanel implements PropertyChangeListener, ActionListener {
-
     JFrame calendarframe;
-
     SimpleDateFormat df;
-
     TextField field_to_update;
-
     public JButton btnOK;
-
     private JButton btnCancel;
-
     private JPanel PanelOKCancel;
-
     private Calendar calendar;
-
     protected JDayChooser dayChooser;
-
     private boolean initialized = false;
-
     protected boolean weekOfYearVisible = true;
-
     protected Locale locale;
-
     protected JMonthChooser monthChooser;
-
     private JPanel monthYearPanel;
-
     protected JYearChooser yearChooser;
 
     public JCalendar(JFrame calendarframe, TextField field_to_update) {
@@ -142,11 +128,9 @@ class JCalendar extends JPanel implements PropertyChangeListener, ActionListener
         return dayChooser.isWeekOfYearVisible();
     }
 
-
     public void propertyChange(PropertyChangeEvent evt) {
         if (calendar != null) {
             Calendar c = (Calendar) calendar.clone();
-
             if (evt.getPropertyName().equals("day")) {
                 c.set(Calendar.DAY_OF_MONTH, ((Integer) evt.getNewValue()).intValue());
                 setCalendar(c, false);
@@ -166,7 +150,6 @@ class JCalendar extends JPanel implements PropertyChangeListener, ActionListener
     @Override
     public void setBackground(Color bg) {
         super.setBackground(bg);
-
         if (dayChooser != null) {
             dayChooser.setBackground(bg);
         }
@@ -295,7 +278,6 @@ class JCalendar extends JPanel implements PropertyChangeListener, ActionListener
         firePropertyChange("date", oldDate, date);
     }
 
-
     public void actionPerformed(ActionEvent evt) {
         if (evt.getSource() == btnCancel) {
             exitcalendar();
@@ -310,5 +292,4 @@ class JCalendar extends JPanel implements PropertyChangeListener, ActionListener
     public void exitcalendar() {
         calendarframe.dispose();
     }
-
 }

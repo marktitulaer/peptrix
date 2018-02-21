@@ -5,15 +5,10 @@ import pharmaceuticals.nl.peptrix.experiment.Experiment;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 
 public class Default_input_xml {
-
     Controller cc;
-
     Experiment experiment;
-
     ExportFileToDisk exportfiletodisk;
-
     public boolean default_input_xml_file_created;
-
     public String default_input_xml_file_name;
 
     public Default_input_xml(Controller cc, Experiment experiment, ExportFileToDisk exportfiletodisk) {

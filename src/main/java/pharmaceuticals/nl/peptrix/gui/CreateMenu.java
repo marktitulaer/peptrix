@@ -5,7 +5,6 @@ import java.awt.*;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class CreateMenu extends MenuBar {
-
     public CreateMenu(Controller cc) {
         Menu mFile = new Menu("File");
         this.add(mFile);
@@ -16,5 +15,4 @@ public class CreateMenu extends MenuBar {
         mSystem.add(cc.Code);
         cc.Code.addActionListener(cc);
     }
-
 }

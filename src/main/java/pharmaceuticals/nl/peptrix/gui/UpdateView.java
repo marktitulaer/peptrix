@@ -10,181 +10,93 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.gui.Creatematrix;
 
 public class UpdateView implements ActionListener {
-
     String[] type;
-
     JFrame calendarframe = new JFrame();
-
     JTabbedPane tabbedPane;
-
     ScrollPane updatemasterview;
-
     JPanel p;
-
     JPanel updatemastertotal;
-
     JPanel updatemasternorth;
-
     JPanel primarytablevalues;
-
     JPanel browsepanel;
-
     JPanel updatepanel;
-
     JPanel panel_OK_Cancel;
-
     JPanel mastertablevalues;
-
     JPanel mastertablevaluesleft;
-
     JPanel mastertablevaluesright;
-
     JPanel dummypanel;
-
     JPanel updatemastersouth;
-
     JPanel[] slavepanels;
-
     JPanel primarytablevaluestotal;
-
     JButton btnNext;
-
     JButton btnFirst;
-
     JButton btnPrevious;
-
     JButton btnLast;
-
     JButton btnrefresh;
-
     JButton btnNew;
-
     JButton btnUpdate;
-
     JButton btnDelete;
-
     JButton btnOK;
-
     JButton btnCancel;
-
     JButton btnallocation;
-
     JButton btncreatematrix;
-
     JButton[] open;
-
     JButton[] zoek;
-
     JButton[] clear;
-
     JButton[] btncalendar;
-
     String[] zoektable;
-
     TextField[] mastertablefieldvalue;
-
     TextField[] tablefield;
-
     Label[] masterfieldname;
-
     Label[] fieldname;
-
     GridBagLayout gridbaglayout = new GridBagLayout();
-
     GridBagLayout gridbaglayoutmastertable = new GridBagLayout();
-
     GridBagConstraints gridbagcontraints = new GridBagConstraints();
-
     Controller cc;
-
     SlavePane[] slavepane;
-
     Object[][] odata;
-
     Object[][] odata2;
-
     Object[][] odata_min;
-
     Object[][] odata_max;
-
     Object[][] odata_new;
-
     Object[][] odata_delete;
-
     String message;
-
     String actualstatus;
-
     String query;
-
     String TableName;
-
     String primarykey;
-
     String primarykeyvalue;
-
     String oldTableName;
-
     String oldprimarykey;
-
     String oldprimarykeyvalue;
-
     String strfieldname;
-
     String wherestring = "";
-
     String dialogtitle;
-
     String[] primarykeymastertable;
-
     String[] primarykeynamemastertable;
-
     StringBuffer querybuffer;
-
     String minvalue;
-
     String maxvalue;
-
     String newvalue;
-
     String wherestringsearch;
-
     String fidname;
-
     String searchstring;
-
     boolean firstrecord = false;
-
     boolean lastrecord = false;
-
     boolean recordtoupdate = false;
-
     boolean debugmode = false;
-
     boolean disable_delete_button = true;
-
     static final String num = "0123456789";
-
     static final String[] status = {"DISPLAY", "NEW", "UPDATE", "DELETE"};
-
     int slavepanelcount;
-
     int top = 2;
-
     int left = 2;
-
     int bottom = 2;
-
     int right = 2;
-
     int indexof_fid;
-
     JPanel searchtablerecordpanel;
-
     SearchSelection searchselection;
-
     JCalendar calendar;
-
     int rows;
 
     public UpdateView(Controller cc) {
@@ -248,7 +160,6 @@ public class UpdateView implements ActionListener {
                 createslavePanes(tabs[i], primarykey, primarykeyvalue);
             }
         }
-
         cc.setslavepane(slavepane);
         tabbedPane.setSelectedIndex(0);
         cc.pBody.removeAll();
@@ -323,7 +234,6 @@ public class UpdateView implements ActionListener {
         updatemastertotal.setLayout(new BorderLayout());
         updatemastertotal.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
         primarytablevalues = selectfields(tab, primarykey, primarykeyvalue);
-
         if (this.actualstatus != status[1]) {
             fillfieldsmastertable(tab, primarykey, primarykeyvalue);
         }
@@ -380,7 +290,6 @@ public class UpdateView implements ActionListener {
                 try {
                     odata2 = cc.jdbcconnection.returnData(query);
                 } catch (SQLException e) {
-
                 }
                 for (int i = 0; i <= (numberoffields - 1); i++) {
                     if (odata[i][0] != null) {
@@ -528,7 +437,6 @@ public class UpdateView implements ActionListener {
         } else {
             lastrecord = false;
         }
-
         if (actualstatus == status[0]) {
             btnFirst.setEnabled(!firstrecord);
             btnPrevious.setEnabled(!firstrecord);
@@ -552,7 +460,6 @@ public class UpdateView implements ActionListener {
         Object[] components = primarytablevalues.getComponents();
         Vector<TextField> databasefields = new Vector<TextField>();
         Vector<JButton> zoekbuttons = new Vector<JButton>();
-
         for (int i = 0; i < components.length; i++) {
             if (components[i] instanceof TextField) {
                 databasefields.add((TextField) components[i]);
@@ -712,7 +619,6 @@ public class UpdateView implements ActionListener {
                 gridbaglayout.setConstraints(clear[i], gridbagcontraints);
                 primarytablevalues.add(clear[i]);
             }
-
             if (type[i].toLowerCase().indexOf("date") > -1) {
                 btncalendar[i] = new JButton("Calendar");
                 btncalendar[i].addActionListener(this);
@@ -783,7 +689,6 @@ public class UpdateView implements ActionListener {
                                 JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                             }
                         }
-
                     }
                 }
             }
@@ -970,7 +875,6 @@ public class UpdateView implements ActionListener {
                 viewtablerecord(oldTableName, oldprimarykey, oldprimarykeyvalue);
             }
         }
-
         if (evt.getSource() == btnCancel) {
             this.actualstatus = status[0];
             viewtablerecord(oldTableName, oldprimarykey, oldprimarykeyvalue);
@@ -1101,7 +1005,6 @@ public class UpdateView implements ActionListener {
                 tablefield[i].setText("");
             }
         }
-
         for (int i = 0; i < btncalendar.length; i++) {
             if (evt.getSource() == btncalendar[i]) {
                 calendarframe = new JFrame("Calendar");
@@ -1123,5 +1026,4 @@ public class UpdateView implements ActionListener {
         }
         return wherestringsearch;
     }
-
 }

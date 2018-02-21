@@ -7,7 +7,6 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.gui.creatematrix.top.ExperimentLeftPanelCreateMatrix;
 
 public class Creatematrixnorth {
-
     JPanel creatematrixnorth;
 
     public Creatematrixnorth(Controller cc) {
@@ -23,5 +22,4 @@ public class Creatematrixnorth {
     public JPanel getpanel() {
         return creatematrixnorth;
     }
-
 }

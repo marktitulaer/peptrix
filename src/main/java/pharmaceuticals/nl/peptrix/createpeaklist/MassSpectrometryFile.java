@@ -1,35 +1,21 @@
 package pharmaceuticals.nl.peptrix.createpeaklist;
 
 public class MassSpectrometryFile {
-
     private String m_filename;
-
     private int m_filenumber;
-
     private String m_sampleid;
-
     private String m_previoussampleid;
-
     private String m_groupid;
-
     private String m_previousgroupid;
-
     private String m_tmp_exportname;
-
     private double m_offset_lc_ms;
-
     private String[] m_arraymassesoffile;
-
     private String[] m_arrayintensitiesoffile;
-
     private String[] m_arraymintimesoffile;
-
     private String[] m_arraymaxtimesoffile;
-
     private String[] m_arraytimesoffile;
 
     public MassSpectrometryFile() {
-
     }
 
     public void setFilename(String filename) {
@@ -139,5 +125,4 @@ public class MassSpectrometryFile {
     public String[] getarraytimesoffile() {
         return m_arraytimesoffile;
     }
-
 }

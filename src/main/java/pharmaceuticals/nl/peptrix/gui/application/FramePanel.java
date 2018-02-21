@@ -1,18 +1,14 @@
 package pharmaceuticals.nl.peptrix.gui.application;
 
 import java.awt.BorderLayout;
-
 import javax.swing.JPanel;
 
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.gui.application.menu.Buttonsleftpanel;
 
 public class FramePanel {
-
     Contentrightpanel contentrightpanel;
-
     BorderLayout borderlayout = new BorderLayout();
-
     JPanel panel = new JPanel();
 
     public FramePanel(Controller cc) {
@@ -28,5 +24,4 @@ public class FramePanel {
     public JPanel getPanel() {
         return panel;
     }
-
 }

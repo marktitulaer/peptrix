@@ -17,9 +17,7 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.SortedListModel;
 
 public class Panel_ms2_sequencing {
-
     Controller cc;
-
     JPanel ms2_sequencing_panel;
 
     public Panel_ms2_sequencing(Controller cc) {
@@ -33,8 +31,6 @@ public class Panel_ms2_sequencing {
         GridBagLayout ms2_sequencing_panellayout = new GridBagLayout();
         ms2_sequencing_panel.setLayout(ms2_sequencing_panellayout);
         GridBagConstraints gridbagcontraintsmodifications = new GridBagConstraints();
-
-
         gridbagcontraintsmodifications.anchor = GridBagConstraints.FIRST_LINE_START;
         gridbagcontraintsmodifications.insets = new Insets(2, 2, 2, 2);
         gridbagcontraintsmodifications.gridx = 1;
@@ -67,8 +63,6 @@ public class Panel_ms2_sequencing {
         cc.combo_searchengine = new JComboBox(array_searchengine);
         cc.combo_searchengine.setLightWeightPopupEnabled(false);
         ms2_sequencing_panel.add(cc.combo_searchengine, gridbagcontraintsmodifications);
-
-
         gridbagcontraintsmodifications.gridx = 6;
         gridbagcontraintsmodifications.gridy = 2;
         gridbagcontraintsmodifications.gridwidth = 1;
@@ -83,7 +77,6 @@ public class Panel_ms2_sequencing {
         gridbagcontraintsmodifications.fill = GridBagConstraints.NONE;
         JLabel enzymelabel = new JLabel("Enzyme");
         ms2_sequencing_panel.add(enzymelabel, gridbagcontraintsmodifications);
-
         gridbagcontraintsmodifications.gridx = 1;
         gridbagcontraintsmodifications.gridy = 3;
         gridbagcontraintsmodifications.gridwidth = 1;
@@ -137,8 +130,6 @@ public class Panel_ms2_sequencing {
         cc.list_all_modifications = new JList(cc.model_all_modifications);
         JScrollPane pane_all_mods = new JScrollPane(cc.list_all_modifications);
         ms2_sequencing_panel.add(pane_all_mods, gridbagcontraintsmodifications);
-
-
         gridbagcontraintsmodifications.gridx = 10;
         gridbagcontraintsmodifications.gridy = 3;
         gridbagcontraintsmodifications.gridwidth = 1;
@@ -165,8 +156,6 @@ public class Panel_ms2_sequencing {
         cc.list_potential_enzyme = new JList(cc.potential_enzyme_list);
         JScrollPane pane_potential_enzyme = new JScrollPane(cc.list_potential_enzyme);
         ms2_sequencing_panel.add(pane_potential_enzyme, gridbagcontraintsmodifications);
-
-
         gridbagcontraintsmodifications.gridx = 1;
         gridbagcontraintsmodifications.gridy = 4;
         gridbagcontraintsmodifications.gridwidth = 2;
@@ -202,7 +191,6 @@ public class Panel_ms2_sequencing {
         cc.button_add_fixed = new JButton("<");
         cc.button_add_fixed.addActionListener(cc);
         ms2_sequencing_panel.add(cc.button_add_fixed, gridbagcontraintsmodifications);
-
         gridbagcontraintsmodifications.gridx = 11;
         gridbagcontraintsmodifications.gridy = 4;
         gridbagcontraintsmodifications.gridwidth = 1;
@@ -211,8 +199,6 @@ public class Panel_ms2_sequencing {
         cc.button_add_enzyme = new JButton("<");
         cc.button_add_enzyme.addActionListener(cc);
         ms2_sequencing_panel.add(cc.button_add_enzyme, gridbagcontraintsmodifications);
-
-
         gridbagcontraintsmodifications.gridx = 1;
         gridbagcontraintsmodifications.gridy = 5;
         gridbagcontraintsmodifications.gridwidth = 1;
@@ -229,8 +215,6 @@ public class Panel_ms2_sequencing {
         cc.combo_Taxonomy = new JComboBox(array_Taxonomy);
         cc.combo_Taxonomy.setLightWeightPopupEnabled(false);
         ms2_sequencing_panel.add(cc.combo_Taxonomy, gridbagcontraintsmodifications);
-
-
         gridbagcontraintsmodifications.gridx = 1;
         gridbagcontraintsmodifications.gridy = 6;
         gridbagcontraintsmodifications.gridwidth = 1;
@@ -245,8 +229,6 @@ public class Panel_ms2_sequencing {
         gridbagcontraintsmodifications.fill = GridBagConstraints.NONE;
         cc.only_ms2sequenced_masses = new Checkbox();
         ms2_sequencing_panel.add(cc.only_ms2sequenced_masses, gridbagcontraintsmodifications);
-
-
         gridbagcontraintsmodifications.gridx = 6;
         gridbagcontraintsmodifications.gridy = 8;
         gridbagcontraintsmodifications.gridwidth = 1;
@@ -254,8 +236,6 @@ public class Panel_ms2_sequencing {
         gridbagcontraintsmodifications.fill = GridBagConstraints.NONE;
         JLabel label_variable_mod = new JLabel("Variable modifications");
         ms2_sequencing_panel.add(label_variable_mod, gridbagcontraintsmodifications);
-
-
         gridbagcontraintsmodifications.gridx = 6;
         gridbagcontraintsmodifications.gridy = 9;
         gridbagcontraintsmodifications.gridwidth = 1;
@@ -273,8 +253,6 @@ public class Panel_ms2_sequencing {
         cc.button_remove_variabel = new JButton(">");
         cc.button_remove_variabel.addActionListener(cc);
         ms2_sequencing_panel.add(cc.button_remove_variabel, gridbagcontraintsmodifications);
-
-
         gridbagcontraintsmodifications.gridx = 7;
         gridbagcontraintsmodifications.gridy = 10;
         gridbagcontraintsmodifications.gridwidth = 1;

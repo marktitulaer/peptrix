@@ -5,19 +5,12 @@ import pharmaceuticals.nl.peptrix.service.ExperimentService;
 import pharmaceuticals.nl.peptrix.serviceimpl.ExperimentServiceImpl;
 
 public class Createnewexperiment {
-
     Controller cc;
-
     Object[][] odataexperiment;
-
     String latestexperimentid;
-
     String sqlstring;
-
     String strquery;
-
     int numberofrows;
-
     ExperimentService experimentService;
 
     public Createnewexperiment(Controller cc) {
@@ -31,5 +24,4 @@ public class Createnewexperiment {
         latestexperimentid = experimentService.getlatestexperimentid();
         return latestexperimentid;
     }
-
 }

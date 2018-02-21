@@ -11,41 +11,23 @@ import pharmaceuticals.nl.peptrix.experiment.Experiment;
 import pharmaceuticals.nl.peptrix.service.ResultService;
 
 public class ResultServiceImpl implements ResultService {
-
     Object[][] odatafiletypes;
-
     int datalength;
-
     Object[][] odatafiletypes2;
-
     int intmaxnumberofrecords;
-
     int recordsnotallocated;
-
     String[][] odata;
-
     String filtertype;
-
     Controller cc;
-
     String[][] odatamatrixfiles;
-
     String[] matrixfiles;
-
     Object[][] odataselectedmatrix;
-
     boolean presenterrormessage;
-
     String strquery;
-
     Object[][] count_allocated_records;
-
     Object[][] numberofnoisypectra;
-
     Object[][] odatanewresultid2;
-
     String[] oheaders;
-
     Object[][] odatagroupnumbers;
 
     public ResultServiceImpl(Controller cc) {
@@ -570,7 +552,6 @@ public class ResultServiceImpl implements ResultService {
         try {
             odata = cc.jdbcconnection.returnData(strquery);
         } catch (SQLException e) {
-
             e.printStackTrace();
         }
         return odata;
@@ -585,7 +566,6 @@ public class ResultServiceImpl implements ResultService {
         try {
             odata = cc.jdbcconnection.returnData(strquery);
         } catch (SQLException e) {
-
             e.printStackTrace();
         }
         return odata;
@@ -639,9 +619,7 @@ public class ResultServiceImpl implements ResultService {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-
         return odata;
-
     }
 
     public int insertreport(String strquantilethreshold, String reportname, String strexperimentid, BigDecimal tempBD) {
@@ -701,7 +679,6 @@ public class ResultServiceImpl implements ResultService {
     }
 
     public String[] collectgroupnumberswilcoxon(String strexperimentid) {
-
         String[] groupnumbers = null;
         try {
             if (!strexperimentid.trim().equals("")) {
@@ -739,7 +716,6 @@ public class ResultServiceImpl implements ResultService {
                 + transposed_file_name.trim() + "' " + " and exp.experimentid =  rs.experimentid "
                 + " and rs.type = 'transposed' " + " and rs.experimentid = " + experimentid.trim();
         try {
-
             odata = cc.jdbcconnection.returnData(strquery);
         } catch (SQLException e) {
             if (cc.debugmode) {
@@ -783,7 +759,6 @@ public class ResultServiceImpl implements ResultService {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-
         return recordsaffected;
     }
 
@@ -898,7 +873,6 @@ public class ResultServiceImpl implements ResultService {
                                   String strtime, String experimentnumber, String strquantilethreshold, String exportname, String strdatum,
                                   String stryear) {
         int updatesample = -1;
-
         BigDecimal tempBD = new BigDecimal(filegrootte_kbytes);
         if (massspectrometryfile.getSampleid().trim().equals("")) {
             massspectrometryfile.setSampleid("null");
@@ -912,7 +886,6 @@ public class ResultServiceImpl implements ResultService {
                 + "','" + strtime + "'," + tempBD.setScale(3, BigDecimal.ROUND_HALF_EVEN) + ",'" + exportname + "','"
                 + type + "','" + strquantilethreshold + "','" + stryear + "'," + massspectrometryfile.getOffset_lc_ms()
                 + ")";
-
         try {
             updatesample = cc.jdbcconnection.update_table(strquery);
         } catch (SQLException e) {
@@ -933,7 +906,6 @@ public class ResultServiceImpl implements ResultService {
                 + "VALUES (" + experimentnumber + ",null,null,'" + strdatum + "','" + strtime + "',"
                 + tempBD.setScale(3, BigDecimal.ROUND_HALF_EVEN) + ",'" + filename + "','matrix'" + ",'"
                 + strquantilethreshold + "','" + stryear + "')";
-
         try {
             updatesample = cc.jdbcconnection.update_table(strquery);
         } catch (SQLException e) {
@@ -950,8 +922,6 @@ public class ResultServiceImpl implements ResultService {
                                   Experiment experiment, String strdatum, String strtime, String exportnamexmlfraction, String strjaar,
                                   String retentiontime, String mzxmlfraction, int filenumber, double offset_lc_ms) {
         int updatesample = -1;
-
-
         BigDecimal tempBD = new BigDecimal(filegrootte_kbytes);
         if (sampleid.trim().equals("")) {
             sampleid = "null";
@@ -966,7 +936,6 @@ public class ResultServiceImpl implements ResultService {
                 + exportnamexmlfraction + "','" + type + "','" + experiment.getquantilethreshold().trim() + "','"
                 + strjaar + "'," + retentiontime + "," + mzxmlfraction + "," + String.valueOf(filenumber) + ","
                 + String.valueOf(offset_lc_ms) + ")";
-
         try {
             updatesample = cc.jdbcconnection.update_table(strquery);
         } catch (Exception e) {
@@ -993,6 +962,4 @@ public class ResultServiceImpl implements ResultService {
         }
         return odata;
     }
-
-
 }

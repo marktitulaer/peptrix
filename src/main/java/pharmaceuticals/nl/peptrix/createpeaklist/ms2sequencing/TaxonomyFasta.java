@@ -9,11 +9,8 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 
 public class TaxonomyFasta {
-
     Controller cc;
-
     ExportFileToDisk exportfiletodisk;
-
     FileOutputStream taxonomyFastaFile;
 
     public TaxonomyFasta(Controller cc, ExportFileToDisk exportfiletodisk) {
@@ -88,5 +85,4 @@ public class TaxonomyFasta {
         taxonomyFastaFileName = taxonomyFastaFileName.replace("\\", "/");
         return taxonomyFastaFileName;
     }
-
 }

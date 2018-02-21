@@ -2,20 +2,15 @@ package pharmaceuticals.nl.peptrix.gui.allocation.top;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-
 import javax.swing.Box;
 import javax.swing.JPanel;
 
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Experimentrighttotal {
-
     JPanel panelexperimentright;
-
     Experimentrightpanel experimentrightpanel;
-
     JPanel panelexperimentrighttotal;
-
     JPanel dummy;
 
     public Experimentrighttotal(Controller cc) {
@@ -34,5 +29,4 @@ public class Experimentrighttotal {
     public JPanel getpanel() {
         return panelexperimentrighttotal;
     }
-
 }

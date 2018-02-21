@@ -14,13 +14,9 @@ import javax.swing.table.DefaultTableModel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class DisplayPvalues {
-
     Controller cc;
-
     FTPClient ftp;
-
     int numberofrows;
-
     byte[] data_wilcoxon;
 
     public DisplayPvalues(Controller cc) {
@@ -28,9 +24,7 @@ public class DisplayPvalues {
     }
 
     public JTable displaypvalues(String p_values_name, String stryear, String strexperiment) {
-
         JTable pvaluestable = null;
-
         if (ftp == null) {
             try {
                 ftp = new FTPClient();
@@ -52,17 +46,11 @@ public class DisplayPvalues {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-
         String[] stringtableheader = {"Mass", "Wilcoxon P-value"};
-
         String[] temp;
-
         String line = "";
-
         String[] listdir = null;
-
         String[][] stringPvalues = null;
-
         try {
             numberofrows = 0;
             boolean filepresent = false;
@@ -110,7 +98,6 @@ public class DisplayPvalues {
             pvaluestable = new JTable(defaulttablemodel);
             pvaluestable.setPreferredScrollableViewportSize(new Dimension(400, 220));
         }
-
         try {
             ftp.quit();
         } catch (Exception e) {

@@ -6,99 +6,53 @@ import javax.swing.*;
 import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.export.ExportFileToDisk;
 import pharmaceuticals.nl.peptrix.gui.Progress;
-
 import com.enterprisedt.net.ftp.*;
 
 public class Wilcoxon {
-
     ExportFileToDisk exportfiletodisk;
-
     ExportFileToDisk rterminputfile;
-
     Controller cc;
-
     boolean filepresent;
-
     boolean isWindowsFlag;
-
     boolean first = true;
-
     int numberofrows;
-
     int rowlength;
-
     int int_randomizationgroups;
-
     int count;
-
     int index1;
-
     int index2;
-
     char backslash = (char) 92;
-
     String filename;
-
     String experimentnumber;
-
     String groupcode1;
-
     String groupid1;
-
     String groupcode2;
-
     String groupid2;
-
     String stringnumberrandomizations;
-
     String line;
-
     String linefeed;
-
     String Rscript;
-
     String color1;
-
     String color2;
-
     String osName;
-
     String inputpath;
-
     String outputpath;
-
     String Rscriptname;
-
     String searchstring;
-
     String teststring = "";
-
     String strinputplotheight;
-
     String strinputplotwidth;
-
     String pvalue;
-
     StringBuffer linebuffer;
-
     StringBuffer inputpathbuffer;
-
     StringBuffer outputpathbuffer;
-
     double[][] doublePvalues;
-
     String[] temp;
-
     String[] listdir;
-
     String experimentyear;
-
     FTPClient ftp;
-
     FileInputStream fstream;
-
     DataInputStream in;
-
     String strequipmentid;
 
     public Wilcoxon(Controller cc) {
@@ -215,7 +169,6 @@ public class Wilcoxon {
                         if (!linebuffer.toString().substring(0, index1).trim().equalsIgnoreCase("")) {
                             numberofrows++;
                         }
-
                         linebuffer = new StringBuffer(line);
                     }
                 }
@@ -280,7 +233,6 @@ public class Wilcoxon {
                                             doublePvalues[3][count] = j;
                                             count++;
                                         }
-
                                     }
                                     first = false;
                                     second = true;
@@ -288,7 +240,6 @@ public class Wilcoxon {
                                 try {
                                     rterminputfile.append_data_to_file(line.getBytes());
                                     rterminputfile.append_data_to_file(linefeed.getBytes());
-
                                 } catch (IOException e) {
                                     if (cc.debugmode) {
                                         e.printStackTrace();

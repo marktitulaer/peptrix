@@ -15,21 +15,13 @@ import javax.swing.JRadioButton;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class FileChooserExperiment {
-
     Controller cc;
-
     JPanel panelexperimentleft;
-
     GridBagLayout gridbagexperiment;
-
     GridBagConstraints constraintsexperiment;
-
     ButtonGroup btngroup;
-
     JLabel experimentidlabel;
-
     JLabel labelexperimentname;
-
     JLabel automaticlabel;
 
     public FileChooserExperiment(Controller cc) {
@@ -122,5 +114,4 @@ public class FileChooserExperiment {
     public JPanel getpanelexperiment() {
         return panelexperimentleft;
     }
-
 }

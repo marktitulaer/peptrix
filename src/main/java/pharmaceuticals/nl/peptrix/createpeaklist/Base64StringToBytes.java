@@ -1,19 +1,12 @@
 package pharmaceuticals.nl.peptrix.createpeaklist;
 
 public class Base64StringToBytes {
-
     String base64chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-
     int inputlength;
-
     int outputcount = 0;
-
     int base64_1;
-
     int base64_2;
-
     int base64_3;
-
     int base64_4;
 
     public int ConvertStringToBytes(byte[] input_output_bytes) {

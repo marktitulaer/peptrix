@@ -6,17 +6,12 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Northcreatewilcoxon {
-
     Controller cc;
-
     JPanel panelexperimentleft;
-
     JPanel panelexperimentright;
-
     JPanel createwilcoxonnorth;
 
     public Northcreatewilcoxon(Controller cc) {
@@ -114,5 +109,4 @@ public class Northcreatewilcoxon {
     public JPanel getpanel() {
         return createwilcoxonnorth;
     }
-
 }

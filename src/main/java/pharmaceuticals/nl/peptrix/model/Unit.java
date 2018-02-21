@@ -2,7 +2,6 @@ package pharmaceuticals.nl.peptrix.model;
 
 import java.io.Serializable;
 import java.util.Date;
-
 import javax.persistence.*;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -11,23 +10,17 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 @Table(name = "Unit")
 public class Unit implements Serializable {
-
     private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "unitid")
     private long unitid;
-
     @Column(name = "Type", length = 16)
     private String type;
-
     @Column(name = "UnitValue", length = 16)
     private String unitvalue;
-
     @CreationTimestamp
     private Date created;
-
     @UpdateTimestamp
     private Date updated;
 
@@ -70,5 +63,4 @@ public class Unit implements Serializable {
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
-
 }

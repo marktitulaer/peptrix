@@ -5,13 +5,9 @@ import pharmaceuticals.nl.peptrix.service.SystemCodeItemService;
 import pharmaceuticals.nl.peptrix.serviceimpl.SystemCodeItemServiceImpl;
 
 public class Getcalibrationstandards {
-
     Controller cc;
-
     Object[][] odatacalibrationmasses;
-
     String[] strcalibrationstandards;
-
     SystemCodeItemService systemCodeItemService;
 
     public Getcalibrationstandards(Controller cc) {
@@ -36,5 +32,4 @@ public class Getcalibrationstandards {
     public String getcodeitemid(int i) {
         return (String) odatacalibrationmasses[i][0];
     }
-
 }

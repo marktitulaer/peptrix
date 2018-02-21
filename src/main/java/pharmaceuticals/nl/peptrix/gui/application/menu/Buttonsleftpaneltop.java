@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Buttonsleftpaneltop {
-
     JPanel jpanel;
 
     public Buttonsleftpaneltop(Controller cc) {
@@ -21,7 +20,6 @@ public class Buttonsleftpaneltop {
         gridbagconstraints.anchor = GridBagConstraints.NORTHEAST;
         gridbagconstraints.insets = new Insets(2, 2, 2, 2);
         jpanel.setLayout(gridbglayout);
-
         gridbagconstraints.gridx = 1;
         gridbagconstraints.gridy = 1;
         gridbagconstraints.gridwidth = 1;
@@ -30,7 +28,6 @@ public class Buttonsleftpaneltop {
         Box.Filler vFill = new Box.Filler(fill, fill, fill);
         gridbglayout.setConstraints(vFill, gridbagconstraints);
         jpanel.add(vFill);
-
         gridbagconstraints.gridx = 1;
         gridbagconstraints.gridy = 2;
         gridbagconstraints.gridwidth = 1;
@@ -38,7 +35,6 @@ public class Buttonsleftpaneltop {
         gridbglayout.setConstraints(cc.btnallocation, gridbagconstraints);
         cc.btnallocation.addActionListener(cc);
         jpanel.add(cc.btnallocation);
-
         gridbagconstraints.gridx = 1;
         gridbagconstraints.gridy = 3;
         gridbagconstraints.gridwidth = 1;
@@ -46,7 +42,6 @@ public class Buttonsleftpaneltop {
         gridbglayout.setConstraints(cc.btnfasta, gridbagconstraints);
         cc.btnfasta.addActionListener(cc);
         jpanel.add(cc.btnfasta);
-
         gridbagconstraints.gridx = 1;
         gridbagconstraints.gridy = 4;
         gridbagconstraints.gridwidth = 1;
@@ -54,7 +49,6 @@ public class Buttonsleftpaneltop {
         gridbglayout.setConstraints(cc.btncreatematrix, gridbagconstraints);
         cc.btncreatematrix.addActionListener(cc);
         jpanel.add(cc.btncreatematrix);
-
         gridbagconstraints.gridx = 1;
         gridbagconstraints.gridy = 5;
         gridbagconstraints.gridwidth = 1;
@@ -62,7 +56,6 @@ public class Buttonsleftpaneltop {
         gridbglayout.setConstraints(cc.btntransposematrix, gridbagconstraints);
         cc.btntransposematrix.addActionListener(cc);
         jpanel.add(cc.btntransposematrix);
-
         gridbagconstraints.gridx = 1;
         gridbagconstraints.gridy = 6;
         gridbagconstraints.gridwidth = 1;
@@ -75,5 +68,4 @@ public class Buttonsleftpaneltop {
     public JPanel getPanel() {
         return jpanel;
     }
-
 }

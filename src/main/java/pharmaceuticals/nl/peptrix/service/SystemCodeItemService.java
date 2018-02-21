@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.service;
 
 public interface SystemCodeItemService {
-
     public Object[][] getsystemcodeitem();
 
     public Object[][] selectenzymes();
@@ -25,5 +24,4 @@ public interface SystemCodeItemService {
     public Object[][] getclibrationstandards();
 
     public Object[][] getclibrationmasses(String systemcodeitemid);
-
 }

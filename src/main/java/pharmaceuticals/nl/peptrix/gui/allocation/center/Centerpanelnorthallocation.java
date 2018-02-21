@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.gui.allocation.center;
 
 import java.awt.BorderLayout;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,13 +10,9 @@ import javax.swing.SwingConstants;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Centerpanelnorthallocation {
-
     JPanel jpanel;
-
     Allocationbrowsepanel allocationbrowsepanel;
-
     JPanel browsepanel;
-
     Controller cc;
 
     public Centerpanelnorthallocation(Controller cc) {
@@ -64,5 +59,4 @@ public class Centerpanelnorthallocation {
         browsepanel.add(cc.btnNext);
         browsepanel.add(cc.btnLast);
     }
-
 }

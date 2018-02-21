@@ -14,9 +14,7 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Inputpanelwilcoxon {
-
     Controller cc;
-
     JPanel wilcoxoninputpanel;
 
     public Inputpanelwilcoxon(Controller cc) {

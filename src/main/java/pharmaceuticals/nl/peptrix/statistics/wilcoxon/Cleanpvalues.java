@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.statistics.wilcoxon;
 
 public class Cleanpvalues {
-
     public Cleanpvalues() {
     }
 

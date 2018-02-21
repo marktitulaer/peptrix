@@ -1,7 +1,6 @@
 package pharmaceuticals.nl.peptrix.createpeaklist;
 
 public class Theoreticaldistribution {
-
     double[][] coefficients_of_ratios_no_sulphur_atoms = {
             {-0.00142320578040, 0.06258138406507, 0.03092092306220, -0.02490747037406, -0.19423148776489,
                     0.04574408690798},
@@ -13,7 +12,6 @@ public class Theoreticaldistribution {
                     -0.04344815868749},
             {-0.00007968737684, 0.00038011211412, -0.00073155573939, -0.00176688757979, -0.00355426505742,
                     0.00449747222180}};
-
     double[][] coefficients_of_ratios_one_sulphur_atom = {
             {-0.01040584267474, 0.37339166598255, 0.06969331604484, 0.04462649178239, -0.20727547407753,
                     0.27169670700251},
@@ -25,7 +23,6 @@ public class Theoreticaldistribution {
                     -0.08668833166842},
             {-0.00007954180489, 0.00563606634601, -0.00238998426027, -0.00145145206815, -0.00439750995163,
                     0.00822975581940}};
-
     double[][] coefficients_of_ratios_two_sulphur_atoms = {
             {-0.01937823810470, 0.68496829280011, 0.04215807391059, 0.14015578207913, -0.02549241716294,
                     -0.14490868030324},
@@ -39,7 +36,6 @@ public class Theoreticaldistribution {
                     -0.00027717589598}};
 
     public Theoreticaldistribution() {
-
     }
 
     public int returnnumberofcoefficients() {
@@ -93,5 +89,4 @@ public class Theoreticaldistribution {
         }
         return ratio[rationumber];
     }
-
 }

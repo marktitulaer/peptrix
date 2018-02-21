@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Experimentrightpanel {
-
     JPanel panelexperimentright;
 
     public Experimentrightpanel(Controller cc) {
@@ -20,5 +19,4 @@ public class Experimentrightpanel {
     public JPanel getpanel() {
         return panelexperimentright;
     }
-
 }

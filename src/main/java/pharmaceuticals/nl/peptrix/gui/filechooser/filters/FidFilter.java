@@ -3,9 +3,7 @@ package pharmaceuticals.nl.peptrix.gui.filechooser.filters;
 import java.io.File;
 
 public class FidFilter extends SuffixAwareFilter {
-
     String suffix;
-
     boolean fid_in_name = false;
 
     @Override

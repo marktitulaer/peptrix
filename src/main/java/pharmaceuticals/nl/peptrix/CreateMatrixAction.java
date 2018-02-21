@@ -7,20 +7,12 @@ import java.awt.event.TextListener;
 import pharmaceuticals.nl.peptrix.gui.Creatematrix;
 
 public class CreateMatrixAction implements TextListener {
-
     Controller cc;
-
     public TextField experimentid2;
-
     Creatematrix creatematrix;
 
-
-    public CreateMatrixAction(Controller cc)
-
-    {
+    public CreateMatrixAction(Controller cc) {
         this.cc = cc;
-
-
     }
 
     public void create_matrix_screen() {
@@ -30,7 +22,6 @@ public class CreateMatrixAction implements TextListener {
     public void textValueChanged(TextEvent evt) {
         cc.PerformAction(evt.getSource());
         if (evt.getSource() == experimentid2) {
-
             creatematrix.creatematrix_center.centerpanelsouthcreatematrix.removeAll2();
             creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
                     .setVisible(false);

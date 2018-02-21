@@ -8,9 +8,7 @@ import java.io.InputStreamReader;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Readoutputfilescalibration {
-
     Controller cc;
-
     int count;
 
     public Readoutputfilescalibration(Controller cc) {
@@ -38,5 +36,4 @@ public class Readoutputfilescalibration {
             e.printStackTrace();
         }
     }
-
 }

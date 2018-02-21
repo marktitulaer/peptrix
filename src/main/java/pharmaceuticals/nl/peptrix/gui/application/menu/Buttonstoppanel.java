@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class Buttonstoppanel {
-
     JPanel jpanel;
 
     public Buttonstoppanel(Controller cc) {
@@ -29,5 +28,4 @@ public class Buttonstoppanel {
     public JPanel getPanel() {
         return jpanel;
     }
-
 }

@@ -3,11 +3,8 @@ package pharmaceuticals.nl.peptrix.gui.filechooser.filters;
 import java.io.File;
 
 public class MsconvertFilter extends SuffixAwareFilter {
-
     String suffix;
-
     String searchname = "msconvert.exe";
-
     boolean readw_in_name = false;
 
     @Override

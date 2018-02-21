@@ -1,39 +1,24 @@
 package pharmaceuticals.nl.peptrix.database;
 
 import java.sql.*;
-
 import java.util.*;
-
 import javax.swing.JOptionPane;
 
 import pharmaceuticals.nl.peptrix.Controller;
 
 public class JDBC {
-
     public Connection con = null;
-
     Statement stmt;
-
     public ResultSet rs;
-
     ResultSet rs2;
-
     Properties properties;
-
     public ResultSetMetaData metaData;
-
     String[][] odata;
-
     String[] clmHeaders;
-
     int[] batchrows;
-
     String drivertype;
-
     int clmCnt;
-
     public int rowCnt;
-
     boolean debugmode = true;
 
     public JDBC(Controller cc) {
@@ -163,5 +148,4 @@ public class JDBC {
         batchrows = stmt.executeBatch();
     }
     // END BATCH PROCESS
-
 }

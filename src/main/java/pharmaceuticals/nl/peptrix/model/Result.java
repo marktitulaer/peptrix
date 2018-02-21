@@ -10,63 +10,44 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 @Table(name = "Result")
 public class Result implements Serializable {
-
     private static final long serialVersionUID = 1L;
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "resultid")
     private long resultid;
-
     @ManyToOne(optional = true)
     @JoinColumn(name = "experimentid")
     private Experiment experiment;
-
     @ManyToOne(optional = true)
     @JoinColumn(name = "sampleid")
     private Sample sample;
-
     @ManyToOne(optional = true)
     @JoinColumn(name = "group_id")
     private Group group;
-
     @Column(name = "filenumber")
     private long filenumber;
-
     @Column(name = "lcfraction")
     private long lcfraction;
-
     @Column(name = "Offset_LC_MS")
     private float offset_LC_MS;
-
     @Column(name = "retentiontime")
     private float retentiontime;
-
     @Column(name = "Quantilethreshold", length = 8)
     private String quantilethreshold;
-
     @Column(name = "Year", length = 4)
     private String year;
-
     @Column(name = "Size_KB")
     private float size_KB;
-
     @Column(name = "File", length = 200)
     private String file;
-
     @Column(name = "Type", length = 16)
     private String type;
-
     @Temporal(TemporalType.DATE)
     private Date date;
-
     @Temporal(TemporalType.TIME)
     private Date time;
-
     @CreationTimestamp
     private Date created;
-
     @UpdateTimestamp
     private Date updated;
 
@@ -205,5 +186,4 @@ public class Result implements Serializable {
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
-
 }
