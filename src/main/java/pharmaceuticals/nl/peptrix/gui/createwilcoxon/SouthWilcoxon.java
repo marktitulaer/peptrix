@@ -9,30 +9,30 @@ import pharmaceuticals.nl.peptrix.Controller;
 
 public class SouthWilcoxon {
 
-	JPanel creatematrixsouth;
+    JPanel creatematrixsouth;
 
-	BoxLayout boxlayout;
+    BoxLayout boxlayout;
 
-	Box.Filler vFill;
+    Box.Filler vFill;
 
-	Dimension fill;
+    Dimension fill;
 
-	Controller cc;
+    Controller cc;
 
-	public SouthWilcoxon(Controller cc) {
-		this.cc = cc;
-		creatematrixsouth = new JPanel();
-		creatematrixsouth = new JPanel();
-		creatematrixsouth.setBackground(cc.color_empty_frames);
-		boxlayout = new BoxLayout(creatematrixsouth, BoxLayout.X_AXIS);
-		creatematrixsouth.setLayout(boxlayout);
-		fill = new Dimension(10, 30);
-		vFill = new Box.Filler(fill, fill, fill);
-		creatematrixsouth.add(vFill);
-	}
+    public SouthWilcoxon(Controller cc) {
+        this.cc = cc;
+        creatematrixsouth = new JPanel();
+        creatematrixsouth = new JPanel();
+        creatematrixsouth.setBackground(cc.color_empty_frames);
+        boxlayout = new BoxLayout(creatematrixsouth, BoxLayout.X_AXIS);
+        creatematrixsouth.setLayout(boxlayout);
+        fill = new Dimension(10, 30);
+        vFill = new Box.Filler(fill, fill, fill);
+        creatematrixsouth.add(vFill);
+    }
 
-	public JPanel getpanel() {
-		return creatematrixsouth;
-	}
+    public JPanel getpanel() {
+        return creatematrixsouth;
+    }
 
 }

@@ -2,12 +2,12 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 
 public class Spectrum {
 
-	double[] mass;
+    double[] mass;
 
-	double[] intensity;
+    double[] intensity;
 
-	public Spectrum(int intnumberofmeasurements) {
-		mass = new double[intnumberofmeasurements];
-		intensity = new double[intnumberofmeasurements];
-	}
+    public Spectrum(int intnumberofmeasurements) {
+        mass = new double[intnumberofmeasurements];
+        intensity = new double[intnumberofmeasurements];
+    }
 }

@@ -9,24 +9,24 @@ import pharmaceuticals.nl.peptrix.gui.application.menu.Buttonsleftpanel;
 
 public class FramePanel {
 
-	Contentrightpanel contentrightpanel;
+    Contentrightpanel contentrightpanel;
 
-	BorderLayout borderlayout = new BorderLayout();
+    BorderLayout borderlayout = new BorderLayout();
 
-	JPanel panel = new JPanel();
+    JPanel panel = new JPanel();
 
-	public FramePanel(Controller cc) {
-		Buttonsleftpanel buttonsleftpanel = new Buttonsleftpanel(cc);
-		cc.pLeft = buttonsleftpanel.getPanel();
-		Contentrightpanel contentrightpanel = new Contentrightpanel(cc);
-		JPanel jpanel = contentrightpanel.getPanel();
-		panel.setLayout(borderlayout);
-		panel.add("West", cc.pLeft);
-		panel.add("Center", jpanel);
-	}
+    public FramePanel(Controller cc) {
+        Buttonsleftpanel buttonsleftpanel = new Buttonsleftpanel(cc);
+        cc.pLeft = buttonsleftpanel.getPanel();
+        Contentrightpanel contentrightpanel = new Contentrightpanel(cc);
+        JPanel jpanel = contentrightpanel.getPanel();
+        panel.setLayout(borderlayout);
+        panel.add("West", cc.pLeft);
+        panel.add("Center", jpanel);
+    }
 
-	public JPanel getPanel() {
-		return panel;
-	}
+    public JPanel getPanel() {
+        return panel;
+    }
 
 }

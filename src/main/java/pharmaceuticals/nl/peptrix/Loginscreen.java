@@ -10,62 +10,62 @@ import pharmaceuticals.nl.peptrix.gui.application.FramePanel;
 
 public class Loginscreen implements WindowListener {
 
-	static String screentitle = "PEPTRIX v3.40";
+    static String screentitle = "PEPTRIX v3.42";
 
-	Controller cc;
+    Controller cc;
 
-	DataBase database;
+    DataBase database;
 
-	public static void main(String[] args) throws SQLException {
-		Loginscreen lg = new Loginscreen(screentitle);
-		lg.dummy();
-	}
+    public static void main(String[] args) throws SQLException {
+        Loginscreen lg = new Loginscreen(screentitle);
+        lg.dummy();
+    }
 
-	Loginscreen(String title) throws SQLException {
-		database = new DataBase();
-		database.FillInitialData();
-		JFrame frame = new JFrame(title);
-		cc = new Controller(frame);
-		MenuBar menubar = new CreateMenu(cc);
-		frame.setMenuBar(menubar);
-		Dimension d = frame.getToolkit().getScreenSize();
-		frame.setSize(d.width, d.height);
-		frame.setLocation(0, 0);
-		frame.addWindowListener(this);
-		FramePanel framepanel = new FramePanel(cc);
-		JPanel jpanel = framepanel.getPanel();
-		frame.getContentPane().add(jpanel);
-		frame.setVisible(true);
-	}
+    Loginscreen(String title) throws SQLException {
+        database = new DataBase();
+        database.FillInitialData();
+        JFrame frame = new JFrame(title);
+        cc = new Controller(frame);
+        MenuBar menubar = new CreateMenu(cc);
+        frame.setMenuBar(menubar);
+        Dimension d = frame.getToolkit().getScreenSize();
+        frame.setSize(d.width, d.height);
+        frame.setLocation(0, 0);
+        frame.addWindowListener(this);
+        FramePanel framepanel = new FramePanel(cc);
+        JPanel jpanel = framepanel.getPanel();
+        frame.getContentPane().add(jpanel);
+        frame.setVisible(true);
+    }
 
-	private void dummy() {
-	}
+    private void dummy() {
+    }
 
-	public void windowClosing(WindowEvent e) {
-		try {
-			if (cc.jdbcconnection.con != null) {
-				cc.jdbcconnection.con.close();
-			}
-		} catch (SQLException sqlexception) {
-		}
-		System.exit(0);
-	}
+    public void windowClosing(WindowEvent e) {
+        try {
+            if (cc.jdbcconnection.con != null) {
+                cc.jdbcconnection.con.close();
+            }
+        } catch (SQLException sqlexception) {
+        }
+        System.exit(0);
+    }
 
-	public void windowActivated(WindowEvent e) {
-	}
+    public void windowActivated(WindowEvent e) {
+    }
 
-	public void windowDeactivated(WindowEvent e) {
-	}
+    public void windowDeactivated(WindowEvent e) {
+    }
 
-	public void windowDeiconified(WindowEvent e) {
-	}
+    public void windowDeiconified(WindowEvent e) {
+    }
 
-	public void windowClosed(WindowEvent e) {
-	}
+    public void windowClosed(WindowEvent e) {
+    }
 
-	public void windowIconified(WindowEvent e) {
-	}
+    public void windowIconified(WindowEvent e) {
+    }
 
-	public void windowOpened(WindowEvent e) {
-	}
+    public void windowOpened(WindowEvent e) {
+    }
 }

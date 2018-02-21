@@ -2,142 +2,142 @@ package pharmaceuticals.nl.peptrix.createpeaklist;
 
 public class MassSpectrometryFile {
 
-	private String m_filename;
+    private String m_filename;
 
-	private int m_filenumber;
+    private int m_filenumber;
 
-	private String m_sampleid;
+    private String m_sampleid;
 
-	private String m_previoussampleid;
+    private String m_previoussampleid;
 
-	private String m_groupid;
+    private String m_groupid;
 
-	private String m_previousgroupid;
+    private String m_previousgroupid;
 
-	private String m_tmp_exportname;
+    private String m_tmp_exportname;
 
-	private double m_offset_lc_ms;
+    private double m_offset_lc_ms;
 
-	private String[] m_arraymassesoffile;
+    private String[] m_arraymassesoffile;
 
-	private String[] m_arrayintensitiesoffile;
+    private String[] m_arrayintensitiesoffile;
 
-	private String[] m_arraymintimesoffile;
+    private String[] m_arraymintimesoffile;
 
-	private String[] m_arraymaxtimesoffile;
+    private String[] m_arraymaxtimesoffile;
 
-	private String[] m_arraytimesoffile;
+    private String[] m_arraytimesoffile;
 
-	public MassSpectrometryFile() {
-		// TODO Auto-generated constructor stub
-	}
+    public MassSpectrometryFile() {
 
-	public void setFilename(String filename) {
-		m_filename = filename;
-	}
+    }
 
-	public String getFilename() {
-		return m_filename;
-	}
+    public void setFilename(String filename) {
+        m_filename = filename;
+    }
 
-	public void setFilenumber(int filenumber) {
-		m_filenumber = filenumber;
-	}
+    public String getFilename() {
+        return m_filename;
+    }
 
-	public int getFilenumber() {
-		return m_filenumber;
-	}
+    public void setFilenumber(int filenumber) {
+        m_filenumber = filenumber;
+    }
 
-	public void setSampleid(String sampleid) {
-		m_sampleid = sampleid;
-	}
+    public int getFilenumber() {
+        return m_filenumber;
+    }
 
-	public String getSampleid() {
-		return m_sampleid;
-	}
+    public void setSampleid(String sampleid) {
+        m_sampleid = sampleid;
+    }
 
-	public void setPreviousSampleid(String previoussampleid) {
-		m_previoussampleid = previoussampleid;
-	}
+    public String getSampleid() {
+        return m_sampleid;
+    }
 
-	public String getPreviousSampleid() {
-		return m_previoussampleid;
-	}
+    public void setPreviousSampleid(String previoussampleid) {
+        m_previoussampleid = previoussampleid;
+    }
 
-	public void setPreviousGroupid(String previousgroupid) {
-		m_previousgroupid = previousgroupid;
-	}
+    public String getPreviousSampleid() {
+        return m_previoussampleid;
+    }
 
-	public String getPreviousGroupid() {
-		return m_previousgroupid;
-	}
+    public void setPreviousGroupid(String previousgroupid) {
+        m_previousgroupid = previousgroupid;
+    }
 
-	public void setGroupid(String groupid) {
-		m_groupid = groupid;
-	}
+    public String getPreviousGroupid() {
+        return m_previousgroupid;
+    }
 
-	public String getGroupid() {
-		return m_groupid;
-	}
+    public void setGroupid(String groupid) {
+        m_groupid = groupid;
+    }
 
-	public void setTmp_exportname(String tmp_exportname) {
-		m_tmp_exportname = tmp_exportname;
-	}
+    public String getGroupid() {
+        return m_groupid;
+    }
 
-	public String getTmp_exportname() {
-		return m_tmp_exportname;
-	}
+    public void setTmp_exportname(String tmp_exportname) {
+        m_tmp_exportname = tmp_exportname;
+    }
 
-	public void setOffset_lc_ms(double offset_lc_ms) {
-		m_offset_lc_ms = offset_lc_ms;
-	}
+    public String getTmp_exportname() {
+        return m_tmp_exportname;
+    }
 
-	public double getOffset_lc_ms() {
-		return m_offset_lc_ms;
-	}
+    public void setOffset_lc_ms(double offset_lc_ms) {
+        m_offset_lc_ms = offset_lc_ms;
+    }
 
-	public void setarraymassesoffile(String[] arraymassesoffile) {
-		m_arraymassesoffile = arraymassesoffile;
-	}
+    public double getOffset_lc_ms() {
+        return m_offset_lc_ms;
+    }
 
-	public int getlength() {
-		return m_arraymassesoffile.length;
-	}
+    public void setarraymassesoffile(String[] arraymassesoffile) {
+        m_arraymassesoffile = arraymassesoffile;
+    }
 
-	public String[] getarraymassesoffile() {
-		return m_arraymassesoffile;
-	}
+    public int getlength() {
+        return m_arraymassesoffile.length;
+    }
 
-	public void setarrayintensitiesoffile(String[] arrayintensitiesoffile) {
-		m_arrayintensitiesoffile = arrayintensitiesoffile;
-	}
+    public String[] getarraymassesoffile() {
+        return m_arraymassesoffile;
+    }
 
-	public String[] getarrayintensitiesoffile() {
-		return m_arrayintensitiesoffile;
-	}
+    public void setarrayintensitiesoffile(String[] arrayintensitiesoffile) {
+        m_arrayintensitiesoffile = arrayintensitiesoffile;
+    }
 
-	public void setarraymintimesoffile(String[] arraymintimesoffile) {
-		m_arraymintimesoffile = arraymintimesoffile;
-	}
+    public String[] getarrayintensitiesoffile() {
+        return m_arrayintensitiesoffile;
+    }
 
-	public String[] getarraymintimesoffile() {
-		return m_arraymintimesoffile;
-	}
+    public void setarraymintimesoffile(String[] arraymintimesoffile) {
+        m_arraymintimesoffile = arraymintimesoffile;
+    }
 
-	public void setarraymaxtimesoffile(String[] arraymaxtimesoffile) {
-		m_arraymaxtimesoffile = arraymaxtimesoffile;
-	}
+    public String[] getarraymintimesoffile() {
+        return m_arraymintimesoffile;
+    }
 
-	public String[] getarraymaxtimesoffile() {
-		return m_arraymaxtimesoffile;
-	}
+    public void setarraymaxtimesoffile(String[] arraymaxtimesoffile) {
+        m_arraymaxtimesoffile = arraymaxtimesoffile;
+    }
 
-	public void setarraytimesoffile(String[] arraytimesoffile) {
-		m_arraytimesoffile = arraytimesoffile;
-	}
+    public String[] getarraymaxtimesoffile() {
+        return m_arraymaxtimesoffile;
+    }
 
-	public String[] getarraytimesoffile() {
-		return m_arraytimesoffile;
-	}
+    public void setarraytimesoffile(String[] arraytimesoffile) {
+        m_arraytimesoffile = arraytimesoffile;
+    }
+
+    public String[] getarraytimesoffile() {
+        return m_arraytimesoffile;
+    }
 
 }

@@ -6,45 +6,45 @@ import pharmaceuticals.nl.peptrix.serviceimpl.ResultServiceImpl;
 
 public class Getmatrixfileswilcoxon {
 
-	Controller cc;
+    Controller cc;
 
-	int odatamatrixfileswicoxonlength;
+    int odatamatrixfileswicoxonlength;
 
-	String[] matrixfiles;
+    String[] matrixfiles;
 
-	String experimentyear;
+    String experimentyear;
 
-	ResultService resultService;
+    ResultService resultService;
 
-	public Getmatrixfileswilcoxon(Controller cc) {
-		this.cc = cc;
-		resultService = new ResultServiceImpl(cc);
-	}
+    public Getmatrixfileswilcoxon(Controller cc) {
+        this.cc = cc;
+        resultService = new ResultServiceImpl(cc);
+    }
 
-	public String getyear() {
-		return experimentyear;
-	}
+    public String getyear() {
+        return experimentyear;
+    }
 
-	public int getdatalength() {
-		return odatamatrixfileswicoxonlength;
-	}
+    public int getdatalength() {
+        return odatamatrixfileswicoxonlength;
+    }
 
-	public String[] collectmatrixfileswilcoxon(String experimentid) {
-		Object[][] odatamatrixfileswicoxon;
-		experimentyear = "";
-		odatamatrixfileswicoxonlength = 0;
-		if (!experimentid.trim().equals("")) {
-			odatamatrixfileswicoxon = resultService.collectmatrixfileswilcoxon2(experimentid);
-			if (odatamatrixfileswicoxon.length > 0) {
-				odatamatrixfileswicoxonlength = odatamatrixfileswicoxon.length;
-				matrixfiles = new String[odatamatrixfileswicoxon.length];
-				for (int i = 0; i < odatamatrixfileswicoxon.length; i++) {
-					matrixfiles[i] = (String) odatamatrixfileswicoxon[i][0];
-					experimentyear = odatamatrixfileswicoxon[i][2].toString().trim();
-				}
-			}
-		}
-		return matrixfiles;
-	}
+    public String[] collectmatrixfileswilcoxon(String experimentid) {
+        Object[][] odatamatrixfileswicoxon;
+        experimentyear = "";
+        odatamatrixfileswicoxonlength = 0;
+        if (!experimentid.trim().equals("")) {
+            odatamatrixfileswicoxon = resultService.collectmatrixfileswilcoxon2(experimentid);
+            if (odatamatrixfileswicoxon.length > 0) {
+                odatamatrixfileswicoxonlength = odatamatrixfileswicoxon.length;
+                matrixfiles = new String[odatamatrixfileswicoxon.length];
+                for (int i = 0; i < odatamatrixfileswicoxon.length; i++) {
+                    matrixfiles[i] = (String) odatamatrixfileswicoxon[i][0];
+                    experimentyear = odatamatrixfileswicoxon[i][2].toString().trim();
+                }
+            }
+        }
+        return matrixfiles;
+    }
 
 }

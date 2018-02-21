@@ -10,179 +10,179 @@ import javax.swing.event.*;
 
 class JMonthChooser extends JPanel implements ItemListener, ChangeListener {
 
-	protected boolean hasSpinner;
+    protected boolean hasSpinner;
 
-	private Locale locale;
+    private Locale locale;
 
-	private int month;
+    private int month;
 
-	private int oldSpinnerValue = 0;
+    private int oldSpinnerValue = 0;
 
-	private JDayChooser dayChooser;
+    private JDayChooser dayChooser;
 
-	private JYearChooser yearChooser;
+    private JYearChooser yearChooser;
 
-	private JComboBox comboBox;
+    private JComboBox comboBox;
 
-	private JSpinner spinner;
+    private JSpinner spinner;
 
-	private boolean initialized;
+    private boolean initialized;
 
-	private boolean localInitialize;
+    private boolean localInitialize;
 
-	public JMonthChooser() {
-		this(true);
-	}
+    public JMonthChooser() {
+        this(true);
+    }
 
-	public JMonthChooser(boolean hasSpinner) {
-		super();
-		this.hasSpinner = hasSpinner;
-		setLayout(new BorderLayout());
-		comboBox = new JComboBox();
-		comboBox.addItemListener(this);
-		locale = Locale.getDefault();
-		initNames();
-		if (hasSpinner) {
-			spinner = new JSpinner();
-			spinner.addChangeListener(this);
-			comboBox.setBorder(new EmptyBorder(0, 0, 0, 0));
-			spinner.setEditor(comboBox);
-			add(spinner, BorderLayout.WEST);
-		} else {
-			add(comboBox, BorderLayout.WEST);
-		}
-		initialized = true;
-		setMonth(Calendar.getInstance().get(Calendar.MONTH));
-	}
+    public JMonthChooser(boolean hasSpinner) {
+        super();
+        this.hasSpinner = hasSpinner;
+        setLayout(new BorderLayout());
+        comboBox = new JComboBox();
+        comboBox.addItemListener(this);
+        locale = Locale.getDefault();
+        initNames();
+        if (hasSpinner) {
+            spinner = new JSpinner();
+            spinner.addChangeListener(this);
+            comboBox.setBorder(new EmptyBorder(0, 0, 0, 0));
+            spinner.setEditor(comboBox);
+            add(spinner, BorderLayout.WEST);
+        } else {
+            add(comboBox, BorderLayout.WEST);
+        }
+        initialized = true;
+        setMonth(Calendar.getInstance().get(Calendar.MONTH));
+    }
 
-	public void initNames() {
-		localInitialize = true;
-		DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(locale);
-		String[] monthNames = dateFormatSymbols.getMonths();
-		if (comboBox.getItemCount() == 12) {
-			comboBox.removeAllItems();
-		}
-		for (int i = 0; i < 12; i++) {
-			comboBox.addItem(monthNames[i]);
-		}
-		localInitialize = false;
-		comboBox.setSelectedIndex(month);
-	}
+    public void initNames() {
+        localInitialize = true;
+        DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(locale);
+        String[] monthNames = dateFormatSymbols.getMonths();
+        if (comboBox.getItemCount() == 12) {
+            comboBox.removeAllItems();
+        }
+        for (int i = 0; i < 12; i++) {
+            comboBox.addItem(monthNames[i]);
+        }
+        localInitialize = false;
+        comboBox.setSelectedIndex(month);
+    }
 
-	// @Override
-	public void stateChanged(ChangeEvent e) {
-		SpinnerNumberModel model = (SpinnerNumberModel) ((JSpinner) e.getSource()).getModel();
-		int value = model.getNumber().intValue();
-		boolean increase = (value > oldSpinnerValue) ? true : false;
-		oldSpinnerValue = value;
-		int month = getMonth();
-		if (increase) {
-			month += 1;
-			if (month == 12) {
-				month = 0;
-				if (yearChooser != null) {
-					int year = yearChooser.getYear();
-					year += 1;
-					yearChooser.setYear(year);
-				}
-			}
-		} else {
-			month -= 1;
-			if (month == -1) {
-				month = 11;
-				if (yearChooser != null) {
-					int year = yearChooser.getYear();
-					year -= 1;
-					yearChooser.setYear(year);
-				}
-			}
-		}
-		setMonth(month);
-	}
 
-	// @Override
-	public void itemStateChanged(ItemEvent e) {
-		if (e.getStateChange() == ItemEvent.SELECTED) {
-			int index = comboBox.getSelectedIndex();
-			if ((index >= 0) && (index != month)) {
-				setMonth(index, false);
-			}
-		}
-	}
+    public void stateChanged(ChangeEvent e) {
+        SpinnerNumberModel model = (SpinnerNumberModel) ((JSpinner) e.getSource()).getModel();
+        int value = model.getNumber().intValue();
+        boolean increase = (value > oldSpinnerValue) ? true : false;
+        oldSpinnerValue = value;
+        int month = getMonth();
+        if (increase) {
+            month += 1;
+            if (month == 12) {
+                month = 0;
+                if (yearChooser != null) {
+                    int year = yearChooser.getYear();
+                    year += 1;
+                    yearChooser.setYear(year);
+                }
+            }
+        } else {
+            month -= 1;
+            if (month == -1) {
+                month = 11;
+                if (yearChooser != null) {
+                    int year = yearChooser.getYear();
+                    year -= 1;
+                    yearChooser.setYear(year);
+                }
+            }
+        }
+        setMonth(month);
+    }
 
-	private void setMonth(int newMonth, boolean select) {
-		if (!initialized || localInitialize) {
-			return;
-		}
-		int oldMonth = month;
-		month = newMonth;
-		if (select) {
-			comboBox.setSelectedIndex(month);
-		}
-		if (dayChooser != null) {
-			dayChooser.setMonth(month);
-		}
-		firePropertyChange("month", oldMonth, month);
-	}
 
-	public void setMonth(int newMonth) {
-		if (newMonth < 0 || newMonth > 11) {
-			return;
-		}
-		setMonth(newMonth, true);
-	}
+    public void itemStateChanged(ItemEvent e) {
+        if (e.getStateChange() == ItemEvent.SELECTED) {
+            int index = comboBox.getSelectedIndex();
+            if ((index >= 0) && (index != month)) {
+                setMonth(index, false);
+            }
+        }
+    }
 
-	public int getMonth() {
-		return month;
-	}
+    private void setMonth(int newMonth, boolean select) {
+        if (!initialized || localInitialize) {
+            return;
+        }
+        int oldMonth = month;
+        month = newMonth;
+        if (select) {
+            comboBox.setSelectedIndex(month);
+        }
+        if (dayChooser != null) {
+            dayChooser.setMonth(month);
+        }
+        firePropertyChange("month", oldMonth, month);
+    }
 
-	public void setDayChooser(JDayChooser dayChooser) {
-		this.dayChooser = dayChooser;
-	}
+    public void setMonth(int newMonth) {
+        if (newMonth < 0 || newMonth > 11) {
+            return;
+        }
+        setMonth(newMonth, true);
+    }
 
-	public void setYearChooser(JYearChooser yearChooser) {
-		this.yearChooser = yearChooser;
-	}
+    public int getMonth() {
+        return month;
+    }
 
-	@Override
-	public Locale getLocale() {
-		return locale;
-	}
+    public void setDayChooser(JDayChooser dayChooser) {
+        this.dayChooser = dayChooser;
+    }
 
-	@Override
-	public void setLocale(Locale l) {
-		if (!initialized) {
-			super.setLocale(l);
-		} else {
-			locale = l;
-			initNames();
-		}
-	}
+    public void setYearChooser(JYearChooser yearChooser) {
+        this.yearChooser = yearChooser;
+    }
 
-	@Override
-	public void setEnabled(boolean enabled) {
-		super.setEnabled(enabled);
-		comboBox.setEnabled(enabled);
-		if (spinner != null) {
-			spinner.setEnabled(enabled);
-		}
-	}
+    @Override
+    public Locale getLocale() {
+        return locale;
+    }
 
-	public Component getComboBox() {
-		return this.comboBox;
-	}
+    @Override
+    public void setLocale(Locale l) {
+        if (!initialized) {
+            super.setLocale(l);
+        } else {
+            locale = l;
+            initNames();
+        }
+    }
 
-	public Component getSpinner() {
-		return spinner;
-	}
+    @Override
+    public void setEnabled(boolean enabled) {
+        super.setEnabled(enabled);
+        comboBox.setEnabled(enabled);
+        if (spinner != null) {
+            spinner.setEnabled(enabled);
+        }
+    }
 
-	public boolean hasSpinner() {
-		return hasSpinner;
-	}
+    public Component getComboBox() {
+        return this.comboBox;
+    }
 
-	@Override
-	public String getName() {
-		return "JMonthChooser";
-	}
+    public Component getSpinner() {
+        return spinner;
+    }
+
+    public boolean hasSpinner() {
+        return hasSpinner;
+    }
+
+    @Override
+    public String getName() {
+        return "JMonthChooser";
+    }
 
 }

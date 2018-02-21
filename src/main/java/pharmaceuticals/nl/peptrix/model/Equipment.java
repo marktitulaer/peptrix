@@ -10,70 +10,70 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name = "Equipment")
-public class Equipment  implements Serializable {
+public class Equipment implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "equipmentid")
-	private long equipmentid;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "equipmentid")
+    private long equipmentid;
 
-	@Column(name = "Name", length = 200)
-	private String name;
+    @Column(name = "Name", length = 200)
+    private String name;
 
-	@Column(name = "Code", length = 16, unique = true)
-	private String code;
+    @Column(name = "Code", length = 16, unique = true)
+    private String code;
 
-	@CreationTimestamp
-	private Date created;
+    @CreationTimestamp
+    private Date created;
 
-	@UpdateTimestamp
-	private Date updated;
+    @UpdateTimestamp
+    private Date updated;
 
-	public long getEquipmentid() {
-		return equipmentid;
-	}
+    public long getEquipmentid() {
+        return equipmentid;
+    }
 
-	public void setEquipmentid(long equipmentid) {
-		this.equipmentid = equipmentid;
-	}
+    public void setEquipmentid(long equipmentid) {
+        this.equipmentid = equipmentid;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Date getCreated() {
-		return created;
-	}
+    public Date getCreated() {
+        return created;
+    }
 
-	public void setCreated(Date created) {
-		this.created = created;
-	}
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
-	public Date getUpdated() {
-		return updated;
-	}
+    public Date getUpdated() {
+        return updated;
+    }
 
-	public void setUpdated(Date updated) {
-		this.updated = updated;
-	}
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	@Override
-	public String toString() {
-		return "Equipment2 [id=" + equipmentid + ", name=" + name + ", code=" + code + "]";
-	}
+    @Override
+    public String toString() {
+        return "Equipment2 [id=" + equipmentid + ", name=" + name + ", code=" + code + "]";
+    }
 
 }

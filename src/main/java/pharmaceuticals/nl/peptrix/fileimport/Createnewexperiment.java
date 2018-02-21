@@ -6,30 +6,30 @@ import pharmaceuticals.nl.peptrix.serviceimpl.ExperimentServiceImpl;
 
 public class Createnewexperiment {
 
-	Controller cc;
+    Controller cc;
 
-	Object[][] odataexperiment;
+    Object[][] odataexperiment;
 
-	String latestexperimentid;
+    String latestexperimentid;
 
-	String sqlstring;
+    String sqlstring;
 
-	String strquery;
+    String strquery;
 
-	int numberofrows;
+    int numberofrows;
 
-	ExperimentService experimentService;
+    ExperimentService experimentService;
 
-	public Createnewexperiment(Controller cc) {
-		this.cc = cc;
-		experimentService = new ExperimentServiceImpl(cc);
-	}
+    public Createnewexperiment(Controller cc) {
+        this.cc = cc;
+        experimentService = new ExperimentServiceImpl(cc);
+    }
 
-	public String createnewexperiment(String newexperimentname, String equipmentid) {
-		cc.actualtime.resettime();
-		numberofrows = experimentService.create_new_experiment(equipmentid, newexperimentname);
-		latestexperimentid = experimentService.getlatestexperimentid();
-		return latestexperimentid;
-	}
+    public String createnewexperiment(String newexperimentname, String equipmentid) {
+        cc.actualtime.resettime();
+        numberofrows = experimentService.create_new_experiment(equipmentid, newexperimentname);
+        latestexperimentid = experimentService.getlatestexperimentid();
+        return latestexperimentid;
+    }
 
 }

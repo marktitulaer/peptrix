@@ -3,6 +3,7 @@ package pharmaceuticals.nl.peptrix;
 import java.awt.*;
 import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
+
 import pharmaceuticals.nl.peptrix.gui.Creatematrix;
 
 public class CreateMatrixAction implements TextListener {
@@ -18,14 +19,11 @@ public class CreateMatrixAction implements TextListener {
 
     {
         this.cc = cc;
-        //System.out.println("  new Creatematrix(cc) ");
 
-        //creatematrix = new Creatematrix(cc);
 
-        //System.out.println("  na ");
     }
 
-    public void create_matrix_screen(){
+    public void create_matrix_screen() {
         creatematrix = new Creatematrix(cc);
     }
 

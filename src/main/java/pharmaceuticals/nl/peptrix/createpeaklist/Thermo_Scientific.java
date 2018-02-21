@@ -22,297 +22,293 @@ import com.enterprisedt.net.ftp.FTPTransferType;
 
 public class Thermo_Scientific extends DefaultHandler {
 
-	ExportFileToDisk exportfiletodisk;
+    ExportFileToDisk exportfiletodisk;
 
-	Process jproc;
+    Process jproc;
 
-	FileDescriptor fd;
+    FileDescriptor fd;
 
-	Controller cc;
+    Controller cc;
 
-	FTPClient ftp;
+    FTPClient ftp;
 
-	ReadmzXML readmzxml;
+    ReadmzXML readmzxml;
 
-	File file_thermo_scientific;
+    File file_thermo_scientific;
 
-	JFileChooser filechooser;
+    JFileChooser filechooser;
 
-	SearchFile objectsearchfile;
+    SearchFile objectsearchfile;
 
-	BufferedReader reader;
+    BufferedReader reader;
 
-	String exportname;
+    String exportname;
 
-	Vector<String[]> sequensing_results_vector;
+    Vector<String[]> sequensing_results_vector;
 
-	Experiment experiment;
+    Experiment experiment;
 
-	String Batchfilename2;
+    String Batchfilename2;
 
-	String clearstatusfile;
+    String clearstatusfile;
 
-	String cmd2;
+    String cmd2;
 
-	String message = "";
+    String message = "";
 
-	String text;
+    String text;
 
-	String Thermo_Scientific_dir;
+    String Thermo_Scientific_dir;
 
-	String emptystring = "";
+    String emptystring = "";
 
-	String filename = "";
+    String filename = "";
 
-	String experimentyear = "";
+    String experimentyear = "";
 
-	String experimentnumber = "";
+    String experimentnumber = "";
 
-	String thermoscientific_filename;
+    String thermoscientific_filename;
 
-	String raw_to_mzXML_executable;
+    String raw_to_mzXML_executable;
 
-	String mslevel;
+    String mslevel;
 
-	String found_raw_to_mzXML_executable_name;
+    String found_raw_to_mzXML_executable_name;
 
-	String finished_text = "finished";
+    String finished_text = "finished";
 
-	String status_file = "status.txt";
+    String status_file = "status.txt";
 
-	String content;
+    String content;
 
-	String found_raw_to_mzXML_executable_name2;
+    String found_raw_to_mzXML_executable_name2;
 
-	long readw_byteSize;
+    long readw_byteSize;
 
-	int procesexitvalue;
+    int procesexitvalue;
 
-	int number_of_masses;
+    int number_of_masses;
 
-	int number_of_noise_peaks = 0;
+    int number_of_noise_peaks = 0;
 
-	boolean errormessageonce = false;
+    boolean errormessageonce = false;
 
-	boolean isWindowsFlag = false;
+    boolean isWindowsFlag = false;
 
-	boolean notfinished;
+    boolean notfinished;
 
-	public Thermo_Scientific(Controller cc, Experiment experiment, ExportFileToDisk exportfiletodisk) {
-		raw_to_mzXML_executable = "msconvert.exe";
-		// if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert32")) {
-		// raw_to_mzXML_executable = "msconvert.exe";
-		// }
-		// if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert64")) {
-		// raw_to_mzXML_executable = "msconvert.exe";
-		// }
-		this.exportfiletodisk = exportfiletodisk;
-		objectsearchfile = new SearchFile(cc);
-		thermoscientific_filename = "thermo_scientific";
-		emptystring = "";
-		this.cc = cc;
-		this.experiment = experiment;
-		isWindowsFlag = cc.osName.startsWith("Windows");
-		makedirs();
-	}
+    public Thermo_Scientific(Controller cc, Experiment experiment, ExportFileToDisk exportfiletodisk) {
+        raw_to_mzXML_executable = "msconvert.exe";
 
-	public void setobjects_null() {
-		if (readmzxml != null) {
-			readmzxml.setobjects_null();
-			readmzxml = null;
-		}
-	}
 
-	public int createpeaklist(MassSpectrometryFile massspectrometryfile) {
-		String filename = massspectrometryfile.getFilename();
-		String exportname = massspectrometryfile.getTmp_exportname();
-		sequensing_results_vector = null;
-		this.filename = filename;
-		this.experimentyear = experiment.getExperimentyear();
-		this.experimentnumber = String.valueOf(experiment.getExperimentid());
-		this.exportname = exportname;
-		if (readmzxml == null) {
-			readmzxml = new ReadmzXML(cc, experiment, exportfiletodisk);
-		}
-		number_of_noise_peaks = 0;
-		if (ftp == null) {
-			try {
-				ftp = new FTPClient();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		found_raw_to_mzXML_executable_name = objectsearchfile.return_file(raw_to_mzXML_executable);
-		readw_byteSize = objectsearchfile.byteSize;
-		remove_old_files();
-		store_file_local();
-		createbatchfile();
-		execscript();
-		mslevel = "1";
-		number_of_masses = 0;
-		number_of_masses = readmzxml.store_peak_lists(Thermo_Scientific_dir + thermoscientific_filename + ".mzxml",
-				mslevel, exportname, massspectrometryfile);
-		number_of_noise_peaks = readmzxml.return_number_of_noisemasses();
-		if (experiment.getperform_ms2_sequencing()) {
-			if (readmzxml.sequensing_results_vector != null) {
-				this.sequensing_results_vector = readmzxml.sequensing_results_vector;
-			}
-		}
-		return number_of_masses;
-	}
+        this.exportfiletodisk = exportfiletodisk;
+        objectsearchfile = new SearchFile(cc);
+        thermoscientific_filename = "thermo_scientific";
+        emptystring = "";
+        this.cc = cc;
+        this.experiment = experiment;
+        isWindowsFlag = cc.osName.startsWith("Windows");
+        makedirs();
+    }
 
-	private void makedirs() {
-		Thermo_Scientific_dir = cc.userhome + cc.fileSeparator + "thermo_scientific" + cc.fileSeparator;
-		file_thermo_scientific = null;
-		try {
-			file_thermo_scientific = new File(Thermo_Scientific_dir);
-		} catch (Exception e) {
-			;
-		}
-		if (!file_thermo_scientific.isDirectory()) {
-			file_thermo_scientific.mkdirs();
-		}
-	}
+    public void setobjects_null() {
+        if (readmzxml != null) {
+            readmzxml.setobjects_null();
+            readmzxml = null;
+        }
+    }
 
-	private void remove_old_files() {
-		boolean exporttodisksucceeded = exportfiletodisk.exportcompletefilename(
-				(Thermo_Scientific_dir + thermoscientific_filename + ".raw"), emptystring.getBytes());
-		exporttodisksucceeded = exportfiletodisk.exportcompletefilename(
-				(Thermo_Scientific_dir + thermoscientific_filename + ".mzxml"), emptystring.getBytes());
-	}
+    public int createpeaklist(MassSpectrometryFile massspectrometryfile) {
+        String filename = massspectrometryfile.getFilename();
+        String exportname = massspectrometryfile.getTmp_exportname();
+        sequensing_results_vector = null;
+        this.filename = filename;
+        this.experimentyear = experiment.getExperimentyear();
+        this.experimentnumber = String.valueOf(experiment.getExperimentid());
+        this.exportname = exportname;
+        if (readmzxml == null) {
+            readmzxml = new ReadmzXML(cc, experiment, exportfiletodisk);
+        }
+        number_of_noise_peaks = 0;
+        if (ftp == null) {
+            try {
+                ftp = new FTPClient();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        found_raw_to_mzXML_executable_name = objectsearchfile.return_file(raw_to_mzXML_executable);
+        readw_byteSize = objectsearchfile.byteSize;
+        remove_old_files();
+        store_file_local();
+        createbatchfile();
+        execscript();
+        mslevel = "1";
+        number_of_masses = 0;
+        number_of_masses = readmzxml.store_peak_lists(Thermo_Scientific_dir + thermoscientific_filename + ".mzxml",
+                mslevel, exportname, massspectrometryfile);
+        number_of_noise_peaks = readmzxml.return_number_of_noisemasses();
+        if (experiment.getperform_ms2_sequencing()) {
+            if (readmzxml.sequensing_results_vector != null) {
+                this.sequensing_results_vector = readmzxml.sequensing_results_vector;
+            }
+        }
+        return number_of_masses;
+    }
 
-	private void store_file_local() {
-		try {
-			ftp.quit();
-		} catch (Exception e) {
-		}
-		try {
-			ftp.setRemoteHost(cc.ftpremotehost);
-			ftp.connect();
-			ftp.login(cc.ftpuser, cc.ftppassword);
-			ftp.setConnectMode(FTPConnectMode.PASV);
-			ftp.setType(FTPTransferType.BINARY);
-			ftp.chdir(File.separator + experimentyear + File.separator + experimentnumber);
-			ftp.get(Thermo_Scientific_dir + thermoscientific_filename + ".raw", filename);
-		} catch (Exception e) {
-		}
-		try {
-			ftp.quit();
-		} catch (Exception e) {
-		}
-	}
+    private void makedirs() {
+        Thermo_Scientific_dir = cc.userhome + cc.fileSeparator + "thermo_scientific" + cc.fileSeparator;
+        file_thermo_scientific = null;
+        try {
+            file_thermo_scientific = new File(Thermo_Scientific_dir);
+        } catch (Exception e) {
+            ;
+        }
+        if (!file_thermo_scientific.isDirectory()) {
+            file_thermo_scientific.mkdirs();
+        }
+    }
 
-	private int execscript() {
-		procesexitvalue = -1;
-		try {
-			jproc.destroy();
-		} catch (Exception e) {
-		}
-		try {
-			if (Batchfilename2.indexOf(" ") > 0) {
-				Batchfilename2 = "\"" + Batchfilename2 + "\"";
-			}
-			jproc = Runtime.getRuntime().exec(Batchfilename2);
-			try {
-				jproc.waitFor();
-			} catch (InterruptedException ie) {
-				ie.printStackTrace();
-			}
-			procesexitvalue = jproc.exitValue();
-			if (procesexitvalue == 1) {
-				if (errormessageonce == false) {
-					errormessageonce = true;
-					message = raw_to_mzXML_executable + " is not executed correctly ! ";
-					JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
-				}
-			}
-			jproc.destroy();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return (procesexitvalue);
-	}
+    private void remove_old_files() {
+        boolean exporttodisksucceeded = exportfiletodisk.exportcompletefilename(
+                (Thermo_Scientific_dir + thermoscientific_filename + ".raw"), emptystring.getBytes());
+        exporttodisksucceeded = exportfiletodisk.exportcompletefilename(
+                (Thermo_Scientific_dir + thermoscientific_filename + ".mzxml"), emptystring.getBytes());
+    }
 
-	private void createbatchfile() {
-		cmd2 = "";
-		Batchfilename2 = Thermo_Scientific_dir + thermoscientific_filename + "2.bat";
-		found_raw_to_mzXML_executable_name2 = found_raw_to_mzXML_executable_name.trim();
-		if (found_raw_to_mzXML_executable_name2.indexOf(" ") > 0) {
-			found_raw_to_mzXML_executable_name2 = "\"" + found_raw_to_mzXML_executable_name2 + "\"";
-		}
-		if (experiment.getraw_to_mzXML().equalsIgnoreCase("readw")) {
-			if (Thermo_Scientific_dir.trim().indexOf(" ") > 0) {
-				if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
-					cmd2 = found_raw_to_mzXML_executable_name2 + " --mzXML " + "\"" + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw" + "\"" + " 1> " + "\"" + Thermo_Scientific_dir
-							+ "output.txt" + "\"" + " 2> " + "\"" + Thermo_Scientific_dir + "error.txt" + "\" ";
-				} else {
-					cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + "  --mzXML  " + "\"" + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw" + "\"" + " 1> " + Thermo_Scientific_dir + "output.txt"
-							+ "\"" + " 2> " + "\"" + Thermo_Scientific_dir + "error.txt" + "\" ";
-				}
-			} else {
-				if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
-					cmd2 = found_raw_to_mzXML_executable_name2 + "  --mzXML   " + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw 1> " + Thermo_Scientific_dir + "output.txt" + " 2> "
-							+ Thermo_Scientific_dir + "error.txt ";
-				} else {
-					cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + "   --mzXML    " + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw 1> " + Thermo_Scientific_dir + "output.txt" + " 2> "
-							+ Thermo_Scientific_dir + "error.txt ";
-				}
-			}
-		}
-		if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert32")) {
-			if (Thermo_Scientific_dir.trim().indexOf(" ") > 0) {
-				if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
-					cmd2 = found_raw_to_mzXML_executable_name2 + "  " + "\"" + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw" + "\"" + " --32  --mzXML -o " + "\""
-							+ Thermo_Scientific_dir + "\"" + " 1> " + "\"" + Thermo_Scientific_dir + "output.txt" + "\""
-							+ " 2> " + "\"" + Thermo_Scientific_dir + "error.txt" + "\" ";
-				} else {
-					cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + " " + "\"" + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw" + "\"" + " --32  --mzXML -o " + "\""
-							+ Thermo_Scientific_dir + "\"" + "  1> " + Thermo_Scientific_dir + "output.txt" + "\""
-							+ " 2> " + "\"" + Thermo_Scientific_dir + "error.txt" + "\" ";
-				}
-			} else {
-				if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
-					cmd2 = found_raw_to_mzXML_executable_name2 + "     " + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw --32  --mzXML -o " + Thermo_Scientific_dir + "  1> "
-							+ Thermo_Scientific_dir + "output.txt" + " 2> " + Thermo_Scientific_dir + "error.txt ";
-				} else {
-					cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + " " + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw --32  --mzXML -o " + Thermo_Scientific_dir + "  1> "
-							+ Thermo_Scientific_dir + "output.txt" + " 2> " + Thermo_Scientific_dir + "error.txt ";
-				}
-			}
-		}
-		if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert64")) {
-			if (Thermo_Scientific_dir.trim().indexOf(" ") > 0) {
-				if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
-					cmd2 = found_raw_to_mzXML_executable_name2 + "  " + "\"" + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw" + "\"" + " --mzXML -o " + "\"" + Thermo_Scientific_dir
-							+ "\"" + " 1> " + "\"" + Thermo_Scientific_dir + "output.txt" + "\"" + " 2> " + "\""
-							+ Thermo_Scientific_dir + "error.txt" + "\" ";
-				} else {
-					cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + " " + "\"" + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw" + "\"" + " --mzXML -o " + "\"" + Thermo_Scientific_dir
-							+ "\"" + "  1> " + Thermo_Scientific_dir + "output.txt" + "\"" + " 2> " + "\""
-							+ Thermo_Scientific_dir + "error.txt" + "\" ";
-				}
-			} else {
-				if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
-					cmd2 = found_raw_to_mzXML_executable_name2 + "     " + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw --mzXML -o " + Thermo_Scientific_dir + "  1> "
-							+ Thermo_Scientific_dir + "output.txt" + " 2> " + Thermo_Scientific_dir + "error.txt ";
-				} else {
-					cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + " " + Thermo_Scientific_dir
-							+ thermoscientific_filename + ".raw  --mzXML -o " + Thermo_Scientific_dir + "  1> "
-							+ Thermo_Scientific_dir + "output.txt" + " 2> " + Thermo_Scientific_dir + "error.txt ";
-				}
-			}
-		}
-		boolean exporttodisksucceeded = exportfiletodisk.exportcompletefilename(Batchfilename2, cmd2.getBytes());
-	}
+    private void store_file_local() {
+        try {
+            ftp.quit();
+        } catch (Exception e) {
+        }
+        try {
+            ftp.setRemoteHost(cc.ftpremotehost);
+            ftp.connect();
+            ftp.login(cc.ftpuser, cc.ftppassword);
+            ftp.setConnectMode(FTPConnectMode.PASV);
+            ftp.setType(FTPTransferType.BINARY);
+            ftp.chdir(File.separator + experimentyear + File.separator + experimentnumber);
+            ftp.get(Thermo_Scientific_dir + thermoscientific_filename + ".raw", filename);
+        } catch (Exception e) {
+        }
+        try {
+            ftp.quit();
+        } catch (Exception e) {
+        }
+    }
+
+    private int execscript() {
+        procesexitvalue = -1;
+        try {
+            jproc.destroy();
+        } catch (Exception e) {
+        }
+        try {
+            if (Batchfilename2.indexOf(" ") > 0) {
+                Batchfilename2 = "\"" + Batchfilename2 + "\"";
+            }
+            jproc = Runtime.getRuntime().exec(Batchfilename2);
+            try {
+                jproc.waitFor();
+            } catch (InterruptedException ie) {
+                ie.printStackTrace();
+            }
+            procesexitvalue = jproc.exitValue();
+            if (procesexitvalue == 1) {
+                if (errormessageonce == false) {
+                    errormessageonce = true;
+                    message = raw_to_mzXML_executable + " is not executed correctly ! ";
+                    JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            jproc.destroy();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return (procesexitvalue);
+    }
+
+    private void createbatchfile() {
+        cmd2 = "";
+        Batchfilename2 = Thermo_Scientific_dir + thermoscientific_filename + "2.bat";
+        found_raw_to_mzXML_executable_name2 = found_raw_to_mzXML_executable_name.trim();
+        if (found_raw_to_mzXML_executable_name2.indexOf(" ") > 0) {
+            found_raw_to_mzXML_executable_name2 = "\"" + found_raw_to_mzXML_executable_name2 + "\"";
+        }
+        if (experiment.getraw_to_mzXML().equalsIgnoreCase("readw")) {
+            if (Thermo_Scientific_dir.trim().indexOf(" ") > 0) {
+                if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
+                    cmd2 = found_raw_to_mzXML_executable_name2 + " --mzXML " + "\"" + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw" + "\"" + " 1> " + "\"" + Thermo_Scientific_dir
+                            + "output.txt" + "\"" + " 2> " + "\"" + Thermo_Scientific_dir + "error.txt" + "\" ";
+                } else {
+                    cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + "  --mzXML  " + "\"" + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw" + "\"" + " 1> " + Thermo_Scientific_dir + "output.txt"
+                            + "\"" + " 2> " + "\"" + Thermo_Scientific_dir + "error.txt" + "\" ";
+                }
+            } else {
+                if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
+                    cmd2 = found_raw_to_mzXML_executable_name2 + "  --mzXML   " + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw 1> " + Thermo_Scientific_dir + "output.txt" + " 2> "
+                            + Thermo_Scientific_dir + "error.txt ";
+                } else {
+                    cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + "   --mzXML    " + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw 1> " + Thermo_Scientific_dir + "output.txt" + " 2> "
+                            + Thermo_Scientific_dir + "error.txt ";
+                }
+            }
+        }
+        if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert32")) {
+            if (Thermo_Scientific_dir.trim().indexOf(" ") > 0) {
+                if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
+                    cmd2 = found_raw_to_mzXML_executable_name2 + "  " + "\"" + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw" + "\"" + " --32  --mzXML -o " + "\""
+                            + Thermo_Scientific_dir + "\"" + " 1> " + "\"" + Thermo_Scientific_dir + "output.txt" + "\""
+                            + " 2> " + "\"" + Thermo_Scientific_dir + "error.txt" + "\" ";
+                } else {
+                    cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + " " + "\"" + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw" + "\"" + " --32  --mzXML -o " + "\""
+                            + Thermo_Scientific_dir + "\"" + "  1> " + Thermo_Scientific_dir + "output.txt" + "\""
+                            + " 2> " + "\"" + Thermo_Scientific_dir + "error.txt" + "\" ";
+                }
+            } else {
+                if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
+                    cmd2 = found_raw_to_mzXML_executable_name2 + "     " + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw --32  --mzXML -o " + Thermo_Scientific_dir + "  1> "
+                            + Thermo_Scientific_dir + "output.txt" + " 2> " + Thermo_Scientific_dir + "error.txt ";
+                } else {
+                    cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + " " + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw --32  --mzXML -o " + Thermo_Scientific_dir + "  1> "
+                            + Thermo_Scientific_dir + "output.txt" + " 2> " + Thermo_Scientific_dir + "error.txt ";
+                }
+            }
+        }
+        if (experiment.getraw_to_mzXML().equalsIgnoreCase("msconvert64")) {
+            if (Thermo_Scientific_dir.trim().indexOf(" ") > 0) {
+                if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
+                    cmd2 = found_raw_to_mzXML_executable_name2 + "  " + "\"" + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw" + "\"" + " --mzXML -o " + "\"" + Thermo_Scientific_dir
+                            + "\"" + " 1> " + "\"" + Thermo_Scientific_dir + "output.txt" + "\"" + " 2> " + "\""
+                            + Thermo_Scientific_dir + "error.txt" + "\" ";
+                } else {
+                    cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + " " + "\"" + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw" + "\"" + " --mzXML -o " + "\"" + Thermo_Scientific_dir
+                            + "\"" + "  1> " + Thermo_Scientific_dir + "output.txt" + "\"" + " 2> " + "\""
+                            + Thermo_Scientific_dir + "error.txt" + "\" ";
+                }
+            } else {
+                if (!found_raw_to_mzXML_executable_name2.equalsIgnoreCase("")) {
+                    cmd2 = found_raw_to_mzXML_executable_name2 + "     " + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw --mzXML -o " + Thermo_Scientific_dir + "  1> "
+                            + Thermo_Scientific_dir + "output.txt" + " 2> " + Thermo_Scientific_dir + "error.txt ";
+                } else {
+                    cmd2 = "C:/" + raw_to_mzXML_executable.toLowerCase() + " " + Thermo_Scientific_dir
+                            + thermoscientific_filename + ".raw  --mzXML -o " + Thermo_Scientific_dir + "  1> "
+                            + Thermo_Scientific_dir + "output.txt" + " 2> " + Thermo_Scientific_dir + "error.txt ";
+                }
+            }
+        }
+        boolean exporttodisksucceeded = exportfiletodisk.exportcompletefilename(Batchfilename2, cmd2.getBytes());
+    }
 }

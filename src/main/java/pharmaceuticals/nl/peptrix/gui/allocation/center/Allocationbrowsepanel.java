@@ -6,16 +6,16 @@ import javax.swing.JPanel;
 
 public class Allocationbrowsepanel {
 
-	JPanel jpanel;
+    JPanel jpanel;
 
-	public Allocationbrowsepanel() {
-		jpanel = new JPanel();
-		FlowLayout layoutMgr = new FlowLayout(FlowLayout.LEFT, 2, 5);
-		jpanel.setLayout(layoutMgr);
-	}
+    public Allocationbrowsepanel() {
+        jpanel = new JPanel();
+        FlowLayout layoutMgr = new FlowLayout(FlowLayout.LEFT, 2, 5);
+        jpanel.setLayout(layoutMgr);
+    }
 
-	public JPanel getpanel() {
-		return jpanel;
-	}
+    public JPanel getpanel() {
+        return jpanel;
+    }
 
 }

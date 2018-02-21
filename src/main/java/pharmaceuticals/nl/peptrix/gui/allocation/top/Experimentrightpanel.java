@@ -8,17 +8,17 @@ import pharmaceuticals.nl.peptrix.Controller;
 
 public class Experimentrightpanel {
 
-	JPanel panelexperimentright;
+    JPanel panelexperimentright;
 
-	public Experimentrightpanel(Controller cc) {
-		panelexperimentright = new JPanel();
-		cc.labelrecordsnotallocated = new JLabel("not allocated :");
-		panelexperimentright.setBorder(BorderFactory.createTitledBorder("Info"));
-		panelexperimentright.add(cc.labelrecordsnotallocated);
-	}
+    public Experimentrightpanel(Controller cc) {
+        panelexperimentright = new JPanel();
+        cc.labelrecordsnotallocated = new JLabel("not allocated :");
+        panelexperimentright.setBorder(BorderFactory.createTitledBorder("Info"));
+        panelexperimentright.add(cc.labelrecordsnotallocated);
+    }
 
-	public JPanel getpanel() {
-		return panelexperimentright;
-	}
+    public JPanel getpanel() {
+        return panelexperimentright;
+    }
 
 }
