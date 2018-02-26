@@ -112,7 +112,7 @@ public class Experimentleftpanelallocation {
         constraintsexperiment.gridheight = 1;
         gridbagexperiment.setConstraints(labelfiletype, constraintsexperiment);
         panelexperimentleft.add(labelfiletype);
-        cc.filtercombobox = new JComboBox<String>(cc.filtertypes);
+        cc.filtercombobox = new JComboBox(cc.filtertypes);
         cc.filtercombobox.setLightWeightPopupEnabled(false);
         constraintsexperiment.gridx = 1;
         constraintsexperiment.gridy = 5;

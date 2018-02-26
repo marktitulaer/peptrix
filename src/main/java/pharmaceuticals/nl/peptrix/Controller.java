@@ -136,22 +136,22 @@ public class Controller
     public SortedListModel model_fixed_mod;
     public SortedListModel selected_enzyme_list;
     public SortedListModel potential_enzyme_list;
-    public JComboBox<String> comborandomizationgroups;
-    public JComboBox<String> colorgroup1;
-    public JComboBox<String> colorgroup2;
-    public JComboBox<String> creatematrixmethodcombobox;
-    public JComboBox<String> combo_Taxonomy;
-    public JComboBox<String> combo_searchengine;
-    public JComboBox<String> combo_ITOLU;
-    public JComboBox<String> combo_TOLU;
-    public JComboBox<String> combomatrixtodisplay;
-    public JComboBox<String> calibrationstandard;
-    public JComboBox<String> equipmentcombo;
-    public JComboBox<String> filtercombobox2;
-    public JComboBox<String> filtercombobox;
-    public JComboBox<String> combogroupnumber1;
-    public JComboBox<String> combogroupnumber2;
-    public JComboBox<String> combomatrixtodisplaywilcoxon;
+    public JComboBox comborandomizationgroups;
+    public JComboBox colorgroup1;
+    public JComboBox colorgroup2;
+    public JComboBox creatematrixmethodcombobox;
+    public JComboBox combo_Taxonomy;
+    public JComboBox combo_searchengine;
+    public JComboBox combo_ITOLU;
+    public JComboBox combo_TOLU;
+    public JComboBox combomatrixtodisplay;
+    public JComboBox calibrationstandard;
+    public JComboBox equipmentcombo;
+    public JComboBox filtercombobox2;
+    public JComboBox filtercombobox;
+    public JComboBox combogroupnumber1;
+    public JComboBox  combogroupnumber2;
+    public JComboBox  combomatrixtodisplaywilcoxon;
     public ButtonGroup btngroup;
     public ButtonGroup radiosetapodization;
     public ButtonGroup raw_to_mzXML_programms;
@@ -214,11 +214,11 @@ public class Controller
     public JButton creatematrix2;
     public JButton btnreport;
     public JButton clearselectedsample;
-    public JList<String> list_fixed_mod;
-    public JList<String> list_selected_enzyme;
-    public JList<String> list_potential_enzyme;
-    public JList<String> list_variabel_mod;
-    public JList<String> list_all_modifications;
+    public JList  list_fixed_mod;
+    public JList  list_selected_enzyme;
+    public JList  list_potential_enzyme;
+    public JList  list_variabel_mod;
+    public JList  list_all_modifications;
     public TextField[] Offset_LC_MS;
     public TextField[] Sampleid;
     public TextField[] Groupid;
@@ -956,6 +956,7 @@ public class Controller
 
     private void clearSourceSelected() {
         Object selected[] = list_fixed_mod.getSelectedValuesList().toArray();
+                //.getSelectedValuesList().toArray();
         for (int i = selected.length - 1; i >= 0; --i) {
             model_fixed_mod.removeElement(selected[i]);
         }

@@ -37,7 +37,7 @@ class CreateMatrixStartPanel {
         constraintsstartcreatematrix.gridheight = 1;
         gridbagstartcreatematrix.setConstraints(labelcreatematrixmethod, constraintsstartcreatematrix);
         startcreatematrixpanel.add(labelcreatematrixmethod);
-        cc.creatematrixmethodcombobox = new JComboBox<String>(creatematrixmethods);
+        cc.creatematrixmethodcombobox = new JComboBox(creatematrixmethods);
         cc.creatematrixmethodcombobox.setLightWeightPopupEnabled(false);
         constraintsstartcreatematrix.gridx = 2;
         constraintsstartcreatematrix.gridy = 1;
@@ -52,7 +52,7 @@ class CreateMatrixStartPanel {
         constraintsstartcreatematrix.gridheight = 1;
         gridbagstartcreatematrix.setConstraints(labelmatrixfiles, constraintsstartcreatematrix);
         startcreatematrixpanel.add(labelmatrixfiles);
-        cc.combomatrixtodisplay = new JComboBox<String>(cc.matrixfiles);
+        cc.combomatrixtodisplay = new JComboBox(cc.matrixfiles);
         cc.combomatrixtodisplay.setLightWeightPopupEnabled(false);
         cc.combomatrixtodisplay.addActionListener(cc);
         constraintsstartcreatematrix.gridx = 2;
@@ -68,7 +68,7 @@ class CreateMatrixStartPanel {
         constraintsstartcreatematrix.gridheight = 1;
         gridbagstartcreatematrix.setConstraints(labelfiletype, constraintsstartcreatematrix);
         startcreatematrixpanel.add(labelfiletype);
-        cc.filtercombobox2 = new JComboBox<String>();
+        cc.filtercombobox2 = new JComboBox();
         cc.filtercombobox2.setLightWeightPopupEnabled(false);
         constraintsstartcreatematrix.gridx = 2;
         constraintsstartcreatematrix.gridy = 3;
