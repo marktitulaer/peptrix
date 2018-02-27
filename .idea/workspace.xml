@@ -1,180 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2422f7b1-097a-4dac-9eae-108cc9ac4cec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Controller.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/R/Rterm.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/R/Rterm.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/SearchFile.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/SearchFile.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/SortedListModel.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/SortedListModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/allocation/InsertGroup.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/allocation/InsertGroup.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/allocation/InsertGroups.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/allocation/InsertGroups.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/allocation/InsertSamples.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/allocation/InsertSamples.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/allocation/Insertsample.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/allocation/Insertsample.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/allocation/SaveAllocation.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/allocation/SaveAllocation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/Calibration.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/Calibration.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/CalibrationRScript.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/CalibrationRScript.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/Calibrationlinear.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/Calibrationlinear.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/Calibrationquadratic.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/Calibrationquadratic.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/GenerateinputfilesRscript.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/GenerateinputfilesRscript.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/Getcalibrationstandards.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/Getcalibrationstandards.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/Readoutputfilescalibration.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/calibration/Readoutputfilescalibration.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/AddPeaksToMatrix.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/AddPeaksToMatrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/CheckMassandTimeWindow.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/CheckMassandTimeWindow.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Checkbettermatchingothermass.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Checkbettermatchingothermass.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/CombineMS2peaks.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/CombineMS2peaks.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/CombineNoisePeaks.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/CombineNoisePeaks.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/CombineNoisePeaks2.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/CombineNoisePeaks2.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Combinedpeaks.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Combinedpeaks.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Combinepeaks.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Combinepeaks.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Eliminatesamples.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Eliminatesamples.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Makematrix.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Makematrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Matrix.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Matrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Base64BytesToNumbers.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Base64BytesToNumbers.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Base64Coder.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Base64Coder.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Base64StringToBytes.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Base64StringToBytes.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Clusters.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Clusters.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Comparetheoreticaldistribution.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Comparetheoreticaldistribution.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Deisotoping.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Deisotoping.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Eliminateistopes.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Eliminateistopes.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/FTMSdata.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/FTMSdata.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Filetypes.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Filetypes.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/IdentifyPeaks.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/IdentifyPeaks.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/IdentifypeaksRscript.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/IdentifypeaksRscript.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Makepeaklist.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Makepeaklist.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/MassSpectrometryFile.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/MassSpectrometryFile.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Monoisotoopfinding.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Monoisotoopfinding.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Potentialisotopicclusters.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Potentialisotopicclusters.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Readdatafiles.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Readdatafiles.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/ReadmzXML.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/ReadmzXML.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Simplepeakfind.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Simplepeakfind.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Spectrum.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Spectrum.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Theoreticaldistribution.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Theoreticaldistribution.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Thermo_Scientific.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Thermo_Scientific.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/ms2sequencing/Default_input_xml.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/ms2sequencing/Default_input_xml.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/ms2sequencing/Input_xml.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/ms2sequencing/Input_xml.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/ms2sequencing/Taxonomy.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/ms2sequencing/Taxonomy.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/ms2sequencing/TaxonomyFasta.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/ms2sequencing/TaxonomyFasta.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/experiment/Experiment.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/experiment/Experiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/experiment/Getexistingexperiment.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/experiment/Getexistingexperiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/export/CreateexportstringWilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/export/CreateexportstringWilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/export/ExportFileToDisk.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/export/ExportFileToDisk.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/export/Storereport.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/export/Storereport.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/AddOnlyFiles.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/AddOnlyFiles.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/Createnewexperiment.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/Createnewexperiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/Directories.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/Directories.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/FileTransfer.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/FileTransfer.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/GetFiles.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/GetFiles.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/ImportFiles.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/ImportFiles.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/ScanFilesandDirs.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/fileimport/ScanFilesandDirs.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/Allocation.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/Allocation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/CreateMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/CreateMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/CreateWilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/CreateWilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/Creatematrix.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/Creatematrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/FileChooser.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/FileChooser.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/JCalendar.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/JCalendar.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/JDayChooser.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/JDayChooser.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/JMonthChooser.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/JMonthChooser.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/JSpinField.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/JSpinField.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/JYearChooser.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/JYearChooser.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/Progress.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/Progress.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/ReportAllocation.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/ReportAllocation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/ResultSetTableModel.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/ResultSetTableModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/SearchSelection.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/SearchSelection.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/SlavePane.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/SlavePane.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/TableSorter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/TableSorter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/UpdateView.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/UpdateView.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/Centerallocation.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/Centerallocation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/Northallocation.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/Northallocation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/Southallocation.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/Southallocation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/center/Allocationbrowsepanel.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/center/Allocationbrowsepanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/center/Allocationcenternorthleft.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/center/Allocationcenternorthleft.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/center/Allocationcenterpanelsouth.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/center/Allocationcenterpanelsouth.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/center/Centerpanelnorthallocation.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/center/Centerpanelnorthallocation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/center/Panelallocationcentertotal.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/center/Panelallocationcentertotal.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/top/Experimentleftpanelallocation.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/top/Experimentleftpanelallocation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/top/Experimentrightpanel.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/top/Experimentrightpanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/top/Experimentrighttotal.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/top/Experimentrighttotal.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/application/Contentrightpanel.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/application/Contentrightpanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/application/FramePanel.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/application/FramePanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/application/menu/Buttonsleftpanel.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/application/menu/Buttonsleftpanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/application/menu/Buttonsleftpaneltop.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/application/menu/Buttonsleftpaneltop.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/application/menu/Buttonstoppanel.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/application/menu/Buttonstoppanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/Creatematrixcenter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/Creatematrixcenter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/Creatematrixnorth.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/Creatematrixnorth.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/PanelCreateMatrixSouth.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/PanelCreateMatrixSouth.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/Calibrationinputpanel.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/Calibrationinputpanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/CenterpanelnorthCreatematrix.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/CenterpanelnorthCreatematrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/Centerpanelnorthtotalcreatematrix.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/Centerpanelnorthtotalcreatematrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/CenterpanelsouthCreatematrix.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/CenterpanelsouthCreatematrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/CreateMatrixStartPanel.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/CreateMatrixStartPanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/PanelCombine.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/PanelCombine.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/PanelFTICR.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/PanelFTICR.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/PanelPeakFind.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/PanelPeakFind.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/PanelPreprocessing.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/PanelPreprocessing.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/Panel_ms2_sequencing.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/Panel_ms2_sequencing.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/top/ExperimentLeftPanelCreateMatrix.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/top/ExperimentLeftPanelCreateMatrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/createwilcoxon/CenterWilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/createwilcoxon/CenterWilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/createwilcoxon/Northcreatewilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/createwilcoxon/Northcreatewilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/createwilcoxon/SouthWilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/createwilcoxon/SouthWilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/createwilcoxon/center/Inputpanelwilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/createwilcoxon/center/Inputpanelwilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/createwilcoxon/center/Panelpvalues.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/createwilcoxon/center/Panelpvalues.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/FileChooserEquipment.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/FileChooserEquipment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/FileChooserExperiment.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/FileChooserExperiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/PanelTop.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/PanelTop.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/FastaFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/FastaFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/FidFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/FidFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/MsconvertFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/MsconvertFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/RawFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/RawFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/ReadwFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/ReadwFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/RtermFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/RtermFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/SuffixAwareFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/SuffixAwareFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/TandemFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/TandemFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/TextFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/TextFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/XMLFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/XMLFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/mzXMLFilter.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/filechooser/filters/mzXMLFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Equipment.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Equipment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Experiment.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Experiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Group.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Group.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/ItemValue.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/ItemValue.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Result.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Result.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Sample.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Sample.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Systemcode.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Systemcode.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Systemcodeitem.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Systemcodeitem.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Unit.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Unit.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/EquipmentService.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/EquipmentService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/ExperimentService.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/ExperimentService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/GroupService.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/GroupService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/ResultService.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/ResultService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/SampleService.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/SampleService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/SystemCodeItemService.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/service/SystemCodeItemService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/EquipmentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/EquipmentServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/ExperimentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/ExperimentServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/GroupServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/GroupServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/ResultServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/ResultServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/SampleServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/SampleServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/SystemCodeItemServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/serviceimpl/SystemCodeItemServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/BMPLoader.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/BMPLoader.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/BitmapHeader.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/BitmapHeader.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/Cleanpvalues.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/Cleanpvalues.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/CreateexportstringWilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/CreateexportstringWilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/DisplayPplot.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/DisplayPplot.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/DisplayPvalues.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/DisplayPvalues.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/Getmatrixfileswilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/Getmatrixfileswilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/InsertresultrecordWilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/InsertresultrecordWilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/StartWilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/StartWilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/StorePplot.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/StorePplot.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/StorePvalues.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/StorePvalues.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/StoredetailsWilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/StoredetailsWilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/Wilcoxon.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/statistics/wilcoxon/Wilcoxon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/transpose/TransposeMatrix.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/transpose/TransposeMatrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/utils/ActualTime.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/utils/ActualTime.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/utils/FastFourierTransform.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/utils/FastFourierTransform.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/utils/SortArray.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/utils/SortArray.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/utils/SortMatrix.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/utils/SortMatrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pharmaceuticals/nl/peptrix/AppTest.java" afterPath="$PROJECT_DIR$/src/test/java/pharmaceuticals/nl/peptrix/AppTest.java" />
-    </list>
+    <list default="true" id="2422f7b1-097a-4dac-9eae-108cc9ac4cec" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -184,57 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14195">
-              <caret line="2617" column="1" lean-forward="false" selection-start-line="2617" selection-start-column="1" selection-end-line="2617" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#124569#124570#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResultSetTableModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/ResultSetTableModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataBase.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/database/DataBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="119" column="33" lean-forward="false" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Loginscreen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -335,10 +112,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -376,6 +151,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -561,13 +338,13 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23020834" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23020834" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30965006" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -595,7 +372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -626,6 +402,7 @@
           <caret line="963" column="9" lean-forward="false" selection-start-line="963" selection-start-column="9" selection-end-line="963" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#124523#124524#0" expanded="true" />
             <element signature="e#124569#124570#0" expanded="true" />
           </folding>
         </state>
@@ -659,7 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,6 +466,7 @@
           <caret line="968" column="60" lean-forward="true" selection-start-line="962" selection-start-column="7" selection-end-line="968" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#124523#124524#0" expanded="true" />
             <element signature="e#124569#124570#0" expanded="true" />
           </folding>
         </state>
@@ -723,7 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,6 +530,7 @@
           <caret line="957" column="8" lean-forward="true" selection-start-line="957" selection-start-column="8" selection-end-line="957" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#124523#124524#0" expanded="true" />
             <element signature="e#124569#124570#0" expanded="true" />
           </folding>
         </state>
@@ -763,7 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,6 +693,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/model/Person.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/DataBase.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/ResultSetTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/hibernate/HibernateUtil.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/database/DataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="119" column="33" lean-forward="false" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -929,36 +726,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14195">
+        <state relative-caret-position="7851">
           <caret line="2617" column="1" lean-forward="false" selection-start-line="2617" selection-start-column="1" selection-end-line="2617" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#124523#124524#0" expanded="true" />
             <element signature="e#124569#124570#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/ResultSetTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/database/DataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="119" column="33" lean-forward="false" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/hibernate/HibernateUtil.java" />
   </component>
   <component name="masterDetails">
     <states>
