@@ -9,13 +9,23 @@ import pharmaceuticals.nl.peptrix.database.HibernateUtil;
 import pharmaceuticals.nl.peptrix.model.*;
 
 public class DataBase {
-    public DataBase() {
+
+    String jdbc_user;
+    String jdbc_password;
+    String databaseName;
+
+    public DataBase(String jdbc_user, String jdbc_password, String databaseName) {
+        this.jdbc_user =  jdbc_user;
+        this.jdbc_password = jdbc_password;
+        this.databaseName = databaseName;
     }
 
     public void FillInitialData() {
         Session session = null;
         Transaction transaction = null;
+
         try {
+            HibernateUtil.setDatabaseVariables(jdbc_user, jdbc_password, databaseName);
             session = HibernateUtil.getSessionFactory().openSession();
             transaction = session.getTransaction();
             transaction.begin();

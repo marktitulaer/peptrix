@@ -15,15 +15,26 @@ public class HibernateUtil {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
+    private static String databaseUser;
+    private static String databasePassword;
+    private static String databasename;
+
+    public static void setDatabaseVariables(String inputDatabaseUser, String inputDatabasePassword, String inputDatabaseName) {
+        databaseUser = inputDatabaseUser;
+        databasePassword = inputDatabasePassword;
+        databasename = inputDatabaseName.trim();
+    }
+
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
                 StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
                 Map<String, Object> settings = new HashMap();
                 settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/proteomics?useSSL=false");
-                settings.put(Environment.USER, "root");
-                settings.put(Environment.PASS, "jk3567");
+                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/" + databasename + "?useSSL=false");
+                System.out.println("test " + databaseUser);
+                settings.put(Environment.USER, databaseUser);
+                settings.put(Environment.PASS, databasePassword);
                 settings.put(Environment.HBM2DDL_AUTO, "update");
                 settings.put(Environment.SHOW_SQL, true);
                 // HikariCP settings

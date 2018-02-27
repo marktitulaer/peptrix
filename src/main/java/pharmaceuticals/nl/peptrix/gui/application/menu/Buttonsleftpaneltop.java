@@ -38,12 +38,12 @@ public class Buttonsleftpaneltop {
 
 
         //gridbagconstraints.gridx = 1;
-       // gridbagconstraints.gridy = 3;
+        // gridbagconstraints.gridy = 3;
         //gridbagconstraints.gridwidth = 1;
-       // gridbagconstraints.gridheight = 1;
-       // gridbglayout.setConstraints(cc.btnfasta, gridbagconstraints);
-       // cc.btnfasta.addActionListener(cc);
-       // jpanel.add(cc.btnfasta);
+        // gridbagconstraints.gridheight = 1;
+        // gridbglayout.setConstraints(cc.btnfasta, gridbagconstraints);
+        // cc.btnfasta.addActionListener(cc);
+        // jpanel.add(cc.btnfasta);
 
 
         gridbagconstraints.gridx = 1;

@@ -150,8 +150,8 @@ public class Controller
     public JComboBox filtercombobox2;
     public JComboBox filtercombobox;
     public JComboBox combogroupnumber1;
-    public JComboBox  combogroupnumber2;
-    public JComboBox  combomatrixtodisplaywilcoxon;
+    public JComboBox combogroupnumber2;
+    public JComboBox combomatrixtodisplaywilcoxon;
     public ButtonGroup btngroup;
     public ButtonGroup radiosetapodization;
     public ButtonGroup raw_to_mzXML_programms;
@@ -214,11 +214,11 @@ public class Controller
     public JButton creatematrix2;
     public JButton btnreport;
     public JButton clearselectedsample;
-    public JList  list_fixed_mod;
-    public JList  list_selected_enzyme;
-    public JList  list_potential_enzyme;
-    public JList  list_variabel_mod;
-    public JList  list_all_modifications;
+    public JList list_fixed_mod;
+    public JList list_selected_enzyme;
+    public JList list_potential_enzyme;
+    public JList list_variabel_mod;
+    public JList list_all_modifications;
     public TextField[] Offset_LC_MS;
     public TextField[] Sampleid;
     public TextField[] Groupid;
@@ -372,6 +372,7 @@ public class Controller
     public String fileSeparator;
     public String userhome;
     public String jdbc_user;
+    public String databaseName;
     public String jdbc_password;
     public String p_values_prefix = "p_values_";
     String javaHome;
@@ -486,9 +487,10 @@ public class Controller
     InsertGroups insertGroups;
     public ResultService resultService;
 
-    public Controller(JFrame frame) {
-        jdbc_user = "root";
-        jdbc_password = "jk3567";
+    public Controller(JFrame frame, String jdbc_user, String jdbc_password, String databaseName) {
+        this.jdbc_user = jdbc_user;
+        this.jdbc_password = jdbc_password;
+        this.databaseName = databaseName;
         fileSeparator = System.getProperty("file.separator");
         userhome = System.getProperty("user.home");
         javaHome = System.getProperty("java.home");
@@ -955,11 +957,11 @@ public class Controller
     }
 
     private void clearSourceSelected() {
-       // Object selected[] = list_fixed_mod.getSelectedValuesList().toArray();
-      //  for (int i = selected.length - 1; i >= 0; --i) {
-      //     model_fixed_mod.removeElement(selected[i]);
-     //   }
-     //   list_fixed_mod.getSelectionModel().clearSelection();
+        // Object selected[] = list_fixed_mod.getSelectedValuesList().toArray();
+        //  for (int i = selected.length - 1; i >= 0; --i) {
+        //     model_fixed_mod.removeElement(selected[i]);
+        //   }
+        //   list_fixed_mod.getSelectionModel().clearSelection();
 
 
         int[] selectedindices = list_fixed_mod.getSelectedIndices();
@@ -971,9 +973,6 @@ public class Controller
         list_fixed_mod.getSelectionModel().clearSelection();
 
 
-
-
-
     }
 
     private void clearSourceSelected2() {
@@ -981,7 +980,7 @@ public class Controller
         //for (int i = selected.length - 1; i >= 0; --i) {
         //    model_variabel_mod.removeElement(selected[i]);
         //}
-       // list_variabel_mod.getSelectionModel().clearSelection();
+        // list_variabel_mod.getSelectionModel().clearSelection();
 
 
         int[] selectedindices = list_variabel_mod.getSelectedIndices();
@@ -993,19 +992,14 @@ public class Controller
         list_variabel_mod.getSelectionModel().clearSelection();
 
 
-
-
-
-
-
     }
 
     private void clearDestinationSelected() {
-       // Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
-      //  for (int i = selected.length - 1; i >= 0; --i) {
-     //       model_all_modifications.removeElement(selected[i]);
-     //   }
-     //   list_all_modifications.getSelectionModel().clearSelection();
+        // Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
+        //  for (int i = selected.length - 1; i >= 0; --i) {
+        //       model_all_modifications.removeElement(selected[i]);
+        //   }
+        //   list_all_modifications.getSelectionModel().clearSelection();
 
 
         int[] selectedindices = list_all_modifications.getSelectedIndices();
@@ -1017,19 +1011,14 @@ public class Controller
         list_all_modifications.getSelectionModel().clearSelection();
 
 
-
-
-
-
-
     }
 
     private void clearPotentialEnzymesSelected() {
         //Object selected[] = list_potential_enzyme.getSelectedValuesList().toArray();
-       // for (int i = selected.length - 1; i >= 0; --i) {
-       //     potential_enzyme_list.removeElement(selected[i]);
-       // }
-      //  list_potential_enzyme.getSelectionModel().clearSelection();
+        // for (int i = selected.length - 1; i >= 0; --i) {
+        //     potential_enzyme_list.removeElement(selected[i]);
+        // }
+        //  list_potential_enzyme.getSelectionModel().clearSelection();
 
 
         int[] selectedindices = list_potential_enzyme.getSelectedIndices();
@@ -1047,8 +1036,8 @@ public class Controller
         //Object selected[] = list_selected_enzyme.getSelectedValuesList().toArray();
         //for (int i = selected.length - 1; i >= 0; --i) {
         //    selected_enzyme_list.removeElement(selected[i]);
-       // }
-       // list_selected_enzyme.getSelectionModel().clearSelection();
+        // }
+        // list_selected_enzyme.getSelectionModel().clearSelection();
 
 
         int[] selectedindices = list_selected_enzyme.getSelectedIndices();
@@ -1058,8 +1047,6 @@ public class Controller
         }
 
         list_selected_enzyme.getSelectionModel().clearSelection();
-
-
 
 
     }
@@ -2049,7 +2036,6 @@ public class Controller
             }
 
 
-
             addSourceElements2(selected);
             clearDestinationSelected();
         }
@@ -2063,12 +2049,11 @@ public class Controller
             }
 
 
-
             addDestinationElements(selected);
             clearSourceSelected2();
         }
         if (choice == button_add_fixed) {
-           // Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
+            // Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
 
             int[] selectedIndices = list_all_modifications.getSelectedIndices();
             Object[] selected = new Object[selectedIndices.length];

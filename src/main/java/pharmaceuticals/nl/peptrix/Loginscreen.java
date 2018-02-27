@@ -19,10 +19,14 @@ public class Loginscreen implements WindowListener {
     }
 
     Loginscreen(String title) throws SQLException {
-        database = new DataBase();
+
+        String jdbc_user = "root";
+        String jdbc_password = "jk3567";
+        String databaseName = "proteomics";
+        database = new DataBase(jdbc_user, jdbc_password, databaseName);
         database.FillInitialData();
         JFrame frame = new JFrame(title);
-        cc = new Controller(frame);
+        cc = new Controller(frame,jdbc_user, jdbc_password, databaseName );
         MenuBar menubar = new CreateMenu(cc);
         frame.setMenuBar(menubar);
         Dimension d = frame.getToolkit().getScreenSize();
