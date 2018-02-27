@@ -955,44 +955,113 @@ public class Controller
     }
 
     private void clearSourceSelected() {
-        Object selected[] = list_fixed_mod.getSelectedValuesList().toArray();
-                //.getSelectedValuesList().toArray();
-        for (int i = selected.length - 1; i >= 0; --i) {
-            model_fixed_mod.removeElement(selected[i]);
+       // Object selected[] = list_fixed_mod.getSelectedValuesList().toArray();
+      //  for (int i = selected.length - 1; i >= 0; --i) {
+      //     model_fixed_mod.removeElement(selected[i]);
+     //   }
+     //   list_fixed_mod.getSelectionModel().clearSelection();
+
+
+        int[] selectedindices = list_fixed_mod.getSelectedIndices();
+        for (int i = 0; i < selectedindices.length; i++) {
+            Object selected = list_fixed_mod.getModel().getElementAt(selectedindices[i]);
+            model_fixed_mod.removeElement(selected);
         }
+
         list_fixed_mod.getSelectionModel().clearSelection();
+
+
+
+
+
     }
 
     private void clearSourceSelected2() {
-        Object selected[] = list_variabel_mod.getSelectedValuesList().toArray();
-        for (int i = selected.length - 1; i >= 0; --i) {
-            model_variabel_mod.removeElement(selected[i]);
+        //Object selected[] = list_variabel_mod.getSelectedValuesList().toArray();
+        //for (int i = selected.length - 1; i >= 0; --i) {
+        //    model_variabel_mod.removeElement(selected[i]);
+        //}
+       // list_variabel_mod.getSelectionModel().clearSelection();
+
+
+        int[] selectedindices = list_variabel_mod.getSelectedIndices();
+        for (int i = 0; i < selectedindices.length; i++) {
+            Object selected = list_variabel_mod.getModel().getElementAt(selectedindices[i]);
+            model_variabel_mod.removeElement(selected);
         }
+
         list_variabel_mod.getSelectionModel().clearSelection();
+
+
+
+
+
+
+
     }
 
     private void clearDestinationSelected() {
-        Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
-        for (int i = selected.length - 1; i >= 0; --i) {
-            model_all_modifications.removeElement(selected[i]);
+       // Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
+      //  for (int i = selected.length - 1; i >= 0; --i) {
+     //       model_all_modifications.removeElement(selected[i]);
+     //   }
+     //   list_all_modifications.getSelectionModel().clearSelection();
+
+
+        int[] selectedindices = list_all_modifications.getSelectedIndices();
+        for (int i = 0; i < selectedindices.length; i++) {
+            Object selected = list_all_modifications.getModel().getElementAt(selectedindices[i]);
+            model_all_modifications.removeElement(selected);
         }
+
         list_all_modifications.getSelectionModel().clearSelection();
+
+
+
+
+
+
+
     }
 
     private void clearPotentialEnzymesSelected() {
-        Object selected[] = list_potential_enzyme.getSelectedValuesList().toArray();
-        for (int i = selected.length - 1; i >= 0; --i) {
-            potential_enzyme_list.removeElement(selected[i]);
+        //Object selected[] = list_potential_enzyme.getSelectedValuesList().toArray();
+       // for (int i = selected.length - 1; i >= 0; --i) {
+       //     potential_enzyme_list.removeElement(selected[i]);
+       // }
+      //  list_potential_enzyme.getSelectionModel().clearSelection();
+
+
+        int[] selectedindices = list_potential_enzyme.getSelectedIndices();
+        for (int i = 0; i < selectedindices.length; i++) {
+            Object selected = list_potential_enzyme.getModel().getElementAt(selectedindices[i]);
+            potential_enzyme_list.removeElement(selected);
         }
+
         list_potential_enzyme.getSelectionModel().clearSelection();
+
+
     }
 
     private void clearSelectedEnzymesSelected() {
-        Object selected[] = list_selected_enzyme.getSelectedValuesList().toArray();
-        for (int i = selected.length - 1; i >= 0; --i) {
-            selected_enzyme_list.removeElement(selected[i]);
+        //Object selected[] = list_selected_enzyme.getSelectedValuesList().toArray();
+        //for (int i = selected.length - 1; i >= 0; --i) {
+        //    selected_enzyme_list.removeElement(selected[i]);
+       // }
+       // list_selected_enzyme.getSelectionModel().clearSelection();
+
+
+        int[] selectedindices = list_selected_enzyme.getSelectedIndices();
+        for (int i = 0; i < selectedindices.length; i++) {
+            Object selected = list_selected_enzyme.getModel().getElementAt(selectedindices[i]);
+            selected_enzyme_list.removeElement(selected);
         }
+
         list_selected_enzyme.getSelectionModel().clearSelection();
+
+
+
+
     }
 
     public void setlabelsanddefaults() {
@@ -1971,32 +2040,81 @@ public class Controller
             }
         }
         if (choice == button_add_variabel) {
-            Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
+            //Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
+
+            int[] selectedIndices = list_all_modifications.getSelectedIndices();
+            Object[] selected = new Object[selectedIndices.length];
+            for (int i = 0; i < selectedIndices.length; i++) {
+                selected[i] = list_all_modifications.getModel().getElementAt(selectedIndices[i]);
+            }
+
+
+
             addSourceElements2(selected);
             clearDestinationSelected();
         }
         if (choice == button_remove_variabel) {
-            Object selected[] = list_variabel_mod.getSelectedValuesList().toArray();
+            //Object selected[] = list_variabel_mod.getSelectedValuesList().toArray();
+
+            int[] selectedIndices = list_variabel_mod.getSelectedIndices();
+            Object[] selected = new Object[selectedIndices.length];
+            for (int i = 0; i < selectedIndices.length; i++) {
+                selected[i] = list_variabel_mod.getModel().getElementAt(selectedIndices[i]);
+            }
+
+
+
             addDestinationElements(selected);
             clearSourceSelected2();
         }
         if (choice == button_add_fixed) {
-            Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
+           // Object selected[] = list_all_modifications.getSelectedValuesList().toArray();
+
+            int[] selectedIndices = list_all_modifications.getSelectedIndices();
+            Object[] selected = new Object[selectedIndices.length];
+            for (int i = 0; i < selectedIndices.length; i++) {
+                selected[i] = list_all_modifications.getModel().getElementAt(selectedIndices[i]);
+            }
+
+
             addSourceElements(selected);
             clearDestinationSelected();
         }
         if (choice == button_remove_enzyme) {
-            Object selected[] = list_selected_enzyme.getSelectedValuesList().toArray();
+            //Object selected[] = list_selected_enzyme.getSelectedValuesList().toArray();
+
+            int[] selectedIndices = list_selected_enzyme.getSelectedIndices();
+            Object[] selected = new Object[selectedIndices.length];
+            for (int i = 0; i < selectedIndices.length; i++) {
+                selected[i] = list_selected_enzyme.getModel().getElementAt(selectedIndices[i]);
+            }
+
+
             removeSelectedEnzymeElements(selected);
             clearSelectedEnzymesSelected();
         }
         if (choice == button_add_enzyme) {
-            Object selected[] = list_potential_enzyme.getSelectedValuesList().toArray();
+            //Object selected[] = list_potential_enzyme.getSelectedValuesList().toArray();
+
+            int[] selectedIndices = list_potential_enzyme.getSelectedIndices();
+            Object[] selected = new Object[selectedIndices.length];
+            for (int i = 0; i < selectedIndices.length; i++) {
+                selected[i] = list_potential_enzyme.getModel().getElementAt(selectedIndices[i]);
+            }
+
+
             addSelectedEnzymeElements(selected);
             clearPotentialEnzymesSelected();
         }
         if (choice == button_remove_fixed) {
-            Object selected[] = list_fixed_mod.getSelectedValuesList().toArray();
+            //Object selected[] = list_fixed_mod.getSelectedValuesList().toArray();
+
+            int[] selectedIndices = list_fixed_mod.getSelectedIndices();
+            Object[] selected = new Object[selectedIndices.length];
+            for (int i = 0; i < selectedIndices.length; i++) {
+                selected[i] = list_fixed_mod.getModel().getElementAt(selectedIndices[i]);
+            }
+
             addDestinationElements(selected);
             clearSourceSelected();
         }
