@@ -1,201 +1,189 @@
 package pharmaceuticals.nl.peptrix.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "Result2")
-public class Result {
+@Table(name = "Result")
+public class Result implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "resultid")
+    private long resultid;
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "experimentid")
+    private Experiment experiment;
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "sampleid")
+    private Sample sample;
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "group_id")
+    private Group group;
+    @Column(name = "filenumber")
+    private long filenumber;
+    @Column(name = "lcfraction")
+    private long lcfraction;
+    @Column(name = "Offset_LC_MS")
+    private float offset_LC_MS;
+    @Column(name = "retentiontime")
+    private float retentiontime;
+    @Column(name = "Quantilethreshold", length = 8)
+    private String quantilethreshold;
+    @Column(name = "Year", length = 4)
+    private String year;
+    @Column(name = "Size_KB")
+    private float size_KB;
+    @Column(name = "File", length = 200)
+    private String file;
+    @Column(name = "Type", length = 16)
+    private String type;
+    @Temporal(TemporalType.DATE)
+    private Date date;
+    @Temporal(TemporalType.TIME)
+    private Date time;
+    @CreationTimestamp
+    private Date created;
+    @UpdateTimestamp
+    private Date updated;
 
-	@Id
-	@GeneratedValue
-	@Column(name = "esultid")
-	private long resultid;
+    public long getResultid() {
+        return resultid;
+    }
 
-	@Column(name = "xperimentid")
-	private long experimentid;
+    public void setResultid(long resultid) {
+        this.resultid = resultid;
+    }
 
-	@Column(name = "ampleid")
-	private long sampleid;
+    public Experiment getExperiment() {
+        return experiment;
+    }
 
-	@Column(name = "roup_id")
-	private long group_id;
+    public void setExperiment(Experiment experiment) {
+        this.experiment = experiment;
+    }
 
-	@Column(name = "filenumber")
-	private long filenumber;
+    public Sample getSample() {
+        return sample;
+    }
 
-	@Column(name = "lcfraction")
-	private long lcfraction;
+    public void setSample(Sample sample) {
+        this.sample = sample;
+    }
 
-	@Column(name = "Offset_LC_MS")
-	private float offset_LC_MS;
+    public Group getGroup() {
+        return group;
+    }
 
-	@Column(name = "retentiontime")
-	private float retentiontime;
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 
-	@Column(name = "Quantilethreshold", length = 8)
-	private String quantilethreshold;
+    public long getFilenumber() {
+        return filenumber;
+    }
 
-	@Column(name = "Year", length = 4)
-	private String year;
+    public void setFilenumber(long filenumber) {
+        this.filenumber = filenumber;
+    }
 
-	@Column(name = "Size_KB")
-	private float size_KB;
+    public long getLcfraction() {
+        return lcfraction;
+    }
 
-	@Column(name = "File", length = 200)
-	private String file;
+    public void setLcfraction(long lcfraction) {
+        this.lcfraction = lcfraction;
+    }
 
-	@Column(name = "Type", length = 16)
-	private String type;
+    public float getOffset_LC_MS() {
+        return offset_LC_MS;
+    }
 
-	@Temporal(TemporalType.DATE)
-	private Date date;
+    public void setOffset_LC_MS(float offset_LC_MS) {
+        this.offset_LC_MS = offset_LC_MS;
+    }
 
-	@Temporal(TemporalType.TIME)
-	private Date time;
+    public float getRetentiontime() {
+        return retentiontime;
+    }
 
-	@CreationTimestamp
-	private Date created;
+    public void setRetentiontime(float retentiontime) {
+        this.retentiontime = retentiontime;
+    }
 
-	@UpdateTimestamp
-	private Date updated;
+    public String getQuantilethreshold() {
+        return quantilethreshold;
+    }
 
-	public long getResultid() {
-		return resultid;
-	}
+    public void setQuantilethreshold(String quantilethreshold) {
+        this.quantilethreshold = quantilethreshold;
+    }
 
-	public void setResultid(long resultid) {
-		this.resultid = resultid;
-	}
+    public String getYear() {
+        return year;
+    }
 
-	public long getExperimentid() {
-		return experimentid;
-	}
+    public void setYear(String year) {
+        this.year = year;
+    }
 
-	public void setExperimentid(long experimentid) {
-		this.experimentid = experimentid;
-	}
+    public float getSize_KB() {
+        return size_KB;
+    }
 
-	public long getSampleid() {
-		return sampleid;
-	}
+    public void setSize_KB(float size_KB) {
+        this.size_KB = size_KB;
+    }
 
-	public void setSampleid(long sampleid) {
-		this.sampleid = sampleid;
-	}
+    public String getFile() {
+        return file;
+    }
 
-	public long getGroup_id() {
-		return group_id;
-	}
+    public void setFile(String file) {
+        this.file = file;
+    }
 
-	public void setGroup_id(long group_id) {
-		this.group_id = group_id;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public long getFilenumber() {
-		return filenumber;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public void setFilenumber(long filenumber) {
-		this.filenumber = filenumber;
-	}
+    public Date getDate() {
+        return date;
+    }
 
-	public long getLcfraction() {
-		return lcfraction;
-	}
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
-	public void setLcfraction(long lcfraction) {
-		this.lcfraction = lcfraction;
-	}
+    public Date getTime() {
+        return time;
+    }
 
-	public float getOffset_LC_MS() {
-		return offset_LC_MS;
-	}
+    public void setTime(Date time) {
+        this.time = time;
+    }
 
-	public void setOffset_LC_MS(float offset_LC_MS) {
-		this.offset_LC_MS = offset_LC_MS;
-	}
+    public Date getCreated() {
+        return created;
+    }
 
-	public float getRetentiontime() {
-		return retentiontime;
-	}
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
-	public void setRetentiontime(float retentiontime) {
-		this.retentiontime = retentiontime;
-	}
+    public Date getUpdated() {
+        return updated;
+    }
 
-	public String getQuantilethreshold() {
-		return quantilethreshold;
-	}
-
-	public void setQuantilethreshold(String quantilethreshold) {
-		this.quantilethreshold = quantilethreshold;
-	}
-
-	public String getYear() {
-		return year;
-	}
-
-	public void setYear(String year) {
-		this.year = year;
-	}
-
-	public float getSize_KB() {
-		return size_KB;
-	}
-
-	public void setSize_KB(float size_KB) {
-		this.size_KB = size_KB;
-	}
-
-	public String getFile() {
-		return file;
-	}
-
-	public void setFile(String file) {
-		this.file = file;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public Date getTime() {
-		return time;
-	}
-
-	public void setTime(Date time) {
-		this.time = time;
-	}
-
-	public Date getCreated() {
-		return created;
-	}
-
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-
-	public Date getUpdated() {
-		return updated;
-	}
-
-	public void setUpdated(Date updated) {
-		this.updated = updated;
-	}
-
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
 }

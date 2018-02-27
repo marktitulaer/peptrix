@@ -1,97 +1,87 @@
 package pharmaceuticals.nl.peptrix.model;
 
 import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "Experiment2")
-public class Experiment {
+@Table(name = "Experiment")
+public class Experiment implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "experimentid")
+    private long experimentid;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "equipmentid")
+    private Equipment equipment;
+    @Column(name = "Name", length = 200)
+    String name;
+    @Column(name = "Date")
+    Date date;
+    @Column(name = "Year", length = 4)
+    String year;
+    @CreationTimestamp
+    private Date created;
+    @UpdateTimestamp
+    private Date updated;
 
-	@Id
-	@GeneratedValue
-	@Column(name = "xperimentid")
-	private long experimentid;
+    public long getExperimentid() {
+        return experimentid;
+    }
 
-	@Column(name = "quipmentid")
-	private long equipmentid;
+    public void setExperimentid(long experimentid) {
+        this.experimentid = experimentid;
+    }
 
-	@Column(name = "Name", length = 200)
-	String name;
+    public Equipment getEquipment() {
+        return equipment;
+    }
 
-	@Column(name = "Date")
-	Date date;
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
+    }
 
-	@Column(name = "Year", length = 4)
-	String year;
+    public String getName() {
+        return name;
+    }
 
-	@CreationTimestamp
-	private Date created;
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@UpdateTimestamp
-	private Date updated;
+    public Date getDate() {
+        return date;
+    }
 
-	public long getExperimentid() {
-		return experimentid;
-	}
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
-	public void setExperimentid(long experimentid) {
-		this.experimentid = experimentid;
-	}
+    public String getYear() {
+        return year;
+    }
 
-	public long getEquipmentid() {
-		return equipmentid;
-	}
+    public void setYear(String year) {
+        this.year = year;
+    }
 
-	public void setEquipmentid(long equipmentid) {
-		this.equipmentid = equipmentid;
-	}
+    public Date getCreated() {
+        return created;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Date getUpdated() {
+        return updated;
+    }
 
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public String getYear() {
-		return year;
-	}
-
-	public void setYear(String year) {
-		this.year = year;
-	}
-
-	public Date getCreated() {
-		return created;
-	}
-
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-
-	public Date getUpdated() {
-		return updated;
-	}
-
-	public void setUpdated(Date updated) {
-		this.updated = updated;
-	}
-
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
 }

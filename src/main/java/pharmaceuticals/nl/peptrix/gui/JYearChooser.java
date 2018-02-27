@@ -3,63 +3,59 @@ package pharmaceuticals.nl.peptrix.gui;
 import java.util.Calendar;
 
 class JYearChooser extends JSpinField {
+    protected JDayChooser dayChooser;
+    protected int startYear;
+    protected int endYear;
 
-	protected JDayChooser dayChooser;
+    public JYearChooser() {
+        Calendar calendar = Calendar.getInstance();
+        dayChooser = null;
+        setMinimum(calendar.getMinimum(Calendar.YEAR));
+        setMaximum(calendar.getMaximum(Calendar.YEAR));
+        setValue(calendar.get(Calendar.YEAR));
+    }
 
-	protected int startYear;
+    public void setYear(int y) {
+        int oldYear = getValue();
+        super.setValue(y, true, false);
+        if (dayChooser != null) {
+            dayChooser.setYear(value);
+        }
+        spinner.setValue(new Integer(value));
+        firePropertyChange("year", oldYear, value);
+    }
 
-	protected int endYear;
+    @Override
+    public void setValue(int value) {
+        setYear(value);
+    }
 
-	public JYearChooser() {
-		Calendar calendar = Calendar.getInstance();
-		dayChooser = null;
-		setMinimum(calendar.getMinimum(Calendar.YEAR));
-		setMaximum(calendar.getMaximum(Calendar.YEAR));
-		setValue(calendar.get(Calendar.YEAR));
-	}
+    public int getYear() {
+        return super.getValue();
+    }
 
-	public void setYear(int y) {
-		int oldYear = getValue();
-		super.setValue(y, true, false);
-		if (dayChooser != null) {
-			dayChooser.setYear(value);
-		}
-		spinner.setValue(new Integer(value));
-		firePropertyChange("year", oldYear, value);
-	}
+    public void setDayChooser(JDayChooser dayChooser) {
+        this.dayChooser = dayChooser;
+    }
 
-	@Override
-	public void setValue(int value) {
-		setYear(value);
-	}
+    @Override
+    public String getName() {
+        return "JYearChooser";
+    }
 
-	public int getYear() {
-		return super.getValue();
-	}
+    public int getEndYear() {
+        return getMaximum();
+    }
 
-	public void setDayChooser(JDayChooser dayChooser) {
-		this.dayChooser = dayChooser;
-	}
+    public void setEndYear(int endYear) {
+        setMaximum(endYear);
+    }
 
-	@Override
-	public String getName() {
-		return "JYearChooser";
-	}
+    public int getStartYear() {
+        return getMinimum();
+    }
 
-	public int getEndYear() {
-		return getMaximum();
-	}
-
-	public void setEndYear(int endYear) {
-		setMaximum(endYear);
-	}
-
-	public int getStartYear() {
-		return getMinimum();
-	}
-
-	public void setStartYear(int startYear) {
-		setMinimum(startYear);
-	}
-
+    public void setStartYear(int startYear) {
+        setMinimum(startYear);
+    }
 }

@@ -3,19 +3,18 @@ package pharmaceuticals.nl.peptrix.gui.filechooser.filters;
 import java.io.File;
 
 public class XMLFilter extends SuffixAwareFilter {
+    @Override
+    public boolean accept(File f) {
+        String suffix = getSuffix(f);
+        if (suffix != null) {
+            return super.accept(f) || suffix.equals("xml");
+        } else {
+            return super.accept(f);
+        }
+    }
 
-	@Override
-	public boolean accept(File f) {
-		String suffix = getSuffix(f);
-		if (suffix != null) {
-			return super.accept(f) || suffix.equals("xml");
-		} else {
-			return super.accept(f);
-		}
-	}
-
-	@Override
-	public String getDescription() {
-		return "XML Files(*.xml)";
-	}
+    @Override
+    public String getDescription() {
+        return "XML Files(*.xml)";
+    }
 }

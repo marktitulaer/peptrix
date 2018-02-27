@@ -1,69 +1,66 @@
 package pharmaceuticals.nl.peptrix.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "Sample2")
-public class Sample {
+@Table(name = "Sample")
+public class Sample implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "sampleid")
+    private long sampleid;
+    @Column(name = "Sample_code", length = 100, unique = true)
+    private String samplecode;
+    @Column(name = "Name", length = 200)
+    private String name;
+    @CreationTimestamp
+    private Date created;
+    @UpdateTimestamp
+    private Date updated;
 
-	@Id
-	@GeneratedValue
-	@Column(name = "ampleid")
-	private long sampleid;
+    public Date getCreated() {
+        return created;
+    }
 
-	@Column(name = "Sample_code", length = 100, unique = true)
-	private String samplecode;
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
-	@Column(name = "Name", length = 200)
-	private String name;
+    public Date getUpdated() {
+        return updated;
+    }
 
-	@CreationTimestamp
-	private Date created;
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
 
-	@UpdateTimestamp
-	private Date updated;
+    public long getSampleid() {
+        return sampleid;
+    }
 
-	public Date getCreated() {
-		return created;
-	}
+    public void setSampleid(long sampleid) {
+        this.sampleid = sampleid;
+    }
 
-	public void setCreated(Date created) {
-		this.created = created;
-	}
+    public String getSamplecode() {
+        return samplecode;
+    }
 
-	public Date getUpdated() {
-		return updated;
-	}
+    public void setSamplecode(String samplecode) {
+        this.samplecode = samplecode;
+    }
 
-	public void setUpdated(Date updated) {
-		this.updated = updated;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public long getSampleid() {
-		return sampleid;
-	}
-
-	public void setSampleid(long sampleid) {
-		this.sampleid = sampleid;
-	}
-
-	public String getSamplecode() {
-		return samplecode;
-	}
-
-	public void setSamplecode(String samplecode) {
-		this.samplecode = samplecode;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
+    public void setName(String name) {
+        this.name = name;
+    }
 }
