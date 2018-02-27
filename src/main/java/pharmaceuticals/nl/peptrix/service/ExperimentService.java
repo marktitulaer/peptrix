@@ -1,15 +1,17 @@
 package pharmaceuticals.nl.peptrix.service;
 
 public interface ExperimentService {
-    public String[] getexperimentdata(String strexperimentid);
 
-    public String getnewexperimentid();
+	public String[] getexperimentdata(String strexperimentid);
 
-    public int getequipmentid(String experimentnumber);
+	public String getnewexperimentid();
 
-    public int create_new_experiment(String equipmentid, String newexperimentname);
+	public int getequipmentid(String experimentnumber);
 
-    public String getlatestexperimentid();
+	public int create_new_experiment(String equipmentid, String newexperimentname);
 
-    public Object[][] getexperimentdata2(String experimentid);
+	public String getlatestexperimentid();
+
+	public Object[][] getexperimentdata2(String experimentid);
+
 }

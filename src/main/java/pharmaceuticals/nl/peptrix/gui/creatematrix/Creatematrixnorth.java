@@ -7,19 +7,21 @@ import pharmaceuticals.nl.peptrix.Controller;
 import pharmaceuticals.nl.peptrix.gui.creatematrix.top.ExperimentLeftPanelCreateMatrix;
 
 public class Creatematrixnorth {
-    JPanel creatematrixnorth;
 
-    public Creatematrixnorth(Controller cc) {
-        ExperimentLeftPanelCreateMatrix experimentleftpanelcreatematrix = new ExperimentLeftPanelCreateMatrix(cc);
-        JPanel panelexperimentleft = experimentleftpanelcreatematrix.getpanel();
-        JPanel dummypanel = new JPanel();
-        creatematrixnorth = new JPanel();
-        creatematrixnorth.setLayout(new BorderLayout());
-        creatematrixnorth.add(panelexperimentleft, BorderLayout.WEST);
-        creatematrixnorth.add(dummypanel, BorderLayout.CENTER);
-    }
+	JPanel creatematrixnorth;
 
-    public JPanel getpanel() {
-        return creatematrixnorth;
-    }
+	public Creatematrixnorth(Controller cc) {
+		ExperimentLeftPanelCreateMatrix experimentleftpanelcreatematrix = new ExperimentLeftPanelCreateMatrix(cc);
+		JPanel panelexperimentleft = experimentleftpanelcreatematrix.getpanel();
+		JPanel dummypanel = new JPanel();
+		creatematrixnorth = new JPanel();
+		creatematrixnorth.setLayout(new BorderLayout());
+		creatematrixnorth.add(panelexperimentleft, BorderLayout.WEST);
+		creatematrixnorth.add(dummypanel, BorderLayout.CENTER);
+	}
+
+	public JPanel getpanel() {
+		return creatematrixnorth;
+	}
+
 }

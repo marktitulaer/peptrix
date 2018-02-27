@@ -1,77 +1,81 @@
 package pharmaceuticals.nl.peptrix.model;
 
-import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.*;
 
+import javax.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "SystemCodeItem")
-public class Systemcodeitem implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "systemcodeitemid")
-    long systemcodeitemid;
-    @ManyToOne(optional = true)
-    @JoinColumn(name = "systemcodeid")
-    Systemcode systemcode;
-    @Column(name = "ItemCode", length = 16, unique = true)
-    String itemcode;
-    @Column(name = "Description", length = 50)
-    String description;
-    @CreationTimestamp
-    private Date created;
-    @UpdateTimestamp
-    private Date updated;
+@Table(name = "SystemCodeItem2")
+public class Systemcodeitem {
 
-    public long getSystemcodeitemid() {
-        return systemcodeitemid;
-    }
+	@Id
+	@GeneratedValue
+	@Column(name = "ystemCodeItemid")
+	long systemcodeitemid;
 
-    public void setSystemcodeitemid(long systemcodeitemid) {
-        this.systemcodeitemid = systemcodeitemid;
-    }
+	@Column(name = "ystemcodeid")
+	long systemcodeid;
 
-    public Systemcode getSystemcode() {
-        return systemcode;
-    }
+	@Column(name = "ItemCode", length = 16, unique = true)
+	String itemcode;
 
-    public void setSystemcode(Systemcode systemcode) {
-        this.systemcode = systemcode;
-    }
+	@Column(name = "Description", length = 50)
+	String description;
 
-    public String getItemcode() {
-        return itemcode;
-    }
+	@CreationTimestamp
+	private Date created;
 
-    public void setItemcode(String itemcode) {
-        this.itemcode = itemcode;
-    }
+	@UpdateTimestamp
+	private Date updated;
 
-    public String getDescription() {
-        return description;
-    }
+	public long getSystemcodeitemid() {
+		return systemcodeitemid;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setSystemcodeitemid(long systemcodeitemid) {
+		this.systemcodeitemid = systemcodeitemid;
+	}
 
-    public Date getCreated() {
-        return created;
-    }
+	public long getSystemcodeid() {
+		return systemcodeid;
+	}
 
-    public void setCreated(Date created) {
-        this.created = created;
-    }
+	public void setSystemcodeid(long systemcodeid) {
+		this.systemcodeid = systemcodeid;
+	}
 
-    public Date getUpdated() {
-        return updated;
-    }
+	public String getItemcode() {
+		return itemcode;
+	}
 
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
+	public void setItemcode(String itemcode) {
+		this.itemcode = itemcode;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public Date getUpdated() {
+		return updated;
+	}
+
+	public void setUpdated(Date updated) {
+		this.updated = updated;
+	}
+
 }

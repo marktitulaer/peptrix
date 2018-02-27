@@ -8,58 +8,59 @@ import java.util.TreeSet;
 import javax.swing.AbstractListModel;
 
 public class SortedListModel extends AbstractListModel {
-    SortedSet model;
 
-    public SortedListModel() {
-        model = new TreeSet();
-    }
+	SortedSet model;
 
-    public int getSize() {
-        return model.size();
-    }
+	public SortedListModel() {
+		model = new TreeSet();
+	}
 
-    public Object getElementAt(int index) {
-        return model.toArray()[index];
-    }
+	public int getSize() {
+		return model.size();
+	}
 
-    public void add(Object element) {
-        if (model.add(element)) {
-            fireContentsChanged(this, 0, getSize());
-        }
-    }
+	public Object getElementAt(int index) {
+		return model.toArray()[index];
+	}
 
-    public void addAll(Object elements[]) {
-        Collection c = Arrays.asList(elements);
-        model.addAll(c);
-        fireContentsChanged(this, 0, getSize());
-    }
+	public void add(Object element) {
+		if (model.add(element)) {
+			fireContentsChanged(this, 0, getSize());
+		}
+	}
 
-    public void clear() {
-        model.clear();
-        fireContentsChanged(this, 0, getSize());
-    }
+	public void addAll(Object elements[]) {
+		Collection c = Arrays.asList(elements);
+		model.addAll(c);
+		fireContentsChanged(this, 0, getSize());
+	}
 
-    public boolean contains(Object element) {
-        return model.contains(element);
-    }
+	public void clear() {
+		model.clear();
+		fireContentsChanged(this, 0, getSize());
+	}
 
-    public Object firstElement() {
-        return model.first();
-    }
+	public boolean contains(Object element) {
+		return model.contains(element);
+	}
 
-    public Iterator iterator() {
-        return model.iterator();
-    }
+	public Object firstElement() {
+		return model.first();
+	}
 
-    public Object lastElement() {
-        return model.last();
-    }
+	public Iterator iterator() {
+		return model.iterator();
+	}
 
-    public boolean removeElement(Object element) {
-        boolean removed = model.remove(element);
-        if (removed) {
-            fireContentsChanged(this, 0, getSize());
-        }
-        return removed;
-    }
+	public Object lastElement() {
+		return model.last();
+	}
+
+	public boolean removeElement(Object element) {
+		boolean removed = model.remove(element);
+		if (removed) {
+			fireContentsChanged(this, 0, getSize());
+		}
+		return removed;
+	}
 }

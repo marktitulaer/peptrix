@@ -8,37 +8,40 @@ import pharmaceuticals.nl.peptrix.gui.allocation.Northallocation;
 import pharmaceuticals.nl.peptrix.gui.allocation.Southallocation;
 
 public class Allocation {
-    Northallocation northallocation;
-    public Centerallocation centerallocation;
-    Southallocation southallocation;
 
-    public Allocation(Controller cc) {
-        northallocation = new Northallocation(cc);
-        centerallocation = new Centerallocation(cc);
-        southallocation = new Southallocation(cc);
-    }
+	Northallocation northallocation;
 
-    public void fill_panels_with_fields() {
-        centerallocation.fill_panels_with_fields();
-    }
+	public Centerallocation centerallocation;
 
-    public JPanel getpanelnorthallocation() {
-        return northallocation.getpanel();
-    }
+	Southallocation southallocation;
 
-    public JPanel getpanelcenterallocation() {
-        return centerallocation.getpanel();
-    }
+	public Allocation(Controller cc) {
+		northallocation = new Northallocation(cc);
+		centerallocation = new Centerallocation(cc);
+		southallocation = new Southallocation(cc);
+	}
 
-    public JPanel getpanelsouthallocation() {
-        return southallocation.getpanel();
-    }
+	public void fill_panels_with_fields() {
+		centerallocation.fill_panels_with_fields();
+	}
 
-    public void fillbrowsepanel() {
-        centerallocation.fillbrowsepanel();
-    }
+	public JPanel getpanelnorthallocation() {
+		return northallocation.getpanel();
+	}
 
-    public void resetscrollposition() {
-        centerallocation.resetscrollposition();
-    }
+	public JPanel getpanelcenterallocation() {
+		return centerallocation.getpanel();
+	}
+
+	public JPanel getpanelsouthallocation() {
+		return southallocation.getpanel();
+	}
+
+	public void fillbrowsepanel() {
+		centerallocation.fillbrowsepanel();
+	}
+
+	public void resetscrollposition() {
+		centerallocation.resetscrollposition();
+	}
 }

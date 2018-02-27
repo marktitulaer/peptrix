@@ -10,37 +10,41 @@ import pharmaceuticals.nl.peptrix.gui.creatematrix.center.Centerpanelnorthtotalc
 import pharmaceuticals.nl.peptrix.gui.creatematrix.center.CenterpanelsouthCreatematrix;
 
 public class Creatematrixcenter {
-    public Centerpanelnorthtotalcreatematrix centerpanelnorthtotalcreatematrix;
-    public CenterpanelsouthCreatematrix centerpanelsouthcreatematrix;
-    public ScrollPane creatematrixcenter;
 
-    public Creatematrixcenter(Controller cc) {
-        centerpanelnorthtotalcreatematrix = new Centerpanelnorthtotalcreatematrix(cc);
-        JPanel centerpanelnorthtotal = centerpanelnorthtotalcreatematrix.getpanel();
-        centerpanelsouthcreatematrix = new CenterpanelsouthCreatematrix(cc);
-        JPanel creatematrixcenterpanelsouthnew = centerpanelsouthcreatematrix.getpanel();
-        JPanel creatematrixcenterpanel = new JPanel();
-        creatematrixcenterpanel.setLayout(new BorderLayout());
-        creatematrixcenterpanel.add(centerpanelnorthtotal, BorderLayout.NORTH);
-        creatematrixcenterpanel.add(creatematrixcenterpanelsouthnew, BorderLayout.CENTER);
-        creatematrixcenter = new ScrollPane();
-        creatematrixcenter.add(creatematrixcenterpanel);
-    }
+	public Centerpanelnorthtotalcreatematrix centerpanelnorthtotalcreatematrix;
 
-    public ScrollPane returnscrollPane() {
-        return creatematrixcenter;
-    }
+	public CenterpanelsouthCreatematrix centerpanelsouthcreatematrix;
 
-    public void setbackground(Color color) {
-        centerpanelnorthtotalcreatematrix.setBackground(color);
-        centerpanelsouthcreatematrix.setbackground(color);
-    }
+	public ScrollPane creatematrixcenter;
 
-    public void fill_panels_with_fields_() {
-        centerpanelnorthtotalcreatematrix.fill_panels_with_fields_();
-    }
+	public Creatematrixcenter(Controller cc) {
+		centerpanelnorthtotalcreatematrix = new Centerpanelnorthtotalcreatematrix(cc);
+		JPanel centerpanelnorthtotal = centerpanelnorthtotalcreatematrix.getpanel();
+		centerpanelsouthcreatematrix = new CenterpanelsouthCreatematrix(cc);
+		JPanel creatematrixcenterpanelsouthnew = centerpanelsouthcreatematrix.getpanel();
+		JPanel creatematrixcenterpanel = new JPanel();
+		creatematrixcenterpanel.setLayout(new BorderLayout());
+		creatematrixcenterpanel.add(centerpanelnorthtotal, BorderLayout.NORTH);
+		creatematrixcenterpanel.add(creatematrixcenterpanelsouthnew, BorderLayout.CENTER);
+		creatematrixcenter = new ScrollPane();
+		creatematrixcenter.add(creatematrixcenterpanel);
+	}
 
-    public JPanel getcreatematrixcenterpanelsouth() {
-        return centerpanelsouthcreatematrix.getcreatematrixcenterpanelsouth();
-    }
+	public ScrollPane returnscrollPane() {
+		return creatematrixcenter;
+	}
+
+	public void setbackground(Color color) {
+		centerpanelnorthtotalcreatematrix.setBackground(color);
+		centerpanelsouthcreatematrix.setbackground(color);
+	}
+
+	public void fill_panels_with_fields_() {
+		centerpanelnorthtotalcreatematrix.fill_panels_with_fields_();
+	}
+
+	public JPanel getcreatematrixcenterpanelsouth() {
+		return centerpanelsouthcreatematrix.getcreatematrixcenterpanelsouth();
+	}
+
 }

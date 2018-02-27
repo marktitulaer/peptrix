@@ -1,78 +1,80 @@
 package pharmaceuticals.nl.peptrix.model;
 
-import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "ItemValue")
-public class ItemValue implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "itemValueid")
-    private long itemvalueid;
-    @ManyToOne(optional = true)
-    @JoinColumn(name = "systemcodeitemid")
-    private Systemcodeitem systemcodeitem;
-    @ManyToOne(optional = true)
-    @JoinColumn(name = "unitid")
-    private Unit unit;
-    @Column(name = "Itemvalue", length = 200)
-    String itemvalue;
-    @CreationTimestamp
-    private Date created;
-    @UpdateTimestamp
-    private Date updated;
+@Table(name = "ItemValue2")
+public class ItemValue {
 
-    public long getItemvalueid() {
-        return itemvalueid;
-    }
+	@Id
+	@GeneratedValue
+	@Column(name = "temValueid")
+	private long itemvalueid;
 
-    public void setItemvalueid(long itemvalueid) {
-        this.itemvalueid = itemvalueid;
-    }
+	@Column(name = "ystemCodeItemid")
+	private long systemcodeitemid;
 
-    public Systemcodeitem getSystemcodeitem() {
-        return systemcodeitem;
-    }
+	@Column(name = "nitid")
+	private long unitid;
 
-    public void setSystemcodeitem(Systemcodeitem systemcodeitem) {
-        this.systemcodeitem = systemcodeitem;
-    }
+	@Column(name = "Itemvalue", length = 200)
+	String itemvalue;
 
-    public Unit getUnit() {
-        return unit;
-    }
+	@CreationTimestamp
+	private Date created;
 
-    public void setUnit(Unit unit) {
-        this.unit = unit;
-    }
+	@UpdateTimestamp
+	private Date updated;
 
-    public String getItemvalue() {
-        return itemvalue;
-    }
+	public long getItemvalueid() {
+		return itemvalueid;
+	}
 
-    public void setItemvalue(String itemvalue) {
-        this.itemvalue = itemvalue;
-    }
+	public void setItemvalueid(long itemvalueid) {
+		this.itemvalueid = itemvalueid;
+	}
 
-    public Date getCreated() {
-        return created;
-    }
+	public long getSystemcodeitemid() {
+		return systemcodeitemid;
+	}
 
-    public void setCreated(Date created) {
-        this.created = created;
-    }
+	public void setSystemcodeitemid(long systemcodeitemid) {
+		this.systemcodeitemid = systemcodeitemid;
+	}
 
-    public Date getUpdated() {
-        return updated;
-    }
+	public long getUnitid() {
+		return unitid;
+	}
 
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
+	public void setUnitid(long unitid) {
+		this.unitid = unitid;
+	}
+
+	public String getItemvalue() {
+		return itemvalue;
+	}
+
+	public void setItemvalue(String itemvalue) {
+		this.itemvalue = itemvalue;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public Date getUpdated() {
+		return updated;
+	}
+
+	public void setUpdated(Date updated) {
+		this.updated = updated;
+	}
+
 }
