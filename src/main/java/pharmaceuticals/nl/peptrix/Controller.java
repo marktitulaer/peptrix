@@ -371,9 +371,9 @@ public class Controller
     String strgroupid = "";
     public String fileSeparator;
     public String userhome;
-    public String jdbc_user;
+    public String databaseuser;
     public String databaseName;
-    public String jdbc_password;
+    public String databasepassword;
     public String p_values_prefix = "p_values_";
     String javaHome;
     public String osName;
@@ -487,17 +487,26 @@ public class Controller
     InsertGroups insertGroups;
     public ResultService resultService;
 
-    public Controller(JFrame frame, String jdbc_user, String jdbc_password, String databaseName) {
-        this.jdbc_user = jdbc_user;
-        this.jdbc_password = jdbc_password;
+    public Controller(JFrame frame, String databaseuser, String databasepassword, String databaseName,String  ftpuser ,
+                      String ftppassword ,
+                      String ftpremotehost) {
+
+
+        this.ftpuser = ftpuser;
+        this.ftppassword = ftppassword;
+        this.ftpremotehost = ftpremotehost;
+
+
+
+
+        this.databaseuser = databaseuser;
+        this.databasepassword = databasepassword;
         this.databaseName = databaseName;
         fileSeparator = System.getProperty("file.separator");
         userhome = System.getProperty("user.home");
         javaHome = System.getProperty("java.home");
         osName = System.getProperty("os.name");
-        ftpuser = "root";
-        ftppassword = "jk3567";
-        ftpremotehost = "127.0.0.1";
+
         duration_hour = 16;
         ftp_longtime = duration_hour * minute_per_hour * second_per_minute * milliseconds;
         createMatrixAction = new CreateMatrixAction(this);
@@ -884,6 +893,7 @@ public class Controller
             }
         }
     }
+
 
     public void propertyChange(PropertyChangeEvent evt) {
         prop = evt.getPropertyName();

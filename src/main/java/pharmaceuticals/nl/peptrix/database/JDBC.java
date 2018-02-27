@@ -23,8 +23,8 @@ public class JDBC {
 
     public JDBC(Controller cc) {
         properties = new Properties();
-        properties.put("user", cc.jdbc_user);
-        properties.put("password", cc.jdbc_password);
+        properties.put("user", cc.databaseuser);
+        properties.put("password", cc.databasepassword);
         createcon();
     }
 

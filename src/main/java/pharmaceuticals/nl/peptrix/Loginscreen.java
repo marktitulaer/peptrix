@@ -9,7 +9,7 @@ import pharmaceuticals.nl.peptrix.gui.CreateMenu;
 import pharmaceuticals.nl.peptrix.gui.application.FramePanel;
 
 public class Loginscreen implements WindowListener {
-    static String screentitle = "PEPTRIX v3.42";
+    static String screentitle = "PEPTRIX v3.43";
     Controller cc;
     DataBase database;
 
@@ -23,10 +23,15 @@ public class Loginscreen implements WindowListener {
         String jdbc_user = "root";
         String jdbc_password = "jk3567";
         String databaseName = "proteomics";
-        database = new DataBase(jdbc_user, jdbc_password, databaseName);
+
+        String  ftpuser = "root";
+        String ftppassword = "jk3567";
+        String ftpremotehost = "127.0.0.1";
+
+        database = new DataBase(jdbc_user, jdbc_password, databaseName  );
         database.FillInitialData();
         JFrame frame = new JFrame(title);
-        cc = new Controller(frame,jdbc_user, jdbc_password, databaseName );
+        cc = new Controller(frame,jdbc_user, jdbc_password, databaseName, ftpuser,  ftppassword,  ftpremotehost );
         MenuBar menubar = new CreateMenu(cc);
         frame.setMenuBar(menubar);
         Dimension d = frame.getToolkit().getScreenSize();
