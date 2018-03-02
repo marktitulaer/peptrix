@@ -10,7 +10,7 @@ import pharmaceuticals.nl.peptrix.gui.CreateMenu;
 import pharmaceuticals.nl.peptrix.gui.application.FramePanel;
 
 public class Loginscreen implements WindowListener {
-    static String screentitle = "PEPTRIX v3.45";
+    static String screentitle = "PEPTRIX v3.46";
     Controller cc;
     DataBase database;
 
@@ -20,15 +20,12 @@ public class Loginscreen implements WindowListener {
     }
 
     Loginscreen(String title) throws SQLException {
-
         String jdbc_user = "root";
         String jdbc_password = "jk3567";
         String databaseName = "proteomics";
-
         String ftpuser = "root";
         String ftppassword = "jk3567";
         String ftpremotehost = "127.0.0.1";
-
         database = new DataBase(jdbc_user, jdbc_password, databaseName);
         database.FillInitialData();
         JFrame frame = new JFrame(title);

@@ -20,27 +20,16 @@ public class CreateMatrixAction implements TextListener {
     }
 
     public void textValueChanged(TextEvent evt) {
-        //System.out.println(" evt.getSource() " + evt.getSource());
-
         cc.PerformAction(evt.getSource());
         if (evt.getSource() == experimentid2) {
-
-
-            //System.out.println("  experimentid2.getText() " + experimentid2.getText());
-
             String strexperimentid = experimentid2.getText();
-
             generateCreateMtrixScreen(strexperimentid);
-
-
         } else {
             cc.textValueChangedZ(evt);
         }
-
     }
 
     public void generateCreateMtrixScreen(String strexperimentid) {
-
         creatematrix.creatematrix_center.centerpanelsouthcreatematrix.removeAll2();
         creatematrix.creatematrix_center.centerpanelnorthtotalcreatematrix.centerpanelnorthcreatematrix.panelcombine.preprocessingpanel
                 .setVisible(false);
@@ -94,10 +83,8 @@ public class CreateMatrixAction implements TextListener {
             if (cc.combomatrixtodisplay.getItemCount() > 0) {
                 cc.combomatrixtodisplay.setSelectedIndex(0);
             }
-
 //
         }
-
 
     }
 }

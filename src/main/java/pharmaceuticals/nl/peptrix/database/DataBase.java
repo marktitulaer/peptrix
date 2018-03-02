@@ -8,7 +8,6 @@ import org.hibernate.query.Query;
 import pharmaceuticals.nl.peptrix.model.*;
 
 public class DataBase {
-
     String jdbc_user;
     String jdbc_password;
     String databaseName;
@@ -22,7 +21,6 @@ public class DataBase {
     public void FillInitialData() {
         Session session = null;
         Transaction transaction = null;
-
         try {
             HibernateUtil.setDatabaseVariables(jdbc_user, jdbc_password, databaseName);
             session = HibernateUtil.getSessionFactory().openSession();

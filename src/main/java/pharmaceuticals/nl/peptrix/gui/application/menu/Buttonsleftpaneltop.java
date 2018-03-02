@@ -36,7 +36,6 @@ public class Buttonsleftpaneltop {
         cc.btnallocation.addActionListener(cc);
         jpanel.add(cc.btnallocation);
 
-
         //gridbagconstraints.gridx = 1;
         // gridbagconstraints.gridy = 3;
         //gridbagconstraints.gridwidth = 1;
@@ -45,12 +44,9 @@ public class Buttonsleftpaneltop {
         // cc.btnfasta.addActionListener(cc);
         // jpanel.add(cc.btnfasta);
 
-
         gridbagconstraints.gridx = 1;
         //gridbagconstraints.gridy = 4;
-
         gridbagconstraints.gridy = 3;
-
         gridbagconstraints.gridwidth = 1;
         gridbagconstraints.gridheight = 1;
         gridbglayout.setConstraints(cc.btncreatematrix, gridbagconstraints);
@@ -58,9 +54,7 @@ public class Buttonsleftpaneltop {
         jpanel.add(cc.btncreatematrix);
         gridbagconstraints.gridx = 1;
         //gridbagconstraints.gridy = 5;
-
         gridbagconstraints.gridy = 4;
-
 
         gridbagconstraints.gridwidth = 1;
         gridbagconstraints.gridheight = 1;
@@ -69,9 +63,7 @@ public class Buttonsleftpaneltop {
         jpanel.add(cc.btntransposematrix);
         gridbagconstraints.gridx = 1;
         //gridbagconstraints.gridy = 6;
-
         gridbagconstraints.gridy = 5;
-
 
         gridbagconstraints.gridwidth = 1;
         gridbagconstraints.gridheight = 1;

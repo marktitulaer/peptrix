@@ -14,7 +14,6 @@ import pharmaceuticals.nl.peptrix.model.*;
 public class HibernateUtil {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
-
     private static String databaseUser;
     private static String databasePassword;
     private static String databasename;

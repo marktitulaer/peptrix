@@ -500,7 +500,6 @@ public class Controller
         userhome = System.getProperty("user.home");
         javaHome = System.getProperty("java.home");
         osName = System.getProperty("os.name");
-
         duration_hour = 16;
         ftp_longtime = duration_hour * minute_per_hour * second_per_minute * milliseconds;
         createMatrixAction = new CreateMatrixAction(this);
@@ -888,7 +887,6 @@ public class Controller
         }
     }
 
-
     public void propertyChange(PropertyChangeEvent evt) {
         prop = evt.getPropertyName();
         if ((prop.equals(JOptionPane.VALUE_PROPERTY)) && (evt.getSource() == optionsearch)
@@ -967,15 +965,12 @@ public class Controller
         //   }
         //   list_fixed_mod.getSelectionModel().clearSelection();
 
-
         int[] selectedindices = list_fixed_mod.getSelectedIndices();
         for (int i = 0; i < selectedindices.length; i++) {
             Object selected = list_fixed_mod.getModel().getElementAt(selectedindices[i]);
             model_fixed_mod.removeElement(selected);
         }
-
         list_fixed_mod.getSelectionModel().clearSelection();
-
 
     }
 
@@ -985,7 +980,6 @@ public class Controller
             Object selected = list_variabel_mod.getModel().getElementAt(selectedindices[i]);
             model_variabel_mod.removeElement(selected);
         }
-
         list_variabel_mod.getSelectionModel().clearSelection();
     }
 
@@ -1992,13 +1986,11 @@ public class Controller
             }
         }
         if (choice == button_add_variabel) {
-
             int[] selectedIndices = list_all_modifications.getSelectedIndices();
             Object[] selected = new Object[selectedIndices.length];
             for (int i = 0; i < selectedIndices.length; i++) {
                 selected[i] = list_all_modifications.getModel().getElementAt(selectedIndices[i]);
             }
-
 
             addSourceElements2(selected);
             clearDestinationSelected();
@@ -2013,7 +2005,6 @@ public class Controller
             clearSourceSelected2();
         }
         if (choice == button_add_fixed) {
-
             int[] selectedIndices = list_all_modifications.getSelectedIndices();
             Object[] selected = new Object[selectedIndices.length];
             for (int i = 0; i < selectedIndices.length; i++) {
@@ -2023,13 +2014,11 @@ public class Controller
             clearDestinationSelected();
         }
         if (choice == button_remove_enzyme) {
-
             int[] selectedIndices = list_selected_enzyme.getSelectedIndices();
             Object[] selected = new Object[selectedIndices.length];
             for (int i = 0; i < selectedIndices.length; i++) {
                 selected[i] = list_selected_enzyme.getModel().getElementAt(selectedIndices[i]);
             }
-
             removeSelectedEnzymeElements(selected);
             clearSelectedEnzymesSelected();
         }
@@ -2039,7 +2028,6 @@ public class Controller
             for (int i = 0; i < selectedIndices.length; i++) {
                 selected[i] = list_potential_enzyme.getModel().getElementAt(selectedIndices[i]);
             }
-
             addSelectedEnzymeElements(selected);
             clearPotentialEnzymesSelected();
         }
