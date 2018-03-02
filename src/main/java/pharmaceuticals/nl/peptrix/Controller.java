@@ -1008,7 +1008,7 @@ public class Controller
     }
 
     private void clearSelectedEnzymesSelected() {
-         int[] selectedindices = list_selected_enzyme.getSelectedIndices();
+        int[] selectedindices = list_selected_enzyme.getSelectedIndices();
         for (int i = 0; i < selectedindices.length; i++) {
             Object selected = list_selected_enzyme.getModel().getElementAt(selectedindices[i]);
             selected_enzyme_list.removeElement(selected);

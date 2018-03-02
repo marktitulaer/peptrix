@@ -515,6 +515,13 @@ public class Readdatafiles extends DefaultHandler {
         storebinarymatrix();
         emptymemory();
         progressnew.close();
+
+        //System.out.println("=============================================================");
+        //System.out.println("    einde create matrix  experiment.getExperimentid() " + experiment.getExperimentid());
+        cc.createMatrixAction.generateCreateMtrixScreen(experiment.getExperimentid());
+        // System.out.println("en nu ?");
+        // System.out.println("=============================================================");
+
         if (filetype_canbe_processed == false) {
             String message = "Filetype " + experiment.getfiletype() + " can not be processed for equipmentid "
                     + equipmentid;

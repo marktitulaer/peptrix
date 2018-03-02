@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2422f7b1-097a-4dac-9eae-108cc9ac4cec" name="Default" comment="" />
+    <list default="true" id="2422f7b1-097a-4dac-9eae-108cc9ac4cec" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Controller.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/CreateMatrixAction.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/CreateMatrixAction.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Readdatafiles.java" afterPath="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Readdatafiles.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,7 +17,60 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="Makematrix.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Makematrix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="127" column="19" lean-forward="false" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Combinepeaks.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Combinepeaks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Readdatafiles.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Readdatafiles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1794">
+              <caret line="522" column="10" lean-forward="false" selection-start-line="522" selection-start-column="10" selection-end-line="522" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateMatrixAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/CreateMatrixAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Loginscreen.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -29,6 +88,7 @@
       <find>matrixfiles</find>
       <find>JList&lt;String&gt;</find>
       <find>JComboBox&lt;String&gt;</find>
+      <find>experimentid2.getText()</find>
     </findStrings>
     <replaceStrings>
       <replace>JList</replace>
@@ -52,13 +112,14 @@
         <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/DataBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/database/JDBC.java" />
         <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/database/DataBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/CreateMatrixAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/CreateMatrixStartPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/center/Calibrationinputpanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/allocation/top/Experimentleftpanelallocation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/ResultSetTableModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Readdatafiles.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/CreateMatrixAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java" />
       </list>
     </option>
   </component>
@@ -113,7 +174,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,7 +213,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -339,25 +400,25 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23020834" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30965006" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30965006" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -401,9 +462,9 @@
         <state relative-caret-position="349">
           <caret line="963" column="9" lean-forward="false" selection-start-line="963" selection-start-column="9" selection-end-line="963" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#124523#124524#0" expanded="true" />
-            <element signature="e#124569#124570#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#124522#124523#0" expanded="false" />
+            <element signature="e#124568#124569#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -420,7 +481,7 @@
         <state relative-caret-position="170">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -465,9 +526,9 @@
         <state relative-caret-position="230">
           <caret line="968" column="60" lean-forward="true" selection-start-line="962" selection-start-column="7" selection-end-line="968" selection-end-column="60" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#124523#124524#0" expanded="true" />
-            <element signature="e#124569#124570#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#124522#124523#0" expanded="false" />
+            <element signature="e#124568#124569#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -484,7 +545,7 @@
         <state relative-caret-position="170">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -529,9 +590,9 @@
         <state relative-caret-position="43">
           <caret line="957" column="8" lean-forward="true" selection-start-line="957" selection-start-column="8" selection-end-line="957" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#124523#124524#0" expanded="true" />
-            <element signature="e#124569#124570#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#124522#124523#0" expanded="false" />
+            <element signature="e#124568#124569#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -634,32 +695,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Makematrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/CreateMatrixAction.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/gui/creatematrix/PanelCreateMatrixSouth.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Combinepeaks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Readdatafiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10251">
-          <caret line="608" column="23" lean-forward="false" selection-start-line="608" selection-start-column="23" selection-end-line="608" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -698,7 +737,7 @@
         <state relative-caret-position="51">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -714,25 +753,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7851">
+          <caret line="2617" column="1" lean-forward="false" selection-start-line="2617" selection-start-column="1" selection-end-line="2617" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#124522#124523#0" expanded="false" />
+            <element signature="e#124568#124569#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Makematrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="127" column="19" lean-forward="false" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/creatematrix/Combinepeaks.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/createpeaklist/Readdatafiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1794">
+          <caret line="522" column="10" lean-forward="false" selection-start-line="522" selection-start-column="10" selection-end-line="522" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/CreateMatrixAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pharmaceuticals/nl/peptrix/Loginscreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7851">
-          <caret line="2617" column="1" lean-forward="false" selection-start-line="2617" selection-start-column="1" selection-end-line="2617" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#124523#124524#0" expanded="true" />
-            <element signature="e#124569#124570#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
